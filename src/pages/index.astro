@@ -1,11 +1,84 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title='Home Page' description='This is Home Page'>
-	<!-- <Welcome /> -->
+<Layout 
+  title="ImageTools - Professional Image Processing"
+  description="Free online image tools for resizing, compressing, and converting images. Fast, secure, and professional quality."
+>
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div class="text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+          Professional Image Tools
+        </h1>
+        <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          Resize, compress, and convert your images with professional quality. 
+          All processing happens in your browser - fast, secure, and free.
+        </p>
+        <div class="space-x-4">
+          <a href="/resize" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            Start Resizing
+          </a>
+          <a href="/compress" class="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+            Compress Images
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools Grid -->
+  <div class="py-12 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Choose Your Tool</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Select the perfect tool for your image processing needs
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Resize Tool -->
+        <a href="/resize" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Image Resizer</h3>
+          <p class="text-gray-600 text-sm">
+            Resize images to exact dimensions or scale by percentage. Perfect for web optimization.
+          </p>
+        </a>
+
+        <!-- Compress Tool -->
+        <a href="/compress" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Image Compressor</h3>
+          <p class="text-gray-600 text-sm">
+            Reduce file size while maintaining quality. Choose by quality or target file size.
+          </p>
+        </a>
+
+        <!-- Convert Tool -->
+        <a href="/convert" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Format Converter</h3>
+          <p class="text-gray-600 text-sm">
+            Convert between JPEG, PNG, WebP formats with customizable quality settings.
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
 </Layout>

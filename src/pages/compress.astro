@@ -1,0 +1,63 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import CompressToolContainer from '../components/CompressToolContainer';
+---
+
+<ToolLayout 
+  title="Image Compressor" 
+  description="Compress images to reduce file size while maintaining quality. Set target file size or adjust compression levels for optimal results."
+  toolName="compress"
+  icon="📦"
+  features={[
+    "Smart compression",
+    "Target file size",
+    "Quality control",
+    "Format preservation"
+  ]}
+>
+  <!-- Compression Info Banner -->
+  <div class="max-w-7xl mx-auto px-4 mb-6">
+    <div class="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-6">
+      <h3 class="text-lg font-medium text-gray-900 mb-3">Image Compression</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium text-gray-900">Fast Compression</h4>
+            <p class="text-sm text-gray-600">Reduce file size instantly while preserving visual quality</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium text-gray-900">Size Control</h4>
+            <p class="text-sm text-gray-600">Set target file size or adjust compression percentage</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium text-gray-900">Privacy First</h4>
+            <p class="text-sm text-gray-600">All processing happens in your browser - no uploads to servers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <CompressToolContainer client:load />
+</ToolLayout>

@@ -1,0 +1,23 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import PresetToolContainer from '../../components/PresetToolContainer';
+---
+
+<ToolLayout 
+  title="Instagram Story Resizer" 
+  description="Resize your images to perfect Instagram story dimensions (1080×1920px). Create engaging vertical content."
+  toolName="instagram"
+>
+  <PresetToolContainer 
+    preset={{
+      width: 1080,
+      height: 1920,
+      unit: 'px',
+      maintainAspectRatio: false,
+      resizeMethod: 'fill',
+      quality: 95
+    }}
+    presetName="Instagram Story"
+    client:load 
+  />
+</ToolLayout>

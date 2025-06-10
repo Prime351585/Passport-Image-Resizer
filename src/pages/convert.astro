@@ -1,0 +1,42 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import ConvertToolContainer from '../components/ConvertToolContainer';
+---
+
+<ToolLayout 
+  title="Image Format Converter" 
+  description="Convert images between JPEG, PNG, and WebP formats with customizable quality settings. Fast, secure, and browser-based conversion."
+  toolName="convert"
+>
+  <!-- Format Info Banner -->
+  <div class="max-w-7xl mx-auto px-4 mb-6">
+    <div class="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-6">
+      <h3 class="text-lg font-medium text-gray-900 mb-3">Supported Formats</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded-lg border border-gray-200">
+          <div class="flex items-center space-x-2 mb-2">
+            <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <h4 class="font-medium text-gray-900">JPEG</h4>
+          </div>
+          <p class="text-sm text-gray-600">Best for photos. Smaller file sizes with adjustable quality.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg border border-gray-200">
+          <div class="flex items-center space-x-2 mb-2">
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <h4 class="font-medium text-gray-900">PNG</h4>
+          </div>
+          <p class="text-sm text-gray-600">Best for graphics with transparency. Lossless compression.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg border border-gray-200">
+          <div class="flex items-center space-x-2 mb-2">
+            <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+            <h4 class="font-medium text-gray-900">WebP</h4>
+          </div>
+          <p class="text-sm text-gray-600">Modern format with excellent compression. Smaller than JPEG/PNG.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ConvertToolContainer client:load />
+</ToolLayout>
