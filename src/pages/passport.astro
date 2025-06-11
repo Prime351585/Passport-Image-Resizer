@@ -1,0 +1,12 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import PassportToolContainer from '../components/PassportToolContainer';
+---
+
+<ToolLayout 
+  title="Passport Photo Grid Maker" 
+  description="Create professional passport photos with precise cropping and generate printable PDF grids. Perfect for visa applications, ID cards, and official documents."
+  toolName="passport"
+>
+  <PassportToolContainer client:load />
+</ToolLayout>
