@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 import "../styles/global.css"
 
 export interface Props {
@@ -16,55 +17,15 @@ const { title = "ImageTools", description } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description || "Professional image processing tools"} />
   <title>{title}</title>
-</head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet"></head>
 
 <body class="bg-gray-50 min-h-screen flex flex-col">
-  <!-- Header -->
-  <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14 md:h-16">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center space-x-2">
-            <div class="w-7 h-7 md:w-8 md:h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-              </svg>
-            </div>
-            <span class="text-lg md:text-xl font-bold text-gray-900">ImageTools</span>
-          </a>
-        </div>
-        
-        <nav class="hidden sm:flex space-x-4 md:space-x-8">
-          <a href="/" class="text-gray-500 hover:text-gray-900 px-2 md:px-3 py-2 rounded-md text-sm font-medium">Home</a>
-          <a href="/resize" class="text-gray-500 hover:text-gray-900 px-2 md:px-3 py-2 rounded-md text-sm font-medium">Resize</a>
-          <a href="/compress" class="text-gray-500 hover:text-gray-900 px-2 md:px-3 py-2 rounded-md text-sm font-medium">Compress</a>
-          <a href="/convert" class="text-gray-500 hover:text-gray-900 px-2 md:px-3 py-2 rounded-md text-sm font-medium">Convert</a>
-        </nav>
-
-        <!-- Mobile menu button -->
-        <div class="sm:hidden">
-          <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-900 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="sm:hidden hidden bg-white border-t border-gray-200">
-      <div class="px-4 pt-2 pb-3 space-y-1">
-        <a href="/" class="text-gray-500 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-        <a href="/resize" class="text-gray-500 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Resize</a>
-        <a href="/compress" class="text-gray-500 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Compress</a>
-        <a href="/convert" class="text-gray-500 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Convert</a>
-      </div>
-    </div>
-  </header>
-
+  
   <!-- Main Content -->
   <main class="flex-1">
+    <Header/>
     <slot />
   </main>
 

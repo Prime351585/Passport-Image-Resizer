@@ -1,5 +1,10 @@
 ---
+import Image from 'astro/components/Image.astro';
 import Layout from '../layouts/Layout.astro';
+import HeroImg from "../../public/HeroImg.png"
+import HeroImg2 from "../../public/HeroImg2.png"
+import HeroImg2M from "../../public/HeroImg2M.png"
+import DummyImg from "../../public/DummyImg.png"
 ---
 
 <Layout 
@@ -7,92 +12,178 @@ import Layout from '../layouts/Layout.astro';
   description="Free online image tools for resizing, compressing, and converting images. Fast, secure, and professional quality."
 >
   <!-- Hero Section -->
-  <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <div class="text-center">
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">
-          Professional Image Tools
-        </h1>
-        <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-          Resize, compress, and convert your images with professional quality. 
-          All processing happens in your browser - fast, secure, and free.
-        </p>
-        <div class="space-x-4">
-          <a href="/resize" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Start Resizing
-          </a>
-          <a href="/compress" class="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-            Compress Images
-          </a>
-        </div>
-      </div>
+  <div class="bg-white text-center font-crimson">
+    <h1 class="text-[70px] md:text-[140px]">  
+      Master Your Images
+    </h1>
+  </div>
+  <!-- IPAD DIV -->
+  <div class="iPad h-[600px] w-1/2 md:w-3/4 md:h-auto border-black border-8 border-b-0  mx-auto">
+    <Image src={HeroImg} alt={"Hero Image"} class="w-full h-full object-cover"/>
     </div>
+<!-- Benefits Section -->
+<div class="mt-5  px-5">
+
+  <p class="py-5 text-primary font-crimson">
+    Benefits
+  </p>
+  <h2 class=" font-crimson text-[30px] md:text-[60px] md:w-3/4 ">
+    Resize, compress, and convert your photos
+  </h2>
+  <h3 class="py-5 text-gray-500">
+    All within your browser. Fast, private, and perfectly optimized for web and print.
+  </h3>
+</div>
+
+<div class="grid md:grid-cols-4 grid-cols-1 gap-3 p-5">
+  <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
+    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <p class="font-crimson text-lg font-medium py-2">Resize Instantly</p>
+    <p class="text-gray-500 text-sm">Set custom dimensions or scale by percentage — perfect for social, web, or design use.</p>
   </div>
 
-  <!-- Tools Grid -->
-  <div class="py-12 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Choose Your Tool</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Select the perfect tool for your image processing needs
-        </p>
-      </div>
+    <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
+    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <p class="font-crimson text-lg font-medium py-2">Compress Intelligently</p>
+    <p class="text-gray-500 text-sm">Shrink image size while preserving clarity with advanced browser-based optimization.</p>
+  </div>
+  
+  <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
+    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <p class="font-crimson text-lg font-medium py-2">Convert Effortlessly</p>
+    <p class="text-gray-500 text-sm">Transform between JPG, PNG, and WebP formats instantly — all processed locally in your browser.</p>
+  </div>
+  
+  <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
+    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <p class="font-crimson text-lg font-medium py-2">Passport Grid Maker</p>
+    <p class="text-gray-500 text-sm">Automatically arrange passport-sized photos in a printable grid layout for efficient printing.</p>
+  </div>
+</div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Resize Tool -->
-        <a href="/resize" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Image Resizer</h3>
-          <p class="text-gray-600 text-sm">
-            Resize images to exact dimensions or scale by percentage. Perfect for web optimization.
-          </p>
-        </a>
+  <Image src={HeroImg2} alt={"Hero Image 2"} class="mx-auto w-[95%] object-cover rounded-3xl hidden md:block"/>
+  <Image src={HeroImg2M} alt={"Hero Image 2"} class="mx-auto w-[90%] object-cover rounded-3xl block md:hidden"/>
 
-        <!-- Compress Tool -->
-        <a href="/compress" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Image Compressor</h3>
-          <p class="text-gray-600 text-sm">
-            Reduce file size while maintaining quality. Choose by quality or target file size.
-          </p>
-        </a>
+<div class=" grid grid-cols-1 md:grid-cols-2 items-center justify-center  md:m-5 md:p-10 ">
 
-        <!-- Convert Tool -->
-        <a href="/convert" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Format Converter</h3>
-          <p class="text-gray-600 text-sm">
-            Convert between JPEG, PNG, WebP formats with customizable quality settings.
-          </p>
-        </a>
-
-        <!-- Passport Photo Tool -->
-        <a href="/passport" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Passport Photos</h3>
-          <p class="text-gray-600 text-sm">
-            Create professional passport photos with precise cropping and generate printable PDF grids.
-          </p>
-        </a>
-      </div>
+  <div class=" p-5" >
+    <h3 class="text-[50px] md:text-[60px] font-crimson">Do More With Every Image</h3>
+    <p>
+      ResizeIt turns everyday photos into web-ready, printable, and perfectly sized results — all in your browser, instantly.
+    </p>
+    <table class="w-full mt-8">
+      <tr class="border-t-2 border-gray-200">
+      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">01</td>
+      <td class="py-4">
+        <p class="font-crimson text-lg font-medium mb-2">Resize in a Click</p>
+        <p class="text-gray-500 text-sm">Adjust dimensions or aspect ratios without losing quality.</p>
+      </td>
+      </tr>
+      <tr class="border-t-2 border-gray-200">
+      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">02</td>
+      <td class="py-4">
+        <p class="font-crimson text-lg font-medium mb-2">Compress Smartly</p>
+        <p class="text-gray-500 text-sm">Reduce file size while keeping every pixel crisp.</p>
+      </td>
+      </tr>
+      <tr class="border-t-2 border-gray-200">
+      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">03</td>
+      <td class="py-4">
+        <p class="font-crimson text-lg font-medium mb-2">Passport Ready</p>
+        <p class="text-gray-500 text-sm">Generate printable photo grids that meet ID and visa requirements.</p>
+      </td>
+      </tr>
+      <tr class="border-t-2 border-gray-200">
+      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">04</td>
+      <td class="py-4">
+        <p class="font-crimson text-lg font-medium mb-2">All Offline & Secure</p>
+        <p class="text-gray-500 text-sm">Everything runs in your browser — no uploads, no tracking.</p>
+      </td>
+      </tr>
+    </table>
+    <button class=" my-5 bg-tertiary hover:bg-primary text-primary p-2 rounded-3xl px-3 hover:text-white font-semibold duration-700 ease-in-out">Start Editing</button>
+  </div>
+  <div>
+    <Image src={DummyImg} alt={"Dummy Image"} class="w-[90%] mx-auto"/>
+  </div>
+</div>
+<div class="m-10  border-1 border-tertiary/70"></div>
+  <div class="text-[50px] md:text-[60px] font-crimson text-center">Why Choose Resize-It?</div>
+  <p class="text-center w-3/5 py-6 text-md mx-auto text-gray-500 ">You need a solution that keeps up. That’s why we developed Resize-It. A user-friendly approach to resize your Images. </p>
+    <div class="flex justify-center">
+      <button class="my-5 bg-tertiary hover:bg-primary text-primary p-2 rounded-3xl px-3 hover:text-white font-semibold duration-700 ease-in-out">Get Started</button>
+    </div>
+  <div class="my-16 px-5">
+    <div class="max-w-4xl mx-auto overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+        <th class=" py-4 px-4 font-crimson text-xl text-gray-400">Others</th>
+        <th class=" py-4 px-4 font-crimson text-xl">Resize-It</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm font-semibold">
+          <tr class="border-b border-gray-200">
+        <td class="py-4 px-4 text-gray-500">
+          <span class="inline-block mr-2 text-gray-400">✓</span>
+          Upload required
+        </td>
+        <td class=" py-4 px-4 text-gray-700">
+          <span class="inline-block mr-2 text-gray-400">✕</span>
+          No Uploads
+        </td>
+          </tr>
+          <tr class="border-b border-gray-200">
+        <td class="py-4 px-4 text-gray-500">
+          <span class="inline-block mr-2 text-gray-400">✓</span>
+          Server Processing
+        </td>
+        <td class=" py-4 px-4 text-gray-700">
+          <span class="inline-block mr-2 text-gray-400">✕</span>
+          100% Local Processing
+        </td>
+          </tr>
+          <tr class="border-b border-gray-200">
+        <td class="py-4 px-4 text-gray-500">
+          <span class="inline-block mr-2 text-gray-400">✓</span>
+          Subscription Based
+        </td>
+        <td class=" py-4 px-4 text-gray-700">
+          <span class="inline-block mr-2 text-gray-400">✕</span>
+          Free Forever
+        </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  </div>
+
+</div>
+
 </Layout>
+
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const ipadDiv = document.querySelector(".iPad");
+
+  gsap.to(ipadDiv, {
+    width: "100%",
+    scale: 1,
+    borderTopLeftRadius: "50",
+    borderTopRightRadius: "50",
+    scrollTrigger: {
+      trigger: ipadDiv,
+      start: "top center",
+      end: "top top",
+      scrub: 1,
+      pin: false
+    }
+  });
+
+</script>
