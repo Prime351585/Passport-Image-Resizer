@@ -91,29 +91,29 @@ const PassportToolContainer: React.FC = () => {
         className="lg:hidden"
       />
 
-      <div className="max-w-7xl mx-auto p-4 space-y-6">
+      <div className="max-w-7xl mx-auto p-4 md:p-6 space-y-6 md:space-y-8">
         {/* Tool Info Banner */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 md:p-8">
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
               </svg>
             </div>
-            <div>
-              <h3 className="text-lg font-medium text-blue-900">Passport Photo Grid Maker</h3>
-              <p className="text-sm text-blue-700">
-                Create professional passport photos with precise cropping and generate printable PDF grids
+            <div className="flex-1">
+              <h3 className="text-2xl md:text-3xl font-crimson font-medium text-blue-900 mb-2">Passport Photo Grid Maker</h3>
+              <p className="text-sm md:text-base text-blue-700 leading-relaxed">
+                Create professional passport photos with precise cropping and generate printable PDF grids for official documents
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-8">
           
           {/* Upload & Settings Section */}
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-6 md:space-y-8">
             <UploadPreview
               onImageUpload={handleImageUpload}
               onImageRemove={handleImageRemove}
@@ -143,7 +143,7 @@ const PassportToolContainer: React.FC = () => {
           </div>
 
           {/* Cropper & Generate Section */}
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-6 md:space-y-8">
             {/* Image Cropper */}
             {uploadedFile && (
               <PassportCropper

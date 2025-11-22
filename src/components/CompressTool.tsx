@@ -167,55 +167,65 @@ const CompressTool: React.FC<CompressToolProps> = ({
   const targetSizeWarning = getTargetSizeWarning();
 
   return (
-    <div className={`bg-white border border-gray-200 rounded-lg p-4 md:p-6 space-y-4 md:space-y-6 ${className}`}>
+    <div className={`bg-white border-2 border-gray-200 rounded-2xl p-6 md:p-8 space-y-6 md:space-y-8 ${className}`}>
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h3 className="text-base md:text-lg font-medium text-gray-900">Compress Image</h3>
-        <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
+      <div className="space-y-2">
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-crimson font-medium text-gray-900">Compress Image</h3>
+        </div>
+        <p className="text-gray-500 text-sm">Reduce file size while maintaining quality</p>
       </div>
 
       {/* Compression Mode Selection */}
-      <div className="space-y-3">
-        <label className="block text-sm font-medium text-gray-700">Compression Method</label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="space-y-4">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+            <span className="text-lg">⚙️</span>
+          </div>
+          <h4 className="text-lg font-crimson font-medium text-gray-900">Compression Method</h4>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <button
             onClick={() => setCompressionMode('percentage')}
-            className={`p-4 rounded-lg border-2 text-left transition-all ${
+            className={`p-5 rounded-xl border-2 text-left transition-all duration-300 ${
               compressionMode === 'percentage' 
-                ? 'border-blue-500 bg-blue-50' 
-                : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                ? 'border-primary bg-gradient-to-br from-orange-50 to-pink-50 shadow-md' 
+                : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:scale-105'
             }`}
           >
-            <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-orange-500"></div>
-              <div>
-                <h4 className="text-sm font-medium text-gray-900">Quality Level</h4>
-                <p className="text-xs text-gray-600 mt-1">Adjust compression percentage</p>
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center">
+                <span className="text-white text-xl">📊</span>
               </div>
+              <h4 className="text-base font-crimson font-medium text-gray-900">Quality Level</h4>
+              <p className="text-sm text-gray-600">Adjust compression percentage</p>
             </div>
           </button>
 
           <button
             onClick={() => setCompressionMode('target-size')}
             disabled={originalFormat === 'png'}
-            className={`p-4 rounded-lg border-2 text-left transition-all ${
+            className={`p-5 rounded-xl border-2 text-left transition-all duration-300 ${
               compressionMode === 'target-size'
-                ? 'border-blue-500 bg-blue-50'
+                ? 'border-primary bg-gradient-to-br from-green-50 to-emerald-50 shadow-md'
                 : originalFormat === 'png'
                   ? 'border-gray-200 bg-gray-50 cursor-not-allowed opacity-60'
-                  : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                  : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:scale-105'
             }`}
           >
-            <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <div>
-                <h4 className="text-sm font-medium text-gray-900">Target Size</h4>
-                <p className="text-xs text-gray-600 mt-1">
-                  {originalFormat === 'png' ? 'Not available for PNG' : 'Set specific file size'}
-                </p>
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                <span className="text-white text-xl">🎯</span>
               </div>
+              <h4 className="text-base font-crimson font-medium text-gray-900">Target Size</h4>
+              <p className="text-sm text-gray-600">
+                {originalFormat === 'png' ? 'Not available for PNG' : 'Set specific file size'}
+              </p>
             </div>
           </button>
         </div>
@@ -223,9 +233,9 @@ const CompressTool: React.FC<CompressToolProps> = ({
 
       {/* Compression Controls */}
       {compressionMode === 'percentage' ? (
-        <div className="space-y-3">
+        <div className="space-y-4 p-5 rounded-xl bg-gradient-to-br from-orange-50 to-pink-50 border-2 border-orange-200">
           <div className="flex items-center justify-between">
-            <label className="block text-sm font-medium text-gray-700">Compression Level</label>
+            <label className="block text-base font-crimson font-medium text-gray-900">Compression Level</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
@@ -233,39 +243,42 @@ const CompressTool: React.FC<CompressToolProps> = ({
                 max="100"
                 value={compressionPercentage}
                 onChange={(e) => setCompressionPercentage(Math.min(100, Math.max(1, parseInt(e.target.value) || 1)))}
-                className="w-16 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+                className="w-20 px-3 py-2 text-sm font-medium border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
               />
-              <span className="text-sm text-gray-500">%</span>
+              <span className="text-sm font-medium text-gray-700">%</span>
             </div>
           </div>
           
-          <div className="space-y-2">
+          <div className="space-y-3">
             <input
               type="range"
               min="1"
               max="100"
               value={compressionPercentage}
               onChange={(e) => setCompressionPercentage(parseInt(e.target.value))}
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+              style={{
+                background: `linear-gradient(to right, #f97316 0%, #ec4899 ${compressionPercentage}%, #e5e7eb ${compressionPercentage}%, #e5e7eb 100%)`
+              }}
+              className="w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-300"
             />
-            <div className="flex justify-between text-xs text-gray-500">
-              <span>Maximum compression</span>
-              <span>Best quality</span>
+            <div className="flex justify-between text-xs font-medium text-gray-600">
+              <span>🔥 Max compression</span>
+              <span>✨ Best quality</span>
             </div>
           </div>
           
-          <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded">
-            {compressionPercentage >= 90 && 'Minimal compression - Best quality'}
-            {compressionPercentage >= 70 && compressionPercentage < 90 && 'Light compression - Good quality'}
-            {compressionPercentage >= 50 && compressionPercentage < 70 && 'Medium compression - Balanced'}
-            {compressionPercentage >= 30 && compressionPercentage < 50 && 'Heavy compression - Smaller file'}
-            {compressionPercentage < 30 && 'Maximum compression - Smallest file'}
+          <div className="text-sm font-medium text-gray-700 bg-white/50 p-3 rounded-lg backdrop-blur-sm border border-orange-200">
+            {compressionPercentage >= 90 && '✨ Minimal compression - Best quality'}
+            {compressionPercentage >= 70 && compressionPercentage < 90 && '💎 Light compression - Good quality'}
+            {compressionPercentage >= 50 && compressionPercentage < 70 && '⚖️ Medium compression - Balanced'}
+            {compressionPercentage >= 30 && compressionPercentage < 50 && '📦 Heavy compression - Smaller file'}
+            {compressionPercentage < 30 && '🔥 Maximum compression - Smallest file'}
           </div>
         </div>
       ) : (
-        <div className="space-y-3">
+        <div className="space-y-4 p-5 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200">
           <div className="flex items-center justify-between">
-            <label className="block text-sm font-medium text-gray-700">Target File Size</label>
+            <label className="block text-base font-crimson font-medium text-gray-900">Target File Size</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
@@ -273,34 +286,43 @@ const CompressTool: React.FC<CompressToolProps> = ({
                 max={maxSizeKB}
                 value={targetSizeKB}
                 onChange={(e) => setTargetSizeKB(Math.min(maxSizeKB, Math.max(minSizeKB, parseInt(e.target.value) || minSizeKB)))}
-                className="w-20 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+                className="w-24 px-3 py-2 text-sm font-medium border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
               />
-              <span className="text-sm text-gray-500">KB</span>
+              <span className="text-sm font-medium text-gray-700">KB</span>
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             <input
               type="range"
               min={minSizeKB}
               max={maxSizeKB}
               value={targetSizeKB}
               onChange={(e) => setTargetSizeKB(parseInt(e.target.value))}
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+              style={{
+                background: `linear-gradient(to right, #10b981 0%, #059669 ${((targetSizeKB - minSizeKB) / (maxSizeKB - minSizeKB)) * 100}%, #e5e7eb ${((targetSizeKB - minSizeKB) / (maxSizeKB - minSizeKB)) * 100}%, #e5e7eb 100%)`
+              }}
+              className="w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-300"
             />
-            <div className="flex justify-between text-xs text-gray-500">
-              <span>{minSizeKB} KB</span>
-              <span>{Math.round(maxSizeKB)} KB</span>
+            <div className="flex justify-between text-xs font-medium text-gray-600">
+              <span>📉 {minSizeKB} KB</span>
+              <span>📈 {Math.round(maxSizeKB)} KB</span>
             </div>
           </div>
 
           {targetSizeWarning && (
-            <div className={`p-2 rounded text-xs ${
-              targetSizeWarning.type === 'error' ? 'bg-red-50 text-red-800' :
-              targetSizeWarning.type === 'warning' ? 'bg-yellow-50 text-yellow-800' :
-              'bg-blue-50 text-blue-800'
+            <div className={`p-3 rounded-lg text-sm font-medium border-2 ${
+              targetSizeWarning.type === 'error' ? 'bg-red-50 text-red-800 border-red-200' :
+              targetSizeWarning.type === 'warning' ? 'bg-yellow-50 text-yellow-800 border-yellow-200' :
+              'bg-blue-50 text-blue-800 border-blue-200'
             }`}>
-              {targetSizeWarning.message}
+              <div className="flex items-center space-x-2">
+                <span className="text-lg">
+                  {targetSizeWarning.type === 'error' ? '⚠️' :
+                   targetSizeWarning.type === 'warning' ? '⚡' : 'ℹ️'}
+                </span>
+                <span>{targetSizeWarning.message}</span>
+              </div>
             </div>
           )}
         </div>
@@ -308,56 +330,85 @@ const CompressTool: React.FC<CompressToolProps> = ({
 
       {/* Compression Status */}
       {isCompressing && (
-        <div className="flex items-center justify-center py-4">
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 border-2 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
-            <span className="text-sm text-gray-600">Compressing...</span>
+        <div className="flex items-center justify-center py-6">
+          <div className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200">
+            <div className="w-5 h-5 border-3 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <span className="text-base font-crimson font-medium text-gray-900">Compressing your image...</span>
           </div>
         </div>
       )}
 
       {/* Compression Result */}
       {hasCompressed && (
-        <div className={`rounded-lg p-4 transition-colors duration-200 ${
-          compressionError ? 'bg-red-50' : 'bg-green-50'
+        <div className={`rounded-xl p-6 border-2 transition-all duration-300 ${
+          compressionError 
+            ? 'bg-gradient-to-br from-red-50 to-rose-50 border-red-200' 
+            : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200'
         }`}>
-          <h4 className={`text-sm font-medium mb-2 ${
-            compressionError ? 'text-red-800' : 'text-green-800'
-          }`}>
-            {compressionError ? 'Compression Error' : 'Compression Result'}
-          </h4>
+          <div className="space-y-3">
+            <div className="flex items-center space-x-3">
+              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                compressionError 
+                  ? 'bg-gradient-to-br from-red-500 to-rose-500' 
+                  : 'bg-gradient-to-br from-green-500 to-emerald-500'
+              }`}>
+                {compressionError ? (
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                ) : (
+                  <span className="text-white text-2xl">✓</span>
+                )}
+              </div>
+              <h4 className={`text-xl font-crimson font-medium ${
+                compressionError ? 'text-red-800' : 'text-green-800'
+              }`}>
+                {compressionError ? 'Compression Error' : 'Compression Complete!'}
+              </h4>
+            </div>
 
-          {compressionError ? (
-            <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span className="text-sm text-red-800">Compression failed. Please try again.</span>
-            </div>
-          ) : (
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-green-700">Compressed Size:</span>
-                <span className="font-medium">{compressedSize}</span>
+            {compressionError ? (
+              <div className="flex items-center space-x-3 p-3 bg-white/50 rounded-lg backdrop-blur-sm">
+                <span className="text-2xl">⚠️</span>
+                <span className="text-sm font-medium text-red-800">Compression failed. Please try again with different settings.</span>
               </div>
-              
-              <div className="flex justify-between">
-                <span className="text-green-700">Original Size:</span>
-                <span className="font-medium">{formatFileSize(originalFileSize)}</span>
+            ) : (
+              <div className="space-y-3">
+                <div className="space-y-2 p-4 bg-white/50 rounded-lg backdrop-blur-sm border border-green-200">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-medium text-gray-700">Compressed Size:</span>
+                    <span className="text-base font-crimson font-semibold text-gray-900">{compressedSize}</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-medium text-gray-700">Original Size:</span>
+                    <span className="text-base font-crimson font-semibold text-gray-900">{formatFileSize(originalFileSize)}</span>
+                  </div>
+                  
+                  <div className="h-px bg-gradient-to-r from-transparent via-green-300 to-transparent my-2"></div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-medium text-green-700">Space Saved:</span>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-xl">📉</span>
+                      <span className="text-lg font-crimson font-bold text-green-600">
+                        {actualCompressionPercentage.toFixed(1)}%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-3 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border-2 border-blue-200">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-lg">💡</span>
+                    <span className="text-sm font-medium text-blue-800">
+                      Download your compressed image using the section on the right
+                    </span>
+                  </div>
+                </div>
               </div>
-              
-              <div className="flex justify-between">
-                <span className="text-green-700">Space Saved:</span>
-                <span className="font-medium text-green-600">
-                  ↓ {actualCompressionPercentage.toFixed(1)}%
-                </span>
-              </div>
-              
-              <div className="mt-3 p-2 bg-blue-50 rounded text-xs text-blue-800">
-                💡 Download your compressed image using the section on the right
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       )}
     </div>

@@ -156,31 +156,39 @@ const FormatConverter: React.FC<FormatConverterProps> = ({
   const conversionInfo = getConversionInfo();
 
   return (
-    <div className={`bg-white border border-gray-200 rounded-lg p-4 md:p-6 space-y-4 md:space-y-6 ${className}`}>
+    <div className={`bg-white border-2 border-gray-200 rounded-2xl p-6 md:p-8 space-y-6 md:space-y-8 ${className}`}>
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h3 className="text-base md:text-lg font-medium text-gray-900">Convert Format</h3>
-        <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-        </svg>
+      <div className="space-y-2">
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+            </svg>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-crimson font-medium text-gray-900">Convert Format</h3>
+        </div>
+        <p className="text-gray-500 text-sm">Transform your image between different formats</p>
       </div>
 
       {/* Conversion Info Banner */}
       {conversionInfo && (
-        <div className={`p-3 rounded-lg border ${
-          conversionInfo.type === 'lossy-to-lossless' ? 'bg-yellow-50 border-yellow-200' :
-          conversionInfo.type === 'lossless-to-lossy' ? 'bg-orange-50 border-orange-200' :
-          'bg-blue-50 border-blue-200'
+        <div className={`p-4 rounded-xl border-2 ${
+          conversionInfo.type === 'lossy-to-lossless' ? 'bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-200' :
+          conversionInfo.type === 'lossless-to-lossy' ? 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-200' :
+          'bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200'
         }`}>
-          <div className="flex items-start space-x-2">
-            <svg className={`w-4 h-4 mt-0.5 ${
-              conversionInfo.type === 'lossy-to-lossless' ? 'text-yellow-600' :
-              conversionInfo.type === 'lossless-to-lossy' ? 'text-orange-600' :
-              'text-blue-600'
-            }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <p className={`text-xs ${
+          <div className="flex items-start space-x-3">
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
+              conversionInfo.type === 'lossy-to-lossless' ? 'bg-gradient-to-br from-yellow-500 to-amber-500' :
+              conversionInfo.type === 'lossless-to-lossy' ? 'bg-gradient-to-br from-orange-500 to-red-500' :
+              'bg-gradient-to-br from-blue-500 to-indigo-500'
+            }`}>
+              <span className="text-white text-lg">
+                {conversionInfo.type === 'lossy-to-lossless' ? '⚡' :
+                 conversionInfo.type === 'lossless-to-lossy' ? '⚠️' : 'ℹ️'}
+              </span>
+            </div>
+            <p className={`text-sm font-medium ${
               conversionInfo.type === 'lossy-to-lossless' ? 'text-yellow-800' :
               conversionInfo.type === 'lossless-to-lossy' ? 'text-orange-800' :
               'text-blue-800'
@@ -192,9 +200,14 @@ const FormatConverter: React.FC<FormatConverterProps> = ({
       )}
 
       {/* Format Selection */}
-      <div className="space-y-3">
-        <label className="block text-sm font-medium text-gray-700">Choose Target Format</label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div className="space-y-4">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+            <span className="text-lg">🎨</span>
+          </div>
+          <h4 className="text-lg font-crimson font-medium text-gray-900">Choose Target Format</h4>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {FORMATS.map((format) => {
             const isSelected = selectedFormat === format.value;
             const isOriginal = originalFormat.toLowerCase().includes(format.value) || 
@@ -206,30 +219,32 @@ const FormatConverter: React.FC<FormatConverterProps> = ({
                 onClick={() => handleFormatSelect(format.value)}
                 disabled={isOriginal}
                 className={`
-                  relative p-4 rounded-lg border-2 text-left transition-all
+                  relative p-5 rounded-xl border-2 text-left transition-all duration-300
                   ${isSelected 
-                    ? 'border-blue-500 bg-blue-50' 
+                    ? 'border-primary bg-gradient-to-br from-purple-50 to-pink-50 shadow-md scale-105' 
                     : isOriginal
                       ? 'border-gray-200 bg-gray-50 cursor-not-allowed opacity-60'
-                      : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                      : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:scale-105'
                   }
                 `}
               >
-                <div className="flex items-center space-x-3">
-                  <div className={`w-3 h-3 rounded-full ${format.color}`}></div>
-                  <div className="flex-1">
-                    <h4 className="text-sm font-medium text-gray-900">
+                <div className="space-y-3">
+                  <div className={`w-10 h-10 rounded-lg ${format.color} flex items-center justify-center`}>
+                    <span className="text-white text-xl font-bold">{format.label.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <h4 className="text-base font-crimson font-medium text-gray-900">
                       {format.label}
-                      {isOriginal && <span className="ml-1 text-xs text-gray-500">(Current)</span>}
+                      {isOriginal && <span className="ml-2 text-xs font-normal text-gray-500">(Current)</span>}
                     </h4>
-                    <p className="text-xs text-gray-600 mt-1">{format.description}</p>
+                    <p className="text-sm text-gray-600 mt-1">{format.description}</p>
                   </div>
                 </div>
                 
                 {isSelected && (
-                  <div className="absolute top-2 right-2">
-                    <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-3 right-3">
+                    <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                     </div>
@@ -243,14 +258,28 @@ const FormatConverter: React.FC<FormatConverterProps> = ({
 
       {/* Conversion Status */}
       {isConverting && (
-        <div className="flex items-center justify-center py-4">
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-            <span className="text-sm text-gray-600">Converting...</span>
+        <div className="flex items-center justify-center py-6">
+          <div className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200">
+            <div className="w-5 h-5 border-3 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <span className="text-base font-crimson font-medium text-gray-900">Converting your image...</span>
           </div>
         </div>
       )}
 
+      {/* Success Message */}
+      {hasConverted && !isConverting && (
+        <div className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+              <span className="text-white text-2xl">✓</span>
+            </div>
+            <div>
+              <h4 className="text-lg font-crimson font-medium text-green-800">Conversion Complete!</h4>
+              <p className="text-sm text-green-700 mt-1">Your image has been converted to {FORMATS.find(f => f.value === selectedFormat)?.label} format</p>
+            </div>
+          </div>
+        </div>
+      )}
       
     </div>
   );

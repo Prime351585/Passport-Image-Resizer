@@ -1,63 +1,112 @@
 ---
-import ToolLayout from '../layouts/ToolLayout.astro';
+import Layout from '../layouts/Layout.astro';
 import CompressToolContainer from '../components/CompressToolContainer';
 ---
 
-<ToolLayout 
-  title="Image Compressor" 
+<Layout 
+  title="Image Compressor - Reduce File Size"
   description="Compress images to reduce file size while maintaining quality. Set target file size or adjust compression levels for optimal results."
-  toolName="compress"
-  icon="📦"
-  features={[
-    "Smart compression",
-    "Target file size",
-    "Quality control",
-    "Format preservation"
-  ]}
 >
-  <!-- Compression Info Banner -->
-  <div class="max-w-7xl mx-auto px-4 mb-6">
-    <div class="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-6">
-      <h3 class="text-lg font-medium text-gray-900 mb-3">Image Compression</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="flex items-start space-x-3">
-          <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
+  <!-- Hero Section -->
+  <div class="bg-white text-center font-crimson mt-[80px] md:mt-10">
+    <h1 class="text-[50px] md:text-[100px] leading-tight">  
+      Compress Images<br/>
+      <span class="text-primary">Smartly</span>
+    </h1>
+    <p class="text-gray-500 text-lg md:text-xl mt-4 max-w-2xl mx-auto px-4">
+      Reduce file size while preserving quality. Set target size or adjust compression levels. All processing happens in your browser.
+    </p>
+  </div>
+  <!-- Tool Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+    <CompressToolContainer client:load />
+  </div>
+  <!-- Features Section -->
+  <div class="mt-12 px-5 max-w-7xl mx-auto">
+    <p class="text-primary font-crimson text-lg mb-3">
+      Features
+    </p>
+    <h2 class="font-crimson text-[30px] md:text-[50px] mb-6">
+      Intelligent Compression
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">⚡</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Fast Compression</p>
+        <p class="text-gray-500 text-sm">Reduce file size instantly while preserving visual quality with advanced browser-based optimization.</p>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">🎯</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Size Control</p>
+        <p class="text-gray-500 text-sm">Set target file size or adjust compression percentage to meet your exact requirements.</p>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">🔒</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Privacy First</p>
+        <p class="text-gray-500 text-sm">All processing happens in your browser - no uploads to servers, your images stay private.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Benefits Section -->
+  <div class="mt-16 px-5 max-w-7xl mx-auto mb-16">
+    <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8 md:p-12">
+      <h2 class="font-crimson text-[30px] md:text-[50px] mb-6 text-center">
+        Why Compress Your Images?
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div class="flex items-start space-x-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xl">✓</span>
           </div>
           <div>
-            <h4 class="font-medium text-gray-900">Fast Compression</h4>
-            <p class="text-sm text-gray-600">Reduce file size instantly while preserving visual quality</p>
+            <p class="font-crimson text-lg font-medium mb-2 text-gray-900">Faster Website Loading</p>
+            <p class="text-gray-600 text-sm">Smaller images load faster, improving user experience and SEO rankings significantly.</p>
           </div>
         </div>
-        
-        <div class="flex items-start space-x-3">
-          <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-            </svg>
+
+        <div class="flex items-start space-x-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xl">✓</span>
           </div>
           <div>
-            <h4 class="font-medium text-gray-900">Size Control</h4>
-            <p class="text-sm text-gray-600">Set target file size or adjust compression percentage</p>
+            <p class="font-crimson text-lg font-medium mb-2 text-gray-900">Save Storage Space</p>
+            <p class="text-gray-600 text-sm">Reduce storage costs and manage your image library more efficiently with smaller files.</p>
           </div>
         </div>
-        
-        <div class="flex items-start space-x-3">
-          <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
+
+        <div class="flex items-start space-x-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xl">✓</span>
           </div>
           <div>
-            <h4 class="font-medium text-gray-900">Privacy First</h4>
-            <p class="text-sm text-gray-600">All processing happens in your browser - no uploads to servers</p>
+            <p class="font-crimson text-lg font-medium mb-2 text-gray-900">Quality Preservation</p>
+            <p class="text-gray-600 text-sm">Smart compression algorithms maintain visual quality while dramatically reducing file size.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xl">✓</span>
+          </div>
+          <div>
+            <p class="font-crimson text-lg font-medium mb-2 text-gray-900">Email & Upload Friendly</p>
+            <p class="text-gray-600 text-sm">Compress images to meet file size limits for email attachments and online uploads.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <CompressToolContainer client:load />
-</ToolLayout>
+</Layout>

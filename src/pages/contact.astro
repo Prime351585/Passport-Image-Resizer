@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contact Us - ImageTools"
+  description="Get in touch with the ImageTools team. We're here to help with any questions or feedback."
+>
+  <!-- Hero Section -->
+  <div class="bg-white text-center font-crimson mt-[80px] md:mt-10">
+    <h1 class="text-[50px] md:text-[100px] leading-tight">  
+      Contact<br/>
+      <span class="text-primary">Us</span>
+    </h1>
+    <p class="text-gray-500 text-lg md:text-xl mt-4 max-w-2xl mx-auto px-4">
+      We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+    </p>
+  </div>
+
+  <!-- Contact Methods Section -->
+  <div class="mt-12 px-5 max-w-7xl mx-auto">
+    <p class="text-primary font-crimson text-lg mb-3">
+      Get in Touch
+    </p>
+    <h2 class="font-crimson text-[30px] md:text-[50px] mb-6">
+      How Can We Help?
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">📧</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Email Us</p>
+        <p class="text-gray-500 text-sm mb-3">Send us an email anytime</p>
+        <a href="mailto:support@resize-it.com" class="text-primary hover:text-secondary transition-colors font-medium">
+          support@resize-it.com
+        </a>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">💬</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Help Center</p>
+        <p class="text-gray-500 text-sm mb-3">Browse our help articles</p>
+        <a href="/help" class="text-primary hover:text-secondary transition-colors font-medium">
+          Visit Help Center
+        </a>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">❓</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">FAQ</p>
+        <p class="text-gray-500 text-sm mb-3">Quick answers to common questions</p>
+        <a href="/faq" class="text-primary hover:text-secondary transition-colors font-medium">
+          View FAQ
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+    <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8 md:p-12">
+        <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-gray-900 text-center">Send Us a Message</h2>
+        
+        <form id="contactForm" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-crimson font-medium text-gray-900 mb-2">Name</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                    placeholder="Your name"
+                />
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-crimson font-medium text-gray-900 mb-2">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                    placeholder="your.email@example.com"
+                />
+            </div>
+
+            <div>
+                <label for="subject" class="block text-sm font-crimson font-medium text-gray-900 mb-2">Subject</label>
+                <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject" 
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                    placeholder="What is this about?"
+                />
+            </div>
+
+            <div>
+                <label for="message" class="block text-sm font-crimson font-medium text-gray-900 mb-2">Message</label>
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="6" 
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
+                    placeholder="Tell us how we can help..."
+                ></textarea>
+            </div>
+
+            <button 
+                type="submit"
+                class="w-full bg-gradient-to-br from-primary to-secondary hover:from-secondary hover:to-primary text-white px-6 py-4 rounded-xl font-crimson font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+                Send Message
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = (document.getElementById('name') as HTMLInputElement).value;
+        const email = (document.getElementById('email') as HTMLInputElement).value;
+        const subject = (document.getElementById('subject') as HTMLInputElement).value;
+        const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+        
+        const mailtoLink = `mailto:support@resize-it.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        
+        window.location.href = mailtoLink;
+    });
+</script>
+
+  <!-- Response Time Section -->
+  <div class="mt-16 px-5 max-w-7xl mx-auto mb-16">
+    <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12">
+      <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-gray-900 text-center">
+        What to Expect
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-3xl font-crimson font-bold">1</span>
+          </div>
+          <h3 class="font-crimson text-lg font-medium mb-2">We Receive Your Message</h3>
+          <p class="text-gray-600 text-sm">Your message goes directly to our support team</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-3xl font-crimson font-bold">2</span>
+          </div>
+          <h3 class="font-crimson text-lg font-medium mb-2">We Review & Research</h3>
+          <p class="text-gray-600 text-sm">Our team investigates your question or issue</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-3xl font-crimson font-bold">3</span>
+          </div>
+          <h3 class="font-crimson text-lg font-medium mb-2">We Respond</h3>
+          <p class="text-gray-600 text-sm">Typically within 24-48 hours on business days</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</Layout>

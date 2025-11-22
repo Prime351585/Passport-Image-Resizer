@@ -1,47 +1,209 @@
 ---
-import ToolLayout from '../layouts/ToolLayout.astro';
-import PresetToolContainer from '../components/PresetToolContainer';
+import Layout from '../layouts/Layout.astro';
+import ImageToolContainer from '../components/ImageToolContainer';
 ---
 
-<ToolLayout 
-  title="Image Resizer" 
+<Layout 
+  title="Image Resizer - Resize Your Images Instantly"
   description="Resize your images to any dimension while maintaining quality. Perfect for web optimization, social media, and print preparation."
-  toolName="resize"
 >
-  <!-- Quick Preset Links -->
-  <div class="max-w-7xl mx-auto px-4 mb-6">
-    <div class="bg-white border border-gray-200 rounded-lg p-6">
-      <h3 class="text-lg font-medium text-gray-900 mb-4">Popular Presets</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-        <a href="/presets/instagram-post" class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center text-sm font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
-          Instagram Post<br><span class="text-xs opacity-90">1080×1080</span>
-        </a>
-        <a href="/tools/instagram-story" class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center text-sm font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
-          Instagram Story<br><span class="text-xs opacity-90">1080×1920</span>
-        </a>
-        <a href="/presets/youtube-thumbnail" class="p-3 bg-red-500 text-white rounded-lg text-center text-sm font-medium hover:bg-red-600 transition-all">
-          YouTube Thumbnail<br><span class="text-xs opacity-90">1280×720</span>
-        </a>
-        <a href="/presets/facebook-cover" class="p-3 bg-blue-600 text-white rounded-lg text-center text-sm font-medium hover:bg-blue-700 transition-all">
-          Facebook Cover<br><span class="text-xs opacity-90">1200×630</span>
-        </a>
-        <a href="/presets/twitter-header" class="p-3 bg-sky-500 text-white rounded-lg text-center text-sm font-medium hover:bg-sky-600 transition-all">
-          Twitter Header<br><span class="text-xs opacity-90">1500×500</span>
-        </a>
+  <!-- Hero Section -->
+  <div class="bg-white text-center font-crimson mt-[80px] md:mt-10">
+    <h1 class="text-[50px] md:text-[100px] leading-tight">  
+      Resize Your Images<br/>
+      <span class="text-primary">Instantly</span>
+    </h1>
+    <p class="text-gray-500 text-lg md:text-xl mt-4 max-w-2xl mx-auto px-4">
+      Adjust dimensions, scale by percentage, or choose from popular presets. All processing happens in your browser.
+    </p>
+  </div>
+
+  <!-- Quick Presets Section -->
+  <div class="mt-12 px-5 max-w-7xl mx-auto">
+    <p class="text-primary font-crimson text-lg mb-3">
+      Popular Presets
+    </p>
+    <h2 class="font-crimson text-[30px] md:text-[50px] mb-6">
+      Choose Your Platform
+    </h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="preset-card group flex flex-col p-6 border-2 border-gray-200 rounded-2xl hover:border-purple-500 transition-all duration-300 cursor-pointer hover:shadow-lg">
+        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-lg font-semibold mb-1">Instagram Post</p>
+        <p class="text-gray-500 text-sm mb-2">1080 × 1080 px</p>
+        <p class="text-gray-400 text-xs">Perfect for feed posts</p>
+      </div>
+
+      <div class="preset-card group flex flex-col p-6 border-2 border-gray-200 rounded-2xl hover:border-purple-500 transition-all duration-300 cursor-pointer hover:shadow-lg">
+        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-lg font-semibold mb-1">Instagram Story</p>
+        <p class="text-gray-500 text-sm mb-2">1080 × 1920 px</p>
+        <p class="text-gray-400 text-xs">Vertical story format</p>
+      </div>
+
+      <div class="preset-card group flex flex-col p-6 border-2 border-gray-200 rounded-2xl hover:border-red-500 transition-all duration-300 cursor-pointer hover:shadow-lg">
+        <div class="w-12 h-12 bg-red-600 rounded-xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-lg font-semibold mb-1">YouTube</p>
+        <p class="text-gray-500 text-sm mb-2">1280 × 720 px</p>
+        <p class="text-gray-400 text-xs">Thumbnail size</p>
+      </div>
+
+      <div class="preset-card group flex flex-col p-6 border-2 border-gray-200 rounded-2xl hover:border-blue-500 transition-all duration-300 cursor-pointer hover:shadow-lg">
+        <div class="w-12 h-12 bg-blue-600 rounded-xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-lg font-semibold mb-1">Facebook</p>
+        <p class="text-gray-500 text-sm mb-2">1200 × 630 px</p>
+        <p class="text-gray-400 text-xs">Cover photo</p>
+      </div>
+
+      <div class="preset-card group flex flex-col p-6 border-2 border-gray-200 rounded-2xl hover:border-sky-500 transition-all duration-300 cursor-pointer hover:shadow-lg">
+        <div class="w-12 h-12 bg-sky-500 rounded-xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-lg font-semibold mb-1">Twitter</p>
+        <p class="text-gray-500 text-sm mb-2">1500 × 500 px</p>
+        <p class="text-gray-400 text-xs">Header banner</p>
       </div>
     </div>
   </div>
-    <PresetToolContainer 
-    preset={{
-      width: 1080,
-      height: 1920,
-      unit: 'px',
-      maintainAspectRatio: false,
-      resizeMethod: 'fill',
-      quality: 95
-    }}
-    presetName="Instagram Story"
-    client:load 
-  />
 
-</ToolLayout>
+  <!-- Resizer Tool Section -->
+  <div class="mt-16 px-5 max-w-7xl mx-auto">
+    <div class="text-center mb-8">
+      <p class="text-primary font-crimson text-lg mb-3">
+        Custom Resize
+      </p>
+      <h2 class="font-crimson text-[30px] md:text-[50px]">
+        Or Set Your Own Dimensions
+      </h2>
+    </div>
+    
+    <ImageToolContainer client:load />
+  </div>
+
+  <!-- Features Section -->
+  <div class="mt-20 px-5 max-w-7xl mx-auto">
+    <p class="text-primary font-crimson text-lg mb-3">
+      Features
+    </p>
+    <h2 class="font-crimson text-[30px] md:text-[60px] md:w-3/4">
+      Powerful Resizing Options
+    </h2>
+    <p class="py-5 text-gray-500 max-w-2xl">
+      Everything you need to resize images professionally, right in your browser.
+    </p>
+
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-6 mt-8">
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-xl font-medium py-2">Custom Dimensions</p>
+        <p class="text-gray-500 text-sm">Set exact width and height in pixels, or scale by percentage to maintain proportions perfectly.</p>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-xl font-medium py-2">Quality Control</p>
+        <p class="text-gray-500 text-sm">Maintain image quality while resizing. Choose compression levels that work for your needs.</p>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-xl font-medium py-2">Instant Results</p>
+        <p class="text-gray-500 text-sm">Process images instantly in your browser. No waiting, no uploads, no server delays.</p>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-xl font-medium py-2">100% Private</p>
+        <p class="text-gray-500 text-sm">Your images never leave your device. All processing happens locally in your browser.</p>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-xl font-medium py-2">Multiple Formats</p>
+        <p class="text-gray-500 text-sm">Support for JPG, PNG, and WebP formats. Resize and convert in one go.</p>
+      </div>
+
+      <div class="flex flex-col p-6 border-t-2 border-gray-200">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <p class="font-crimson text-xl font-medium py-2">Always Free</p>
+        <p class="text-gray-500 text-sm">No subscriptions, no hidden fees. Professional image resizing, completely free forever.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="mt-20 mb-16 px-5 max-w-4xl mx-auto text-center">
+    <div class="bg-gradient-to-br from-primary/10 to-purple-100 rounded-3xl p-12">
+      <h2 class="font-crimson text-[40px] md:text-[60px] mb-4">
+        Ready to Resize?
+      </h2>
+      <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+        Start resizing your images now. No sign-up required, completely free, and your privacy is guaranteed.
+      </p>
+      <button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-3xl text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+        Start Resizing Now
+      </button>
+    </div>
+  </div>
+
+</Layout>
+
+<script>
+  // Smooth scroll to resize tool when clicking presets or CTA
+  const presetCards = document.querySelectorAll('.preset-card');
+  const ctaButton = document.querySelector('button');
+  const toolSection = document.querySelector('.mt-16');
+
+  presetCards.forEach(card => {
+    card.addEventListener('click', () => {
+      toolSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  ctaButton?.addEventListener('click', () => {
+    toolSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>

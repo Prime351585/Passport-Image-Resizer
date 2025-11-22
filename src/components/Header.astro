@@ -1,16 +1,27 @@
+---
+import Image from "astro/components/Image.astro"
+import logo from "../assets/logo.png"
+import logo_mobile from "../assets/logo_mobile.png"
+
+---
 <header class="font-link ">
     <div class="navbar fixed top-0 left-0 right-0 flex flex-col items-center px-4 bg-white z-50 shadow-md rounded-b-3xl overflow-hidden transition-all duration-300 ease-in-out md:relative md:shadow-none md:rounded-none md:h-auto" style="height: 5rem;">
         <!-- Top bar with logo and toggle -->
         <div class="w-full flex justify-between items-center h-20 shrink-0">
-            <div id="logo" class="text-black font-bold text-xl relative z-10">Logo</div>
+            <!-- <Image src={logo_mobile} alt={"Logo"} width={60}/> -->
+             <a href="/">
+                <Image src={logo} alt={"Logo"} width={120}/>
+            </a>
+            <!-- <div id="logo" class="text-black font-bold text-xl relative z-10">Logo</div> -->
             
             <!-- Desktop Menu -->
             <nav class="hidden md:flex fixed left-1/2 -translate-x-1/2 space-x-7 backdrop-blur-sm p-3 px-5 bg-white/20 rounded-3xl text-black font-bold">
-                <a href="/" class="hover:text-white/60 transition-colors duration-300 ease-in-out">Home</a>
-                <a href="/resize" class="hover:text-white/60 transition-colors duration-300 ease-in-out">Resize</a>
-                <a href="/compress" class="hover:text-white/60 transition-colors duration-300 ease-in-out">Compress</a>
-                <a href="/convert" class="hover:text-white/60 transition-colors duration-300 ease-in-out">Convert</a>
-                <a href="/passport" class="hover:text-white/60 transition-colors duration-300 ease-in-out">Passport</a>
+                <a href="/" class="hover:text-primary transition-colors duration-300 ease-in-out">Home</a>
+                <a href="/resize" class="hover:text-primary transition-colors duration-300 ease-in-out">Resize</a>
+                <a href="/compress" class="hover:text-primary transition-colors duration-300 ease-in-out">Compress</a>
+                <a href="/convert" class="hover:text-primary transition-colors duration-300 ease-in-out">Convert</a>
+                <a href="/passport" class="hover:text-primary transition-colors duration-300 ease-in-out">Passport</a>
+                <a href="/blogs" class="hover:text-primary transition-colors duration-300 ease-in-out">Blogs</a>
             </nav>
 
             <!-- Mobile Menu Button -->
@@ -24,7 +35,9 @@
             </button>
             
             <button class="hidden md:block bg-primary hover:bg-primary/90 p-2 px-4 rounded-3xl text-white transition-colors duration-300 cursor-pointer">
-                Get Started
+                <a href="/resize">
+                    Get Started
+                </a>
             </button>
         </div>
 
@@ -35,6 +48,7 @@
             <a href="/compress" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Compress</a>
             <a href="/convert" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Convert</a>
             <a href="/passport" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Passport</a>
+            <a href="/blogs" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Blogs</a>
             
             <button class="bg-primary hover:bg-primary/90 p-3 px-6 rounded-3xl text-white text-center mt-6 w-full transition-colors duration-300">
                 Get Started

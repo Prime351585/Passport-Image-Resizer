@@ -278,21 +278,33 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
   }, [targetDimension, isLoaded, calculateInitialCropArea]);
 
   return (
-    <div className={`bg-white border border-gray-200 rounded-lg p-4 md:p-6 space-y-4 ${className}`}>
+    <div className={`bg-white border-2 border-gray-200 rounded-2xl p-6 md:p-8 space-y-6 ${className}`}>
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h3 className="text-base md:text-lg font-medium text-gray-900">Crop & Align</h3>
-        <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
-        </svg>
+      <div className="space-y-2">
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+            </svg>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-crimson font-medium text-gray-900">Crop & Align</h3>
+        </div>
+        <p className="text-gray-500 text-sm">Position and align your photo for perfect results</p>
       </div>
 
       {/* Instructions */}
-      <div className="bg-blue-50 rounded-lg p-3">
-        <p className="text-sm text-blue-800">
-          <span className="font-medium">👤 Position your face:</span> Drag the blue frame to align your face properly. 
-          The grid lines help ensure your eyes are positioned correctly.
-        </p>
+      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border-2 border-blue-200">
+        <div className="flex items-start space-x-3">
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span className="text-white text-2xl">👤</span>
+          </div>
+          <div>
+            <p className="text-sm font-medium text-blue-900">
+              <span className="font-crimson text-base">Position your face:</span> Drag the frame to align your face properly. 
+              The grid lines help ensure your eyes are positioned correctly.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Crop Canvas */}
@@ -303,15 +315,15 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className={`w-full border border-gray-300 rounded-lg ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+          className={`w-full border-2 border-gray-300 rounded-xl shadow-md ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
           style={{ maxHeight: '400px' }}
         />
         
         {!isLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-              <span className="text-sm text-gray-600">Loading image...</span>
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl">
+            <div className="flex items-center space-x-3 p-4 rounded-xl bg-white shadow-lg">
+              <div className="w-5 h-5 border-3 border-primary border-t-transparent rounded-full animate-spin"></div>
+              <span className="text-base font-crimson font-medium text-gray-900">Loading image...</span>
             </div>
           </div>
         )}
@@ -319,37 +331,59 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
 
       {/* Crop Info */}
       {isLoaded && (
-        <div className="grid grid-cols-2 gap-4 text-sm">
-          <div className="bg-gray-50 rounded-lg p-3">
-            <h4 className="font-medium text-gray-700 mb-1">Target Size</h4>
-            <p className="text-gray-600">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 border-2 border-purple-200">
+            <div className="flex items-center space-x-2 mb-2">
+              <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
+                <span className="text-lg">📐</span>
+              </div>
+              <h4 className="text-base font-crimson font-medium text-gray-900">Target Size</h4>
+            </div>
+            <p className="text-base font-medium text-gray-700">
               {targetDimension.width} × {targetDimension.height} {targetDimension.unit}
             </p>
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-sm text-gray-500 mt-1">
               {getTargetPixelSize().width} × {getTargetPixelSize().height} pixels
             </p>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
-            <h4 className="font-medium text-gray-700 mb-1">Quality</h4>
-            <p className="text-gray-600">300 DPI</p>
-            <p className="text-xs text-gray-500 mt-1">Print ready</p>
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border-2 border-green-200">
+            <div className="flex items-center space-x-2 mb-2">
+              <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
+                <span className="text-lg">✨</span>
+              </div>
+              <h4 className="text-base font-crimson font-medium text-gray-900">Quality</h4>
+            </div>
+            <p className="text-base font-medium text-gray-700">300 DPI</p>
+            <p className="text-sm text-gray-500 mt-1">Print ready</p>
           </div>
         </div>
       )}
 
       {/* Face Positioning Guidelines */}
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
-        <div className="flex items-start space-x-2">
-          <svg className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          <div>
-            <h5 className="text-sm font-medium text-amber-800">Positioning Guidelines</h5>
-            <ul className="text-xs text-amber-700 mt-1 space-y-1">
-              <li>• Eyes should be on the upper horizontal grid line</li>
-              <li>• Face should be centered horizontally</li>
-              <li>• Head should occupy 70-80% of the crop area</li>
-              <li>• Ensure neutral expression and good lighting</li>
+      <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-xl p-5">
+        <div className="flex items-start space-x-3">
+          <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span className="text-white text-xl">💡</span>
+          </div>
+          <div className="flex-1">
+            <h5 className="text-lg font-crimson font-medium text-amber-800 mb-3">Positioning Guidelines</h5>
+            <ul className="text-sm text-amber-700 space-y-2">
+              <li className="flex items-start space-x-2">
+                <span className="text-amber-500 mt-0.5">✓</span>
+                <span>Eyes should be on the upper horizontal grid line</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-amber-500 mt-0.5">✓</span>
+                <span>Face should be centered horizontally</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-amber-500 mt-0.5">✓</span>
+                <span>Head should occupy 70-80% of the crop area</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-amber-500 mt-0.5">✓</span>
+                <span>Ensure neutral expression and good lighting</span>
+              </li>
             </ul>
           </div>
         </div>

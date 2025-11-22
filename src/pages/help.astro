@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Help Center - ImageTools"
+  description="Get help with using ImageTools. Learn how to resize, compress, convert images and create passport photos."
+>
+  <!-- Hero Section -->
+  <div class="bg-white text-center font-crimson mt-[80px] md:mt-10">
+    <h1 class="text-[50px] md:text-[100px] leading-tight">  
+      Help<br/>
+      <span class="text-primary">Center</span>
+    </h1>
+    <p class="text-gray-500 text-lg md:text-xl mt-4 max-w-2xl mx-auto px-4">
+      Find answers to common questions and learn how to use our tools effectively.
+    </p>
+  </div>
+
+  <!-- Quick Links Section -->
+  <div class="mt-12 px-5 max-w-7xl mx-auto">
+    <p class="text-primary font-crimson text-lg mb-3">
+      Quick Start
+    </p>
+    <h2 class="font-crimson text-[30px] md:text-[50px] mb-6">
+      Popular Topics
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <a href="#resize" class="flex flex-col p-6 border-t-2 border-gray-200 hover:border-primary transition-all duration-300">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">📏</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Image Resizing</p>
+        <p class="text-gray-500 text-sm">Learn how to resize images to custom dimensions</p>
+      </a>
+
+      <a href="#compress" class="flex flex-col p-6 border-t-2 border-gray-200 hover:border-primary transition-all duration-300">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">⚡</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Image Compression</p>
+        <p class="text-gray-500 text-sm">Reduce file size while maintaining quality</p>
+      </a>
+
+      <a href="#convert" class="flex flex-col p-6 border-t-2 border-gray-200 hover:border-primary transition-all duration-300">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">🔄</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Format Conversion</p>
+        <p class="text-gray-500 text-sm">Convert between JPEG, PNG, and WebP</p>
+      </a>
+
+      <a href="#passport" class="flex flex-col p-6 border-t-2 border-gray-200 hover:border-primary transition-all duration-300">
+        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl">📸</span>
+        </div>
+        <p class="font-crimson text-lg font-medium mb-2">Passport Photos</p>
+        <p class="text-gray-500 text-sm">Create professional passport photo grids</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Detailed Help Sections -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-12">
+    
+    <!-- Image Resizing -->
+    <div id="resize" class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8">
+      <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-gray-900">Image Resizing</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">How to Resize Images</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">1.</span>
+              <span>Upload your image by clicking "Choose Image" or drag and drop</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">2.</span>
+              <span>Enter your desired width and height in pixels</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">3.</span>
+              <span>Toggle "Maintain Aspect Ratio" to keep proportions</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">4.</span>
+              <span>Click "Resize Image" and download your resized image</span>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">Tips for Best Results</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Use high-quality source images for better results</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Maintain aspect ratio to prevent distortion</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Choose presets for common social media sizes</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Compression -->
+    <div id="compress" class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8">
+      <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-gray-900">Image Compression</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">How to Compress Images</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">1.</span>
+              <span>Upload the image you want to compress</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">2.</span>
+              <span>Choose between quality slider or target file size</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">3.</span>
+              <span>Adjust the compression level to your preference</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">4.</span>
+              <span>Preview the result and download when satisfied</span>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">Compression Tips</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>80-90% quality is usually imperceptible to the human eye</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Use target file size for specific upload requirements</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Preview before downloading to ensure quality</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Format Conversion -->
+    <div id="convert" class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8">
+      <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-gray-900">Format Conversion</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">How to Convert Image Formats</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">1.</span>
+              <span>Upload your image in any supported format</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">2.</span>
+              <span>Select your desired output format (JPEG, PNG, or WebP)</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">3.</span>
+              <span>Adjust quality settings if needed</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">4.</span>
+              <span>Click "Convert" and download your converted image</span>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">Format Guide</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span><strong>JPEG:</strong> Best for photos, smaller file sizes</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span><strong>PNG:</strong> Best for graphics, supports transparency</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span><strong>WebP:</strong> Modern format, excellent compression</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Passport Photos -->
+    <div id="passport" class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8">
+      <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-gray-900">Passport Photos</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">How to Create Passport Photos</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">1.</span>
+              <span>Upload your photo (make sure it meets passport photo requirements)</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">2.</span>
+              <span>Select your country standard or enter custom dimensions</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">3.</span>
+              <span>Crop and position your photo using the interactive tool</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-primary font-crimson font-medium">4.</span>
+              <span>Choose paper size and generate a printable PDF grid</span>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="font-crimson text-xl font-medium mb-3 text-gray-900">Passport Photo Tips</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Use a plain white or light-colored background</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Face the camera directly with a neutral expression</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Ensure good lighting without shadows on face</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-500">✓</span>
+              <span>Follow your country's specific requirements</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Need More Help Section -->
+  <div class="mt-16 px-5 max-w-7xl mx-auto mb-16">
+    <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8 md:p-12 text-center">
+      <h2 class="font-crimson text-[30px] md:text-[50px] mb-4">
+        Still Need Help?
+      </h2>
+      <p class="text-gray-600 text-lg mb-6">
+        Can't find what you're looking for? Contact our support team.
+      </p>
+      <a href="/contact" class="inline-block bg-tertiary hover:bg-primary text-primary hover:text-white px-6 py-3 rounded-3xl font-crimson font-semibold transition-all duration-700 ease-in-out">
+        Contact Support
+      </a>
+    </div>
+  </div>
+
+</Layout>

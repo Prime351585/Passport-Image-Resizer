@@ -1,0 +1,313 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="How to Optimize Images for Web: A Complete Guide | ImageTools Blog"
+  description="Learn the best practices for optimizing images for faster website loading times without sacrificing quality. Complete guide with practical tips and tools."
+>
+  <!-- Article Header -->
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">
+    
+    <!-- Breadcrumbs -->
+    <nav class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-gray-600">
+        <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+        <li><span class="text-gray-400">/</span></li>
+        <li><a href="/blogs" class="hover:text-primary transition-colors">Blog</a></li>
+        <li><span class="text-gray-400">/</span></li>
+        <li class="text-gray-900">How to Optimize Images for Web</li>
+      </ol>
+    </nav>
+
+    <!-- Category Badge -->
+    <div class="mb-6">
+      <span class="px-4 py-2 bg-primary text-white text-sm font-crimson font-medium rounded-full">
+        Tutorials
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="font-crimson text-[40px] md:text-[60px] leading-tight text-gray-900 mb-6">
+      How to Optimize Images for Web: A Complete Guide
+    </h1>
+
+    <!-- Meta Information -->
+    <div class="flex flex-wrap items-center gap-4 text-gray-600 mb-8 pb-8 border-b-2 border-gray-200">
+      <div class="flex items-center space-x-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span>November 20, 2025</span>
+      </div>
+      <span class="text-gray-400">•</span>
+      <div class="flex items-center space-x-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span>8 min read</span>
+      </div>
+
+    </div>
+
+    <!-- Featured Image -->
+    <div class="mb-12 rounded-2xl overflow-hidden">
+      <img 
+        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop" 
+        alt="Image optimization guide"
+        class="w-full h-auto"
+      />
+    </div>
+
+    <!-- Article Content -->
+    <div class="prose prose-lg max-w-none">
+      
+      <!-- Introduction -->
+      <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8 mb-8">
+        <p class="text-lg text-gray-700 leading-relaxed mb-0">
+          Image optimization is crucial for website performance. Studies show that images account for over 50% of the average web page's total size. By optimizing your images, you can dramatically improve loading times, user experience, and SEO rankings.
+        </p>
+      </div>
+
+      <h2 class="font-crimson text-[30px] md:text-[40px] text-gray-900 mt-12 mb-6">Why Image Optimization Matters</h2>
+      
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Before diving into the how, let's understand why image optimization is essential for your website:
+      </p>
+
+      <div class="bg-white border-2 border-gray-200 rounded-xl p-6 mb-8">
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 text-xl mt-1">✓</span>
+            <div>
+              <strong class="font-crimson text-lg text-gray-900">Faster Loading Times:</strong>
+              <p class="text-gray-700 mt-1">Optimized images load quickly, reducing page load times by up to 70%.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 text-xl mt-1">✓</span>
+            <div>
+              <strong class="font-crimson text-lg text-gray-900">Better SEO:</strong>
+              <p class="text-gray-700 mt-1">Google considers page speed as a ranking factor. Faster sites rank higher.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 text-xl mt-1">✓</span>
+            <div>
+              <strong class="font-crimson text-lg text-gray-900">Improved User Experience:</strong>
+              <p class="text-gray-700 mt-1">Users are more likely to stay on fast-loading websites.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 text-xl mt-1">✓</span>
+            <div>
+              <strong class="font-crimson text-lg text-gray-900">Reduced Bandwidth:</strong>
+              <p class="text-gray-700 mt-1">Smaller images consume less bandwidth, saving hosting costs.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="font-crimson text-[30px] md:text-[40px] text-gray-900 mt-12 mb-6">Step 1: Choose the Right Format</h2>
+      
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Different image formats serve different purposes. Here's when to use each:
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-xl p-6">
+          <h3 class="font-crimson text-2xl text-gray-900 mb-3">JPEG</h3>
+          <p class="text-gray-700 text-sm mb-4">Best for photographs and images with many colors.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• Excellent compression</li>
+            <li>• Lossy format</li>
+            <li>• No transparency</li>
+            <li>• Ideal for photos</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-xl p-6">
+          <h3 class="font-crimson text-2xl text-gray-900 mb-3">PNG</h3>
+          <p class="text-gray-700 text-sm mb-4">Perfect for graphics, logos, and images with transparency.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• Lossless quality</li>
+            <li>• Supports transparency</li>
+            <li>• Larger file sizes</li>
+            <li>• Great for logos</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-xl p-6">
+          <h3 class="font-crimson text-2xl text-gray-900 mb-3">WebP</h3>
+          <p class="text-gray-700 text-sm mb-4">Modern format with superior compression for web use.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• Best compression</li>
+            <li>• Supports transparency</li>
+            <li>• Excellent quality</li>
+            <li>• Modern browsers</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="font-crimson text-[30px] md:text-[40px] text-gray-900 mt-12 mb-6">Step 2: Resize Your Images</h2>
+      
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Never use images larger than needed. If your content area is 800 pixels wide, there's no need for a 3000-pixel image. Here's a quick reference:
+      </p>
+
+      <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden mb-8">
+        <table class="w-full">
+          <thead class="bg-gradient-to-r from-tertiary to-green-50">
+            <tr>
+              <th class="px-6 py-4 text-left font-crimson text-lg text-gray-900">Use Case</th>
+              <th class="px-6 py-4 text-left font-crimson text-lg text-gray-900">Recommended Width</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4 text-gray-700">Hero Images</td>
+              <td class="px-6 py-4 text-gray-700">1920px - 2560px</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700">Content Images</td>
+              <td class="px-6 py-4 text-gray-700">800px - 1200px</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700">Thumbnails</td>
+              <td class="px-6 py-4 text-gray-700">150px - 300px</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700">Social Media</td>
+              <td class="px-6 py-4 text-gray-700">1200px - 1500px</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-6 mb-8">
+        <div class="flex items-start space-x-3">
+          <svg class="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div>
+            <h4 class="font-crimson text-lg font-medium text-blue-900 mb-2">Pro Tip</h4>
+            <p class="text-blue-800 text-sm">
+              Use our <a href="/resize" class="underline font-medium hover:text-blue-600">Image Resizer tool</a> to quickly resize images to the perfect dimensions for your needs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="font-crimson text-[30px] md:text-[40px] text-gray-900 mt-12 mb-6">Step 3: Compress Your Images</h2>
+      
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Compression reduces file size without significantly affecting visual quality. Here's how to do it right:
+      </p>
+
+      <ol class="space-y-6 mb-8">
+        <li class="flex items-start space-x-4">
+          <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="text-white font-crimson font-bold">1</span>
+          </div>
+          <div>
+            <h3 class="font-crimson text-xl font-medium text-gray-900 mb-2">Set Quality Level (80-85%)</h3>
+            <p class="text-gray-700">This range offers the best balance between quality and file size. Most people can't see the difference from 100% quality.</p>
+          </div>
+        </li>
+        <li class="flex items-start space-x-4">
+          <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="text-white font-crimson font-bold">2</span>
+          </div>
+          <div>
+            <h3 class="font-crimson text-xl font-medium text-gray-900 mb-2">Use Progressive Rendering</h3>
+            <p class="text-gray-700">Progressive JPEGs load gradually, showing a low-quality version first that improves over time.</p>
+          </div>
+        </li>
+        <li class="flex items-start space-x-4">
+          <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="text-white font-crimson font-bold">3</span>
+          </div>
+          <div>
+            <h3 class="font-crimson text-xl font-medium text-gray-900 mb-2">Remove Metadata</h3>
+            <p class="text-gray-700">EXIF data can add unnecessary kilobytes. Strip it unless you need it for copyright or SEO.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h2 class="font-crimson text-[30px] md:text-[40px] text-gray-900 mt-12 mb-6">Conclusion</h2>
+      
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Image optimization is not optional in today's web environment. By following these steps—choosing the right format, resizing appropriately, and compressing smartly—you can dramatically improve your website's performance.
+      </p>
+
+      <p class="text-gray-700 text-lg leading-relaxed mb-8">
+        The good news? You don't need expensive software. ImageTools provides all the tools you need, completely free, right in your browser.
+      </p>
+
+      <!-- CTA Box -->
+      <div class="bg-gradient-to-br from-tertiary to-green-50 border-2 border-secondary/30 rounded-2xl p-8 text-center">
+        <h3 class="font-crimson text-2xl md:text-3xl text-gray-900 mb-4">Ready to Optimize Your Images?</h3>
+        <p class="text-gray-700 mb-6">Use our free tools to resize, compress, and convert your images in seconds.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/resize" class="px-6 py-3 bg-gradient-to-br from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-xl font-crimson font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+            Start Optimizing
+          </a>
+          <a href="/blogs" class="px-6 py-3 bg-white hover:bg-gray-50 text-primary border-2 border-primary rounded-xl font-crimson font-semibold transition-all duration-300">
+            Read More Articles
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Share Section -->
+    <div class="mt-12 pt-8 border-t-2 border-gray-200">
+      <p class="font-crimson text-lg font-medium text-gray-900 mb-4">Share this article</p>
+      <div class="flex space-x-4">
+        <button class="w-10 h-10 bg-gradient-to-br from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </button>
+        <button class="w-10 h-10 bg-gradient-to-br from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </button>
+        <button class="w-10 h-10 bg-gradient-to-br from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="mt-16 mb-16">
+      <h2 class="font-crimson text-[30px] md:text-[40px] text-gray-900 mb-8">Related Articles</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/blogs/jpeg-png-webp-comparison" class="group">
+          <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-primary transition-all duration-300">
+            <div class="h-40 bg-gradient-to-br from-tertiary to-green-50"></div>
+            <div class="p-4">
+              <h3 class="font-crimson text-lg text-gray-900 group-hover:text-primary transition-colors mb-2">JPEG vs PNG vs WebP Comparison</h3>
+              <p class="text-gray-600 text-sm">Learn which format to use...</p>
+            </div>
+          </div>
+        </a>
+        <a href="/blogs/social-media-image-sizes-2025" class="group">
+          <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-primary transition-all duration-300">
+            <div class="h-40 bg-gradient-to-br from-tertiary to-green-50"></div>
+            <div class="p-4">
+              <h3 class="font-crimson text-lg text-gray-900 group-hover:text-primary transition-colors mb-2">Social Media Image Sizes 2025</h3>
+              <p class="text-gray-600 text-sm">Complete reference guide...</p>
+            </div>
+          </div>
+        </a>
+        <a href="/blogs/image-compression-explained" class="group">
+          <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-primary transition-all duration-300">
+            <div class="h-40 bg-gradient-to-br from-tertiary to-green-50"></div>
+            <div class="p-4">
+              <h3 class="font-crimson text-lg text-gray-900 group-hover:text-primary transition-colors mb-2">Image Compression Explained</h3>
+              <p class="text-gray-600 text-sm">Lossy vs lossless compression...</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </article>
+
+</Layout>

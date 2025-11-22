@@ -4,17 +4,22 @@ import Layout from '../layouts/Layout.astro';
 import HeroImg from "../../public/HeroImg.png"
 import HeroImg2 from "../../public/HeroImg2.png"
 import HeroImg2M from "../../public/HeroImg2M.png"
-import DummyImg from "../../public/DummyImg.png"
+import MobileDemo4 from "../assets/Mobile_Demos/1.png"
+import MobileDemo3 from "../assets/Mobile_Demos/2.png"
+import MobileDemo2 from "../assets/Mobile_Demos/3.png"
+import MobileDemo1 from "../assets/Mobile_Demos/4.png"
 ---
 
 <Layout 
-  title="ImageTools - Professional Image Processing"
+  title="Resize-It | Professional Image Processing"
   description="Free online image tools for resizing, compressing, and converting images. Fast, secure, and professional quality."
 >
   <!-- Hero Section -->
   <div class="bg-white text-center font-crimson mt-[80px] md:mt-0">
     <h1 class="text-[70px] md:text-[140px]">  
       Master Your Images
+      <p class="text-[20px] text-primary p-2">With Resize-It</p>
+      
     </h1>
   </div>
   <!-- IPAD DIV -->
@@ -37,25 +42,25 @@ import DummyImg from "../../public/DummyImg.png"
 
 <div class="grid md:grid-cols-4 grid-cols-1 gap-3 p-5">
   <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
     <p class="font-crimson text-lg font-medium py-2">Resize Instantly</p>
     <p class="text-gray-500 text-sm">Set custom dimensions or scale by percentage — perfect for social, web, or design use.</p>
   </div>
 
     <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
     <p class="font-crimson text-lg font-medium py-2">Compress Intelligently</p>
     <p class="text-gray-500 text-sm">Shrink image size while preserving clarity with advanced browser-based optimization.</p>
   </div>
   
   <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
     <p class="font-crimson text-lg font-medium py-2">Convert Effortlessly</p>
     <p class="text-gray-500 text-sm">Transform between JPG, PNG, and WebP formats instantly — all processed locally in your browser.</p>
   </div>
   
   <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <img src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
+    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
     <p class="font-crimson text-lg font-medium py-2">Passport Grid Maker</p>
     <p class="text-gray-500 text-sm">Automatically arrange passport-sized photos in a printable grid layout for efficient printing.</p>
   </div>
@@ -103,9 +108,95 @@ import DummyImg from "../../public/DummyImg.png"
     </table>
     <button class=" my-5 bg-tertiary hover:bg-primary text-primary p-2 rounded-3xl px-3 hover:text-white font-semibold duration-700 ease-in-out">Start Editing</button>
   </div>
-  <div>
-    <Image src={DummyImg} alt={"Dummy Image"} class="w-[90%] mx-auto"/>
+  <div class="relative w-[60%] mx-auto overflow-hidden">
+    <div class="slider-container flex transition-transform duration-500 ease-in-out touch-pan-y">
+      <div class="min-w-full">
+        <Image src={MobileDemo1} alt={"Image 1"} class="rounded-4xl"/>
+      </div>
+      <div class="min-w-full">
+        <Image src={MobileDemo2} alt={"Image 2"} class="rounded-4xl"/>
+      </div>
+      <div class="min-w-full">
+        <Image src={MobileDemo3} alt={"Image 3"} class="rounded-4xl"/>
+      </div>
+      <div class="min-w-full">
+        <Image src={MobileDemo4} alt={"Image 4"} class="rounded-4xl"/>
+      </div>
+    </div>
+    
+    <!-- Dots Indicator -->
+    <div class="slider-dots flex justify-center gap-2 mt-4">
+      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="0"></button>
+      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="1"></button>
+      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="2"></button>
+      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="3"></button>
+    </div>
   </div>
+
+  <script>
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const sliderContainer = document.querySelector('.slider-container');
+    const dots = document.querySelectorAll('.dot');
+    let autoSlideInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    function updateSlider() {
+      sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('bg-gray-800', index === currentSlide);
+        dot.classList.toggle('bg-gray-400', index !== currentSlide);
+      });
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }
+    
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 3000);
+    }
+    
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+    
+    // Touch events for swipe
+    sliderContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      clearInterval(autoSlideInterval);
+    });
+    
+    sliderContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startAutoSlide();
+    });
+    
+    function handleSwipe() {
+      if (touchStartX - touchEndX > 50) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      } else if (touchEndX - touchStartX > 50) {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      }
+    }
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateSlider();
+        resetAutoSlide();
+      });
+    });
+    
+    updateSlider();
+    startAutoSlide();
+  </script>
 </div>
 <div class="m-10  border-1 border-tertiary/70"></div>
   <div class="text-[50px] md:text-[60px] font-crimson text-center">Why Choose Resize-It?</div>
@@ -114,48 +205,50 @@ import DummyImg from "../../public/DummyImg.png"
       <button class="my-5 bg-tertiary hover:bg-primary text-primary p-2 rounded-3xl px-3 hover:text-white font-semibold duration-700 ease-in-out">Get Started</button>
     </div>
   <div class="my-16 px-5">
-    <div class="max-w-4xl mx-auto overflow-x-auto">
-      <table class="w-full border-collapse">
+    <div class="mt-12 md:mt-16 mb-16 md:mb-24 px-5 max-w-7xl mx-auto">
+    <div class="max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full border-collapse bg-white">
         <thead>
-          <tr class="border-b-2 border-gray-200">
-        <th class=" py-4 px-4 font-crimson text-xl text-gray-400">Others</th>
-        <th class=" py-4 px-4 font-crimson text-xl">Resize-It</th>
+          <tr class="border-b-2 border-gray-200 bg-gray-50">
+            <th class="py-4 md:py-5 px-4 md:px-6 font-crimson text-lg md:text-xl text-gray-400 text-left">Others</th>
+            <th class="py-4 md:py-5 px-4 md:px-6 font-crimson text-lg md:text-xl text-gray-900 text-left">Resize-It</th>
           </tr>
         </thead>
-        <tbody class="text-sm font-semibold">
-          <tr class="border-b border-gray-200">
-        <td class="py-4 px-4 text-gray-500">
-          <span class="inline-block mr-2 text-gray-400">✓</span>
-          Upload required
-        </td>
-        <td class=" py-4 px-4 text-gray-700">
-          <span class="inline-block mr-2 text-gray-400">✕</span>
-          No Uploads
-        </td>
+        <tbody class="text-sm md:text-base font-semibold">
+          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-500">
+              <span class="inline-block mr-2 text-red-400">✓</span>
+              Upload required
+            </td>
+            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-900">
+              <span class="inline-block mr-2 text-green-500">✓</span>
+              No Uploads
+            </td>
           </tr>
-          <tr class="border-b border-gray-200">
-        <td class="py-4 px-4 text-gray-500">
-          <span class="inline-block mr-2 text-gray-400">✓</span>
-          Server Processing
-        </td>
-        <td class=" py-4 px-4 text-gray-700">
-          <span class="inline-block mr-2 text-gray-400">✕</span>
-          100% Local Processing
-        </td>
+          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-500">
+              <span class="inline-block mr-2 text-red-400">✓</span>
+              Server Processing
+            </td>
+            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-900">
+              <span class="inline-block mr-2 text-green-500">✓</span>
+              100% Local Processing
+            </td>
           </tr>
-          <tr class="border-b border-gray-200">
-        <td class="py-4 px-4 text-gray-500">
-          <span class="inline-block mr-2 text-gray-400">✓</span>
-          Subscription Based
-        </td>
-        <td class=" py-4 px-4 text-gray-700">
-          <span class="inline-block mr-2 text-gray-400">✕</span>
-          Free Forever
-        </td>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-500">
+              <span class="inline-block mr-2 text-red-400">✓</span>
+              Subscription Based
+            </td>
+            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-900">
+              <span class="inline-block mr-2 text-green-500">✓</span>
+              Free Forever
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
+  </div>
   </div>
   </div>
 
