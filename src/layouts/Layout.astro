@@ -22,7 +22,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://yourdoma
   <link rel="canonical" href={canonicalURL} />
   <link rel="sitemap" href="/sitemap-index.xml" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-432HWBTEC5"></script>
-		<script>
+		<script is:inline>
 		  window.dataLayer = window.dataLayer || [];
 		    function gtag(){dataLayer.push(arguments);}
 			  gtag('js', new Date());
