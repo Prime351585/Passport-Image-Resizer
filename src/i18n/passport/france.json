@@ -1,0 +1,53 @@
+{
+  "meta_title": "Créateur officiel de format de photo de passeport français (35x45 mm) | 2026",
+  "meta_description": "Créez en ligne une photo de passeport ou de visa français 100% conforme. Dimensions exactes 35x45 mm (1,38x1,77 in), fond Gris clair ou bleu clair requis. Outil rapide et privé côté navigateur.",
+  "h1": "Guide officiel de la taille et des exigences des photos du passeport français",
+  "subtitle": "Redimensionnez, recadrez et compilez une grille imprimable correspondant aux normes officielles du passeport biométrique français.",
+  "tool_workspace": {
+    "h2": "Outil de recadrage biométrique interactif France",
+    "description": "Téléchargez votre fichier pour l'aligner sur la grille de dimensions intégrée en France. Aucune image n'est envoyée aux serveurs ; tout le traitement du canevas s'effectue localement en JavaScript.",
+    "spec_badge_mm": "35x45mm",
+    "spec_badge_in": "1,38 x 1,77 pouces",
+    "spec_background": "Toile de fond requise : Gris clair ou bleu clair"
+  },
+  "biometric_details": {
+    "h2": "Proportions biométriques officielles pour la France",
+    "head_size_label": "Rapport de hauteur de tête",
+    "head_size_text": "La distance entre le bas de votre menton et le haut de vos cheveux doit occuper environ 75 % de la hauteur verticale du cadre.",
+    "eye_height_label": "Ligne d'alignement des yeux",
+    "eye_height_text": "Vos yeux doivent être centrés verticalement dans les limites du cadre d’alignement cible."
+  },
+  "how_to": {
+    "title": "Comment faire et imprimer une photo de passeport français",
+    "step1_title": "1. Initialiser les préréglages France",
+    "step1_text": "La fenêtre de recadrage s'adapte automatiquement à la taille réglementaire exacte de 35 x 45 mm.",
+    "step2_title": "2. Téléchargement d'images locales",
+    "step2_text": "Sélectionnez votre photo source. Il reste entièrement sécurisé dans la mémoire d'exécution du navigateur.",
+    "step3_title": "3. Alignez-vous avec les superpositions biométriques",
+    "step3_text": "Redimensionnez et déplacez votre image jusqu'à ce que votre visage corresponde aux calques translucides d'alignement de la tête et des yeux.",
+    "step4_title": "4. Générer une grille et enregistrer",
+    "step4_text": "Téléchargez un seul fichier image optimisé ou une feuille de modèle imprimable pré-alignée pour les mises en page d'impression photo standard de 4 x 6 pouces."
+  },
+  "faq": {
+    "h2": "Foire aux questions sur les photos de France",
+    "q1": "Quelle est la règle officielle en matière de couleur de fond pour la France ?",
+    "a1": "Le gouvernement exige une toile de fond Gris clair ou bleu clair solide et uniforme, sans ombres, objets ou textures.",
+    "q2": "Puis-je porter des lunettes ou un couvre-chef sur la photo de mon document France ?",
+    "a2": "Les lunettes doivent être retirées sauf nécessité médicale stricte (pas d'éblouissement, de teinte ou de monture épaisse). Les couvre-chefs religieux sont autorisés à condition qu'ils dévoilent tout l'ovale du visage, du menton au front.",
+    "q3": "Comment imprimer mon fichier numérique France généré ?",
+    "a3": "Téléchargez notre option de feuille imprimable compilée, enregistrez-la sur une clé USB et imprimez-la dans un kiosque photo numérique local en utilisant les paramètres standard du papier photo 4x6 de haute qualité."
+  },
+  "cross_link_footer": {
+    "title": "Formats de documents associés",
+    "text": "Besoin d'une autre taille ? Consultez les exigences relatives aux dimensions du visa France ou recherchez d'autres formats de documentation standard mondiaux."
+  },
+  "country_code": "FR",
+  "inLanguage": "fr",
+  "raw_dimensions": {
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "Light Grey or Light Blue"
+  }
+}

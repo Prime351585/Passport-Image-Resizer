@@ -1,0 +1,44 @@
+{
+  "meta_title": "Free Online Image Compressor | Reduce Image File Size",
+  "meta_description": "Compress JPG, PNG, and WebP images online instantly. Set target file size in KB or adjust compression ratio. 100% private, browser-based.",
+  "h1": "Free Online Image Compressor",
+  "subtitle": "Reduce file sizes without losing visual quality. Set target file sizes, optimize web assets—all processed securely in your browser.",
+  "tool_workspace": {
+    "h2": "Interactive Photo Compression Studio",
+    "description": "Upload your file to compress. Set the desired quality level or target file size.",
+    "features_list": [
+      "Target Size (KB) Control Mode",
+      "Adjustable Compression Ratio",
+      "Real-Time File Size Preview",
+      "Zero Server Uploads (100% Secure)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Compress for Fast Web Loading",
+    "description": "Optimize images for faster load speeds across various platforms.",
+    "preset_1": "Email Attachments Size",
+    "preset_2": "E-commerce Product Pages",
+    "preset_3": "Website Asset Compression",
+    "preset_4": "Portfolio Galleries"
+  },
+  "how_to": {
+    "title": "How to Compress an Image Online",
+    "step1_title": "1. Upload Your Image",
+    "step1_text": "Select your JPG, PNG, or WebP file. It loads securely in browser execution memory.",
+    "step2_title": "2. Select Compression Mode",
+    "step2_text": "Choose either Quality slider compression or enter a Target File Size (KB).",
+    "step3_title": "3. Adjust Settings",
+    "step3_text": "Slide to lower quality or specify the KB limit to reach your desired file size.",
+    "step4_title": "4. Compress and Download",
+    "step4_text": "Click 'Compress Image' to save the optimized file directly to your downloads."
+  },
+  "faq": {
+    "h2": "Compression Tool FAQs",
+    "q1": "Will my compressed image look blurry?",
+    "a1": "No. The compressor optimizes the file structure and metadata to reduce size while keeping visual details sharp.",
+    "q2": "Are my files uploaded?",
+    "a2": "Absolutely not. The compressor runs client-side in browser memory with total privacy.",
+    "q3": "Does it support PNG compression?",
+    "a3": "Yes! PNG files are optimized using lossless compression or conversion to indexed colors."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta_title": "Ridimensionatore di immagini Instagram gratuito | Ridimensiona a 1080x1080 px Online",
+  "meta_description": "Ridimensiona istantaneamente le tue immagini per adattarle alle dimensioni standard di Instagram. Modifica le dimensioni online esattamente a 1080x1080 px (1:1). 100% privato e sicuro.",
+  "h1": "Ridimensionatore di immagini Instagram gratuito",
+  "subtitle": "Ridimensiona perfettamente le tue foto per Instagram. Ridimensiona istantaneamente a 1080x1080 px (1:1) esatti senza perdita di qualità.",
+  "tool_workspace": {
+    "h2": "Studio interattivo di ridimensionamento di Instagram",
+    "description": "Carica il tuo file per ridimensionarlo secondo le specifiche ufficiali di Instagram. Elaborato localmente nel tuo browser.",
+    "spec_badge": "1080 x 1080 pixel",
+    "spec_ratio": "Rapporto: 1:1"
+  },
+  "how_to": {
+    "title": "Come ridimensionare per Instagram online",
+    "step1_title": "1. Carica la tua immagine",
+    "step1_text": "Seleziona il tuo JPG, PNG o WebP. Il file viene caricato immediatamente nella memoria lato client.",
+    "step2_title": "2. Selezionare Dimensioni preimpostate",
+    "step2_text": "I campi larghezza e altezza si bloccano automaticamente a 1080x1080 px.",
+    "step3_title": "3. Opzione Adatta o Allunga",
+    "step3_text": "Scegli se allungare l'immagine per adattarla, riempire lo sfondo o ritagliare i bordi.",
+    "step4_title": "4. Scarica l'immagine ridimensionata",
+    "step4_text": "Fai clic su \"Ridimensiona\" e scarica il tuo file Instagram perfettamente ridimensionato."
+  },
+  "faq": {
+    "h2": "Domande frequenti sul ridimensionatore di foto di Instagram",
+    "q1": "L'immagine ridimensionata si allungherà o distorcerà?",
+    "a1": "No. Utilizzando proporzioni standard e opzioni di riempimento, il ridimensionatore mantiene le tue foto perfettamente proporzionate.",
+    "q2": "Le mie immagini sono sicure?",
+    "a2": "SÌ. Nessun file viene caricato su server esterni. Tutte le operazioni avvengono in JavaScript sul browser del tuo dispositivo."
+  }
+}

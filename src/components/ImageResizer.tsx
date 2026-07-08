@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 
 interface ResizeSettings {
-  width: number;
-  height: number;
+  width: number | '';
+  height: number | '';
   unit: 'px' | '%' | 'mm' | 'cm' | 'in';
   maintainAspectRatio: boolean;
   resizeMethod: 'exact' | 'fit' | 'fill' | 'crop';
@@ -74,18 +74,29 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
   // Handle dimension changes with aspect ratio
   const handleDimensionChange = useCallback((
     type: 'width' | 'height', 
-    value: number
+    valStr: string
   ) => {
     const newSettings = { ...settings };
+    if (valStr === '') {
+      if (type === 'width') {
+        newSettings.width = '';
+      } else {
+        newSettings.height = '';
+      }
+      setSettings(newSettings);
+      return;
+    }
+
+    const value = parseInt(valStr) || 0;
     
     if (type === 'width') {
-      newSettings.width = Math.max(1, value);
-      if (settings.maintainAspectRatio && originalAspectRatio) {
+      newSettings.width = value;
+      if (settings.maintainAspectRatio && originalAspectRatio && value > 0) {
         newSettings.height = Math.round(value / originalAspectRatio);
       }
     } else {
-      newSettings.height = Math.max(1, value);
-      if (settings.maintainAspectRatio && originalAspectRatio) {
+      newSettings.height = value;
+      if (settings.maintainAspectRatio && originalAspectRatio && value > 0) {
         newSettings.width = Math.round(value * originalAspectRatio);
       }
     }
@@ -125,8 +136,8 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
       });
 
       // Convert dimensions to pixels
-      const targetWidth = convertToPixels(settings.width, settings.unit, true);
-      const targetHeight = convertToPixels(settings.height, settings.unit, false);
+      const targetWidth = convertToPixels(Number(settings.width) || 1, settings.unit, true);
+      const targetHeight = convertToPixels(Number(settings.height) || 1, settings.unit, false);
 
       let drawWidth = targetWidth;
       let drawHeight = targetHeight;
@@ -338,7 +349,7 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
                 type="number"
                 min="1"
                 value={settings.width}
-                onChange={(e) => handleDimensionChange('width', parseInt(e.target.value) || 1)}
+                onChange={(e) => handleDimensionChange('width', e.target.value)}
                 className="flex-1 px-4 py-3 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
               />
               <select
@@ -362,7 +373,7 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
                 type="number"
                 min="1"
                 value={settings.height}
-                onChange={(e) => handleDimensionChange('height', parseInt(e.target.value) || 1)}
+                onChange={(e) => handleDimensionChange('height', e.target.value)}
                 className="flex-1 px-4 py-3 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
               />
               <div className="px-3 py-3 text-sm text-gray-500 w-20 text-center bg-gray-50 rounded-xl border-2 border-gray-200 font-medium">
@@ -476,7 +487,7 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
             <div className="flex flex-col space-y-1">
               <span className="text-green-700 font-medium">New Dimensions:</span>
               <span className="font-semibold text-gray-900">
-                {convertToPixels(settings.width, settings.unit, true)} × {convertToPixels(settings.height, settings.unit, false)} px
+                {convertToPixels(Number(settings.width) || 1, settings.unit, true)} × {convertToPixels(Number(settings.height) || 1, settings.unit, false)} px
               </span>
             </div>
             <div className="flex flex-col space-y-1">

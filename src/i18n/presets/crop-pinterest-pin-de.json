@@ -1,0 +1,30 @@
+{
+  "meta_title": "Kostenloser Pinterest-Bildzuschnitt | Online auf 2:3 quadratisch zuschneiden",
+  "meta_description": "Schneiden Sie Bilder sofort online zu, um sie an das offizielle Pinterest-Seitenverhältnis (2:3) anzupassen. 100 % privates, browserbasiertes Zuschneiden ohne Qualitätsverlust.",
+  "h1": "Kostenloser Pinterest Image Cropper",
+  "subtitle": "Fotos perfekt für Pinterest zuschneiden. Schneiden Sie sofort und ohne Server-Uploads auf exakt 1000 x 1500 Pixel (2:3) zu.",
+  "tool_workspace": {
+    "h2": "Interaktives Pinterest-Zuschneidestudio",
+    "description": "Laden Sie Ihre Datei hoch, um sie an den offiziellen Pinterest-Zuschnittrahmen (2:3) anzupassen. Lokal in Ihrem Browser verarbeitet.",
+    "spec_badge": "1000 x 1500 Pixel",
+    "spec_ratio": "Verhältnis: 2:3"
+  },
+  "how_to": {
+    "title": "Wie man für Pinterest online zuschneidet",
+    "step1_title": "1. Laden Sie Ihr Bild hoch",
+    "step1_text": "Wählen Sie Ihr Foto aus. Das Bild wird für absolute Privatsphäre sofort in den Speicher Ihres Browsers geladen.",
+    "step2_title": "2. Wählen Sie Pinterest-Voreinstellung",
+    "step2_text": "Der Zuschneiderahmen stellt sich automatisch auf das offizielle Seitenverhältnis 2:3 ein.",
+    "step3_title": "3. Anpassen und zentrieren",
+    "step3_text": "Ziehen Sie die Griffe und rahmen Sie Ihr Gesicht oder Motiv perfekt in den Zuschneiderahmen ein.",
+    "step4_title": "4. Speichern und herunterladen",
+    "step4_text": "Klicken Sie auf „Zuschneiden“, um das Foto lokal zu verarbeiten und Ihre optimierte Pinterest-Datei herunterzuladen."
+  },
+  "faq": {
+    "h2": "Häufig gestellte Fragen zum Pinterest Photo Cropper",
+    "q1": "Was ist die offizielle Größe für Pinterest-Beiträge?",
+    "a1": "Die empfohlenen Standardabmessungen sind 1000 x 1500 Pixel, was dem Seitenverhältnis 2:3 entspricht.",
+    "q2": "Werden meine Fotos hochgeladen?",
+    "a2": "Nein. Das Tool verarbeitet Ihr Bild clientseitig im Browser Ihres Geräts und sorgt so für die Sicherheit Ihrer Daten."
+  }
+}

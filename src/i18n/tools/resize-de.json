@@ -1,0 +1,50 @@
+{
+  "meta_title": "Kostenloser Online-Bild-Resizer | Bildgröße sicher ändern",
+  "meta_description": "Ändern Sie die Größe von Bildern sofort online. Passen Sie Breite, Höhe oder Dateigröße in Pixel, Prozent, Zoll oder cm an. 100 % private, browserseitige Skalierung für JPG, PNG und WebP.",
+  "h1": "Kostenloser Online-Bild-Resizer",
+  "subtitle": "Skalieren Sie Ihre Fotos perfekt, ohne an Qualität zu verlieren. Passen Sie Abmessungen an, ändern Sie Größen und formatieren Sie Bilder für den Druck, soziale Medien oder die Webleistung – alles wird sicher in Ihrem Browser verarbeitet.",
+  "tool_workspace": {
+    "h2": "Interaktives Studio zur Größenänderung von Fotos",
+    "description": "Ziehen Sie Ihr Bild per Drag-and-Drop nach unten. Passen Sie Breite, Höhe oder Zieldateigröße an, um die Größe Ihres Bildes sofort zu ändern.",
+    "features_list": [
+      "Skalierung mit mehreren Einheiten (Pixel, %, Zoll, mm, cm)",
+      "Seitenverhältnis sperren (Verzerrung verhindern)",
+      "Intelligente Komprimierung (Dateigröße/KB reduzieren)",
+      "Keine Server-Uploads (100 % Datenschutz)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Passen Sie die Größe sofort für soziale Medien und das Web an",
+    "description": "Raten Sie nicht über die Abmessungen. Nutzen Sie unsere Ein-Klick-Voreinstellungen, um Ihre Inhalte perfekt für die wichtigsten Plattformen zu skalieren.",
+    "preset_1": "Instagram Quadrat (1080x1080px)",
+    "preset_2": "YouTube-Miniaturansicht (1280 x 720 Pixel)",
+    "preset_3": "Facebook-Cover (1200x630px)",
+    "preset_4": "Pinterest-Pin (1000x1500px)"
+  },
+  "how_to": {
+    "title": "So ändern Sie die Größe eines Bildes online",
+    "step1_title": "1. Laden Sie Ihr Bild hoch",
+    "step1_text": "Wählen Sie eine JPG-, PNG-, GIF- oder WebP-Datei aus. Ihr Bild wird sofort direkt in den Speicher Ihres Browsers geladen, ohne dass es auf einen Remote-Server hochgeladen werden muss.",
+    "step2_title": "2. Wählen Sie Dimensionen oder Prozentsatz",
+    "step2_text": "Geben Sie genaue neue Breiten- und Höhenwerte ein, wählen Sie eine Standarddruckgröße (z. B. 4 x 6 Zoll) oder wählen Sie eine prozentuale Skalierung.",
+    "step3_title": "3. Seitenverhältnis sperren",
+    "step3_text": "Stellen Sie sicher, dass das Kettensymbol „Proportionen sperren“ aktiviert ist, um zu verhindern, dass Ihr Foto während der Größenänderung gedehnt, gestaucht oder verzerrt wird.",
+    "step4_title": "4. Bewerben und herunterladen",
+    "step4_text": "Klicken Sie auf „Bildgröße ändern“, um hochwertige Resampling-Algorithmen lokal anzuwenden, und laden Sie dann Ihre optimierte Datei herunter."
+  },
+  "faq": {
+    "h2": "Häufig gestellte Fragen zum Image Resizer",
+    "q1": "Wird die Größenänderung meines Bildes dazu führen, dass es unscharf wird oder an Qualität verliert?",
+    "a1": "Durch die Reduzierung der Bildgröße bleibt die scharfe Qualität erhalten. Das Vergrößern eines Bildes (Upscaling) kann zu einer gewissen Unschärfe führen, aber unser Tool verwendet fortschrittliche HTML5 Canvas-Resampling-Algorithmen mit hoher Wiedergabetreue (z. B. bikubische Interpolation), um die maximale visuelle Qualität beizubehalten.",
+    "q2": "Sind meine Bilder sicher und privat?",
+    "a2": "Ja, völlig. Es werden keine Dateien auf Cloud-Server hochgeladen. Alle Größenänderungsvorgänge erfolgen in JavaScript sicher im Browser Ihres Geräts.",
+    "q3": "Kann ich die Größe eines Bildes zum Drucken ändern?",
+    "a3": "Ja! Stellen Sie die Einheitenauswahl von „Pixel“ auf „Zoll“, „Millimeter“ oder „Zentimeter“ um. Sie können die Größe von Fotos ganz einfach auf die standardmäßigen Druckabmessungen ändern.",
+    "q4": "Kann ich mit diesem Tool die Dateigröße (KB/MB) reduzieren?",
+    "a4": "Ja, indem Sie die Pixelabmessungen reduzieren oder den Schieberegler „Qualität“ für JPG/WebP-Ausgaben anpassen, können Sie die Dateigröße erheblich komprimieren, um das Laden im Internet oder E-Mail-Anhänge zu beschleunigen.",
+    "q5": "Was sind Schnellvoreinstellungen?",
+    "a5": "Mit Schnellvoreinstellungen können Sie die Größe Ihrer Bilder sofort mit einem einzigen Klick auf perfekte Abmessungen für Plattformen wie Instagram, YouTube, Facebook und mehr ändern.",
+    "q6": "Wie funktionieren die verschiedenen Methoden zur Größenänderung?",
+    "a6": "Wir bieten vier erweiterte Methoden zur Größenänderung an: „Exakt“ streckt das Bild auf Ihre genauen Abmessungen (kann verzerrt werden). „Anpassen“ skaliert das Bild so, dass es in die Abmessungen passt, während das Seitenverhältnis beibehalten wird. „Füllen“ füllt die Abmessungen und schneidet möglicherweise Kanten ab. „Zuschneiden“ Sie Zuschnitte direkt von der Mitte aus, um sie perfekt an die Abmessungen anzupassen."
+  }
+}

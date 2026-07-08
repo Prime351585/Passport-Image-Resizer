@@ -2,18 +2,39 @@
 import Header from "../components/Header.astro";
 import "../styles/global.css"
 import Footer from "../components/Footer.astro";
+import type { HreflangAlternate } from "../utils/i18n";
+import { RTL_LANGUAGES } from "../utils/i18n";
+import type { SupportedLanguage } from "../utils/i18n";
+
 export interface Props {
   title?: string;
   description?: string;
+  lang?: SupportedLanguage;
+  hreflangAlternates?: HreflangAlternate[];
+  structuredData?: object | object[];
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  lang = 'en',
+  hreflangAlternates = [],
+  structuredData,
+} = Astro.props;
 
-// Get the canonical URL - replace with your actual domain
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://yourdomain.com');
+// Get the canonical URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.resize-it.com');
+
+// Determine text direction
+const dir = RTL_LANGUAGES.includes(lang as any) ? 'rtl' : 'ltr';
+
+// Normalize structured data to array
+const schemas = structuredData
+  ? (Array.isArray(structuredData) ? structuredData : [structuredData])
+  : [];
 ---
 
-<html lang="en">
+<html lang={lang} dir={dir}>
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,6 +42,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://yourdoma
   <meta name="description" content={description || "Professional image processing tools"} />
   <link rel="canonical" href={canonicalURL} />
   <link rel="sitemap" href="/sitemap-index.xml" />
+
+  {/* Hreflang tags for international SEO */}
+  {hreflangAlternates.map((alt) => (
+    <link rel="alternate" hreflang={alt.lang} href={alt.href} />
+  ))}
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-432HWBTEC5"></script>
 		<script is:inline>
 		  window.dataLayer = window.dataLayer || [];
@@ -32,7 +59,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://yourdoma
   <title>{title}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet"></head>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  {/* Structured Data (JSON-LD) */}
+  {schemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+</head>
 
 <body class="bg-white min-h-screen flex flex-col">
   

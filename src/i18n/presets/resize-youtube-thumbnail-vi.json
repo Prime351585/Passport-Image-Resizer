@@ -1,0 +1,30 @@
+{
+  "meta_title": "Trình chỉnh sửa hình ảnh YouTube miễn phí | Thay đổi kích thước thành 1280x720 px Trực tuyến",
+  "meta_description": "Thay đổi kích thước hình ảnh của bạn ngay lập tức để phù hợp với kích thước tiêu chuẩn của YouTube. Thay đổi kích thước trực tuyến thành chính xác 1280x720 px (16:9). 100% riêng tư và an toàn.",
+  "h1": "Trình chỉnh sửa hình ảnh YouTube miễn phí",
+  "subtitle": "Chia tỷ lệ ảnh của bạn một cách hoàn hảo cho YouTube. Thay đổi kích thước thành chính xác 1280x720 px (16:9) ngay lập tức mà không làm giảm chất lượng.",
+  "tool_workspace": {
+    "h2": "Studio thay đổi kích thước YouTube tương tác",
+    "description": "Tải tệp của bạn lên để thay đổi kích thước theo thông số kỹ thuật chính thức của YouTube. Được xử lý cục bộ trong trình duyệt của bạn.",
+    "spec_badge": "1280 x 720 pixel",
+    "spec_ratio": "Tỷ lệ: 16:9"
+  },
+  "how_to": {
+    "title": "Cách thay đổi kích thước cho YouTube trực tuyến",
+    "step1_title": "1. Tải hình ảnh của bạn lên",
+    "step1_text": "Chọn JPG, PNG hoặc WebP của bạn. Tệp sẽ tải vào bộ nhớ phía máy khách ngay lập tức.",
+    "step2_title": "2. Chọn kích thước đặt trước",
+    "step2_text": "Các trường chiều rộng và chiều cao tự động khóa ở mức 1280x720 px.",
+    "step3_title": "3. Tùy chọn vừa vặn hoặc co giãn",
+    "step3_text": "Chọn kéo dài hình ảnh cho vừa, đệm nền hoặc cắt các cạnh.",
+    "step4_title": "4. Tải xuống hình ảnh đã thay đổi kích thước",
+    "step4_text": "Nhấp vào 'Thay đổi kích thước' và tải xuống tệp YouTube có tỷ lệ hoàn hảo của bạn."
+  },
+  "faq": {
+    "h2": "Câu hỏi thường gặp về Trình chỉnh lại ảnh trên YouTube",
+    "q1": "Hình ảnh đã thay đổi kích thước của tôi có bị giãn hoặc biến dạng không?",
+    "a1": "Không. Bằng cách sử dụng các tỷ lệ khung hình tiêu chuẩn và các tùy chọn đệm, trình chỉnh lại kích thước sẽ giữ cho ảnh của bạn có tỷ lệ hoàn hảo.",
+    "q2": "Hình ảnh của tôi có an toàn không?",
+    "a2": "Đúng. Không có tập tin nào được tải lên máy chủ bên ngoài. Tất cả các hoạt động diễn ra bằng JavaScript trên trình duyệt của thiết bị của bạn."
+  }
+}

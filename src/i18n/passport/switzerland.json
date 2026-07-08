@@ -1,0 +1,53 @@
+{
+  "meta_title": "Offizieller Schweiz Passport Photo Size Maker (35x45 mm) | 2026",
+  "meta_description": "Erstellen Sie online ein 100 % konformes Pass- oder Visa-Foto gemäß Schweiz. Genaue Abmessungen von 35 x 45 mm (1,38 x 1,77 Zoll), erforderlicher Hintergrund von Einfacher heller Hintergrund mm. Schnelles, privates browserseitiges Tool.",
+  "h1": "Offizieller Schweiz Passfoto-Größen- und Anforderungsleitfaden",
+  "subtitle": "Ändern Sie die Größe, schneiden und kompilieren Sie ein leistungsfähiges Raster, das den offiziellen biometrischen Schweiz-Passsstandards entspricht.",
+  "tool_workspace": {
+    "h2": "Interaktives biometrisches Zuschneidewerkzeug Schweiz",
+    "description": "Laden Sie Ihre Datei hoch, um sie an das eingebaute Raster mit den Abmessungen Schweiz anzupassen. Es werden keine Bilder an den Server gesendet; Die gesamte Canvas-Verarbeitung erfolgt lokal in JavaScript.",
+    "spec_badge_mm": "35 x 45 mm",
+    "spec_badge_in": "1,38 x 1,77 Zoll",
+    "spec_background": "Erforderlicher Hintergrund: Einfacher heller Hintergrund"
+  },
+  "biometric_details": {
+    "h2": "Offizielle biometrische Proportionen für die Schweiz",
+    "head_size_label": "Kopfhöhenverhältnis",
+    "head_size_text": "Der Abstand von der Unterseite Ihres Kinns bis zur Haarspitze muss etwa 75 % der vertikalen Rahmenhöhe einnehmen.",
+    "eye_height_label": "Augenausrichtungslinie",
+    "eye_height_text": "Ihre Augen müssen vertikal innerhalb der Zielausrichtungsrahmengrenzen zentriert sein."
+  },
+  "how_to": {
+    "title": "So erstellen und drucken Sie ein Schweiz Passfoto",
+    "step1_title": "1. Schweiz Voreinstellungen initialisieren",
+    "step1_text": "Das Zuschneidefenster skaliert automatisch auf die exakte Regelgröße 35x45 mm.",
+    "step2_title": "2. Lokaler Bild-Upload",
+    "step2_text": "Wählen Sie Ihr Quellfoto aus. Es bleibt vollständig im Ausführungsspeicher des Browsers gesichert.",
+    "step3_title": "3. Ausrichtung mit biometrischen Überlagerungen",
+    "step3_text": "Skalieren und verschieben Sie Ihr Bild, bis Ihr Gesicht mit den durchscheinenden Kopf- und Augenausrichtungsschichten übereinstimmt.",
+    "step4_title": "4. Raster generieren und speichern",
+    "step4_text": "Laden Sie eine einzelne optimierte Bilddatei oder ein vorab ausgerichtetes, geeignetes Vorlagenblatt für standardmäßige 4x6-Zoll-Fotodrucklayouts herunter."
+  },
+  "faq": {
+    "h2": "Häufig gestellte Fragen zu Schweiz Fotos",
+    "q1": "Was ist die offizielle Hintergrundfarbenregel für die Schweiz?",
+    "a1": "Die Regierung verlangt einen soliden, einheitlichen Hintergrund ohne Schatten, Objekte oder Texturen.",
+    "q2": "Kann ich auf meinem Schweiz-Dokumentenfoto eine Brille oder Kopfbedeckung tragen?",
+    "a2": "Brillen müssen abgenommen werden, es sei denn, dies ist medizinisch unbedingt erforderlich (keine Blendung, Tönung oder dicke Rahmen). Religiöse Kopfbedeckungen sind erlaubt, sofern sie das gesamte Gesichtsoval vom Kinn bis zur Stirn freigeben.",
+    "q3": "Wie drucke ich meine generierte digitale Schweiz-Datei aus?",
+    "a3": "Laden Sie unsere zusammengestellte Option für druckbare Blätter herunter, speichern Sie sie auf einem USB-Stick und drucken Sie sie an einem lokalen Digitalfoto-Kiosk mit hochwertigen 4x6-Fotopapier-Standardeinstellungen aus."
+  },
+  "cross_link_footer": {
+    "title": "Verwandte Dokumentformate",
+    "text": "Benötigen Sie eine alternative Größe? Sehen Sie sich die Anforderungen für die Abmessungen des Schweiz-Visums an oder suchen Sie nach alternativen globalen Standarddokumentationsformaten."
+  },
+  "country_code": "CH",
+  "inLanguage": "de",
+  "raw_dimensions": {
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "Plain Light Background"
+  }
+}

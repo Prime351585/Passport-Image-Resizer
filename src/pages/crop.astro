@@ -1,0 +1,24 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import CropToolContainer from '../components/CropToolContainer';
+import { getToolHreflangAlternates, getToolUrl } from '../utils/i18n';
+
+import toolData from '../i18n/tools/crop-en.json';
+
+const canonicalUrl = getToolUrl('crop', 'en');
+const hreflangAlternates = getToolHreflangAlternates('crop');
+const breadcrumbs = [
+  { name: 'Home', url: 'https://www.resize-it.com' },
+  { name: toolData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang="en"
+  toolData={toolData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  <CropToolContainer client:load slot="tool" />
+</ToolPageLayout>

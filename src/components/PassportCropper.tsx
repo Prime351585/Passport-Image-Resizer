@@ -40,11 +40,11 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
     let pixelWidth, pixelHeight;
     
     if (targetDimension.unit === 'mm') {
-      pixelWidth = Math.round((targetDimension.width * dpi) / 25.4);
-      pixelHeight = Math.round((targetDimension.height * dpi) / 25.4);
+      pixelWidth = Math.round(((Number(targetDimension.width) || 35) * dpi) / 25.4);
+      pixelHeight = Math.round(((Number(targetDimension.height) || 45) * dpi) / 25.4);
     } else {
-      pixelWidth = Math.round(targetDimension.width * dpi);
-      pixelHeight = Math.round(targetDimension.height * dpi);
+      pixelWidth = Math.round((Number(targetDimension.width) || 1.38) * dpi);
+      pixelHeight = Math.round((Number(targetDimension.height) || 1.77) * dpi);
     }
     
     return { width: pixelWidth, height: pixelHeight };

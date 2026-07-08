@@ -1,0 +1,50 @@
+{
+  "meta_title": "Ridimensionatore di immagini online gratuito | Modifica la dimensione dell'immagine in modo sicuro",
+  "meta_description": "Ridimensiona le immagini online istantaneamente. Regola larghezza, altezza o dimensione del file in pixel, percentuali, pollici o cm. 100% privato, ridimensionamento lato browser per JPG, PNG e WebP.",
+  "h1": "Ridimensionatore di immagini online gratuito",
+  "subtitle": "Ridimensiona perfettamente le tue foto senza perdere la qualità. Regola le dimensioni, modifica le dimensioni e formatta le immagini per la stampa, i social media o le prestazioni sul Web, il tutto elaborato in modo sicuro all'interno del tuo browser.",
+  "tool_workspace": {
+    "h2": "Studio interattivo di ridimensionamento delle foto",
+    "description": "Trascina e rilascia la tua immagine qui sotto. Regola larghezza, altezza o dimensione del file di destinazione per ridimensionare istantaneamente la tua immagine.",
+    "features_list": [
+      "Ridimensionamento multiunità (pixel, %, pollici, mm, cm)",
+      "Blocca proporzioni (previene la distorsione)",
+      "Compressione intelligente (riduci dimensioni file/KB)",
+      "Zero caricamenti sul server (privacy al 100%)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Ridimensiona istantaneamente per social media e Web",
+    "description": "Non indovinare le dimensioni. Utilizza le nostre preimpostazioni con un clic per adattare perfettamente i tuoi contenuti alle principali piattaforme.",
+    "preset_1": "Instagram quadrato (1080x1080px)",
+    "preset_2": "Miniatura YouTube (1280x720px)",
+    "preset_3": "Copertina Facebook (1200x630px)",
+    "preset_4": "Pin Pinterest (1000x1500px)"
+  },
+  "how_to": {
+    "title": "Come ridimensionare un'immagine online",
+    "step1_title": "1. Carica la tua immagine",
+    "step1_text": "Seleziona un file JPG, PNG, GIF o WebP. La tua immagine viene caricata istantaneamente direttamente nella memoria del browser senza essere caricata su un server remoto.",
+    "step2_title": "2. Scegli Dimensioni o Percentuale",
+    "step2_text": "Inserisci i nuovi valori esatti di larghezza e altezza, seleziona un formato di stampa standard (come 4x6 pollici) o scegli una scala percentuale.",
+    "step3_title": "3. Blocca proporzioni",
+    "step3_text": "Assicurati che l'icona della catena \"Blocca proporzioni\" sia selezionata per evitare di allungare, comprimere o distorcere la foto durante il ridimensionamento.",
+    "step4_title": "4. Applica e scarica",
+    "step4_text": "Fai clic su \"Ridimensiona immagine\" per applicare localmente algoritmi di ricampionamento di alta qualità, quindi scarica il file ottimizzato."
+  },
+  "faq": {
+    "h2": "Domande frequenti sul ridimensionatore di immagini",
+    "q1": "Il ridimensionamento della mia immagine la renderà sfocata o perderà qualità?",
+    "a1": "Riducendo le dimensioni di un'immagine si mantiene una qualità nitida. L'ingrandimento di un'immagine (upscaling) può causare una certa sfocatura, ma il nostro strumento utilizza algoritmi avanzati di ricampionamento ad alta fedeltà di HTML5 Canvas (come l'interpolazione bicubica) per mantenere la massima qualità visiva.",
+    "q2": "Le mie immagini sono sicure e private?",
+    "a2": "Sì, completamente. Nessun file viene caricato sui server cloud. Tutte le operazioni di ridimensionamento avvengono in JavaScript in modo sicuro sul browser del tuo dispositivo.",
+    "q3": "Posso ridimensionare un'immagine per la stampa?",
+    "a3": "SÌ! Cambia il selettore dell'unità da \"Pixel\" a \"Pollici\", \"Millimetri\" o \"Centimetri\". Puoi ridimensionare facilmente le foto alle dimensioni di stampa standard.",
+    "q4": "Posso ridurre la dimensione del file (KB/MB) con questo strumento?",
+    "a4": "Sì, riducendo le dimensioni in pixel o regolando il dispositivo di scorrimento \"Qualità\" per gli output JPG/WebP, puoi comprimere in modo significativo le dimensioni del file per un caricamento web o un allegato e-mail più veloce.",
+    "q5": "Cosa sono i preset rapidi?",
+    "a5": "Le preimpostazioni rapide ti consentono di ridimensionare istantaneamente le tue immagini in dimensioni perfette per piattaforme come Instagram, YouTube, Facebook e altre con un solo clic.",
+    "q6": "Come funzionano i diversi metodi di ridimensionamento?",
+    "a6": "Offriamo quattro metodi di ridimensionamento avanzati: \"Esatto\" allunga l'immagine alle tue dimensioni esatte (potrebbe distorcere). 'Adatta' ridimensiona l'immagine per adattarla alle dimensioni mantenendo le proporzioni. 'Riempi' riempie le dimensioni e potrebbe ritagliare i bordi. 'Ritaglia' ritaglia direttamente dal centro per adattarlo perfettamente alle dimensioni."
+  }
+}

@@ -1,9 +1,10 @@
 import React from 'react';
-import type {PaperSize} from './PassportToolContainer';
+import type {PaperSize, PassportDimension} from './PassportToolContainer';
 
 interface PaperTypeSelectorProps {
   selectedPaper: PaperSize;
   onPaperChange: (paper: PaperSize) => void;
+  photoDimension: PassportDimension;
   className?: string;
 }
 
@@ -55,14 +56,18 @@ const PAPER_SIZES: PaperSize[] = [
 const PaperTypeSelector: React.FC<PaperTypeSelectorProps> = ({
   selectedPaper,
   onPaperChange,
+  photoDimension,
   className = ''
 }) => {
-  const calculatePhotosPerPage = (paper: PaperSize, photoWidth: number, photoHeight: number, unit: 'mm' | 'in'): number => {
+  const calculatePhotosPerPage = (paper: PaperSize, photoWidth: number | '', photoHeight: number | '', unit: 'mm' | 'in'): number => {
+    const w = photoWidth || 35;
+    const h = photoHeight || 45;
+
     // Convert everything to mm for calculation
     const paperWidthMm = paper.unit === 'mm' ? paper.width : paper.width * 25.4;
     const paperHeightMm = paper.unit === 'mm' ? paper.height : paper.height * 25.4;
-    const photoWidthMm = unit === 'mm' ? photoWidth : photoWidth * 25.4;
-    const photoHeightMm = unit === 'mm' ? photoHeight : photoHeight * 25.4;
+    const photoWidthMm = unit === 'mm' ? w : w * 25.4;
+    const photoHeightMm = unit === 'mm' ? h : h * 25.4;
     
     // Add margins (5mm on each side)
     const usableWidth = paperWidthMm - 10;
@@ -74,6 +79,13 @@ const PaperTypeSelector: React.FC<PaperTypeSelectorProps> = ({
     
     return Math.max(1, photosPerRow * photosPerCol);
   };
+
+  const selectedMaxPhotos = calculatePhotosPerPage(
+    selectedPaper,
+    photoDimension.width,
+    photoDimension.height,
+    photoDimension.unit
+  );
 
   return (
     <div className={`bg-white border-2 border-gray-200 rounded-2xl p-6 md:p-8 space-y-6 ${className}`}>
@@ -106,7 +118,7 @@ const PaperTypeSelector: React.FC<PaperTypeSelectorProps> = ({
           </div>
           <div className="text-right">
             <p className="text-2xl font-crimson font-bold text-green-900">
-              ~{selectedPaper.maxPhotos}
+              ~{selectedMaxPhotos}
             </p>
             <p className="text-sm text-green-600">photos/page</p>
           </div>
@@ -122,39 +134,47 @@ const PaperTypeSelector: React.FC<PaperTypeSelectorProps> = ({
           <h4 className="text-lg font-crimson font-medium text-gray-900">Available Sizes</h4>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {PAPER_SIZES.map((paper) => (
-            <button
-              key={paper.name}
-              onClick={() => onPaperChange(paper)}
-              className={`p-4 rounded-xl border-2 transition-all duration-300 text-left ${
-                selectedPaper.name === paper.name
-                  ? 'border-primary bg-gradient-to-br from-green-50 to-emerald-50 shadow-md scale-105'
-                  : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:scale-105'
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                    <span className="text-xl">📄</span>
+          {PAPER_SIZES.map((paper) => {
+            const paperMaxPhotos = calculatePhotosPerPage(
+              paper,
+              photoDimension.width,
+              photoDimension.height,
+              photoDimension.unit
+            );
+            return (
+              <button
+                key={paper.name}
+                onClick={() => onPaperChange({ ...paper, maxPhotos: paperMaxPhotos })}
+                className={`p-4 rounded-xl border-2 transition-all duration-300 text-left ${
+                  selectedPaper.name === paper.name
+                    ? 'border-primary bg-gradient-to-br from-green-50 to-emerald-50 shadow-md scale-105'
+                    : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:scale-105'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                      <span className="text-xl">📄</span>
+                    </div>
+                    <div>
+                      <h4 className="font-crimson font-medium text-gray-900 text-base">
+                        {paper.name}
+                      </h4>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {paper.width} × {paper.height} {paper.unit}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-crimson font-medium text-gray-900 text-base">
-                      {paper.name}
-                    </h4>
-                    <p className="text-sm text-gray-600 mt-1">
-                      {paper.width} × {paper.height} {paper.unit}
+                  <div className="text-right">
+                    <p className="text-lg font-crimson font-bold text-gray-900">
+                      ~{paperMaxPhotos}
                     </p>
+                    <p className="text-xs text-gray-500">photos</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-lg font-crimson font-bold text-gray-900">
-                    ~{paper.maxPhotos}
-                  </p>
-                  <p className="text-xs text-gray-500">photos</p>
-                </div>
-              </div>
-            </button>
-          ))}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -178,17 +198,17 @@ const PaperTypeSelector: React.FC<PaperTypeSelectorProps> = ({
             {/* Grid lines to show photo layout */}
             <div className="absolute inset-1 grid gap-0.5" 
                  style={{ 
-                   gridTemplateColumns: `repeat(${Math.ceil(Math.sqrt(selectedPaper.maxPhotos))}, 1fr)`,
-                   gridTemplateRows: `repeat(${Math.ceil(selectedPaper.maxPhotos / Math.ceil(Math.sqrt(selectedPaper.maxPhotos)))}, 1fr)`
+                   gridTemplateColumns: `repeat(${Math.ceil(Math.sqrt(selectedMaxPhotos))}, 1fr)`,
+                   gridTemplateRows: `repeat(${Math.ceil(selectedMaxPhotos / Math.ceil(Math.sqrt(selectedMaxPhotos)))}, 1fr)`
                  }}>
-              {Array.from({ length: selectedPaper.maxPhotos }).map((_, i) => (
+              {Array.from({ length: selectedMaxPhotos }).map((_, i) => (
                 <div key={i} className="bg-gradient-to-br from-blue-100 to-indigo-100 border border-blue-300 rounded-sm"></div>
               ))}
             </div>
           </div>
         </div>
         <p className="text-sm font-medium text-gray-600 text-center mt-3">
-          Approximate layout with {selectedPaper.maxPhotos} photos
+          Approximate layout with {selectedMaxPhotos} photos
         </p>
       </div>
 
@@ -198,26 +218,11 @@ const PaperTypeSelector: React.FC<PaperTypeSelectorProps> = ({
           <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">
             <span className="text-white text-xl">💡</span>
           </div>
-          <div className="flex-1">
-            <h5 className="text-lg font-crimson font-medium text-amber-800 mb-3">Printing Tips</h5>
-            <ul className="text-sm text-amber-700 space-y-2">
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Use high-quality photo paper for best results</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Print at 300 DPI or higher for sharp photos</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Check your printer settings for borderless printing</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Cut carefully along the guides for precise photos</span>
-              </li>
-            </ul>
+          <div className="space-y-1">
+            <h4 className="font-crimson font-medium text-amber-900 text-base">Printing Tip</h4>
+            <p className="text-sm text-amber-800 leading-relaxed">
+              When printing the generated PDF, make sure to set the scale to <span className="font-bold">"Actual Size"</span> or <span className="font-bold">"100%"</span> in your printer settings. Do not select "Fit to Page" as it will alter the official dimensions.
+            </p>
           </div>
         </div>
       </div>

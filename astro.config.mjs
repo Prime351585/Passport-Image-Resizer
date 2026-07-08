@@ -1,28 +1,47 @@
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react'; // Make sure you have @astrojs/react installed and configured
-import cloudflare from '@astrojs/cloudflare'; // Make sure you have @astrojs/cloudflare installed and configured
+import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
-  site: 'https://www.resize-it.com', // Replace with your actual domain
-  adapter: cloudflare({
-    // Cloudflare Adapter specific configurations, such as:
-    // imageService: 'passthrough', // If using Astro's image service
-    // runtime: {
-    //   mode: 'directory', // or 'worker'
-    // },
-  }),
-  integrations: [react(), sitemap()],
-  vite: {
-    resolve: {
-      alias: import.meta.env.PROD && {
-        "react-dom/server": "react-dom/server.edge",
-      },
+  site: 'https://www.resize-it.com',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de', 'fr', 'es', 'hi', 'ja', 'zh', 'pt', 'it', 'ru', 'ar', 'ko', 'tr', 'id', 'vi'],
+    routing: {
+      prefixDefaultLocale: false,
     },
+  },
+  integrations: [
+    react(), 
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+          de: 'de',
+          fr: 'fr',
+          es: 'es',
+          hi: 'hi',
+          ja: 'ja',
+          zh: 'zh',
+          pt: 'pt',
+          it: 'it',
+          ru: 'ru',
+          ar: 'ar',
+          ko: 'ko',
+          tr: 'tr',
+          id: 'id',
+          vi: 'vi',
+        }
+      }
+    })
+  ],
+  vite: {
     plugins: [tailwindcss()],
   },
-  server:{
-    host:true
+  server: {
+    host: true
   }
 });

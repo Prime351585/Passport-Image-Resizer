@@ -1,0 +1,53 @@
+{
+  "meta_title": "香港官方护照照片尺寸制作器 (40x50 毫米) | 2026年",
+  "meta_description": "在线创建 100% 合规的香港护照或签证照片。精确的 40x50 毫米（1.57x1.97 英寸）尺寸，需要白色背景。快速、私密的浏览器端工具。",
+  "h1": "香港护照照片尺寸和要求官方指南",
+  "subtitle": "调整大小、裁剪并编译符合香港官方生物识别护照标准的可打印网格。",
+  "tool_workspace": {
+    "h2": "交互式香港生物识别裁剪工具",
+    "description": "Upload your file to align with the built-in 香港 dimensions grid.没有图像发送到服务器； all canvas processing happens locally in JavaScript.",
+    "spec_badge_mm": "40×50毫米",
+    "spec_badge_in": "1.57 x 1.97 英寸",
+    "spec_background": "所需背景：白色"
+  },
+  "biometric_details": {
+    "h2": "香港官方生物识别比例",
+    "head_size_label": "头高比",
+    "head_size_text": "从下巴底部到头发顶部的距离必须占据垂直框架高度的大约 75%。",
+    "eye_height_label": "眼睛对齐线",
+    "eye_height_text": "您的眼睛必须在目标对齐框范围内垂直居中。"
+  },
+  "how_to": {
+    "title": "如何制作和打印香港护照照片",
+    "step1_title": "1. 初始化香港预设",
+    "step1_text": "裁剪窗口自动缩放至精确的 40x50 毫米规定尺寸。",
+    "step2_title": "2.本地图片上传",
+    "step2_text": "选择您的源照片。它在浏览器执行内存中保持完全安全。",
+    "step3_title": "3. 与生物识别叠加层对齐",
+    "step3_text": "缩放并移动图像，直到您的脸部与半透明头部和眼睛对齐层匹配。",
+    "step4_title": "4. 生成网格并保存",
+    "step4_text": "下载用于标准 4x6 英寸照片打印布局的单个优化图像文件或预先对齐的可打印模板表。"
+  },
+  "faq": {
+    "h2": "关于香港照片的常见问题",
+    "q1": "香港的官方背景颜色规则是什么？",
+    "a1": "政府需要一个坚实、统一的白色背景，不存在任何阴影、物体或纹理。",
+    "q2": "我可以在香港证件照片中佩戴眼镜或头饰吗？",
+    "a2": "除非有严格的医疗必要性（无眩光、色彩或厚镜框），否则必须摘下眼镜。允许佩戴宗教头饰，只要它能露出从下巴到前额的整个椭圆形脸部。",
+    "q3": "如何打印生成的香港数字文件？",
+    "a3": "下载我们编译的可打印纸张选项，将其保存到拇指驱动器，然后使用高质量 4x6 相纸标准设置在本地数码照相亭打印。"
+  },
+  "cross_link_footer": {
+    "title": "相关文档格式",
+    "text": "需要替代尺寸吗？查看香港签证尺寸要求或查找替代的全球标准文件格式。"
+  },
+  "country_code": "HK",
+  "inLanguage": "zh",
+  "raw_dimensions": {
+    "width_mm": 40,
+    "height_mm": 50,
+    "width_in": 1.57,
+    "height_in": 1.97,
+    "background": "White"
+  }
+}

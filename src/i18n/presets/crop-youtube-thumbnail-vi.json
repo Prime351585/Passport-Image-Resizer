@@ -1,0 +1,30 @@
+{
+  "meta_title": "Trình cắt hình ảnh YouTube miễn phí | Cắt thành hình vuông 16:9 trực tuyến",
+  "meta_description": "Cắt hình ảnh trực tuyến ngay lập tức để phù hợp với tỷ lệ khung hình chính thức của YouTube (16:9). Cắt xén dựa trên trình duyệt, riêng tư 100% mà không làm giảm chất lượng.",
+  "h1": "Trình cắt hình ảnh YouTube miễn phí",
+  "subtitle": "Cắt ảnh hoàn hảo cho YouTube. Cắt ngay lập tức đến độ phân giải chính xác 1280x720 pixel (16:9) mà không cần tải lên máy chủ.",
+  "tool_workspace": {
+    "h2": "Studio cắt xén YouTube tương tác",
+    "description": "Tải tệp của bạn lên để phù hợp với hộp cắt chính thức của YouTube (16:9). Được xử lý cục bộ trong trình duyệt của bạn.",
+    "spec_badge": "1280 x 720 pixel",
+    "spec_ratio": "Tỷ lệ: 16:9"
+  },
+  "how_to": {
+    "title": "Cách cắt cho YouTube trực tuyến",
+    "step1_title": "1. Tải hình ảnh của bạn lên",
+    "step1_text": "Chọn ảnh của bạn. Hình ảnh tải ngay lập tức vào bộ nhớ trình duyệt của bạn để đảm bảo sự riêng tư hoàn toàn.",
+    "step2_title": "2. Chọn cài đặt trước YouTube",
+    "step2_text": "Khung cắt ảnh tự động khóa theo tỷ lệ khung hình 16:9 chính thức.",
+    "step3_title": "3. Điều chỉnh và căn giữa",
+    "step3_text": "Kéo các tay cầm và tạo khung cho khuôn mặt hoặc chủ thể của bạn một cách hoàn hảo trong hộp cắt.",
+    "step4_title": "4. Lưu và tải xuống",
+    "step4_text": "Nhấp vào 'Cắt' để xử lý ảnh cục bộ và tải xuống tệp YouTube được tối ưu hóa của bạn."
+  },
+  "faq": {
+    "h2": "Câu hỏi thường gặp về Trình cắt ảnh trên YouTube",
+    "q1": "Kích thước chính thức cho bài đăng trên YouTube là gì?",
+    "a1": "Kích thước tiêu chuẩn được đề xuất là 1280x720 pixel, phù hợp với tỷ lệ khung hình 16:9.",
+    "q2": "Ảnh của tôi có được tải lên không?",
+    "a2": "Không. Công cụ xử lý hình ảnh phía máy khách trên trình duyệt của thiết bị, giữ an toàn cho dữ liệu của bạn."
+  }
+}

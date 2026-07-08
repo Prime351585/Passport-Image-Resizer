@@ -209,7 +209,7 @@ const PassportDimensionSelector: React.FC<PassportDimensionSelectorProps> = ({
                     value={selectedDimension.width}
                     onChange={(e) => onDimensionChange({
                       ...selectedDimension,
-                      width: parseInt(e.target.value) || 35,
+                      width: e.target.value === '' ? '' : (parseInt(e.target.value) || 0),
                       name: 'Custom'
                     })}
                     className="flex-1 px-3 py-2 text-sm font-medium border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
@@ -229,7 +229,7 @@ const PassportDimensionSelector: React.FC<PassportDimensionSelectorProps> = ({
                     value={selectedDimension.height}
                     onChange={(e) => onDimensionChange({
                       ...selectedDimension,
-                      height: parseInt(e.target.value) || 45,
+                      height: e.target.value === '' ? '' : (parseInt(e.target.value) || 0),
                       name: 'Custom'
                     })}
                     className="flex-1 px-3 py-2 text-sm font-medium border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"

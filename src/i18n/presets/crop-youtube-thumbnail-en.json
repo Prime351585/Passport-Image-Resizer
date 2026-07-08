@@ -1,0 +1,30 @@
+{
+  "meta_title": "Free YouTube Image Cropper | Crop to 16:9 Square Online",
+  "meta_description": "Crop images online instantly to fit the official YouTube aspect ratio (16:9). 100% private, browser-based cropping with zero quality loss.",
+  "h1": "Free YouTube Image Cropper",
+  "subtitle": "Crop photos perfectly for YouTube. Crop to exact 1280x720 pixels (16:9) instantly without server uploads.",
+  "tool_workspace": {
+    "h2": "Interactive YouTube Cropping Studio",
+    "description": "Upload your file to align with the official YouTube crop box (16:9). Processed locally in your browser.",
+    "spec_badge": "1280 x 720 px",
+    "spec_ratio": "Ratio: 16:9"
+  },
+  "how_to": {
+    "title": "How to Crop for YouTube Online",
+    "step1_title": "1. Upload Your Image",
+    "step1_text": "Select your photo. The image loads instantly in your browser memory for total privacy.",
+    "step2_title": "2. Choose YouTube Preset",
+    "step2_text": "The cropping frame locks automatically to the official 16:9 aspect ratio.",
+    "step3_title": "3. Adjust and Center",
+    "step3_text": "Drag the handles and frame your face or subject perfectly within the crop box.",
+    "step4_title": "4. Save and Download",
+    "step4_text": "Click 'Crop' to process the photo locally and download your optimized YouTube file."
+  },
+  "faq": {
+    "h2": "YouTube Photo Cropper FAQs",
+    "q1": "What is the official size for YouTube posts?",
+    "a1": "The standard recommended dimensions are 1280x720 pixels, which matches the 16:9 aspect ratio.",
+    "q2": "Are my photos uploaded?",
+    "a2": "No. The tool processes your image client-side on your device's browser, keeping your data secure."
+  }
+}

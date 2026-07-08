@@ -1,0 +1,50 @@
+{
+  "meta_title": "Ücretsiz Online Resim Yeniden Boyutlandırıcı | Görüntü Boyutunu Güvenli Bir Şekilde Değiştirin",
+  "meta_description": "Görüntüleri anında çevrimiçi olarak yeniden boyutlandırın. Genişliği, yüksekliği veya dosya boyutunu piksel, yüzde, inç veya cm cinsinden ayarlayın. JPG, PNG ve WebP için %100 özel, tarayıcı tarafında ölçeklendirme.",
+  "h1": "Ücretsiz Çevrimiçi Resim Boyutlandırıcı",
+  "subtitle": "Fotoğraflarınızı kaliteden ödün vermeden mükemmel şekilde ölçeklendirin. Baskı, sosyal medya veya web performansı için boyutları ayarlayın, boyutları değiştirin ve görüntüleri biçimlendirin; bunların tümü tarayıcınızda güvenli bir şekilde işlenir.",
+  "tool_workspace": {
+    "h2": "İnteraktif Fotoğraf Yeniden Boyutlandırma Stüdyosu",
+    "description": "Resminizi aşağıya sürükleyip bırakın. Resminizi anında yeniden boyutlandırmak için genişliği, yüksekliği veya hedef dosya boyutunu ayarlayın.",
+    "features_list": [
+      "Çoklu Birim Ölçeklendirme (Piksel, %, İnç, mm, cm)",
+      "En-Boy Oranını Kilitle (Bozulmanın Önlenmesi)",
+      "Akıllı Sıkıştırma (Dosya Boyutunu/KB'yi Azalt)",
+      "Sıfır Sunucu Yüklemesi (%100 Gizlilik)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Sosyal Medya ve Web için Anında Yeniden Boyutlandırın",
+    "description": "Boyutları tahmin etmeyin. İçeriğinizi büyük platformlara göre mükemmel şekilde ölçeklendirmek için tek tıklamayla hazır ayarlarımızı kullanın.",
+    "preset_1": "Instagram Meydanı (1080x1080px)",
+    "preset_2": "YouTube Küçük Resmi (1280x720 piksel)",
+    "preset_3": "Facebook Kapağı (1200x630px)",
+    "preset_4": "Pinterest Pini (1000x1500px)"
+  },
+  "how_to": {
+    "title": "Çevrimiçi Bir Görüntü Nasıl Yeniden Boyutlandırılır",
+    "step1_title": "1. Resminizi Yükleyin",
+    "step1_text": "Bir JPG, PNG, GIF veya WebP dosyası seçin. Görüntünüz uzak bir sunucuya yüklenmeden anında doğrudan tarayıcınızın belleğine yüklenir.",
+    "step2_title": "2. Boyutları veya Yüzdeyi Seçin",
+    "step2_text": "Tam olarak yeni genişlik ve yükseklik değerlerini girin, standart bir baskı boyutu seçin (4x6 inç gibi) veya bir yüzde ölçeği seçin.",
+    "step3_title": "3. En Boy Oranını Kilitle",
+    "step3_text": "Yeniden boyutlandırma sırasında fotoğrafınızın gerilmesini, sıkılmasını veya bozulmasını önlemek için 'Oranları Kilitle' zincir simgesinin işaretlendiğinden emin olun.",
+    "step4_title": "4. Uygula ve İndir",
+    "step4_text": "Yüksek kaliteli yeniden örnekleme algoritmalarını yerel olarak uygulamak için 'Görüntüyü Yeniden Boyutlandır'ı tıklayın ve ardından optimize edilmiş dosyanızı indirin."
+  },
+  "faq": {
+    "h2": "Görüntü Yeniden Boyutlandırıcı SSS",
+    "q1": "Resmimi yeniden boyutlandırmak onu bulanıklaştırır mı yoksa kalitesini kaybeder mi?",
+    "a1": "Görüntü boyutunun küçültülmesi keskin kaliteyi korur. Bir görüntüyü büyütmek (yükseltme) bir miktar bulanıklığa neden olabilir, ancak aracımız, maksimum görsel kaliteyi korumak için gelişmiş HTML5 Canvas yüksek kaliteli yeniden örnekleme algoritmalarını (bikübik enterpolasyon gibi) kullanır.",
+    "q2": "Resimlerim güvenli ve özel mi?",
+    "a2": "Evet, tamamen. Bulut sunucularına hiçbir dosya yüklenmez. Tüm yeniden boyutlandırma işlemleri, cihazınızın tarayıcısında, JavaScript'te güvenli bir şekilde gerçekleştirilir.",
+    "q3": "Bir görüntüyü yazdırmak için yeniden boyutlandırabilir miyim?",
+    "a3": "Evet! Birim seçiciyi 'Piksel' yerine 'İnç', 'Milimetre' veya 'Santimetre' olarak değiştirin. Fotoğrafları standart baskı boyutlarına göre kolayca yeniden boyutlandırabilirsiniz.",
+    "q4": "Bu araçla dosya boyutunu (KB/MB) azaltabilir miyim?",
+    "a4": "Evet, JPG/WebP çıktıları için piksel boyutlarını azaltarak veya 'Kalite' kaydırıcısını ayarlayarak, daha hızlı web yükleme veya e-posta ekleme için dosya boyutunu önemli ölçüde sıkıştırabilirsiniz.",
+    "q5": "Hızlı Ön Ayarlar nedir?",
+    "a5": "Hızlı Ön Ayarlar, tek bir tıklamayla görsellerinizi Instagram, YouTube, Facebook ve daha fazlası gibi platformlar için mükemmel boyutlara anında yeniden boyutlandırmanıza olanak tanır.",
+    "q6": "Farklı yeniden boyutlandırma yöntemleri nasıl çalışır?",
+    "a6": "Dört gelişmiş yeniden boyutlandırma yöntemi sunuyoruz: 'Tam', görüntüyü tam boyutlarınıza göre genişletir (bozulabilir). 'Uydur', en boy oranını korurken görüntüyü boyutların içine sığacak şekilde ölçeklendirir. 'Doldur' boyutları doldurur ve kenarları kırpabilir. Boyutlara mükemmel uyum sağlamak için mahsulleri doğrudan merkezden 'kırpın'."
+  }
+}

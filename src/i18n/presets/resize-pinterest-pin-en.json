@@ -1,0 +1,30 @@
+{
+  "meta_title": "Free Pinterest Image Resizer | Resize to 1000x1500 px Online",
+  "meta_description": "Resize your images instantly to fit Pinterest standard sizes. Change size to exact 1000x1500 px (2:3) online. 100% private and secure.",
+  "h1": "Free Pinterest Image Resizer",
+  "subtitle": "Scale your photos perfectly for Pinterest. Resize to exact 1000x1500 px (2:3) instantly with no quality loss.",
+  "tool_workspace": {
+    "h2": "Interactive Pinterest Resizing Studio",
+    "description": "Upload your file to resize to official Pinterest specs. Processed locally in your browser.",
+    "spec_badge": "1000 x 1500 px",
+    "spec_ratio": "Ratio: 2:3"
+  },
+  "how_to": {
+    "title": "How to Resize for Pinterest Online",
+    "step1_title": "1. Upload Your Image",
+    "step1_text": "Select your JPG, PNG, or WebP. The file loads in client-side memory instantly.",
+    "step2_title": "2. Select Preset size",
+    "step2_text": "The width and height fields lock automatically to 1000x1500 px.",
+    "step3_title": "3. Fit or Stretch Option",
+    "step3_text": "Choose whether to stretch the image to fit, pad the background, or crop the edges.",
+    "step4_title": "4. Download Resized Image",
+    "step4_text": "Click 'Resize' and download your perfectly scaled Pinterest file."
+  },
+  "faq": {
+    "h2": "Pinterest Photo Resizer FAQs",
+    "q1": "Will my resized image stretch or distort?",
+    "a1": "No. By using standard aspect ratios and padding options, the resizer keeps your photos perfectly proportioned.",
+    "q2": "Are my images secure?",
+    "a2": "Yes. No files are uploaded to external servers. All operations happen in JavaScript on your device's browser."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "meta_title": "Pengubah Gambar Online Gratis | Ubah Ukuran Gambar dengan Aman",
+  "meta_description": "Ubah ukuran gambar secara online secara instan. Sesuaikan lebar, tinggi, atau ukuran file dalam piksel, persentase, inci, atau cm. 100% pribadi, penskalaan sisi browser untuk JPG, PNG, dan WebP.",
+  "h1": "Pengubah Gambar Online Gratis",
+  "subtitle": "Skala foto Anda dengan sempurna tanpa kehilangan kualitas. Sesuaikan dimensi, ubah ukuran, dan format gambar untuk kinerja cetak, media sosial, atau web—semua diproses dengan aman di browser Anda.",
+  "tool_workspace": {
+    "h2": "Studio Pengubahan Ukuran Foto Interaktif",
+    "description": "Seret dan letakkan gambar Anda di bawah. Sesuaikan lebar, tinggi, atau ukuran file target untuk mengubah ukuran gambar Anda secara instan.",
+    "features_list": [
+      "Penskalaan Multi-Unit (Piksel, %, Inci, mm, cm)",
+      "Kunci Rasio Aspek (Mencegah Distorsi)",
+      "Kompresi Cerdas (Mengurangi Ukuran File/KB)",
+      "Tanpa Pengunggahan Server (Privasi 100%)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Ubah ukuran untuk Media Sosial & Web Secara Instan",
+    "description": "Jangan menebak dimensinya. Gunakan preset sekali klik kami untuk menskalakan konten Anda dengan sempurna untuk platform utama.",
+    "preset_1": "Kotak Instagram (1080x1080 piksel)",
+    "preset_2": "Gambar Kecil YouTube (1280x720 piksel)",
+    "preset_3": "Sampul Facebook (1200x630 piksel)",
+    "preset_4": "Pin Pinterest (1000x1500 piksel)"
+  },
+  "how_to": {
+    "title": "Cara Mengubah Ukuran Gambar Secara Online",
+    "step1_title": "1. Unggah Gambar Anda",
+    "step1_text": "Pilih file JPG, PNG, GIF, atau WebP. Gambar Anda langsung dimuat ke dalam memori browser Anda tanpa diunggah ke server jarak jauh.",
+    "step2_title": "2. Pilih Dimensi atau Persentase",
+    "step2_text": "Masukkan nilai lebar dan tinggi baru, pilih ukuran cetak standar (seperti 4x6 inci), atau pilih skala persentase.",
+    "step3_title": "3. Kunci Rasio Aspek",
+    "step3_text": "Pastikan ikon rantai 'Kunci Proporsi' dicentang untuk mencegah peregangan, kompresi, atau distorsi foto Anda selama pengubahan ukuran.",
+    "step4_title": "4. Terapkan dan Unduh",
+    "step4_text": "Klik 'Ubah Ukuran Gambar' untuk menerapkan algoritme pengambilan sampel ulang berkualitas tinggi secara lokal, lalu unduh file yang dioptimalkan."
+  },
+  "faq": {
+    "h2": "FAQ Pengubah Ukuran Gambar",
+    "q1": "Apakah mengubah ukuran gambar akan membuatnya buram atau menurunkan kualitas?",
+    "a1": "Mengurangi ukuran gambar menjaga kualitas tajam. Memperbesar gambar (meningkatkan skala) dapat menyebabkan beberapa keburaman, namun alat kami menggunakan algoritma pengambilan sampel ulang HTML5 Canvas dengan ketelitian tinggi (seperti interpolasi bikubik) untuk mempertahankan kualitas visual maksimum.",
+    "q2": "Apakah gambar saya aman dan pribadi?",
+    "a2": "Ya, sepenuhnya. Tidak ada file yang diunggah ke server cloud. Semua operasi pengubahan ukuran terjadi dalam JavaScript dengan aman di browser perangkat Anda.",
+    "q3": "Bisakah saya mengubah ukuran gambar untuk dicetak?",
+    "a3": "Ya! Alihkan pemilih satuan dari 'Piksel' ke 'Inci', 'Milimeter', atau 'Sentimeter'. Anda dapat dengan mudah mengubah ukuran foto ke dimensi cetak standar.",
+    "q4": "Bisakah saya memperkecil ukuran file (KB/MB) dengan alat ini?",
+    "a4": "Ya, dengan mengurangi dimensi piksel atau menyesuaikan penggeser 'Kualitas' untuk keluaran JPG/WebP, Anda dapat mengompresi ukuran file secara signifikan untuk mempercepat pemuatan web atau lampiran email.",
+    "q5": "Apa itu Preset Cepat?",
+    "a5": "Preset Cepat memungkinkan Anda mengubah ukuran gambar secara instan ke dimensi sempurna untuk platform seperti Instagram, YouTube, Facebook, dan lainnya dengan satu klik.",
+    "q6": "Bagaimana cara kerja berbagai metode pengubahan ukuran?",
+    "a6": "Kami menawarkan empat metode pengubahan ukuran tingkat lanjut: 'Tepat' merenggangkan gambar ke dimensi persis Anda (dapat terdistorsi). 'Fit' menskalakan gambar agar sesuai dengan dimensi sambil mempertahankan rasio aspek. 'Isi' mengisi dimensi dan dapat memotong tepinya. 'Pangkas' tanaman langsung dari tengah agar sesuai dengan dimensinya."
+  }
+}

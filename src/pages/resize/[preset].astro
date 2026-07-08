@@ -1,0 +1,43 @@
+---
+import ToolPageLayout from '../../layouts/ToolPageLayout.astro';
+import ImageToolContainer from '../../components/ImageToolContainer';
+import { getPresetHreflangAlternates, getPresetUrl, RESIZE_PRESETS } from '../../utils/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  const allPresetFiles = import.meta.glob('../../i18n/presets/resize-*-en.json', { eager: true });
+
+  for (const presetId of RESIZE_PRESETS) {
+    const filePath = `../../i18n/presets/resize-${presetId}-en.json`;
+    const presetDataModule = allPresetFiles[filePath] as any;
+    
+    if (presetDataModule) {
+      paths.push({
+        params: { preset: presetId }, // In English we just use the ID as slug
+        props: { presetId, presetData: presetDataModule.default }
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { presetId, presetData } = Astro.props;
+const canonicalUrl = getPresetUrl('resize', presetId, 'en');
+const hreflangAlternates = getPresetHreflangAlternates('resize', presetId);
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Resize', url: '/resize' },
+  { name: presetData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang="en"
+  toolData={presetData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  <ImageToolContainer client:load slot="tool" />
+</ToolPageLayout>

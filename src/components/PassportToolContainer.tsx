@@ -8,8 +8,8 @@ import StickyPreview from './StickyPreview';
 
 export interface PassportDimension {
   name: string;
-  width: number;
-  height: number;
+  width: number | '';
+  height: number | '';
   unit: 'mm' | 'in';
   description: string;
   country?: string;
@@ -137,6 +137,7 @@ const PassportToolContainer: React.FC = () => {
               <PaperTypeSelector
                 selectedPaper={selectedPaper}
                 onPaperChange={setSelectedPaper}
+                photoDimension={selectedDimension}
                 className="w-full"
               />
             )}

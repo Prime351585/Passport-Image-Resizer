@@ -1,0 +1,30 @@
+{
+  "meta_title": "Kostenloser YouTube-Bildbeschnitt | Online auf 16:9 quadratisch zuschneiden",
+  "meta_description": "Schneiden Sie Bilder sofort online zu, um sie an das offizielle YouTube-Seitenverhältnis (16:9) anzupassen. 100 % privates, browserbasiertes Zuschneiden ohne Qualitätsverlust.",
+  "h1": "Kostenloser YouTube-Bildbeschneider",
+  "subtitle": "Fotos perfekt für YouTube zuschneiden. Schneiden Sie sofort und ohne Server-Uploads auf exakt 1280 x 720 Pixel (16:9) zu.",
+  "tool_workspace": {
+    "h2": "Interaktives YouTube-Zuschneidestudio",
+    "description": "Laden Sie Ihre Datei hoch, um sie an den offiziellen YouTube-Zuschnittrahmen (16:9) anzupassen. Lokal in Ihrem Browser verarbeitet.",
+    "spec_badge": "1280 x 720 Pixel",
+    "spec_ratio": "Verhältnis: 16:9"
+  },
+  "how_to": {
+    "title": "So beschneiden Sie es für YouTube Online",
+    "step1_title": "1. Laden Sie Ihr Bild hoch",
+    "step1_text": "Wählen Sie Ihr Foto aus. Das Bild wird für absolute Privatsphäre sofort in den Speicher Ihres Browsers geladen.",
+    "step2_title": "2. Wählen Sie YouTube-Voreinstellung",
+    "step2_text": "Der Zuschneiderahmen stellt sich automatisch auf das offizielle Seitenverhältnis 16:9 ein.",
+    "step3_title": "3. Anpassen und zentrieren",
+    "step3_text": "Ziehen Sie die Griffe und rahmen Sie Ihr Gesicht oder Motiv perfekt in den Zuschneiderahmen ein.",
+    "step4_title": "4. Speichern und herunterladen",
+    "step4_text": "Klicken Sie auf „Zuschneiden“, um das Foto lokal zu verarbeiten und Ihre optimierte YouTube-Datei herunterzuladen."
+  },
+  "faq": {
+    "h2": "Häufig gestellte Fragen zum YouTube Photo Cropper",
+    "q1": "Was ist die offizielle Größe für YouTube-Beiträge?",
+    "a1": "Die empfohlenen Standardabmessungen betragen 1280 x 720 Pixel, was dem Seitenverhältnis 16:9 entspricht.",
+    "q2": "Werden meine Fotos hochgeladen?",
+    "a2": "Nein. Das Tool verarbeitet Ihr Bild clientseitig im Browser Ihres Geräts und sorgt so für die Sicherheit Ihrer Daten."
+  }
+}

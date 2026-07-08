@@ -1,0 +1,53 @@
+{
+  "meta_title": "Criador de Tamanho Oficial de Foto para Passaporte de Portugal (35x45 mm) | 2026",
+  "meta_description": "Crie um passaporte português 100% compatível ou uma foto de visto online. Dimensões exatas de 35x45 mm (1,38x1,77 pol.), Fundo branco sólido liso necessário. Ferramenta rápida e privada do navegador.",
+  "h1": "Guia oficial de tamanho e requisitos da foto do passaporte de Portugal",
+  "subtitle": "Redimensione, recorte e compile uma grelha imprimível que corresponda aos padrões biométricos oficiais do passaporte português.",
+  "tool_workspace": {
+    "h2": "Ferramenta interativa de corte biométrico de Portugal",
+    "description": "Carregue o seu arquivo para alinhar com a grade de dimensões integrada de Portugal. Nenhuma imagem é enviada aos servidores; todo o processamento do canvas acontece localmente em JavaScript.",
+    "spec_badge_mm": "35x45mm",
+    "spec_badge_in": "1,38 x 1,77 pol.",
+    "spec_background": "Cenário necessário: Branco sólido liso"
+  },
+  "biometric_details": {
+    "h2": "Proporções Biométricas Oficiais para Portugal",
+    "head_size_label": "Proporção de altura da cabeça",
+    "head_size_text": "A distância da parte inferior do queixo até o topo do cabelo deve ocupar aproximadamente 75% da altura vertical da moldura.",
+    "eye_height_label": "Linha de alinhamento dos olhos",
+    "eye_height_text": "Seus olhos devem estar centralizados verticalmente dentro dos limites do quadro de alinhamento do alvo."
+  },
+  "how_to": {
+    "title": "Como fazer e imprimir uma foto para passaporte de Portugal",
+    "step1_title": "1. Inicialize as predefinições de Portugal",
+    "step1_text": "A janela de corte é dimensionada automaticamente para o tamanho regulamentar exato de 35x45 mm.",
+    "step2_title": "2. Upload de imagem local",
+    "step2_text": "Selecione sua foto de origem. Ele permanece totalmente protegido na memória de execução do navegador.",
+    "step3_title": "3. Alinhe com sobreposições biométricas",
+    "step3_text": "Dimensione e mova sua imagem até que seu rosto corresponda às camadas translúcidas de alinhamento da cabeça e dos olhos.",
+    "step4_title": "4. Gere grade e salve",
+    "step4_text": "Baixe um único arquivo de imagem otimizado ou uma folha de modelo pré-alinhada para impressão para layouts de impressão de fotos padrão de 4 x 6 polegadas."
+  },
+  "faq": {
+    "h2": "Perguntas frequentes sobre fotos de Portugal",
+    "q1": "Qual é a regra oficial de cor de fundo para Portugal?",
+    "a1": "O governo exige um cenário Branco sólido liso sólido e uniforme, sem sombras, objetos ou texturas presentes.",
+    "q2": "Posso usar óculos ou capacete na foto do meu documento em Portugal?",
+    "a2": "Os óculos devem ser removidos, a menos que seja estritamente necessário do ponto de vista médico (sem brilho, coloração ou armações grossas). Chapéus religiosos são permitidos desde que revelem todo o oval do rosto, do queixo à testa.",
+    "q3": "Como imprimo meu arquivo digital de Portugal gerado?",
+    "a3": "Baixe nossa opção de folha compilada para impressão, salve-a em um pen drive e imprima-a em um quiosque fotográfico digital local usando configurações padrão de papel fotográfico 4x6 de alta qualidade."
+  },
+  "cross_link_footer": {
+    "title": "Formatos de documentos relacionados",
+    "text": "Precisa de um tamanho alternativo? Veja os requisitos para as dimensões do Visto de Portugal ou procure formatos alternativos de documentação padrão global."
+  },
+  "country_code": "PT",
+  "inLanguage": "pt",
+  "raw_dimensions": {
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "Plain Solid White"
+  }
+}

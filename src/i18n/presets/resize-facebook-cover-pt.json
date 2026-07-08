@@ -1,0 +1,30 @@
+{
+  "meta_title": "Redimensionador de imagens do Facebook grátis | Redimensionar para 1200x630 px on-line",
+  "meta_description": "Redimensione suas imagens instantaneamente para caber nos tamanhos padrão do Facebook. Altere o tamanho para exatos 1200x630 px (1,9:1) online. 100% privado e seguro.",
+  "h1": "Redimensionador de imagens do Facebook grátis",
+  "subtitle": "Dimensione suas fotos perfeitamente para o Facebook. Redimensione para exatos 1200x630 px (1,9:1) instantaneamente, sem perda de qualidade.",
+  "tool_workspace": {
+    "h2": "Estúdio interativo de redimensionamento do Facebook",
+    "description": "Carregue seu arquivo para redimensionar de acordo com as especificações oficiais do Facebook. Processado localmente no seu navegador.",
+    "spec_badge": "1200 x 630 pixels",
+    "spec_ratio": "Proporção: 1,9:1"
+  },
+  "how_to": {
+    "title": "Como redimensionar para Facebook Online",
+    "step1_title": "1. Envie sua imagem",
+    "step1_text": "Selecione seu JPG, PNG ou WebP. O arquivo é carregado instantaneamente na memória do cliente.",
+    "step2_title": "2. Selecione o tamanho predefinido",
+    "step2_text": "Os campos de largura e altura são bloqueados automaticamente em 1200x630 px.",
+    "step3_title": "3. Opção de ajuste ou alongamento",
+    "step3_text": "Escolha se deseja esticar a imagem para caber, preencher o fundo ou cortar as bordas.",
+    "step4_title": "4. Baixe a imagem redimensionada",
+    "step4_text": "Clique em 'Redimensionar' e baixe seu arquivo do Facebook perfeitamente dimensionado."
+  },
+  "faq": {
+    "h2": "Perguntas frequentes sobre o redimensionador de fotos do Facebook",
+    "q1": "Minha imagem redimensionada será esticada ou distorcida?",
+    "a1": "Não. Ao usar proporções padrão e opções de preenchimento, o redimensionador mantém suas fotos perfeitamente proporcionadas.",
+    "q2": "Minhas imagens estão seguras?",
+    "a2": "Sim. Nenhum arquivo é carregado em servidores externos. Todas as operações acontecem em JavaScript no navegador do seu dispositivo."
+  }
+}

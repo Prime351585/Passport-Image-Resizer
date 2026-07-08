@@ -25,8 +25,8 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({
     // Convert everything to mm for calculation
     const paperWidthMm = paperSize.unit === 'mm' ? paperSize.width : paperSize.width * 25.4;
     const paperHeightMm = paperSize.unit === 'mm' ? paperSize.height : paperSize.height * 25.4;
-    const photoWidthMm = dimension.unit === 'mm' ? dimension.width : dimension.width * 25.4;
-    const photoHeightMm = dimension.unit === 'mm' ? dimension.height : dimension.height * 25.4;
+    const photoWidthMm = dimension.unit === 'mm' ? (Number(dimension.width) || 35) : (Number(dimension.width) || 1.38) * 25.4;
+    const photoHeightMm = dimension.unit === 'mm' ? (Number(dimension.height) || 45) : (Number(dimension.height) || 1.77) * 25.4;
     
     // Add margins (5mm on each side)
     const usableWidth = paperWidthMm - 10;
@@ -55,11 +55,11 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({
       : Math.round(paperSize.height * dpi);
     
     const photoWidthPx = dimension.unit === 'mm'
-      ? Math.round((dimension.width * dpi) / 25.4)
-      : Math.round(dimension.width * dpi);
+      ? Math.round(((Number(dimension.width) || 35) * dpi) / 25.4)
+      : Math.round((Number(dimension.width) || 1.38) * dpi);
     const photoHeightPx = dimension.unit === 'mm'
-      ? Math.round((dimension.height * dpi) / 25.4)
-      : Math.round(dimension.height * dpi);
+      ? Math.round(((Number(dimension.height) || 45) * dpi) / 25.4)
+      : Math.round((Number(dimension.height) || 1.77) * dpi);
 
     canvas.width = paperWidthPx;
     canvas.height = paperHeightPx;

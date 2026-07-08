@@ -1,0 +1,30 @@
+{
+  "meta_title": "Ridimensionatore di immagini Pinterest gratuito | Ridimensiona a 1000x1500 px Online",
+  "meta_description": "Ridimensiona istantaneamente le tue immagini per adattarle alle dimensioni standard di Pinterest. Modifica le dimensioni online esattamente a 1000x1500 px (2:3). 100% privato e sicuro.",
+  "h1": "Ridimensionatore di immagini Pinterest gratuito",
+  "subtitle": "Ridimensiona perfettamente le tue foto per Pinterest. Ridimensiona istantaneamente a 1000x1500 px (2:3) esatti senza perdita di qualità.",
+  "tool_workspace": {
+    "h2": "Studio interattivo di ridimensionamento di Pinterest",
+    "description": "Carica il tuo file per ridimensionarlo secondo le specifiche ufficiali di Pinterest. Elaborato localmente nel tuo browser.",
+    "spec_badge": "1000 x 1500 pixel",
+    "spec_ratio": "Rapporto: 2:3"
+  },
+  "how_to": {
+    "title": "Come ridimensionare per Pinterest Online",
+    "step1_title": "1. Carica la tua immagine",
+    "step1_text": "Seleziona il tuo JPG, PNG o WebP. Il file viene caricato immediatamente nella memoria lato client.",
+    "step2_title": "2. Selezionare Dimensioni preimpostate",
+    "step2_text": "I campi larghezza e altezza si bloccano automaticamente su 1000x1500 px.",
+    "step3_title": "3. Opzione Adatta o Allunga",
+    "step3_text": "Scegli se allungare l'immagine per adattarla, riempire lo sfondo o ritagliare i bordi.",
+    "step4_title": "4. Scarica l'immagine ridimensionata",
+    "step4_text": "Fai clic su \"Ridimensiona\" e scarica il file Pinterest perfettamente ridimensionato."
+  },
+  "faq": {
+    "h2": "Domande frequenti sul ridimensionatore di foto Pinterest",
+    "q1": "L'immagine ridimensionata si allungherà o distorcerà?",
+    "a1": "No. Utilizzando proporzioni standard e opzioni di riempimento, il ridimensionatore mantiene le tue foto perfettamente proporzionate.",
+    "q2": "Le mie immagini sono sicure?",
+    "a2": "SÌ. Nessun file viene caricato su server esterni. Tutte le operazioni avvengono in JavaScript sul browser del tuo dispositivo."
+  }
+}

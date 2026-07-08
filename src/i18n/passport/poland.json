@@ -1,0 +1,53 @@
+{
+  "meta_title": "Official Poland Passport Photo Size Maker (35x45 mm) | 2026",
+  "meta_description": "Create a 100% compliant Poland passport or visa photo online. Exact 35x45 mm (1.38x1.77 in) dimensions, required White background. Fast, private browser-side tool.",
+  "h1": "Official Poland Passport Photo Size & Requirements Guide",
+  "subtitle": "Resize, crop, and compile a printable grid matching official Poland biometric passport standards.",
+  "tool_workspace": {
+    "h2": "Interactive Poland Biometric Cropping Tool",
+    "description": "Upload your file to align with the built-in Poland dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
+    "spec_badge_mm": "35 x 45 mm",
+    "spec_badge_in": "1.38 x 1.77 in",
+    "spec_background": "Required Backdrop: White"
+  },
+  "biometric_details": {
+    "h2": "Official Biometric Proportions for Poland",
+    "head_size_label": "Head Height Ratio",
+    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
+    "eye_height_label": "Eye Alignment Line",
+    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  },
+  "how_to": {
+    "title": "How to Make and Print a Poland Passport Photo",
+    "step1_title": "1. Initialize Poland Presets",
+    "step1_text": "The cropping window scales automatically to the exact 35x45 mm regulation size.",
+    "step2_title": "2. Local Image Upload",
+    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
+    "step3_title": "3. Align with Biometric Overlays",
+    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
+    "step4_title": "4. Generate Grid and Save",
+    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+  },
+  "faq": {
+    "h2": "Frequently Asked Questions about Poland Photos",
+    "q1": "What is the official background color rule for Poland?",
+    "a1": "The government requires a solid, uniform White backdrop with no shadows, objects, or textures present.",
+    "q2": "Can I wear glasses or headgear in my Poland document photo?",
+    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
+    "q3": "How do I print my generated digital Poland file?",
+    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
+  },
+  "cross_link_footer": {
+    "title": "Related Document Formats",
+    "text": "Need an alternative size? View requirements for Poland Visa dimensions or look up alternative global standard documentation formats."
+  },
+  "country_code": "PL",
+  "inLanguage": "en",
+  "raw_dimensions": {
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "White"
+  }
+}

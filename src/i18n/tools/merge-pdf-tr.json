@@ -1,0 +1,44 @@
+{
+  "meta_title": "Free Online PDF PDF Merger | Merge PDF Photos & Pictures Securely",
+  "meta_description": "Merge PDF pdfs online instantly. Use custom aspect ratios or presets for Instagram, YouTube, and Facebook. 100% private, browser-based merge pdfping with no quality loss.",
+  "h1": "Free Online PDF PDF Merger",
+  "subtitle": "Frame your photos perfectly. Merge PDF out distractions, adjust aspect ratios, and format for social media instantly—all processed securely within your browser.",
+  "tool_workspace": {
+    "h2": "Interactive Photo Merge PDFping Studio",
+    "description": "Drag and drop your pdf below. Use the handles to define your merge pdf box or select a preset ratio.",
+    "features_list": [
+      "Custom Freeform Merge PDFping",
+      "Fixed Aspect Ratios (1:1, 16:9, 4:3, 3:2)",
+      "Circular Merge PDF for Profile Pictures",
+      "Zero Server Uploads (Total Privacy)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Merge PDF for Social Media Instantly",
+    "description": "Don't guess the dimensions. Use our one-click presets to perfectly frame your content for any platform.",
+    "preset_1": "Instagram Square (1:1)",
+    "preset_2": "YouTube Thumbnail (16:9)",
+    "preset_3": "Twitter/X Header (3:1)",
+    "preset_4": "Pinterest Pin (2:3)"
+  },
+  "how_to": {
+    "title": "How to Merge PDF an PDF Online",
+    "step1_title": "1. Upload Your PDF",
+    "step1_text": "Select a PDF files file. The pdf loads instantly in your browser without uploading to a remote server.",
+    "step2_title": "2. Choose Your Ratio",
+    "step2_text": "Select a fixed aspect ratio or drag the corner handles to create a custom merge pdf frame.",
+    "step3_title": "3. Adjust and Frame",
+    "step3_text": "Pan your pdf within the merge pdf box to center your main subject and eliminate background distractions.",
+    "step4_title": "4. Apply and Download",
+    "step4_text": "Click 'Merge PDF PDF' to process the file locally and download your perfectly framed photo."
+  },
+  "faq": {
+    "h2": "Merge PDFping Tool FAQs",
+    "q1": "Will my merge pdfped pdf lose quality?",
+    "a1": "No. Our tool performs a high-fidelity merge pdf, retaining the original resolution and color profile of the selected area.",
+    "q2": "Are my pdfs uploaded to your servers?",
+    "a2": "Absolutely not. This tool utilizes modern HTML5 Canvas technology to perform all merge pdfping locally on your device's browser.",
+    "q3": "Can I merge pdf an pdf into a circle?",
+    "a3": "Yes! Select the 'Circular Merge PDF' option in the toolbar, which is perfect for generating profile pictures or avatars with transparent PNG backgrounds."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta_title": "Ridimensionatore immagini YouTube gratuito | Ridimensiona a 1280x720 px Online",
+  "meta_description": "Ridimensiona istantaneamente le tue immagini per adattarle alle dimensioni standard di YouTube. Modifica le dimensioni online esattamente a 1280x720 px (16:9). 100% privato e sicuro.",
+  "h1": "Ridimensionatore di immagini YouTube gratuito",
+  "subtitle": "Ridimensiona perfettamente le tue foto per YouTube. Ridimensiona istantaneamente a 1280x720 px (16:9) esatti senza perdita di qualità.",
+  "tool_workspace": {
+    "h2": "Studio interattivo di ridimensionamento di YouTube",
+    "description": "Carica il tuo file per ridimensionarlo secondo le specifiche ufficiali di YouTube. Elaborato localmente nel tuo browser.",
+    "spec_badge": "1280 x 720 pixel",
+    "spec_ratio": "Rapporto: 16:9"
+  },
+  "how_to": {
+    "title": "Come ridimensionare per YouTube Online",
+    "step1_title": "1. Carica la tua immagine",
+    "step1_text": "Seleziona il tuo JPG, PNG o WebP. Il file viene caricato immediatamente nella memoria lato client.",
+    "step2_title": "2. Selezionare Dimensioni preimpostate",
+    "step2_text": "I campi larghezza e altezza si bloccano automaticamente a 1280x720 px.",
+    "step3_title": "3. Opzione Adatta o Allunga",
+    "step3_text": "Scegli se allungare l'immagine per adattarla, riempire lo sfondo o ritagliare i bordi.",
+    "step4_title": "4. Scarica l'immagine ridimensionata",
+    "step4_text": "Fai clic su \"Ridimensiona\" e scarica il file YouTube perfettamente ridimensionato."
+  },
+  "faq": {
+    "h2": "Domande frequenti sul ridimensionatore di foto di YouTube",
+    "q1": "L'immagine ridimensionata si allungherà o distorcerà?",
+    "a1": "No. Utilizzando proporzioni standard e opzioni di riempimento, il ridimensionatore mantiene le tue foto perfettamente proporzionate.",
+    "q2": "Le mie immagini sono sicure?",
+    "a2": "SÌ. Nessun file viene caricato su server esterni. Tutte le operazioni avvengono in JavaScript sul browser del tuo dispositivo."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "meta_title": "Trình chỉnh sửa hình ảnh trực tuyến miễn phí | Thay đổi kích thước hình ảnh một cách an toàn",
+  "meta_description": "Thay đổi kích thước hình ảnh trực tuyến ngay lập tức. Điều chỉnh chiều rộng, chiều cao hoặc kích thước tệp theo pixel, phần trăm, inch hoặc cm. Chia tỷ lệ phía trình duyệt, riêng tư 100% cho JPG, PNG và WebP.",
+  "h1": "Trình chỉnh sửa hình ảnh trực tuyến miễn phí",
+  "subtitle": "Chia tỷ lệ ảnh của bạn một cách hoàn hảo mà không làm giảm chất lượng. Điều chỉnh kích thước, thay đổi kích thước và định dạng hình ảnh để in, truyền thông xã hội hoặc hiệu suất web—tất cả đều được xử lý an toàn trong trình duyệt của bạn.",
+  "tool_workspace": {
+    "h2": "Studio thay đổi kích thước ảnh tương tác",
+    "description": "Kéo và thả hình ảnh của bạn bên dưới. Điều chỉnh chiều rộng, chiều cao hoặc kích thước tệp mục tiêu để thay đổi kích thước hình ảnh của bạn ngay lập tức.",
+    "features_list": [
+      "Chia tỷ lệ nhiều đơn vị (Pixel, %, Inch, mm, cm)",
+      "Khóa tỷ lệ khung hình (Ngăn ngừa biến dạng)",
+      "Nén thông minh (Giảm kích thước tệp/KB)",
+      "Không tải lên máy chủ (100% quyền riêng tư)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Thay đổi kích thước cho phương tiện truyền thông xã hội và web ngay lập tức",
+    "description": "Đừng đoán kích thước. Sử dụng các cài đặt trước chỉ bằng một cú nhấp chuột của chúng tôi để mở rộng quy mô nội dung của bạn một cách hoàn hảo cho các nền tảng chính.",
+    "preset_1": "Quảng trường Instagram (1080x1080px)",
+    "preset_2": "Hình thu nhỏ của YouTube (1280x720px)",
+    "preset_3": "Ảnh bìa Facebook (1200x630px)",
+    "preset_4": "Ghim của Pinterest (1000x1500px)"
+  },
+  "how_to": {
+    "title": "Cách thay đổi kích thước hình ảnh trực tuyến",
+    "step1_title": "1. Tải hình ảnh của bạn lên",
+    "step1_text": "Chọn tệp JPG, PNG, GIF hoặc WebP. Hình ảnh của bạn tải ngay lập tức trực tiếp vào bộ nhớ trình duyệt mà không cần tải lên máy chủ từ xa.",
+    "step2_title": "2. Chọn Kích thước hoặc Tỷ lệ phần trăm",
+    "step2_text": "Nhập các giá trị chiều rộng và chiều cao mới chính xác, chọn kích thước in tiêu chuẩn (như 4x6 inch) hoặc chọn tỷ lệ phần trăm.",
+    "step3_title": "3. Khóa tỷ lệ khung hình",
+    "step3_text": "Đảm bảo chọn biểu tượng chuỗi 'Khóa tỷ lệ' để tránh bị kéo giãn, nén hoặc làm biến dạng ảnh của bạn trong quá trình thay đổi kích thước.",
+    "step4_title": "4. Áp dụng và tải xuống",
+    "step4_text": "Nhấp vào 'Thay đổi kích thước hình ảnh' để áp dụng cục bộ các thuật toán lấy mẫu lại chất lượng cao, sau đó tải xuống tệp được tối ưu hóa của bạn."
+  },
+  "faq": {
+    "h2": "Câu hỏi thường gặp về Trình chỉnh lại hình ảnh",
+    "q1": "Việc thay đổi kích thước hình ảnh của tôi có làm cho nó bị mờ hoặc giảm chất lượng không?",
+    "a1": "Giảm kích thước hình ảnh sẽ duy trì chất lượng sắc nét. Việc phóng to hình ảnh (nâng cấp) có thể gây ra một số hiện tượng mờ nhưng công cụ của chúng tôi sử dụng thuật toán lấy mẫu lại có độ chính xác cao HTML5 Canvas nâng cao (như nội suy hai khối) để duy trì chất lượng hình ảnh tối đa.",
+    "q2": "Hình ảnh của tôi có an toàn và riêng tư không?",
+    "a2": "Vâng, hoàn toàn. Không có tập tin nào được tải lên máy chủ đám mây. Tất cả các thao tác thay đổi kích thước đều diễn ra bằng JavaScript một cách an toàn trên trình duyệt của thiết bị của bạn.",
+    "q3": "Tôi có thể thay đổi kích thước hình ảnh để in không?",
+    "a3": "Đúng! Chuyển bộ chọn đơn vị từ 'Pixels' sang 'Inches', 'Milimét' hoặc 'Centimét'. Bạn có thể dễ dàng thay đổi kích thước ảnh theo kích thước in tiêu chuẩn.",
+    "q4": "Tôi có thể giảm kích thước tệp (KB/MB) bằng công cụ này không?",
+    "a4": "Có, bằng cách giảm kích thước pixel hoặc điều chỉnh thanh trượt 'Chất lượng' cho đầu ra JPG/WebP, bạn có thể nén đáng kể kích thước tệp để tải web hoặc đính kèm email nhanh hơn.",
+    "q5": "Cài đặt trước nhanh là gì?",
+    "a5": "Cài đặt trước nhanh cho phép bạn thay đổi kích thước hình ảnh của mình ngay lập tức thành kích thước hoàn hảo cho các nền tảng như Instagram, YouTube, Facebook, v.v. chỉ bằng một cú nhấp chuột.",
+    "q6": "Các phương pháp thay đổi kích thước khác nhau hoạt động như thế nào?",
+    "a6": "Chúng tôi cung cấp bốn phương pháp thay đổi kích thước nâng cao: 'Chính xác' kéo dài hình ảnh theo kích thước chính xác của bạn (có thể làm biến dạng). 'Vừa' chia tỷ lệ hình ảnh để vừa với các kích thước bên trong trong khi vẫn duy trì tỷ lệ khung hình. 'Fill' lấp đầy các kích thước và có thể cắt các cạnh. 'Cắt' cắt trực tiếp từ trung tâm để phù hợp hoàn hảo với kích thước."
+  }
+}

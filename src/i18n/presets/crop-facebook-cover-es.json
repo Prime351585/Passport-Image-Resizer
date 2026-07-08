@@ -1,0 +1,30 @@
+{
+  "meta_title": "Recortador de imágenes Facebook gratis | Recortar a 1.9:1 en línea",
+  "meta_description": "Recorta imágenes online al instante para adaptarlas a la proporción oficial de Facebook (1.9:1). 100% privado en su navegador.",
+  "h1": "Recortador de imágenes Facebook gratis",
+  "subtitle": "Recorte fotos perfectamente para Facebook. Grabe exactamente 1200x630 píxeles (1.9:1) al instante.",
+  "tool_workspace": {
+    "h2": "Estudio interactivo de recorte para Facebook",
+    "description": "Suba su archivo para alinearlo con el cuadro de recorte oficial de Facebook (1.9:1). Proceso local.",
+    "spec_badge": "1200 x 630 píxeles",
+    "spec_ratio": "Relación: 1.9:1"
+  },
+  "how_to": {
+    "title": "Cómo recortar para Facebook en línea",
+    "step1_title": "1. Suba su imagen",
+    "step1_text": "Seleccione su foto. La imagen se carga al instante en su navegador para máxima privacidad.",
+    "step2_title": "2. Elija preajuste de Facebook",
+    "step2_text": "El marco de recorte se bloquea automáticamente en la relación de aspecto 1.9:1.",
+    "step3_title": "3. Ajuste y centro",
+    "step3_text": "Arrastre los controles y encuadre su imagen perfectamente dentro del cuadro de recorte.",
+    "step4_title": "4. Guarde y descargue",
+    "step4_text": "Haga clic en 'Recortar' para procesar localmente y descargar su archivo optimizado para Facebook."
+  },
+  "faq": {
+    "h2": "Preguntas frecuentes sobre recorte en Facebook",
+    "q1": "¿Cuál es el tamaño oficial para publicaciones de Facebook?",
+    "a1": "Las dimensiones recomendadas son 1200x630 píxeles, que corresponden a la proporción 1.9:1.",
+    "q2": "¿Se suben mis fotos?",
+    "a2": "No. La herramienta procesa su imagen de forma local en su متصفح."
+  }
+}

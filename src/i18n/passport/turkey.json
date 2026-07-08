@@ -1,0 +1,53 @@
+{
+  "meta_title": "Resmi Türkiye Pasaport Fotoğrafı Boyutu Oluşturucu (50x60 mm) | 2026",
+  "meta_description": "Çevrimiçi olarak %100 uyumlu bir Türkiye pasaportu veya vize fotoğrafı oluşturun. Tam 50x60 mm (1,97x2,36 inç) boyutlar, Beyaz arka plan gereklidir. Hızlı, özel tarayıcı tarafı aracı.",
+  "h1": "Resmi Türkiye Pasaport Fotoğrafı Boyut ve Gereksinimler Kılavuzu",
+  "subtitle": "Resmi Türkiye biyometrik pasaport standartlarıyla eşleşen yazdırılabilir tabloyu yeniden boyutlandırın, kırpın ve derleyin.",
+  "tool_workspace": {
+    "h2": "İnteraktif Türkiye Biyometrik Kırpma Aracı",
+    "description": "Dosyanızı yerleşik Türkiye boyutları tablosuna uygun olacak şekilde yükleyin. Sunuculara hiçbir resim gönderilmez; tüm tuval işlemleri yerel olarak JavaScript'te gerçekleşir.",
+    "spec_badge_mm": "50x60 mm",
+    "spec_badge_in": "1,97x2,36 inç",
+    "spec_background": "Gerekli Arka Plan: Beyaz"
+  },
+  "biometric_details": {
+    "h2": "Türkiye Resmi Biyometrik Oranlar",
+    "head_size_label": "Kafa Yüksekliği Oranı",
+    "head_size_text": "Çenenizin altından saçınızın tepesine kadar olan mesafe dikey çerçeve yüksekliğinin yaklaşık %75'ini kaplamalıdır.",
+    "eye_height_label": "Göz Hizalama Çizgisi",
+    "eye_height_text": "Gözleriniz hedef hizalama çerçevesi sınırları içinde dikey olarak ortalanmalıdır."
+  },
+  "how_to": {
+    "title": "Türkiye Pasaport Fotoğrafı Nasıl Yapılır ve Basılır",
+    "step1_title": "1. Türkiye Ön Ayarlarını Başlatın",
+    "step1_text": "Kırpma penceresi otomatik olarak tam 50x60 mm düzenleme boyutuna ölçeklenir.",
+    "step2_title": "2. Yerel Resim Yükleme",
+    "step2_text": "Kaynak fotoğrafınızı seçin. Tarayıcı yürütme belleğinde tamamen güvende kalır.",
+    "step3_title": "3. Biyometrik Kaplamalarla Hizalayın",
+    "step3_text": "Yüzünüz yarı saydam baş ve göz hizalama katmanlarıyla eşleşene kadar görüntünüzü ölçeklendirin ve taşıyın.",
+    "step4_title": "4. Izgara Oluşturun ve Kaydedin",
+    "step4_text": "Standart 4x6 inç fotoğraf baskısı düzenleri için optimize edilmiş tek bir görüntü dosyasını veya önceden hizalanmış yazdırılabilir şablon sayfasını indirin."
+  },
+  "faq": {
+    "h2": "Türkiye Fotoğrafları ile ilgili Sık Sorulan Sorular",
+    "q1": "Türkiye'nin resmi arka plan rengi kuralı nedir?",
+    "a1": "Hükümet, gölgelerin, nesnelerin veya dokuların bulunmadığı sağlam, tek tip bir Beyaz fon istiyor.",
+    "q2": "Türkiye belgesi fotoğrafımda gözlük veya başlık takabilir miyim?",
+    "a2": "Kesinlikle tıbbi olarak gerekli olmadıkça (parlama, renk tonu veya kalın çerçeveler olmamalıdır) gözlükler çıkarılmalıdır. Çeneden alına kadar yüzün tüm ovalini ortaya çıkarması koşuluyla dini şapkalara izin verilir.",
+    "q3": "Oluşturulan dijital Türkiye dosyamı nasıl yazdırırım?",
+    "a3": "Derlenmiş yazdırılabilir sayfa seçeneğimizi indirin, bir flash sürücüye kaydedin ve yüksek kaliteli 4x6 fotoğraf kağıdı standart ayarlarını kullanarak yerel bir dijital fotoğraf kioskunda yazdırın."
+  },
+  "cross_link_footer": {
+    "title": "İlgili Belge Formatları",
+    "text": "Alternatif bir boyuta mı ihtiyacınız var? Türkiye Vizesi boyutlarına ilişkin gereklilikleri görüntüleyin veya alternatif küresel standart belge formatlarına bakın."
+  },
+  "country_code": "TR",
+  "inLanguage": "tr",
+  "raw_dimensions": {
+    "width_mm": 50,
+    "height_mm": 60,
+    "width_in": 1.97,
+    "height_in": 2.36,
+    "background": "White"
+  }
+}

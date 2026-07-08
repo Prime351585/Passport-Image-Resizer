@@ -1,0 +1,54 @@
+{
+  "meta_title": "Free Online Image Resizer | Change Image Size Securely",
+  "meta_description": "Resize images online instantly. Adjust width, height, or file size in pixels, percentages, inches, or cm. 100% private, browser-side scaling for JPG, PNG, and WebP.",
+  "h1": "Free Online Image Resizer",
+  "subtitle": "Scale your photos perfectly without losing quality. Adjust dimensions, change sizes, and format images for print, social media, or web performance—all processed securely within your browser.",
+  
+  "tool_workspace": {
+    "h2": "Interactive Photo Resizing Studio",
+    "description": "Drag and drop your image below. Adjust width, height, or target file size to instantly resize your picture.",
+    "features_list": [
+      "Multi-Unit Scaling (Pixels, %, Inches, mm, cm)",
+      "Lock Aspect Ratio (Prevent Distortion)",
+      "Smart Compression (Reduce File Size/KB)",
+      "Zero Server Uploads (100% Privacy)"
+    ]
+  },
+
+  "social_presets": {
+    "h2": "Resize for Social Media & Web Instantly",
+    "description": "Don't guess the dimensions. Use our one-click presets to perfectly scale your content for major platforms.",
+    "preset_1": "Instagram Square (1080x1080px)",
+    "preset_2": "YouTube Thumbnail (1280x720px)",
+    "preset_3": "Facebook Cover (1200x630px)",
+    "preset_4": "Pinterest Pin (1000x1500px)"
+  },
+
+  "how_to": {
+    "title": "How to Resize an Image Online",
+    "step1_title": "1. Upload Your Image",
+    "step1_text": "Select a JPG, PNG, GIF, or WebP file. Your image loads instantly directly into your browser memory without uploading to a remote server.",
+    "step2_title": "2. Choose Dimensions or Percentage",
+    "step2_text": "Enter exact new width and height values, select a standard print size (like 4x6 inches), or choose a percentage scale.",
+    "step3_title": "3. Lock Aspect Ratio",
+    "step3_text": "Ensure the 'Lock Proportions' chain icon is checked to prevent stretching, squeezing, or distorting your photo during the resize.",
+    "step4_title": "4. Apply and Download",
+    "step4_text": "Click 'Resize Image' to apply high-quality resampling algorithms locally, then download your optimized file."
+  },
+
+  "faq": {
+    "h2": "Image Resizer FAQs",
+    "q1": "Will resizing my image make it blurry or lose quality?",
+    "a1": "Reducing an image size maintains sharp quality. Enlarging an image (upscaling) can cause some blurriness, but our tool uses advanced HTML5 Canvas high-fidelity resampling algorithms (like bicubic interpolation) to retain maximum visual quality.",
+    "q2": "Are my images safe and private?",
+    "a2": "Yes, completely. No files are uploaded to cloud servers. All resizing operations happen in JavaScript securely on your device's browser.",
+    "q3": "Can I resize an image for printing?",
+    "a3": "Yes! Switch the unit selector from 'Pixels' to 'Inches', 'Millimeters' or 'Centimeters'. You can easily resize photos to standard print dimensions.",
+    "q4": "Can I reduce the file size (KB/MB) with this tool?",
+    "a4": "Yes, by reducing the pixel dimensions or adjusting the 'Quality' slider for JPG/WebP outputs, you can significantly compress the file size for faster web loading or email attachment.",
+    "q5": "What are Quick Presets?",
+    "a5": "Quick Presets allow you to instantly resize your images to perfect dimensions for platforms like Instagram, YouTube, Facebook, and more with a single click.",
+    "q6": "How do the different resize methods work?",
+    "a6": "We offer four advanced resize methods: 'Exact' stretches the image to your exact dimensions (may distort). 'Fit' scales the image to fit inside the dimensions while maintaining aspect ratio. 'Fill' fills the dimensions and may crop edges. 'Crop' crops directly from the center to perfectly fit the dimensions."
+  }
+} 

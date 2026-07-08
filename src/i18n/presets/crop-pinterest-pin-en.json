@@ -1,0 +1,30 @@
+{
+  "meta_title": "Free Pinterest Image Cropper | Crop to 2:3 Square Online",
+  "meta_description": "Crop images online instantly to fit the official Pinterest aspect ratio (2:3). 100% private, browser-based cropping with zero quality loss.",
+  "h1": "Free Pinterest Image Cropper",
+  "subtitle": "Crop photos perfectly for Pinterest. Crop to exact 1000x1500 pixels (2:3) instantly without server uploads.",
+  "tool_workspace": {
+    "h2": "Interactive Pinterest Cropping Studio",
+    "description": "Upload your file to align with the official Pinterest crop box (2:3). Processed locally in your browser.",
+    "spec_badge": "1000 x 1500 px",
+    "spec_ratio": "Ratio: 2:3"
+  },
+  "how_to": {
+    "title": "How to Crop for Pinterest Online",
+    "step1_title": "1. Upload Your Image",
+    "step1_text": "Select your photo. The image loads instantly in your browser memory for total privacy.",
+    "step2_title": "2. Choose Pinterest Preset",
+    "step2_text": "The cropping frame locks automatically to the official 2:3 aspect ratio.",
+    "step3_title": "3. Adjust and Center",
+    "step3_text": "Drag the handles and frame your face or subject perfectly within the crop box.",
+    "step4_title": "4. Save and Download",
+    "step4_text": "Click 'Crop' to process the photo locally and download your optimized Pinterest file."
+  },
+  "faq": {
+    "h2": "Pinterest Photo Cropper FAQs",
+    "q1": "What is the official size for Pinterest posts?",
+    "a1": "The standard recommended dimensions are 1000x1500 pixels, which matches the 2:3 aspect ratio.",
+    "q2": "Are my photos uploaded?",
+    "a2": "No. The tool processes your image client-side on your device's browser, keeping your data secure."
+  }
+}

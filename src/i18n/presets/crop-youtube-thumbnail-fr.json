@@ -1,0 +1,30 @@
+{
+  "meta_title": "Recadrage d'images YouTube gratuit | Recadrer au format carré 16:9 en ligne",
+  "meta_description": "Recadrez instantanément les images en ligne pour les adapter au format d'image officiel de YouTube (16:9). Recadrage 100 % privé, basé sur un navigateur, sans perte de qualité.",
+  "h1": "Recadrage d'images YouTube gratuit",
+  "subtitle": "Recadrez parfaitement les photos pour YouTube. Recadrez instantanément jusqu'à exactement 1 280 x 720 pixels (16:9) sans téléchargement sur le serveur.",
+  "tool_workspace": {
+    "h2": "Studio de recadrage YouTube interactif",
+    "description": "Téléchargez votre fichier pour l'aligner sur la zone de recadrage officielle de YouTube (16:9). Traité localement dans votre navigateur.",
+    "spec_badge": "1280 x 720 pixels",
+    "spec_ratio": "Rapport : 16:9"
+  },
+  "how_to": {
+    "title": "Comment recadrer pour YouTube en ligne",
+    "step1_title": "1. Téléchargez votre image",
+    "step1_text": "Sélectionnez votre photo. L'image se charge instantanément dans la mémoire de votre navigateur pour une confidentialité totale.",
+    "step2_title": "2. Choisissez le préréglage YouTube",
+    "step2_text": "Le cadre de recadrage se verrouille automatiquement sur le format officiel 16:9.",
+    "step3_title": "3. Ajuster et centrer",
+    "step3_text": "Faites glisser les poignées et cadrez parfaitement votre visage ou votre sujet dans la zone de recadrage.",
+    "step4_title": "4. Enregistrer et télécharger",
+    "step4_text": "Cliquez sur « Recadrer » pour traiter la photo localement et télécharger votre fichier YouTube optimisé."
+  },
+  "faq": {
+    "h2": "FAQ sur le recadrage de photos YouTube",
+    "q1": "Quelle est la taille officielle des publications YouTube ?",
+    "a1": "Les dimensions standard recommandées sont de 1 280 x 720 pixels, ce qui correspond au format 16:9.",
+    "q2": "Mes photos sont-elles téléchargées ?",
+    "a2": "Non. L'outil traite votre image côté client sur le navigateur de votre appareil, garantissant ainsi la sécurité de vos données."
+  }
+}

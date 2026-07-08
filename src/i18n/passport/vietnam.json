@@ -1,0 +1,53 @@
+{
+  "meta_title": "Trình tạo kích thước ảnh hộ chiếu chính thức của Việt Nam (40x60 mm) | 2026",
+  "meta_description": "Tạo ảnh hộ chiếu hoặc visa Việt Nam tuân thủ 100% trực tuyến. Kích thước chính xác 40x60 mm (1,57x2,36 in), yêu cầu nền trắng. Công cụ phía trình duyệt riêng tư, nhanh chóng.",
+  "h1": "Hướng dẫn về kích thước và yêu cầu ảnh hộ chiếu chính thức của Việt Nam",
+  "subtitle": "Thay đổi kích thước, cắt và biên dịch lưới có thể in phù hợp với tiêu chuẩn hộ chiếu sinh trắc học chính thức của Việt Nam.",
+  "tool_workspace": {
+    "h2": "Công cụ cắt xén sinh trắc học tương tác Việt Nam",
+    "description": "Tải tệp của bạn lên để căn chỉnh với lưới kích thước tích hợp sẵn của Việt Nam. Không có hình ảnh nào được gửi đến máy chủ; tất cả quá trình xử lý canvas diễn ra cục bộ trong JavaScript.",
+    "spec_badge_mm": "40x60mm",
+    "spec_badge_in": "1,57 x 2,36 inch",
+    "spec_background": "Phông nền bắt buộc: màu trắng"
+  },
+  "biometric_details": {
+    "h2": "Tỷ lệ sinh trắc học chính thức cho Việt Nam",
+    "head_size_label": "Tỷ lệ chiều cao đầu",
+    "head_size_text": "Khoảng cách từ dưới cằm đến đỉnh tóc phải chiếm khoảng 75% chiều cao khung dọc.",
+    "eye_height_label": "Đường căn chỉnh mắt",
+    "eye_height_text": "Mắt của bạn phải được căn giữa theo chiều dọc trong giới hạn khung căn chỉnh mục tiêu."
+  },
+  "how_to": {
+    "title": "Cách làm và in ảnh hộ chiếu Việt Nam",
+    "step1_title": "1. Khởi tạo Preset Việt Nam",
+    "step1_text": "Cửa sổ cắt xén tự động chia tỷ lệ theo kích thước quy định chính xác 40x60 mm.",
+    "step2_title": "2. Tải lên hình ảnh cục bộ",
+    "step2_text": "Chọn ảnh nguồn của bạn. Nó vẫn được bảo mật hoàn toàn trong bộ nhớ thực thi của trình duyệt.",
+    "step3_title": "3. Căn chỉnh với lớp phủ sinh trắc học",
+    "step3_text": "Chia tỷ lệ và di chuyển hình ảnh của bạn cho đến khi khuôn mặt của bạn khớp với các lớp căn chỉnh đầu và mắt trong suốt.",
+    "step4_title": "4. Tạo lưới và lưu",
+    "step4_text": "Tải xuống một tệp hình ảnh được tối ưu hóa duy nhất hoặc một trang mẫu có thể in được căn chỉnh trước cho bố cục in ảnh 4x6 inch tiêu chuẩn."
+  },
+  "faq": {
+    "h2": "Câu hỏi thường gặp về Hình ảnh Việt Nam",
+    "q1": "Quy tắc màu nền chính thức của Việt Nam là gì?",
+    "a1": "Chính phủ yêu cầu phông nền trắng đồng nhất, chắc chắn, không có bóng, vật thể hoặc họa tiết.",
+    "q2": "Tôi có thể đeo kính hoặc đội mũ khi chụp ảnh tài liệu Việt Nam của mình không?",
+    "a2": "Phải tháo kính trừ khi thực sự cần thiết về mặt y tế (không có gọng kính chói, mờ hoặc dày). Được phép đội mũ đội đầu tôn giáo miễn là nó để lộ toàn bộ hình bầu dục của khuôn mặt từ cằm đến trán.",
+    "q3": "Làm cách nào để in tập tin Việt Nam kỹ thuật số được tạo của tôi?",
+    "a3": "Tải xuống tùy chọn trang có thể in đã biên dịch của chúng tôi, lưu nó vào ổ USB và in tại ki-ốt ảnh kỹ thuật số địa phương bằng cách sử dụng cài đặt tiêu chuẩn giấy ảnh 4x6 chất lượng cao."
+  },
+  "cross_link_footer": {
+    "title": "Định dạng tài liệu liên quan",
+    "text": "Cần một kích thước thay thế? Xem các yêu cầu về kích thước Visa Việt Nam hoặc tra cứu các định dạng tài liệu tiêu chuẩn toàn cầu thay thế."
+  },
+  "country_code": "VN",
+  "inLanguage": "vi",
+  "raw_dimensions": {
+    "width_mm": 40,
+    "height_mm": 60,
+    "width_in": 1.57,
+    "height_in": 2.36,
+    "background": "White"
+  }
+}

@@ -1,0 +1,43 @@
+---
+import ToolPageLayout from '../../layouts/ToolPageLayout.astro';
+import CropToolContainer from '../../components/CropToolContainer';
+import { getPresetHreflangAlternates, getPresetUrl, CROP_PRESETS } from '../../utils/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  const allPresetFiles = import.meta.glob('../../i18n/presets/crop-*-en.json', { eager: true });
+
+  for (const presetId of CROP_PRESETS) {
+    const filePath = `../../i18n/presets/crop-${presetId}-en.json`;
+    const presetDataModule = allPresetFiles[filePath] as any;
+    
+    if (presetDataModule) {
+      paths.push({
+        params: { preset: presetId },
+        props: { presetId, presetData: presetDataModule.default }
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { presetId, presetData } = Astro.props;
+const canonicalUrl = getPresetUrl('crop', presetId, 'en');
+const hreflangAlternates = getPresetHreflangAlternates('crop', presetId);
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Crop', url: '/crop' },
+  { name: presetData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang="en"
+  toolData={presetData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  <CropToolContainer client:load slot="tool" />
+</ToolPageLayout>

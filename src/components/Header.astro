@@ -17,9 +17,36 @@ import logo_mobile from "../assets/logo_mobile.png"
             <!-- Desktop Menu -->
             <nav class="hidden md:flex fixed left-1/2 -translate-x-1/2 space-x-7 backdrop-blur-sm p-3 px-5 bg-white/20 rounded-3xl text-black font-bold">
                 <a href="/" class="hover:text-primary transition-colors duration-300 ease-in-out">Home</a>
-                <a href="/resize" class="hover:text-primary transition-colors duration-300 ease-in-out">Resize</a>
-                <a href="/compress" class="hover:text-primary transition-colors duration-300 ease-in-out">Compress</a>
-                <a href="/convert" class="hover:text-primary transition-colors duration-300 ease-in-out">Convert</a>
+                <div class="relative group">
+                    <button class="hover:text-primary transition-colors duration-300 ease-in-out flex items-center space-x-1">
+                        <span>Tools</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden border border-gray-100">
+                        <a href="/resize" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">Resize Image</a>
+                        <a href="/crop" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">Crop Image</a>
+                        <a href="/compress" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors border-b border-gray-100">Compress Image</a>
+                        <a href="/compress-pdf" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">Compress PDF</a>
+                        <a href="/merge-pdf" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">Merge PDF</a>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <button class="hover:text-primary transition-colors duration-300 ease-in-out flex items-center space-x-1">
+                        <span>Convert</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden border border-gray-100">
+                        <a href="/jpeg-to-webp" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors font-medium">JPEG to WebP</a>
+                        <a href="/jpeg-to-png" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">JPEG to PNG</a>
+                        <a href="/png-to-webp" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">PNG to WebP</a>
+                        <a href="/webp-to-jpeg" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">WebP to JPEG</a>
+                        <a href="/webp-to-png" class="block px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-colors">WebP to PNG</a>
+                    </div>
+                </div>
+                
                 <a href="/passport" class="hover:text-primary transition-colors duration-300 ease-in-out">Passport</a>
                 <a href="/blogs" class="hover:text-primary transition-colors duration-300 ease-in-out">Blogs</a>
             </nav>
@@ -42,13 +69,25 @@ import logo_mobile from "../assets/logo_mobile.png"
         </div>
 
         <!-- Mobile Menu (Inside navbar) -->
-        <nav id="mobileMenu" class="hidden md:hidden flex-col justify-evenly items-start w-full px-4 pb-20 flex-1 text-black font-bold opacity-0 transition-opacity duration-300">
-            <a href="/" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Home</a>
-            <a href="/resize" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Resize</a>
-            <a href="/compress" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Compress</a>
-            <a href="/convert" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Convert</a>
-            <a href="/passport" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Passport</a>
-            <a href="/blogs" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-200">Blogs</a>
+        <nav id="mobileMenu" class="hidden md:hidden flex-col justify-start items-start w-full px-4 pb-20 pt-4 flex-1 text-black font-bold opacity-0 transition-opacity duration-300 overflow-y-auto">
+            <a href="/" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-100">Home</a>
+            
+            <p class="w-full py-2 mt-2 text-gray-400 text-xs uppercase tracking-wider">Image Tools</p>
+            <a href="/resize" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">Resize Image</a>
+            <a href="/crop" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">Crop Image</a>
+            <a href="/compress" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">Compress Image</a>
+            
+            <p class="w-full py-2 mt-4 text-gray-400 text-xs uppercase tracking-wider">PDF Tools</p>
+            <a href="/compress-pdf" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">Compress PDF</a>
+            <a href="/merge-pdf" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">Merge PDF</a>
+            
+            <p class="w-full py-2 mt-4 text-gray-400 text-xs uppercase tracking-wider">Convert</p>
+            <a href="/jpeg-to-webp" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">JPEG to WebP</a>
+            <a href="/jpeg-to-png" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">JPEG to PNG</a>
+            <a href="/png-to-webp" class="menu-item w-full py-3 hover:text-primary transition-colors duration-300 border-b border-gray-100 pl-4">PNG to WebP</a>
+            
+            <a href="/passport" class="menu-item w-full py-4 mt-4 hover:text-primary transition-colors duration-300 border-b border-gray-100">Passport</a>
+            <a href="/blogs" class="menu-item w-full py-4 hover:text-primary transition-colors duration-300 border-b border-gray-100">Blogs</a>
             
             <button class="bg-primary hover:bg-primary/90 p-3 px-6 rounded-3xl text-white text-center mt-6 w-full transition-colors duration-300">
                 Get Started

@@ -1,0 +1,53 @@
+{
+  "meta_title": "Fabricante Oficial de Tamanho de Foto para Passaporte Brasil (50x70 mm) | 2026",
+  "meta_description": "Crie um passaporte brasileiro 100% compatível ou uma foto de visto online. Dimensões exatas de 50 x 70 mm (1,97 x 2,76 pol.), Fundo Branco necessário. Ferramenta rápida e privada do navegador.",
+  "h1": "Guia oficial de tamanho e requisitos da foto do passaporte Brasil",
+  "subtitle": "Redimensione, recorte e compile uma grade imprimível que corresponda aos padrões oficiais do passaporte biométrico do Brasil.",
+  "tool_workspace": {
+    "h2": "Ferramenta de corte biométrico interativo Brasil",
+    "description": "Carregue seu arquivo para alinhar com a grade de dimensões integrada do Brasil. Nenhuma imagem é enviada aos servidores; todo o processamento do canvas acontece localmente em JavaScript.",
+    "spec_badge_mm": "50x70mm",
+    "spec_badge_in": "1,97 x 2,76 pol.",
+    "spec_background": "Cenário Requerido: Branco"
+  },
+  "biometric_details": {
+    "h2": "Proporções Biométricas Oficiais para o Brasil",
+    "head_size_label": "Proporção de altura da cabeça",
+    "head_size_text": "A distância da parte inferior do queixo até o topo do cabelo deve ocupar aproximadamente 75% da altura vertical da moldura.",
+    "eye_height_label": "Linha de alinhamento dos olhos",
+    "eye_height_text": "Seus olhos devem estar centralizados verticalmente dentro dos limites do quadro de alinhamento do alvo."
+  },
+  "how_to": {
+    "title": "Como fazer e imprimir uma foto para passaporte do Brasil",
+    "step1_title": "1. Inicialize os presets do Brasil",
+    "step1_text": "A janela de corte é dimensionada automaticamente para o tamanho regulamentar exato de 50x70 mm.",
+    "step2_title": "2. Upload de imagem local",
+    "step2_text": "Selecione sua foto de origem. Ele permanece totalmente protegido na memória de execução do navegador.",
+    "step3_title": "3. Alinhe com sobreposições biométricas",
+    "step3_text": "Dimensione e mova sua imagem até que seu rosto corresponda às camadas translúcidas de alinhamento da cabeça e dos olhos.",
+    "step4_title": "4. Gere grade e salve",
+    "step4_text": "Baixe um único arquivo de imagem otimizado ou uma folha de modelo pré-alinhada para impressão para layouts de impressão de fotos padrão de 4 x 6 polegadas."
+  },
+  "faq": {
+    "h2": "Perguntas frequentes sobre o Brasil Photos",
+    "q1": "Qual é a regra oficial de cor de fundo do Brasil?",
+    "a1": "O governo exige um cenário Branco sólido e uniforme, sem sombras, objetos ou texturas presentes.",
+    "q2": "Posso usar óculos ou capacete na foto do meu documento Brasil?",
+    "a2": "Os óculos devem ser removidos, a menos que seja estritamente necessário do ponto de vista médico (sem brilho, coloração ou armações grossas). Chapéus religiosos são permitidos desde que revelem todo o oval do rosto, do queixo à testa.",
+    "q3": "Como imprimo meu arquivo digital Brasil gerado?",
+    "a3": "Baixe nossa opção de folha compilada para impressão, salve-a em um pen drive e imprima-a em um quiosque fotográfico digital local usando configurações padrão de papel fotográfico 4x6 de alta qualidade."
+  },
+  "cross_link_footer": {
+    "title": "Formatos de documentos relacionados",
+    "text": "Precisa de um tamanho alternativo? Veja os requisitos para as dimensões do Brasil Visa ou procure formatos alternativos de documentação padrão global."
+  },
+  "country_code": "BR",
+  "inLanguage": "pt",
+  "raw_dimensions": {
+    "width_mm": 50,
+    "height_mm": 70,
+    "width_in": 1.97,
+    "height_in": 2.76,
+    "background": "White"
+  }
+}

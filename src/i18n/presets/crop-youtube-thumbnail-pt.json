@@ -1,0 +1,30 @@
+{
+  "meta_title": "Cortador de imagens do YouTube grátis | Cortar para 16:9 Quadrado Online",
+  "meta_description": "Corte imagens on-line instantaneamente para ajustá-las à proporção oficial do YouTube (16:9). Corte 100% privado baseado em navegador, sem perda de qualidade.",
+  "h1": "Cortador de imagens gratuito do YouTube",
+  "subtitle": "Corte fotos perfeitamente para o YouTube. Corte para exatos 1280x720 pixels (16:9) instantaneamente, sem uploads do servidor.",
+  "tool_workspace": {
+    "h2": "Estúdio de recorte interativo do YouTube",
+    "description": "Carregue seu arquivo para alinhá-lo com a caixa de corte oficial do YouTube (16:9). Processado localmente no seu navegador.",
+    "spec_badge": "1280 x 720 pixels",
+    "spec_ratio": "Proporção: 16:9"
+  },
+  "how_to": {
+    "title": "Como cortar para o YouTube online",
+    "step1_title": "1. Envie sua imagem",
+    "step1_text": "Selecione sua foto. A imagem carrega instantaneamente na memória do seu navegador para total privacidade.",
+    "step2_title": "2. Escolha a predefinição do YouTube",
+    "step2_text": "A moldura de corte bloqueia automaticamente na proporção oficial de 16:9.",
+    "step3_title": "3. Ajuste e centralize",
+    "step3_text": "Arraste as alças e enquadre seu rosto ou assunto perfeitamente na caixa de corte.",
+    "step4_title": "4. Salve e baixe",
+    "step4_text": "Clique em ‘Cortar’ para processar a foto localmente e baixar seu arquivo otimizado do YouTube."
+  },
+  "faq": {
+    "h2": "Perguntas frequentes sobre o cortador de fotos do YouTube",
+    "q1": "Qual é o tamanho oficial das postagens do YouTube?",
+    "a1": "As dimensões padrão recomendadas são 1280x720 pixels, o que corresponde à proporção de 16:9.",
+    "q2": "Minhas fotos foram carregadas?",
+    "a2": "Não. A ferramenta processa sua imagem do lado do cliente no navegador do seu dispositivo, mantendo seus dados seguros."
+  }
+}

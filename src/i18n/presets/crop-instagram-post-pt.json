@@ -1,0 +1,30 @@
+{
+  "meta_title": "Cortador de imagens do Instagram grátis | Cortar para quadrado 1:1 on-line",
+  "meta_description": "Corte imagens online instantaneamente para ajustá-las à proporção oficial do Instagram (1:1). Corte 100% privado baseado em navegador, sem perda de qualidade.",
+  "h1": "Cortador de imagens do Instagram grátis",
+  "subtitle": "Corte fotos perfeitamente para o Instagram. Corte para exatos 1080x1080 pixels (1:1) instantaneamente, sem uploads do servidor.",
+  "tool_workspace": {
+    "h2": "Estúdio de recorte interativo para Instagram",
+    "description": "Carregue seu arquivo para alinhar com a caixa de corte oficial do Instagram (1:1). Processado localmente no seu navegador.",
+    "spec_badge": "1080 x 1080 pixels",
+    "spec_ratio": "Proporção: 1:1"
+  },
+  "how_to": {
+    "title": "Como cortar para Instagram Online",
+    "step1_title": "1. Envie sua imagem",
+    "step1_text": "Selecione sua foto. A imagem carrega instantaneamente na memória do seu navegador para total privacidade.",
+    "step2_title": "2. Escolha a predefinição do Instagram",
+    "step2_text": "A moldura de corte bloqueia automaticamente na proporção oficial de 1:1.",
+    "step3_title": "3. Ajuste e centralize",
+    "step3_text": "Arraste as alças e enquadre seu rosto ou assunto perfeitamente na caixa de corte.",
+    "step4_title": "4. Salve e baixe",
+    "step4_text": "Clique em ‘Cortar’ para processar a foto localmente e baixar seu arquivo otimizado do Instagram."
+  },
+  "faq": {
+    "h2": "Perguntas frequentes sobre o cortador de fotos do Instagram",
+    "q1": "Qual é o tamanho oficial das postagens do Instagram?",
+    "a1": "As dimensões padrão recomendadas são 1080x1080 pixels, o que corresponde à proporção de 1:1.",
+    "q2": "Minhas fotos foram carregadas?",
+    "a2": "Não. A ferramenta processa sua imagem do lado do cliente no navegador do seu dispositivo, mantendo seus dados seguros."
+  }
+}

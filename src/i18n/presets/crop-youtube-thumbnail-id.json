@@ -1,0 +1,30 @@
+{
+  "meta_title": "Pemotong Gambar YouTube Gratis | Pangkas ke 16:9 Persegi Online",
+  "meta_description": "Pangkas gambar secara online secara instan agar sesuai dengan rasio aspek resmi YouTube (16:9). Pemangkasan berbasis browser 100% pribadi dan tanpa kehilangan kualitas.",
+  "h1": "Pemangkas Gambar YouTube Gratis",
+  "subtitle": "Pangkas foto dengan sempurna untuk YouTube. Pangkas hingga tepat 1280x720 piksel (16:9) secara instan tanpa perlu mengunggah ke server.",
+  "tool_workspace": {
+    "h2": "Studio Pemangkasan YouTube Interaktif",
+    "description": "Unggah file Anda agar sejajar dengan kotak pangkas YouTube resmi (16:9). Diproses secara lokal di browser Anda.",
+    "spec_badge": "1280x720 piksel",
+    "spec_ratio": "Rasio: 16:9"
+  },
+  "how_to": {
+    "title": "Cara Memotong untuk YouTube Online",
+    "step1_title": "1. Unggah Gambar Anda",
+    "step1_text": "Pilih foto Anda. Gambar dimuat secara instan di memori browser Anda untuk privasi total.",
+    "step2_title": "2. Pilih Prasetel YouTube",
+    "step2_text": "Bingkai pemangkasan mengunci secara otomatis ke rasio aspek resmi 16:9.",
+    "step3_title": "3. Sesuaikan dan Pusatkan",
+    "step3_text": "Seret pegangannya dan bingkai wajah atau subjek Anda dengan sempurna di dalam kotak pangkas.",
+    "step4_title": "4. Simpan dan Unduh",
+    "step4_text": "Klik 'Pangkas' untuk memproses foto secara lokal dan mengunduh file YouTube Anda yang telah dioptimalkan."
+  },
+  "faq": {
+    "h2": "FAQ Pemotong Foto YouTube",
+    "q1": "Berapa ukuran resmi postingan YouTube?",
+    "a1": "Dimensi standar yang disarankan adalah 1280x720 piksel, yang sesuai dengan rasio aspek 16:9.",
+    "q2": "Apakah foto saya diunggah?",
+    "a2": "Tidak. Alat ini memproses gambar Anda di sisi klien pada browser perangkat Anda, sehingga data Anda tetap aman."
+  }
+}

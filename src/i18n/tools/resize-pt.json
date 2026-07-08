@@ -1,0 +1,50 @@
+{
+  "meta_title": "Redimensionador de imagens online grátis | Altere o tamanho da imagem com segurança",
+  "meta_description": "Redimensione imagens online instantaneamente. Ajuste a largura, altura ou tamanho do arquivo em pixels, porcentagens, polegadas ou cm. Dimensionamento 100% privado no navegador para JPG, PNG e WebP.",
+  "h1": "Redimensionador de imagens online gratuito",
+  "subtitle": "Dimensione suas fotos perfeitamente sem perder qualidade. Ajuste dimensões, altere tamanhos e formate imagens para impressão, mídia social ou desempenho na web – tudo processado com segurança em seu navegador.",
+  "tool_workspace": {
+    "h2": "Estúdio interativo de redimensionamento de fotos",
+    "description": "Arraste e solte sua imagem abaixo. Ajuste a largura, a altura ou o tamanho do arquivo de destino para redimensionar sua imagem instantaneamente.",
+    "features_list": [
+      "Dimensionamento de múltiplas unidades (pixels,%, polegadas, mm, cm)",
+      "Bloquear proporção de aspecto (evitar distorção)",
+      "Compressão Inteligente (Reduzir Tamanho do Arquivo/KB)",
+      "Zero uploads de servidor (100% de privacidade)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Redimensione instantaneamente para mídias sociais e Web",
+    "description": "Não adivinhe as dimensões. Use nossas predefinições de um clique para dimensionar perfeitamente seu conteúdo para as principais plataformas.",
+    "preset_1": "Quadrado do Instagram (1080x1080px)",
+    "preset_2": "Miniatura do YouTube (1280x720px)",
+    "preset_3": "Capa do Facebook (1200x630px)",
+    "preset_4": "Pin do Pinterest (1000x1500px)"
+  },
+  "how_to": {
+    "title": "Como redimensionar uma imagem online",
+    "step1_title": "1. Envie sua imagem",
+    "step1_text": "Selecione um arquivo JPG, PNG, GIF ou WebP. Sua imagem é carregada instantaneamente diretamente na memória do navegador, sem carregá-la em um servidor remoto.",
+    "step2_title": "2. Escolha dimensões ou porcentagem",
+    "step2_text": "Insira novos valores exatos de largura e altura, selecione um tamanho de impressão padrão (como 4 x 6 polegadas) ou escolha uma escala percentual.",
+    "step3_title": "3. Bloquear proporção de aspecto",
+    "step3_text": "Certifique-se de que o ícone de cadeia 'Bloquear Proporções' esteja marcado para evitar esticar, comprimir ou distorcer sua foto durante o redimensionamento.",
+    "step4_title": "4. Inscreva-se e baixe",
+    "step4_text": "Clique em 'Redimensionar imagem' para aplicar algoritmos de reamostragem de alta qualidade localmente e, em seguida, baixe seu arquivo otimizado."
+  },
+  "faq": {
+    "h2": "Perguntas frequentes sobre redimensionador de imagem",
+    "q1": "Redimensionar minha imagem a deixará desfocada ou perderá qualidade?",
+    "a1": "Reduzir o tamanho da imagem mantém a qualidade nítida. Ampliar uma imagem (aumentar a escala) pode causar algum desfoque, mas nossa ferramenta usa algoritmos avançados de reamostragem de alta fidelidade do HTML5 Canvas (como interpolação bicúbica) para manter a qualidade visual máxima.",
+    "q2": "Minhas imagens são seguras e privadas?",
+    "a2": "Sim, completamente. Nenhum arquivo é carregado em servidores em nuvem. Todas as operações de redimensionamento acontecem em JavaScript de forma segura no navegador do seu dispositivo.",
+    "q3": "Posso redimensionar uma imagem para impressão?",
+    "a3": "Sim! Mude o seletor de unidade de 'Pixels' para 'Polegadas', 'Milímetros' ou 'Centímetros'. Você pode redimensionar fotos facilmente para dimensões de impressão padrão.",
+    "q4": "Posso reduzir o tamanho do arquivo (KB/MB) com esta ferramenta?",
+    "a4": "Sim, reduzindo as dimensões em pixels ou ajustando o controle deslizante 'Qualidade' para saídas JPG/WebP, você pode compactar significativamente o tamanho do arquivo para carregamento mais rápido da web ou anexo de e-mail.",
+    "q5": "O que são predefinições rápidas?",
+    "a5": "As predefinições rápidas permitem redimensionar instantaneamente suas imagens para dimensões perfeitas para plataformas como Instagram, YouTube, Facebook e muito mais com um único clique.",
+    "q6": "Como funcionam os diferentes métodos de redimensionamento?",
+    "a6": "Oferecemos quatro métodos avançados de redimensionamento: 'Exato' estica a imagem até suas dimensões exatas (pode distorcer). 'Ajustar' dimensiona a imagem para caber dentro das dimensões, mantendo a proporção. 'Preencher' preenche as dimensões e pode cortar bordas. 'Corte' as colheitas diretamente do centro para ajustar-se perfeitamente às dimensões."
+  }
+}

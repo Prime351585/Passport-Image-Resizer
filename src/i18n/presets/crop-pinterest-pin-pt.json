@@ -1,0 +1,30 @@
+{
+  "meta_title": "Cortador de imagens gratuito do Pinterest | Cortar para quadrado 2:3 online",
+  "meta_description": "Corte imagens on-line instantaneamente para ajustá-las à proporção oficial do Pinterest (2:3). Corte 100% privado baseado em navegador, sem perda de qualidade.",
+  "h1": "Cortador de imagens gratuito do Pinterest",
+  "subtitle": "Corte fotos perfeitamente para o Pinterest. Corte para exatos 1000x1500 pixels (2:3) instantaneamente, sem uploads do servidor.",
+  "tool_workspace": {
+    "h2": "Estúdio de recorte interativo do Pinterest",
+    "description": "Carregue seu arquivo para alinhar com a caixa de corte oficial do Pinterest (2:3). Processado localmente no seu navegador.",
+    "spec_badge": "1000 x 1500 pixels",
+    "spec_ratio": "Proporção: 2:3"
+  },
+  "how_to": {
+    "title": "Como cortar para o Pinterest online",
+    "step1_title": "1. Envie sua imagem",
+    "step1_text": "Selecione sua foto. A imagem carrega instantaneamente na memória do seu navegador para total privacidade.",
+    "step2_title": "2. Escolha a predefinição do Pinterest",
+    "step2_text": "A moldura de corte bloqueia automaticamente na proporção oficial de 2:3.",
+    "step3_title": "3. Ajuste e centralize",
+    "step3_text": "Arraste as alças e enquadre seu rosto ou assunto perfeitamente na caixa de corte.",
+    "step4_title": "4. Salve e baixe",
+    "step4_text": "Clique em ‘Cortar’ para processar a foto localmente e baixar seu arquivo otimizado do Pinterest."
+  },
+  "faq": {
+    "h2": "Perguntas frequentes sobre o cortador de fotos do Pinterest",
+    "q1": "Qual é o tamanho oficial das postagens do Pinterest?",
+    "a1": "As dimensões padrão recomendadas são 1000x1500 pixels, o que corresponde à proporção de 2:3.",
+    "q2": "Minhas fotos foram carregadas?",
+    "a2": "Não. A ferramenta processa sua imagem do lado do cliente no navegador do seu dispositivo, mantendo seus dados seguros."
+  }
+}

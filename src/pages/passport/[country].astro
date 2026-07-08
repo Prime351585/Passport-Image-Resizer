@@ -1,0 +1,43 @@
+---
+import ToolPageLayout from '../../layouts/ToolPageLayout.astro';
+import PassportToolContainer from '../../components/PassportToolContainer';
+import { getPassportHreflangAlternates } from '../../utils/i18n';
+
+export async function getStaticPaths() {
+  const allPassportFiles = import.meta.glob('../../i18n/passport/*.json', { eager: true });
+  const paths = [];
+
+  for (const [filePath, module] of Object.entries(allPassportFiles)) {
+    const filename = filePath.split('/').pop() || '';
+    const countrySlug = filename.replace('.json', '');
+    const countryData = (module as any).default;
+
+    paths.push({
+      params: { country: countrySlug },
+      props: { countryData, countrySlug }
+    });
+  }
+
+  return paths;
+}
+
+const { countryData, countrySlug } = Astro.props;
+const lang = countryData.inLanguage || 'en';
+const canonicalUrl = `https://www.resize-it.com/passport/${countrySlug}`;
+const hreflangAlternates = getPassportHreflangAlternates(countrySlug);
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Passport', url: '/passport' },
+  { name: countryData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang={lang}
+  toolData={countryData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  <PassportToolContainer client:load slot="tool" />
+</ToolPageLayout>

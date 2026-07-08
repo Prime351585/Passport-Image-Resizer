@@ -1,0 +1,30 @@
+{
+  "meta_title": "Pengubah Gambar Instagram Gratis | Ubah ukuran menjadi 1080x1080 piksel Online",
+  "meta_description": "Ubah ukuran gambar Anda secara instan agar sesuai dengan ukuran standar Instagram. Ubah ukuran menjadi 1080x1080 piksel (1:1) secara online. 100% pribadi dan aman.",
+  "h1": "Pengubah Gambar Instagram Gratis",
+  "subtitle": "Skala foto Anda dengan sempurna untuk Instagram. Ubah ukurannya menjadi 1080x1080 piksel (1:1) secara instan tanpa kehilangan kualitas.",
+  "tool_workspace": {
+    "h2": "Studio Pengubahan Ukuran Instagram Interaktif",
+    "description": "Unggah file Anda untuk diubah ukurannya ke spesifikasi resmi Instagram. Diproses secara lokal di browser Anda.",
+    "spec_badge": "1080x1080 piksel",
+    "spec_ratio": "Rasio: 1:1"
+  },
+  "how_to": {
+    "title": "Cara Mengubah Ukuran untuk Instagram Online",
+    "step1_title": "1. Unggah Gambar Anda",
+    "step1_text": "Pilih JPG, PNG, atau WebP Anda. File dimuat di memori sisi klien secara instan.",
+    "step2_title": "2. Pilih ukuran preset",
+    "step2_text": "Bidang lebar dan tinggi terkunci secara otomatis ke 1080x1080 px.",
+    "step3_title": "3. Opsi Pas atau Peregangan",
+    "step3_text": "Pilih apakah akan meregangkan gambar agar pas, menambah latar belakang, atau memotong tepinya.",
+    "step4_title": "4. Unduh Gambar yang Diubah Ukurannya",
+    "step4_text": "Klik 'Ubah ukuran' dan unduh file Instagram Anda yang berskala sempurna."
+  },
+  "faq": {
+    "h2": "FAQ Pengubah Ukuran Foto Instagram",
+    "q1": "Apakah gambar saya yang diubah ukurannya akan melebar atau terdistorsi?",
+    "a1": "Tidak. Dengan menggunakan rasio aspek standar dan opsi padding, pengubah ukuran menjaga foto Anda tetap proporsional.",
+    "q2": "Apakah gambar saya aman?",
+    "a2": "Ya. Tidak ada file yang diunggah ke server eksternal. Semua operasi terjadi dalam JavaScript di browser perangkat Anda."
+  }
+}

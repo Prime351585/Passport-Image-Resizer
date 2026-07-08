@@ -1,0 +1,53 @@
+{
+  "meta_title": "Pembuat Ukuran Foto Paspor Resmi Indonesia (40x60 mm) | 2026",
+  "meta_description": "Buat foto paspor atau visa Indonesia yang 100% sesuai secara online. Dimensi tepat 40x60 mm (1,57x2,36 inci), memerlukan latar belakang Putih. Alat sisi browser yang cepat dan pribadi.",
+  "h1": "Panduan Resmi Ukuran & Persyaratan Foto Paspor Indonesia",
+  "subtitle": "Ubah ukuran, potong, dan kompilasi kotak yang dapat dicetak sesuai dengan standar paspor biometrik resmi Indonesia.",
+  "tool_workspace": {
+    "h2": "Alat Pemotong Biometrik Indonesia Interaktif",
+    "description": "Unggah file Anda agar sejajar dengan kisi dimensi bawaan Indonesia. Tidak ada gambar yang dikirim ke server; semua pemrosesan kanvas terjadi secara lokal di JavaScript.",
+    "spec_badge_mm": "40x60mm",
+    "spec_badge_in": "1,57x2,36 inci",
+    "spec_background": "Latar Belakang yang Diperlukan: Putih"
+  },
+  "biometric_details": {
+    "h2": "Proporsi Biometrik Resmi untuk Indonesia",
+    "head_size_label": "Rasio Tinggi Kepala",
+    "head_size_text": "Jarak dari bagian bawah dagu ke bagian atas rambut harus menempati sekitar 75% dari tinggi bingkai vertikal.",
+    "eye_height_label": "Garis Penyelarasan Mata",
+    "eye_height_text": "Mata Anda harus dipusatkan secara vertikal dalam batas bingkai penyelarasan target."
+  },
+  "how_to": {
+    "title": "Cara Membuat dan Mencetak Foto Paspor Indonesia",
+    "step1_title": "1. Inisialisasi Preset Indonesia",
+    "step1_text": "Jendela pemangkasan akan diskalakan secara otomatis ke ukuran regulasi tepat 40x60 mm.",
+    "step2_title": "2. Unggah Gambar Lokal",
+    "step2_text": "Pilih foto sumber Anda. Itu tetap sepenuhnya aman dalam memori eksekusi browser.",
+    "step3_title": "3. Sejajarkan dengan Biometric Overlay",
+    "step3_text": "Skala dan gerakkan gambar Anda hingga wajah Anda cocok dengan lapisan penyelarasan kepala dan mata yang tembus pandang.",
+    "step4_title": "4. Hasilkan Grid dan Simpan",
+    "step4_text": "Unduh satu file gambar yang dioptimalkan atau lembar templat yang dapat dicetak dan telah diselaraskan sebelumnya untuk tata letak cetak foto standar 4x6 inci."
+  },
+  "faq": {
+    "h2": "Pertanyaan yang Sering Diajukan tentang Foto Indonesia",
+    "q1": "Apa aturan resmi warna latar belakang di Indonesia?",
+    "a1": "Pemerintah mewajibkan latar belakang Putih yang solid dan seragam tanpa bayangan, objek, atau tekstur.",
+    "q2": "Bolehkah saya memakai kacamata atau tutup kepala pada foto dokumen Indonesia saya?",
+    "a2": "Kacamata harus dilepas kecuali benar-benar diperlukan secara medis (tidak ada silau, warna, atau bingkai tebal). Hiasan kepala keagamaan diperbolehkan asalkan memperlihatkan seluruh oval wajah dari dagu hingga dahi.",
+    "q3": "Bagaimana cara mencetak file digital Indonesia yang saya hasilkan?",
+    "a3": "Unduh opsi lembar kompilasi kami yang dapat dicetak, simpan ke thumb drive, dan cetak di kios foto digital lokal menggunakan pengaturan standar kertas foto 4x6 berkualitas tinggi."
+  },
+  "cross_link_footer": {
+    "title": "Format Dokumen Terkait",
+    "text": "Butuh ukuran alternatif? Lihat persyaratan dimensi Visa Indonesia atau cari format dokumentasi standar global alternatif."
+  },
+  "country_code": "ID",
+  "inLanguage": "id",
+  "raw_dimensions": {
+    "width_mm": 40,
+    "height_mm": 60,
+    "width_in": 1.57,
+    "height_in": 2.36,
+    "background": "White"
+  }
+}

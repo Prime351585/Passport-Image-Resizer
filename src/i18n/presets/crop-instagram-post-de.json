@@ -1,0 +1,30 @@
+{
+  "meta_title": "Kostenloser Instagram-Bildbeschnitt | Online auf 1:1 quadratisch zuschneiden",
+  "meta_description": "Schneiden Sie Bilder sofort online zu, um sie an das offizielle Instagram-Seitenverhältnis (1:1) anzupassen. 100 % privates, browserbasiertes Zuschneiden ohne Qualitätsverlust.",
+  "h1": "Kostenloser Instagram-Bildbeschneider",
+  "subtitle": "Fotos perfekt für Instagram zuschneiden. Sofort ohne Server-Uploads auf exakte 1080 x 1080 Pixel (1:1) zuschneiden.",
+  "tool_workspace": {
+    "h2": "Interaktives Instagram-Zuschneidestudio",
+    "description": "Laden Sie Ihre Datei hoch, um sie an den offiziellen Instagram-Ernterahmen anzupassen (1:1). Lokal in Ihrem Browser verarbeitet.",
+    "spec_badge": "1080 x 1080 Pixel",
+    "spec_ratio": "Verhältnis: 1:1"
+  },
+  "how_to": {
+    "title": "So beschneiden Sie es für Instagram online",
+    "step1_title": "1. Laden Sie Ihr Bild hoch",
+    "step1_text": "Wählen Sie Ihr Foto aus. Das Bild wird für absolute Privatsphäre sofort in den Speicher Ihres Browsers geladen.",
+    "step2_title": "2. Wählen Sie Instagram-Voreinstellung",
+    "step2_text": "Der Zuschneiderahmen stellt sich automatisch auf das offizielle Seitenverhältnis 1:1 ein.",
+    "step3_title": "3. Anpassen und zentrieren",
+    "step3_text": "Ziehen Sie die Griffe und rahmen Sie Ihr Gesicht oder Motiv perfekt in den Zuschneiderahmen ein.",
+    "step4_title": "4. Speichern und herunterladen",
+    "step4_text": "Klicken Sie auf „Zuschneiden“, um das Foto lokal zu verarbeiten und Ihre optimierte Instagram-Datei herunterzuladen."
+  },
+  "faq": {
+    "h2": "Häufig gestellte Fragen zum Instagram Photo Cropper",
+    "q1": "Was ist die offizielle Größe für Instagram-Posts?",
+    "a1": "Die empfohlenen Standardabmessungen sind 1080 x 1080 Pixel, was dem Seitenverhältnis 1:1 entspricht.",
+    "q2": "Werden meine Fotos hochgeladen?",
+    "a2": "Nein. Das Tool verarbeitet Ihr Bild clientseitig im Browser Ihres Geräts und sorgt so für die Sicherheit Ihrer Daten."
+  }
+}

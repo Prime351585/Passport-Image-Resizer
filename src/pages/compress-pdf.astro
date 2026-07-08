@@ -1,0 +1,24 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import PDFCompressToolContainer from '../components/PDFCompressToolContainer';
+import { getToolHreflangAlternates, getToolUrl } from '../utils/i18n';
+
+import toolData from '../i18n/tools/compress-pdf-en.json';
+
+const canonicalUrl = getToolUrl('compress-pdf', 'en');
+const hreflangAlternates = getToolHreflangAlternates('compress-pdf');
+const breadcrumbs = [
+  { name: 'Home', url: 'https://www.resize-it.com' },
+  { name: toolData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang="en"
+  toolData={toolData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  <PDFCompressToolContainer client:load slot="tool" />
+</ToolPageLayout>

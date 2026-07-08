@@ -1,0 +1,44 @@
+{
+  "meta_title": "Free Online PDF Merger | Combine PDF Pages & Files",
+  "meta_description": "Merge multiple PDF documents online instantly. Combine pages, reorder files, and save as one PDF. 100% private, browser-based.",
+  "h1": "Free Online PDF Merger",
+  "subtitle": "Combine PDF pages easily. Reorder sheets, join reports, and compile documents—all processed securely in your browser.",
+  "tool_workspace": {
+    "h2": "Interactive PDF Merger Studio",
+    "description": "Drag and drop your PDF files. Rearrange pages or files, then merge.",
+    "features_list": [
+      "Drag & Drop File Reordering",
+      "Combine Unlimited PDF Documents",
+      "Instant Client-Side Compilation",
+      "Zero Server Uploads (100% Secure)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Common PDF Merge Scenarios",
+    "description": "Combine documents to create unified files for various requirements.",
+    "preset_1": "Resume & Cover Letters",
+    "preset_2": "Contract and Addendum files",
+    "preset_3": "Academic Assignment Papers",
+    "preset_4": "Scanned Document sheets"
+  },
+  "how_to": {
+    "title": "How to Merge PDF Files Online",
+    "step1_title": "1. Select PDF Files",
+    "step1_text": "Click 'Upload PDFs' and select all the documents you wish to combine.",
+    "step2_title": "2. Arrange File Order",
+    "step2_text": "Drag and drop the file cards to arrange them in the exact order you want them merged.",
+    "step3_title": "3. Click Merge Documents",
+    "step3_text": "Click 'Merge PDFs' to combine the pages instantly inside your browser.",
+    "step4_title": "4. Download Consolidated PDF",
+    "step4_text": "Save the single consolidated PDF document directly to your device."
+  },
+  "faq": {
+    "h2": "PDF Merger FAQs",
+    "q1": "Is there a file size limit for merging PDFs?",
+    "a1": "The limit depends on your device's memory since all processing is completed locally in the browser.",
+    "q2": "Will the merged PDF lose original document formatting?",
+    "a2": "No, the merging process preserves all text styles, layout margins, fonts, and images in the files.",
+    "q3": "Are my combined PDFs sent to servers?",
+    "a3": "Absolutely not. The merger works entirely client-side using JavaScript, keeping your documents confidential."
+  }
+}

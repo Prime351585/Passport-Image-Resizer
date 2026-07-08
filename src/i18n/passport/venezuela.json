@@ -1,0 +1,53 @@
+{
+  "meta_title": "Fabricante oficial de tamaño de foto de pasaporte Venezuela (35x45 mm) | 2026",
+  "meta_description": "Cree una foto de pasaporte o visa Venezuela 100% compatible en línea. Dimensiones exactas de 35x45 mm (1.38x1.77 pulgadas), se requiere un fondo de Blanco. Herramienta rápida y privada del lado del navegador.",
+  "h1": "Guía oficial de requisitos y tamaño de la foto del pasaporte Venezuela",
+  "subtitle": "Cambie el tamaño, recorte y compile una cuadrícula imprimible que coincida con los estándares oficiales de pasaportes biométricos de Venezuela.",
+  "tool_workspace": {
+    "h2": "Herramienta interactiva de recorte biométrico Venezuela",
+    "description": "Cargue su archivo para alinearlo con la cuadrícula de dimensiones Venezuela incorporada. No se envían imágenes a los servidores; Todo el procesamiento del lienzo se realiza localmente en JavaScript.",
+    "spec_badge_mm": "35x45mm",
+    "spec_badge_in": "1,38 x 1,77 pulgadas",
+    "spec_background": "Fondo requerido: Blanco"
+  },
+  "biometric_details": {
+    "h2": "Proporciones biométricas oficiales para Venezuela",
+    "head_size_label": "Relación de altura de cabeza",
+    "head_size_text": "La distancia desde la parte inferior de la barbilla hasta la parte superior del cabello debe ocupar aproximadamente el 75% de la altura del marco vertical.",
+    "eye_height_label": "Línea de alineación ocular",
+    "eye_height_text": "Sus ojos deben estar centrados verticalmente dentro de los límites del marco de alineación del objetivo."
+  },
+  "how_to": {
+    "title": "Cómo hacer e imprimir una foto de pasaporte Venezuela",
+    "step1_title": "1. Inicializar los ajustes preestablecidos Venezuela",
+    "step1_text": "La ventana de recorte escala automáticamente al tamaño exacto de regulación de 35x45 mm.",
+    "step2_title": "2. Carga de imágenes locales",
+    "step2_text": "Selecciona tu foto de origen. Se mantiene completamente seguro dentro de la memoria de ejecución del navegador.",
+    "step3_title": "3. Alineal con superposiciones biométricas",
+    "step3_text": "Escala y mueve la imagen hasta que tu cara coincida con las capas translúcidas de alineación de la cabeza y los ojos.",
+    "step4_title": "4. Generar cuadrícula y guardar",
+    "step4_text": "Descargue un solo archivo de imagen optimizado o una hoja de plantilla imprimible prealineada para diseños de impresión de fotos estándar de 4x6 pulgadas."
+  },
+  "faq": {
+    "h2": "Preguntas frecuentes sobre Venezuela Fotos",
+    "q1": "¿Cuál es la regla oficial de color de fondo para Venezuela?",
+    "a1": "El gobierno requiere un telón de fondo blanco sólido y uniforme sin sombras, objetos ni texturas presentes.",
+    "q2": "¿Puedo usar gafas o sombreros en mi foto del documento Venezuela?",
+    "a2": "Los anteojos deben quitarse al menos que sea estrictamente necesario desde el punto de vista médico (sin reflejos, tintes o marcos horribles). Se permiten sombreros religiosos siempre que revelen todo el óvalo de la cara desde la barbilla hasta la frente.",
+    "q3": "¿Cómo imprimimo mi archivo digital Venezuela generado?",
+    "a3": "Descargue nuestra opción de hoja imprimible compilada, guárdela en una memoria USB e imprímala en un quiosco de fotos digital local utilizando la configuración estándar de papel fotográfico 4x6 de alta calidad."
+  },
+  "cross_link_footer": {
+    "title": "Formatos de documentos relacionados",
+    "text": "¿Necesitas una talla alternativa? Consulta los requisitos para las dimensiones de la visa Venezuela o busca formatos de documentación estándar globales alternativos."
+  },
+  "country_code": "VE",
+  "inLanguage": "es",
+  "raw_dimensions": {
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "White"
+  }
+}

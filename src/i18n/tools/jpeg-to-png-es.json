@@ -1,0 +1,44 @@
+{
+  "meta_title": "Recortador de imágenes en línea gratis | Recortar fotos de forma segura",
+  "meta_description": "Recorte imágenes online al instante. Use relaciones de aspecto personalizadas o ajustes para Instagram, YouTube y Facebook. 100% privado en su navegador.",
+  "h1": "Recortador de imágenes en línea gratis",
+  "subtitle": "Encuadre sus fotos a la perfección. Elimine distracciones, ajuste la relación de aspecto y formatee para redes sociales al instante.",
+  "tool_workspace": {
+    "h2": "Estudio interactivo de recorte de fotos",
+    "description": "Arrastre y suelte su imagen abajo. Use los tiradores para definir el cuadro de recorte o seleccione una proporción preestablecida.",
+    "features_list": [
+      "Recorte libre personalizado",
+      "Relaciones de aspecto fijas (1:1, 16:9, 4:3, 3:2)",
+      "Recorte circular para fotos de perfil",
+      "Sin subidas al servidor (Privacidad total)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Recortar para redes sociales al instante",
+    "description": "No adivine las dimensiones. Use nuestros preajustes de un solo clic para encuadrar perfectamente su contenido.",
+    "preset_1": "Cuadrado de Instagram (1:1)",
+    "preset_2": "Miniatura de YouTube (16:9)",
+    "preset_3": "Encabezado de Twitter/X (3:1)",
+    "preset_4": "Pin de Pinterest (2:3)"
+  },
+  "how_to": {
+    "title": "Cómo recortar una imagen en línea",
+    "step1_title": "1. Suba su imagen",
+    "step1_text": "Seleccione un archivo JPG, PNG o WebP. La imagen se carga al instante en su navegador sin subirse a ningún servidor.",
+    "step2_title": "2. Elija su proporción",
+    "step2_text": "Seleccione una relación de aspecto fija o arrastre las esquinas para crear un marco de recorte personalizado.",
+    "step3_title": "3. Ajuste y encuadre",
+    "step3_text": "Mueva la imagen dentro del cuadro de recorte para centrar el tema principal y eliminar distracciones.",
+    "step4_title": "4. Aplique y descargue",
+    "step4_text": "Haga clic en 'Recortar imagen' para procesar el archivo localmente y descargar su foto perfectamente encuadrada."
+  },
+  "faq": {
+    "h2": "Preguntas frecuentes sobre el recorte",
+    "q1": "¿Perderá calidad mi imagen recortada?",
+    "a1": "No. Nuestra herramienta realiza un recorte de alta fidelidad, conservando la resolución original y el perfil de color del área seleccionada.",
+    "q2": "¿Se suben mis imágenes a sus servidores?",
+    "a2": "Absolutamente no. Esta herramienta utiliza tecnología HTML5 Canvas para realizar todo el recorte localmente en su dispositivo.",
+    "q3": "¿Puedo recortar una imagen en círculo?",
+    "a3": "¡Sí! Seleccione la opción de 'Recorte circular' en la barra de herramientas, ideal para fotos de perfil con fondo transparente PNG."
+  }
+}

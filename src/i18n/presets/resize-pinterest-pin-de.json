@@ -1,0 +1,30 @@
+{
+  "meta_title": "Kostenloser Pinterest Image Resizer | Größe online auf 1000x1500 px ändern",
+  "meta_description": "Passen Sie die Größe Ihrer Bilder sofort an die Standardgrößen von Pinterest an. Ändern Sie die Größe online auf genau 1000 x 1500 Pixel (2:3). 100 % privat und sicher.",
+  "h1": "Kostenloser Pinterest Image Resizer",
+  "subtitle": "Skalieren Sie Ihre Fotos perfekt für Pinterest. Passen Sie die Größe sofort und ohne Qualitätsverlust auf exakt 1000 x 1500 Pixel (2:3) an.",
+  "tool_workspace": {
+    "h2": "Interaktives Pinterest-Größenänderungsstudio",
+    "description": "Laden Sie Ihre Datei hoch, um die Größe an die offiziellen Pinterest-Spezifikationen anzupassen. Lokal in Ihrem Browser verarbeitet.",
+    "spec_badge": "1000 x 1500 Pixel",
+    "spec_ratio": "Verhältnis: 2:3"
+  },
+  "how_to": {
+    "title": "So ändern Sie die Größe für Pinterest online",
+    "step1_title": "1. Laden Sie Ihr Bild hoch",
+    "step1_text": "Wählen Sie Ihr JPG, PNG oder WebP. Die Datei wird sofort in den Speicher des Clients geladen.",
+    "step2_title": "2. Wählen Sie Voreingestellte Größe",
+    "step2_text": "Die Felder Breite und Höhe werden automatisch auf 1000 x 1500 Pixel eingestellt.",
+    "step3_title": "3. Fit- oder Stretch-Option",
+    "step3_text": "Wählen Sie, ob Sie das Bild passend strecken, den Hintergrund auffüllen oder die Kanten beschneiden möchten.",
+    "step4_title": "4. Laden Sie das verkleinerte Bild herunter",
+    "step4_text": "Klicken Sie auf „Größe ändern“ und laden Sie Ihre perfekt skalierte Pinterest-Datei herunter."
+  },
+  "faq": {
+    "h2": "Häufig gestellte Fragen zum Pinterest Photo Resizer",
+    "q1": "Wird mein verkleinertes Bild gestreckt oder verzerrt?",
+    "a1": "Nein. Durch die Verwendung von Standard-Seitenverhältnissen und Fülloptionen sorgt der Resizer dafür, dass Ihre Fotos perfekt proportioniert sind.",
+    "q2": "Sind meine Bilder sicher?",
+    "a2": "Ja. Es werden keine Dateien auf externe Server hochgeladen. Alle Vorgänge erfolgen in JavaScript im Browser Ihres Geräts."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta_title": "Recadrage d'images Instagram gratuit | Recadrer au carré 1:1 en ligne",
+  "meta_description": "Recadrez instantanément les images en ligne pour les adapter au rapport hauteur/largeur officiel d'Instagram (1:1). Recadrage 100 % privé, basé sur un navigateur, sans perte de qualité.",
+  "h1": "Recadrage d'images Instagram gratuit",
+  "subtitle": "Recadrez parfaitement les photos pour Instagram. Recadrez instantanément jusqu'à exactement 1 080 x 1 080 pixels (1: 1) sans téléchargement sur le serveur.",
+  "tool_workspace": {
+    "h2": "Studio de recadrage Instagram interactif",
+    "description": "Téléchargez votre fichier pour l'aligner sur la zone de recadrage officielle d'Instagram (1:1). Traité localement dans votre navigateur.",
+    "spec_badge": "1080 x 1080 pixels",
+    "spec_ratio": "Rapport : 1:1"
+  },
+  "how_to": {
+    "title": "Comment recadrer pour Instagram en ligne",
+    "step1_title": "1. Téléchargez votre image",
+    "step1_text": "Sélectionnez votre photo. L'image se charge instantanément dans la mémoire de votre navigateur pour une confidentialité totale.",
+    "step2_title": "2. Choisissez le préréglage Instagram",
+    "step2_text": "Le cadre de recadrage se verrouille automatiquement sur le rapport hauteur/largeur officiel 1:1.",
+    "step3_title": "3. Ajuster et centrer",
+    "step3_text": "Faites glisser les poignées et cadrez parfaitement votre visage ou votre sujet dans la zone de recadrage.",
+    "step4_title": "4. Enregistrer et télécharger",
+    "step4_text": "Cliquez sur « Recadrer » pour traiter la photo localement et télécharger votre fichier Instagram optimisé."
+  },
+  "faq": {
+    "h2": "FAQ sur le recadrage de photos Instagram",
+    "q1": "Quelle est la taille officielle des publications Instagram ?",
+    "a1": "Les dimensions standard recommandées sont de 1 080 x 1 080 pixels, ce qui correspond au rapport hauteur/largeur 1:1.",
+    "q2": "Mes photos sont-elles téléchargées ?",
+    "a2": "Non. L'outil traite votre image côté client sur le navigateur de votre appareil, garantissant ainsi la sécurité de vos données."
+  }
+}

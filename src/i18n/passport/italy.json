@@ -1,0 +1,53 @@
+{
+  "meta_title": "Creatore ufficiale di dimensioni foto per passaporti Italia (35x45 mm) | 2026",
+  "meta_description": "Crea online un passaporto o una foto del visto italiano conforme al 100%. Dimensioni esatte 35x45 mm (1,38x1,77 pollici), richiesto sfondo bianco. Strumento veloce e privato lato browser.",
+  "h1": "Guida ufficiale su dimensioni e requisiti delle foto per passaporti italiani",
+  "subtitle": "Ridimensiona, ritaglia e compila una griglia stampabile corrispondente agli standard ufficiali del passaporto biometrico italiano.",
+  "tool_workspace": {
+    "h2": "Strumento di ritaglio biometrico interattivo Italia",
+    "description": "Carica il tuo file per allinearlo alla griglia delle dimensioni Italia integrata. Nessuna immagine viene inviata ai server; tutta l'elaborazione del canvas avviene localmente in JavaScript.",
+    "spec_badge_mm": "35 x 45 mm",
+    "spec_badge_in": "1,38 x 1,77 pollici",
+    "spec_background": "Sfondo richiesto: Bianco"
+  },
+  "biometric_details": {
+    "h2": "Proporzioni biometriche ufficiali per l'Italia",
+    "head_size_label": "Rapporto altezza testa",
+    "head_size_text": "La distanza dalla parte inferiore del mento alla parte superiore dei capelli deve occupare circa il 75% dell'altezza verticale della montatura.",
+    "eye_height_label": "Linea di allineamento degli occhi",
+    "eye_height_text": "I tuoi occhi devono essere centrati verticalmente entro i limiti del riquadro di allineamento del bersaglio."
+  },
+  "how_to": {
+    "title": "Come realizzare e stampare una foto per passaporto italiano",
+    "step1_title": "1. Inizializzare le preimpostazioni Italia",
+    "step1_text": "La finestra di ritaglio si adatta automaticamente alla dimensione regolamentare esatta di 35x45 mm.",
+    "step2_title": "2. Caricamento immagine locale",
+    "step2_text": "Seleziona la tua foto sorgente. Rimane completamente protetto nella memoria di esecuzione del browser.",
+    "step3_title": "3. Allinearsi con le sovrapposizioni biometriche",
+    "step3_text": "Ridimensiona e sposta l'immagine finché il tuo viso non corrisponde agli strati di allineamento della testa e degli occhi traslucidi.",
+    "step4_title": "4. Genera griglia e salva",
+    "step4_text": "Scarica un singolo file immagine ottimizzato o un foglio modello stampabile preallineato per layout di stampa fotografica standard da 4x6 pollici."
+  },
+  "faq": {
+    "h2": "Domande frequenti sulle foto dell'Italia",
+    "q1": "Qual è la regola ufficiale del colore dello sfondo per l'Italia?",
+    "a1": "Il governo richiede uno sfondo Bianco solido e uniforme senza ombre, oggetti o trame presenti.",
+    "q2": "Posso indossare occhiali o copricapo nella mia foto documento Italia?",
+    "a2": "Gli occhiali devono essere rimossi se non strettamente necessario dal punto di vista medico (nessun riflesso, tinta o montatura spessa). È consentito il copricapo religioso purché riveli l'intero ovale del viso dal mento alla fronte.",
+    "q3": "Come posso stampare il mio file digitale Italia generato?",
+    "a3": "Scarica la nostra opzione di foglio stampabile compilato, salvalo su una pen drive e stampalo presso un chiosco fotografico digitale locale utilizzando le impostazioni standard della carta fotografica 4x6 di alta qualità."
+  },
+  "cross_link_footer": {
+    "title": "Formati di documenti correlati",
+    "text": "Hai bisogno di una dimensione alternativa? Visualizza i requisiti per le dimensioni del visto Italia o cerca formati di documentazione standard globali alternativi."
+  },
+  "country_code": "IT",
+  "inLanguage": "it",
+  "raw_dimensions": {
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "White"
+  }
+}

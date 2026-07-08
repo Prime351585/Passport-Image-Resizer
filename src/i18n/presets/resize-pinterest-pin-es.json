@@ -1,0 +1,30 @@
+{
+  "meta_title": "Redimensionador de imágenes Pinterest gratis | Cambiar tamaño a 1000x1500 px",
+  "meta_description": "Redimensiona tus imágenes al instante para adaptarlas a los tamaños estándar de Pinterest. Cambie a exactos 1000x1500 px (2:3) en línea.",
+  "h1": "Redimensionador de imágenes Pinterest gratis",
+  "subtitle": "Cambie el tamaño de sus fotos para Pinterest. Redimensione a exactos 1000x1500 px (2:3) al instante.",
+  "tool_workspace": {
+    "h2": "Estudio interactivo de redimensionamiento para Pinterest",
+    "description": "Suba su archivo para redimensionarlo a las especificaciones oficiales de Pinterest. Proceso local.",
+    "spec_badge": "1000 x 1500 píxeles",
+    "spec_ratio": "Relación: 2:3"
+  },
+  "how_to": {
+    "title": "Cómo redimensionar Pinterest en línea",
+    "step1_title": "1. Suba su imagen",
+    "step1_text": "Seleccione JPG, PNG o WebP. El archivo se carga localmente al instante.",
+    "step2_title": "2. Seleccione tamaño preestablecido",
+    "step2_text": "Los campos de ancho y alto se bloquean automáticamente a 1000x1500 px.",
+    "step3_title": "3. Opción de ajuste o relleno",
+    "step3_text": "Elija si desea estirar la imagen para ajustarla, rellenar el fondo o recortar los bordes.",
+    "step4_title": "4. Descargue su imagen",
+    "step4_text": "Haga clic en 'Redimensionar' y descargue su archivo perfectamente adaptado para Pinterest."
+  },
+  "faq": {
+    "h2": "Preguntas frecuentes sobre cambio de tamaño en Pinterest",
+    "q1": "¿Mi imagen redimensionada se estirará o distorsionará?",
+    "a1": "No. Al utilizar las relaciones de aspecto estándar, el redimensionador mantiene sus fotos perfectamente proporcionadas.",
+    "q2": "¿Son seguras mis imágenes?",
+    "a2": "Si. Ningún archivo se encuentra en servidores externos. Todo el proceso ocurre en su navegador."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta_title": "Redimensionneur d'image YouTube gratuit | Redimensionner à 1280 x 720 px en ligne",
+  "meta_description": "Redimensionnez instantanément vos images pour les adapter aux tailles standard de YouTube. Modifiez la taille pour obtenir exactement 1280 x 720 px (16:9) en ligne. 100% privé et sécurisé.",
+  "h1": "Redimensionneur d'image YouTube gratuit",
+  "subtitle": "Redimensionnez parfaitement vos photos pour YouTube. Redimensionnez instantanément à 1280 x 720 px (16:9) exactement sans perte de qualité.",
+  "tool_workspace": {
+    "h2": "Studio de redimensionnement YouTube interactif",
+    "description": "Téléchargez votre fichier pour le redimensionner selon les spécifications officielles de YouTube. Traité localement dans votre navigateur.",
+    "spec_badge": "1280 x 720 pixels",
+    "spec_ratio": "Rapport : 16:9"
+  },
+  "how_to": {
+    "title": "Comment redimensionner pour YouTube en ligne",
+    "step1_title": "1. Téléchargez votre image",
+    "step1_text": "Sélectionnez votre JPG, PNG ou WebP. Le fichier se charge instantanément dans la mémoire côté client.",
+    "step2_title": "2. Sélectionnez la taille prédéfinie",
+    "step2_text": "Les champs de largeur et de hauteur se verrouillent automatiquement à 1280x720 px.",
+    "step3_title": "3. Option d'ajustement ou d'étirement",
+    "step3_text": "Choisissez si vous souhaitez étirer l’image pour l’adapter, remplir l’arrière-plan ou recadrer les bords.",
+    "step4_title": "4. Téléchargez l'image redimensionnée",
+    "step4_text": "Cliquez sur « Redimensionner » et téléchargez votre fichier YouTube parfaitement mis à l'échelle."
+  },
+  "faq": {
+    "h2": "FAQ sur le redimensionnement de photos YouTube",
+    "q1": "Mon image redimensionnée va-t-elle s'étirer ou se déformer ?",
+    "a1": "Non. En utilisant des formats d’image et des options de remplissage standard, le redimensionneur maintient vos photos parfaitement proportionnées.",
+    "q2": "Mes images sont-elles sécurisées ?",
+    "a2": "Oui. Aucun fichier n'est téléchargé sur des serveurs externes. Toutes les opérations se déroulent en JavaScript sur le navigateur de votre appareil."
+  }
+}

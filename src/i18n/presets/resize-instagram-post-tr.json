@@ -1,0 +1,30 @@
+{
+  "meta_title": "Ücretsiz Instagram Resim Yeniden Boyutlandırıcı | Çevrimiçi olarak 1080x1080 piksele yeniden boyutlandır",
+  "meta_description": "Resimlerinizi Instagram standart boyutlarına uyacak şekilde anında yeniden boyutlandırın. Boyutu çevrimiçi olarak tam 1080x1080 piksel (1:1) olarak değiştirin. %100 özel ve güvenli.",
+  "h1": "Ücretsiz Instagram Resim Düzenleyici",
+  "subtitle": "Fotoğraflarınızı Instagram için mükemmel şekilde ölçeklendirin. Kalite kaybı olmadan anında tam 1080x1080 piksele (1:1) yeniden boyutlandırın.",
+  "tool_workspace": {
+    "h2": "İnteraktif Instagram Yeniden Boyutlandırma Stüdyosu",
+    "description": "Resmi Instagram özelliklerine göre yeniden boyutlandırmak için dosyanızı yükleyin. Tarayıcınızda yerel olarak işlenir.",
+    "spec_badge": "1080x1080 piksel",
+    "spec_ratio": "Oran: 1:1"
+  },
+  "how_to": {
+    "title": "Instagram Çevrimiçi için Yeniden Boyutlandırma Nasıl Yapılır?",
+    "step1_title": "1. Resminizi Yükleyin",
+    "step1_text": "JPG, PNG veya WebP'nizi seçin. Dosya istemci tarafındaki belleğe anında yüklenir.",
+    "step2_title": "2. Ön ayar boyutunu seçin",
+    "step2_text": "Genişlik ve yükseklik alanları otomatik olarak 1080x1080 piksele kilitlenir.",
+    "step3_title": "3. Sığdır veya Uzat Seçeneği",
+    "step3_text": "Görüntüyü sığacak şekilde uzatmayı, arka planı doldurmayı veya kenarları kırpmayı seçin.",
+    "step4_title": "4. Yeniden Boyutlandırılmış Resmi İndirin",
+    "step4_text": "'Yeniden Boyutlandır'ı tıklayın ve mükemmel şekilde ölçeklendirilmiş Instagram dosyanızı indirin."
+  },
+  "faq": {
+    "h2": "Instagram Fotoğraf Yeniden Boyutlandırıcı SSS",
+    "q1": "Yeniden boyutlandırılan resmim uzayacak mı veya bozulacak mı?",
+    "a1": "Hayır. Yeniden boyutlandırma, standart en boy oranlarını ve dolgu seçeneklerini kullanarak fotoğraflarınızın mükemmel oranda orantılı kalmasını sağlar.",
+    "q2": "Resimlerim güvende mi?",
+    "a2": "Evet. Harici sunuculara hiçbir dosya yüklenmez. Tüm işlemler cihazınızın tarayıcısındaki JavaScript'te gerçekleşir."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta_title": "Ritaglia immagini Pinterest gratuito | Ritaglia in formato quadrato 2:3 online",
+  "meta_description": "Ritaglia istantaneamente le immagini online per adattarle alle proporzioni ufficiali di Pinterest (2:3). Ritaglio privato al 100% basato su browser con perdita di qualità pari a zero.",
+  "h1": "Ritaglia immagini Pinterest gratuito",
+  "subtitle": "Ritaglia le foto perfettamente per Pinterest. Ritaglia istantaneamente a 1000x1500 pixel esatti (2:3) senza caricamenti sul server.",
+  "tool_workspace": {
+    "h2": "Studio interattivo di ritaglio Pinterest",
+    "description": "Carica il tuo file per allinearlo alla casella di ritaglio ufficiale di Pinterest (2:3). Elaborato localmente nel tuo browser.",
+    "spec_badge": "1000 x 1500 pixel",
+    "spec_ratio": "Rapporto: 2:3"
+  },
+  "how_to": {
+    "title": "Come ritagliare per Pinterest Online",
+    "step1_title": "1. Carica la tua immagine",
+    "step1_text": "Seleziona la tua foto. L'immagine viene caricata istantaneamente nella memoria del browser per una privacy totale.",
+    "step2_title": "2. Scegli Preimpostazione Pinterest",
+    "step2_text": "La cornice di ritaglio si blocca automaticamente sulle proporzioni ufficiali 2:3.",
+    "step3_title": "3. Regola e centra",
+    "step3_text": "Trascina le maniglie e inquadra perfettamente il tuo viso o il soggetto all'interno della casella di ritaglio.",
+    "step4_title": "4. Salva e scarica",
+    "step4_text": "Fai clic su \"Ritaglia\" per elaborare la foto localmente e scaricare il file Pinterest ottimizzato."
+  },
+  "faq": {
+    "h2": "Domande frequenti sul ritaglio di foto di Pinterest",
+    "q1": "Qual è la dimensione ufficiale dei post di Pinterest?",
+    "a1": "Le dimensioni standard consigliate sono 1000x1500 pixel, che corrispondono alle proporzioni 2:3.",
+    "q2": "Le mie foto vengono caricate?",
+    "a2": "No. Lo strumento elabora la tua immagine lato client sul browser del tuo dispositivo, mantenendo i tuoi dati al sicuro."
+  }
+}

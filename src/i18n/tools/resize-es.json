@@ -1,0 +1,50 @@
+{
+  "meta_title": "Redimensionador de imágenes en línea gratuito | Cambiar el tamaño de la imagen de forma segura",
+  "meta_description": "Cambie el tamaño de las imágenes en línea al instante. Ajuste el ancho, alto o tamaño del archivo en píxeles, porcentajes, pulgadas o cm. 100% privado, escalado del lado del navegador para JPG, PNG y WebP.",
+  "h1": "Cambiar el tamaño de imágenes en línea gratis",
+  "subtitle": "Escala tus fotos perfectamente sin perder calidad. Ajuste las dimensiones, cambie los tamaños y dé formato a las imágenes para impresión, redes sociales o rendimiento web, todo procesado de forma segura dentro de su navegador.",
+  "tool_workspace": {
+    "h2": "Estudio interactivo de cambio de tamaño de fotografías",
+    "description": "Arrastra y suelta tu imagen a continuación. Ajuste el ancho, el alto o el tamaño del archivo de destino para cambiar el tamaño de su imagen instantáneamente.",
+    "features_list": [
+      "Escalado de unidades múltiples (píxeles, %, pulgadas, mm, cm)",
+      "Bloquear relación de aspecto (evitar distorsión)",
+      "Compresión inteligente (reducir tamaño de archivo/KB)",
+      "Cargas de servidor cero (100% privacidad)"
+    ]
+  },
+  "social_presets": {
+    "h2": "Cambiar el tamaño para redes sociales y web al instante",
+    "description": "No adivines las dimensiones. Utilice nuestros ajustes preestablecidos con un solo clic para escalar perfectamente su contenido para las principales plataformas.",
+    "preset_1": "Cuadrado de Instagram (1080x1080px)",
+    "preset_2": "Miniatura de YouTube (1280x720px)",
+    "preset_3": "Portada de Facebook (1200x630px)",
+    "preset_4": "Pin de Pinterest (1000x1500px)"
+  },
+  "how_to": {
+    "title": "Cómo cambiar el tamaño de una imagen en línea",
+    "step1_title": "1. Sube tu imagen",
+    "step1_text": "Seleccione un archivo JPG, PNG, GIF o WebP. Su imagen se carga instantáneamente directamente en la memoria de su navegador sin cargarla en un servidor remoto.",
+    "step2_title": "2. Elija Dimensiones o Porcentaje",
+    "step2_text": "Ingrese nuevos valores exactos de ancho y alto, seleccione un tamaño de impresión estándar (como 4x6 pulgadas) o elija una escala de porcentaje.",
+    "step3_title": "3. Bloquear relación de aspecto",
+    "step3_text": "Asegúrese de que el ícono de cadena 'Bloquear proporciones' esté marcado para evitar que su foto se estire, apriete o distorsione durante el cambio de tamaño.",
+    "step4_title": "4. Aplicar y descargar",
+    "step4_text": "Haga clic en 'Cambiar tamaño de imagen' para aplicar algoritmos de remuestreo de alta calidad localmente y luego descargue su archivo optimizado."
+  },
+  "faq": {
+    "h2": "Preguntas frecuentes sobre el cambio de tamaño de imágenes",
+    "q1": "¿Cambiar el tamaño de mi imagen la hará borrosa o perderá calidad?",
+    "a1": "Reducir el tamaño de una imagen mantiene una calidad nítida. Ampliar una imagen (mejorar) puede causar cierta borrosidad, pero nuestra herramienta utiliza algoritmos avanzados de remuestreo de alta fidelidad HTML5 Canvas (como la interpolación bicúbica) para conservar la máxima calidad visual.",
+    "q2": "¿Mis imágenes son seguras y privadas?",
+    "a2": "Sí, completamente. No se cargan archivos en servidores en la nube. Todas las operaciones de cambio de tamaño se realizan en JavaScript de forma segura en el navegador de su dispositivo.",
+    "q3": "¿Puedo cambiar el tamaño de una imagen para imprimirla?",
+    "a3": "¡Sí! Cambie el selector de unidades de 'Píxeles' a 'Pulgadas', 'Milímetros' o 'Centímetros'. Puede cambiar fácilmente el tamaño de las fotografías a las dimensiones de impresión estándar.",
+    "q4": "¿Puedo reducir el tamaño del archivo (KB/MB) con esta herramienta?",
+    "a4": "Sí, al reducir las dimensiones en píxeles o ajustar el control deslizante \"Calidad\" para salidas JPG/WebP, puede comprimir significativamente el tamaño del archivo para una carga web o un archivo adjunto de correo electrónico más rápido.",
+    "q5": "¿Qué son los ajustes preestablecidos rápidos?",
+    "a5": "Los ajustes preestablecidos rápidos le permiten cambiar instantáneamente el tamaño de sus imágenes a dimensiones perfectas para plataformas como Instagram, YouTube, Facebook y más con un solo clic.",
+    "q6": "¿Cómo funcionan los diferentes métodos de cambio de tamaño?",
+    "a6": "Ofrecemos cuatro métodos avanzados de cambio de tamaño: 'Exacto' extiende la imagen a sus dimensiones exactas (puede distorsionar). 'Ajustar' escala la imagen para que se ajuste dentro de las dimensiones manteniendo la relación de aspecto. 'Rellenar' rellena las dimensiones y puede recortar los bordes. 'Recorte' cultivos directamente desde el centro para que se ajusten perfectamente a las dimensiones."
+  }
+}

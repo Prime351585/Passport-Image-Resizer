@@ -1,0 +1,44 @@
+{
+  "meta_title": "Free Online PDF Compressor | Reduce PDF File Size",
+  "meta_description": "Compress PDF documents online instantly. Shrink file sizes while maintaining text readability. 100% private, browser-based tool.",
+  "h1": "Free Online PDF Compressor",
+  "subtitle": "Reduce PDF sizes without losing document clarity. Shrink scanned docs, optimize attachments—all processed securely in your browser.",
+  "tool_workspace": {
+    "h2": "Interactive PDF Compression Studio",
+    "description": "Drag and drop your PDF below. Adjust quality parameters to optimize the file size.",
+    "features_list": [
+      "Client-Side Document Optimization",
+      "Text and Image Clarity Preservation",
+      "Multi-page PDF Compression Support",
+      "Zero Server Uploads (100% Secure)"
+    ]
+  },
+  "social_presets": {
+    "h2": "PDF Optimization Use Cases",
+    "description": "Optimized presets for different PDF sharing and application requirements.",
+    "preset_1": "Government Portal Submissions",
+    "preset_2": "Job Resume Attachments",
+    "preset_3": "Email File Size Optimization",
+    "preset_4": "E-book Web Optimization"
+  },
+  "how_to": {
+    "title": "How to Compress a PDF Online",
+    "step1_title": "1. Upload Your PDF File",
+    "step1_text": "Select the PDF document from your device. The document loads locally in your browser memory.",
+    "step2_title": "2. Choose Compression Level",
+    "step2_text": "Select Low, Medium, or High compression depending on your desired file size reduction.",
+    "step3_title": "3. Process Document",
+    "step3_text": "Click 'Compress PDF' to run the optimization algorithms in client-side JavaScript.",
+    "step4_title": "4. Download Optimized PDF",
+    "step4_text": "Save the newly compressed PDF document to your device immediately."
+  },
+  "faq": {
+    "h2": "PDF Compression FAQs",
+    "q1": "Is my PDF content secure?",
+    "a1": "Yes. Since all processing runs locally on your device, no data is sent to external servers. Your documents remain private.",
+    "q2": "Will compression affect text clarity?",
+    "a2": "No. The compressor targets image assets inside the PDF, leaving vectors, fonts, and text layout crisp.",
+    "q3": "Can I compress password-protected PDFs?",
+    "a3": "No, you must unlock password-protected PDF files before processing them."
+  }
+}

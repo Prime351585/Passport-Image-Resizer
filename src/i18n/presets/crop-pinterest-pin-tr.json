@@ -1,0 +1,30 @@
+{
+  "meta_title": "Ücretsiz Pinterest Resim Kırpıcı | Çevrimiçi 2:3 Kareye Kırp",
+  "meta_description": "Resmi Pinterest en boy oranına (2:3) uyacak şekilde görüntüleri anında çevrimiçi olarak kırpın. Sıfır kalite kaybıyla %100 özel, tarayıcı tabanlı kırpma.",
+  "h1": "Ücretsiz Pinterest Resim Kırpıcı",
+  "subtitle": "Pinterest için fotoğrafları mükemmel bir şekilde kırpın. Sunucuya yükleme yapmadan anında tam 1000x1500 piksele (2:3) kırpın.",
+  "tool_workspace": {
+    "h2": "İnteraktif Pinterest Kırpma Stüdyosu",
+    "description": "Dosyanızı resmi Pinterest kırpma kutusuyla (2:3) hizalanacak şekilde yükleyin. Tarayıcınızda yerel olarak işlenir.",
+    "spec_badge": "1000x1500 piksel",
+    "spec_ratio": "Oran: 2:3"
+  },
+  "how_to": {
+    "title": "Pinterest Çevrimiçi için Nasıl Kırpılır",
+    "step1_title": "1. Resminizi Yükleyin",
+    "step1_text": "Fotoğrafınızı seçin. Görüntü tam bir gizlilik için tarayıcınızın belleğine anında yüklenir.",
+    "step2_title": "2. Pinterest Ön Ayarını Seçin",
+    "step2_text": "Kırpma çerçevesi otomatik olarak resmi 2:3 en boy oranına kilitlenir.",
+    "step3_title": "3. Ayarlayın ve Ortalayın",
+    "step3_text": "Tutamaçları sürükleyin ve yüzünüzü veya nesnenizi kırpma kutusu içinde mükemmel bir şekilde çerçeveleyin.",
+    "step4_title": "4. Kaydet ve İndir",
+    "step4_text": "Fotoğrafı yerel olarak işlemek ve optimize edilmiş Pinterest dosyanızı indirmek için 'Kırp'ı tıklayın."
+  },
+  "faq": {
+    "h2": "Pinterest Fotoğraf Kırpıcı SSS",
+    "q1": "Pinterest gönderilerinin resmi boyutu nedir?",
+    "a1": "Önerilen standart boyutlar 2:3 en boy oranına uyan 1000x1500 pikseldir.",
+    "q2": "Fotoğraflarım yüklendi mi?",
+    "a2": "Hayır. Araç, görselinizi cihazınızın tarayıcısında istemci tarafında işleyerek verilerinizi güvende tutar."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta_title": "Free Facebook Image Cropper | Crop to 1.9:1 Square Online",
+  "meta_description": "Crop images online instantly to fit the official Facebook aspect ratio (1.9:1). 100% private, browser-based cropping with zero quality loss.",
+  "h1": "Free Facebook Image Cropper",
+  "subtitle": "Crop photos perfectly for Facebook. Crop to exact 1200x630 pixels (1.9:1) instantly without server uploads.",
+  "tool_workspace": {
+    "h2": "Interactive Facebook Cropping Studio",
+    "description": "Upload your file to align with the official Facebook crop box (1.9:1). Processed locally in your browser.",
+    "spec_badge": "1200 x 630 px",
+    "spec_ratio": "Ratio: 1.9:1"
+  },
+  "how_to": {
+    "title": "How to Crop for Facebook Online",
+    "step1_title": "1. Upload Your Image",
+    "step1_text": "Select your photo. The image loads instantly in your browser memory for total privacy.",
+    "step2_title": "2. Choose Facebook Preset",
+    "step2_text": "The cropping frame locks automatically to the official 1.9:1 aspect ratio.",
+    "step3_title": "3. Adjust and Center",
+    "step3_text": "Drag the handles and frame your face or subject perfectly within the crop box.",
+    "step4_title": "4. Save and Download",
+    "step4_text": "Click 'Crop' to process the photo locally and download your optimized Facebook file."
+  },
+  "faq": {
+    "h2": "Facebook Photo Cropper FAQs",
+    "q1": "What is the official size for Facebook posts?",
+    "a1": "The standard recommended dimensions are 1200x630 pixels, which matches the 1.9:1 aspect ratio.",
+    "q2": "Are my photos uploaded?",
+    "a2": "No. The tool processes your image client-side on your device's browser, keeping your data secure."
+  }
+}

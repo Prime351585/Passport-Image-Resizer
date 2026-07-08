@@ -1,0 +1,65 @@
+---
+import ToolPageLayout from '../../layouts/ToolPageLayout.astro';
+import ImageToolContainer from '../../components/ImageToolContainer';
+import CompressToolContainer from '../../components/CompressToolContainer';
+import ConvertToolContainer from '../../components/ConvertToolContainer';
+import CropToolContainer from '../../components/CropToolContainer';
+import PDFCompressToolContainer from '../../components/PDFCompressToolContainer';
+import PDFMergeToolContainer from '../../components/PDFMergeToolContainer';
+
+import { SUPPORTED_LANGUAGES, TOOLS, getToolSlug, getToolUrl, getToolHreflangAlternates } from '../../utils/i18n';
+import type { SupportedLanguage, ToolId } from '../../utils/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  const nonEnglishLangs = SUPPORTED_LANGUAGES.filter(l => l !== 'en');
+
+  // We load all json files to pass as props
+  const allToolFiles = import.meta.glob('../../i18n/tools/*.json', { eager: true });
+
+  for (const lang of nonEnglishLangs) {
+    for (const toolId of TOOLS) {
+      const slug = getToolSlug(toolId, lang);
+      const filePath = `../../i18n/tools/${toolId}-${lang}.json`;
+      const toolDataModule = allToolFiles[filePath] as any;
+      
+      // Fallback to English if translation is missing (just in case)
+      const data = toolDataModule ? toolDataModule.default : (allToolFiles[`../../i18n/tools/${toolId}-en.json`] as any).default;
+
+      paths.push({
+        params: { lang, tool: slug },
+        props: { toolId, lang, toolData: data }
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { toolId, lang, toolData } = Astro.props;
+const canonicalUrl = getToolUrl(toolId, lang);
+const hreflangAlternates = getToolHreflangAlternates(toolId);
+const breadcrumbs = [
+  { name: 'Home', url: `/` },
+  { name: toolData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang={lang}
+  toolData={toolData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  {toolId === 'resize' && <ImageToolContainer client:load slot="tool" />}
+  {toolId === 'compress' && <CompressToolContainer client:load slot="tool" />}
+  {toolId === 'crop' && <CropToolContainer client:load slot="tool" />}
+  
+  {(toolId === 'jpeg-to-png' || toolId === 'jpeg-to-webp' || toolId === 'png-to-webp' || toolId === 'webp-to-jpeg' || toolId === 'webp-to-png') && 
+    <ConvertToolContainer client:load slot="tool" defaultFormat={toolId.split('-to-')[1]} />
+  }
+  
+  {toolId === 'compress-pdf' && <PDFCompressToolContainer client:load slot="tool" />}
+  {toolId === 'merge-pdf' && <PDFMergeToolContainer client:load slot="tool" />}
+</ToolPageLayout>

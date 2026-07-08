@@ -1,0 +1,232 @@
+---
+// ToolPageLayout.astro — Reusable layout for all tool pages (resize, crop, compress, converters, etc.)
+// Renders the SEO-optimized content shell around the interactive React tool component.
+
+import Layout from './Layout.astro';
+import type { SupportedLanguage, HreflangAlternate } from '../utils/i18n';
+import { generateWebAppSchema, generateHowToSchema, extractHowToSteps, generateFaqSchema, extractFaqItems, generateBreadcrumbSchema } from '../utils/schemas';
+import { getPresetUrl } from '../utils/i18n';
+
+export interface Props {
+  lang: SupportedLanguage;
+  toolData: any;             // The loaded i18n JSON object
+  canonicalUrl: string;
+  hreflangAlternates: HreflangAlternate[];
+  breadcrumbs?: { name: string; url: string }[];
+}
+
+const { lang, toolData, canonicalUrl, hreflangAlternates, breadcrumbs } = Astro.props;
+
+// Build structured data schemas
+const schemas: object[] = [];
+
+// WebApplication schema
+schemas.push(generateWebAppSchema({
+  name: toolData.h1,
+  description: toolData.meta_description,
+  url: canonicalUrl,
+  lang,
+}));
+
+// HowTo schema (if how_to section exists)
+if (toolData.how_to) {
+  schemas.push(generateHowToSchema({
+    title: toolData.how_to.title,
+    steps: extractHowToSteps(toolData.how_to),
+    url: canonicalUrl,
+    description: toolData.meta_description,
+  }));
+}
+
+// FAQ schema (if faq section exists)
+if (toolData.faq) {
+  const faqItems = extractFaqItems(toolData.faq);
+  if (faqItems.length > 0) {
+    schemas.push(generateFaqSchema(faqItems));
+  }
+}
+
+// Breadcrumb schema
+if (breadcrumbs && breadcrumbs.length > 0) {
+  schemas.push(generateBreadcrumbSchema(breadcrumbs));
+}
+---
+
+<Layout
+  title={toolData.meta_title}
+  description={toolData.meta_description}
+  lang={lang}
+  hreflangAlternates={hreflangAlternates}
+  structuredData={schemas}
+>
+  {/* Breadcrumbs UI */}
+  {breadcrumbs && breadcrumbs.length > 0 && (
+    <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 pt-4 mt-[80px] md:mt-10">
+      <ol class="flex flex-wrap items-center gap-1 text-sm text-gray-500">
+        {breadcrumbs.map((crumb, idx) => (
+          <li class="flex items-center gap-1">
+            {idx > 0 && <span class="mx-1 text-gray-300">/</span>}
+            {idx < breadcrumbs.length - 1 ? (
+              <a href={crumb.url} class="hover:text-primary transition-colors">{crumb.name}</a>
+            ) : (
+              <span class="text-gray-800 font-medium">{crumb.name}</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )}
+
+  {/* Hero Section */}
+  <div class:list={["bg-white text-center font-crimson", breadcrumbs ? "mt-4" : "mt-[80px] md:mt-10"]}>
+    <h1 class="text-[40px] md:text-[50px] leading-tight px-4">
+      {toolData.h1}
+    </h1>
+    <p class="text-gray-500 text-lg md:text-xl mt-4 max-w-2xl mx-auto px-4">
+      {toolData.subtitle}
+    </p>
+  </div>
+
+  {/* Tool Workspace Header */}
+  {toolData.tool_workspace && (
+    <div class="max-w-7xl mx-auto px-4 mt-8">
+      {toolData.tool_workspace.features_list && (
+        <div class="flex flex-wrap gap-3 justify-center mb-6">
+          {toolData.tool_workspace.features_list.map((feature: string) => (
+            <span class="px-4 py-2 bg-primary/5 border border-primary/20 rounded-full text-sm text-primary font-medium">
+              {feature}
+            </span>
+          ))}
+        </div>
+      )}
+      {/* Passport-specific spec badges */}
+      {toolData.tool_workspace.spec_badge_mm && (
+        <div class="flex flex-wrap gap-4 justify-center mb-6">
+          <span class="px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl text-sm text-blue-700 font-semibold">
+            📐 {toolData.tool_workspace.spec_badge_mm}
+          </span>
+          <span class="px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl text-sm text-blue-700 font-semibold">
+            📏 {toolData.tool_workspace.spec_badge_in}
+          </span>
+          <span class="px-4 py-2 bg-green-50 border border-green-200 rounded-xl text-sm text-green-700 font-semibold">
+            🎨 {toolData.tool_workspace.spec_background}
+          </span>
+        </div>
+      )}
+      {/* Preset-specific spec badges */}
+      {toolData.tool_workspace.spec_badge && (
+        <div class="flex flex-wrap gap-4 justify-center mb-6">
+          <span class="px-4 py-2 bg-purple-50 border border-purple-200 rounded-xl text-sm text-purple-700 font-semibold">
+            📐 {toolData.tool_workspace.spec_badge}
+          </span>
+          {toolData.tool_workspace.spec_ratio && (
+            <span class="px-4 py-2 bg-purple-50 border border-purple-200 rounded-xl text-sm text-purple-700 font-semibold">
+              📊 {toolData.tool_workspace.spec_ratio}
+            </span>
+          )}
+        </div>
+      )}
+    </div>
+  )}
+
+  {/* Interactive Tool Component — injected via slot */}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+    <slot name="tool" />
+  </div>
+
+  {/* Social Presets Section */}
+  {toolData.social_presets && (
+    <div class="mt-12 px-5 max-w-7xl mx-auto">
+      <h2 class="font-crimson text-[30px] md:text-[50px] mb-4 text-center">{toolData.social_presets.h2}</h2>
+      <p class="text-gray-500 text-center mb-8 max-w-2xl mx-auto">{toolData.social_presets.description}</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { label: toolData.social_presets.preset_1, id: 'instagram-post' as const },
+          { label: toolData.social_presets.preset_2, id: 'youtube-thumbnail' as const },
+          { label: toolData.social_presets.preset_3, id: 'facebook-cover' as const },
+          { label: toolData.social_presets.preset_4, id: 'pinterest-pin' as const }
+        ].filter(p => p.label).map((preset) => (
+          <a 
+            href={getPresetUrl('resize', preset.id, lang)}
+            class="block p-4 border-2 border-gray-200 rounded-xl text-center hover:border-primary hover:bg-primary/5 transition-colors group"
+          >
+            <p class="font-crimson font-medium text-gray-800 group-hover:text-primary transition-colors">{preset.label}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {/* Biometric Details Section (Passport pages only) */}
+  {toolData.biometric_details && (
+    <div class="mt-12 px-5 max-w-7xl mx-auto">
+      <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-center">{toolData.biometric_details.h2}</h2>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="p-6 bg-blue-50 border border-blue-200 rounded-2xl">
+          <p class="font-crimson text-lg font-semibold text-blue-900 mb-2">{toolData.biometric_details.head_size_label}</p>
+          <p class="text-blue-700 text-sm">{toolData.biometric_details.head_size_text}</p>
+        </div>
+        <div class="p-6 bg-blue-50 border border-blue-200 rounded-2xl">
+          <p class="font-crimson text-lg font-semibold text-blue-900 mb-2">{toolData.biometric_details.eye_height_label}</p>
+          <p class="text-blue-700 text-sm">{toolData.biometric_details.eye_height_text}</p>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {/* How-To Section */}
+  {toolData.how_to && (
+    <div class="mt-16 px-5 max-w-7xl mx-auto">
+      <h2 class="font-crimson text-[30px] md:text-[50px] mb-8 text-center">{toolData.how_to.title}</h2>
+      <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {[
+          { title: toolData.how_to.step1_title, text: toolData.how_to.step1_text },
+          { title: toolData.how_to.step2_title, text: toolData.how_to.step2_text },
+          { title: toolData.how_to.step3_title, text: toolData.how_to.step3_text },
+          { title: toolData.how_to.step4_title, text: toolData.how_to.step4_text },
+        ].map((step) => (
+          <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl hover:border-primary/50 transition-colors">
+            <p class="font-crimson text-lg font-semibold text-gray-900 mb-2">{step.title}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {/* FAQ Section */}
+  {toolData.faq && (
+    <div class="mt-16 mb-16 px-5 max-w-4xl mx-auto">
+      <h2 class="font-crimson text-[30px] md:text-[40px] mb-8 text-center">{toolData.faq.h2}</h2>
+      <div class="space-y-4">
+        {[
+          { q: toolData.faq.q1, a: toolData.faq.a1 },
+          { q: toolData.faq.q2, a: toolData.faq.a2 },
+          toolData.faq.q3 ? { q: toolData.faq.q3, a: toolData.faq.a3 } : null,
+        ].filter(Boolean).map((item: any) => (
+          <details class="group border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-primary/50 transition-colors">
+            <summary class="flex items-center justify-between p-6 cursor-pointer font-crimson text-lg font-semibold text-gray-900 hover:text-primary transition-colors">
+              {item.q}
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {/* Cross-link Footer (Passport pages only) */}
+  {toolData.cross_link_footer && (
+    <div class="mt-8 mb-16 px-5 max-w-4xl mx-auto">
+      <div class="bg-gradient-to-br from-primary/5 to-purple-50 border border-primary/20 rounded-2xl p-8 text-center">
+        <h3 class="font-crimson text-2xl font-semibold mb-3">{toolData.cross_link_footer.title}</h3>
+        <p class="text-gray-600">{toolData.cross_link_footer.text}</p>
+      </div>
+    </div>
+  )}
+</Layout>
