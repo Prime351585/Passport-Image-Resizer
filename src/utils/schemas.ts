@@ -105,6 +105,7 @@ interface BreadcrumbItem {
 }
 
 export function generateBreadcrumbSchema(items: BreadcrumbItem[]): object {
+  const baseUrl = 'https://www.resize-it.com';
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -112,7 +113,7 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]): object {
       '@type': 'ListItem',
       'position': index + 1,
       'name': item.name,
-      'item': item.url,
+      'item': item.url.startsWith('/') ? `${baseUrl}${item.url}` : item.url,
     })),
   };
 }
