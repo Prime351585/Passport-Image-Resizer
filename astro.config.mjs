@@ -36,6 +36,7 @@ export default defineConfig({
           vi: 'vi'
         }
       }, // <-- FIXED: Properly closed the locales and i18n objects here
+      xslURL: '/sitemap.xsl',
       serialize(item) {
         // Strip trailing slash and prefix domain
         const urlObj = new URL(item.url);
