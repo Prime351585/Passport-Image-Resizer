@@ -99,11 +99,13 @@ export default defineConfig({
           }
         }
 
+        let newLinks = item.links || [];
+
         if (isPassport && passportSlug) {
-           item.links = [
+           newLinks = [
              { lang: 'x-default', url: `https://www.resize-it.com/passport/${passportSlug}` }
            ];
-           return item;
+           return { url: item.url, links: newLinks };
         }
 
         const toolId = findToolBySlug(toolSlug);
@@ -112,14 +114,18 @@ export default defineConfig({
            const presetId = findPresetBySlug(presetSlug);
            if (presetId) {
              const alts = getPresetHreflangAlternates(toolId, presetId);
-             item.links = alts.map(a => ({ lang: a.lang, url: a.href }));
+             newLinks = alts.map(a => ({ lang: a.lang, url: a.href }));
            }
         } else if (toolId) {
            const alts = getToolHreflangAlternates(toolId);
-           item.links = alts.map(a => ({ lang: a.lang, url: a.href }));
+           newLinks = alts.map(a => ({ lang: a.lang, url: a.href }));
         }
 
-        return item;
+        // Return a strictly formatted object
+        return { 
+          url: item.url, 
+          links: newLinks 
+        };
       }
     })
   ],
