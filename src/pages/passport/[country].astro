@@ -30,6 +30,16 @@ const breadcrumbs = [
   { name: 'Passport', url: '/passport' },
   { name: countryData.h1, url: canonicalUrl },
 ];
+
+const countryName = countrySlug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+const initialDimension = {
+  name: `${countryName} Passport`,
+  width: countryData.raw_dimensions?.width_mm || 51,
+  height: countryData.raw_dimensions?.height_mm || 51,
+  unit: 'mm' as const,
+  description: countryData.subtitle || `${countryName} passport photo`,
+  country: countryData.country_code || countryName
+};
 ---
 
 <ToolPageLayout
@@ -39,5 +49,5 @@ const breadcrumbs = [
   hreflangAlternates={hreflangAlternates}
   breadcrumbs={breadcrumbs}
 >
-  <PassportToolContainer client:load slot="tool" />
+  <PassportToolContainer initialDimension={initialDimension} client:load slot="tool" />
 </ToolPageLayout>

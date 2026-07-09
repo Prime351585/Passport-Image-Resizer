@@ -23,13 +23,17 @@ export interface PaperSize {
   maxPhotos: number;
 }
 
-const PassportToolContainer: React.FC = () => {
+export interface PassportToolContainerProps {
+  initialDimension?: PassportDimension;
+}
+
+const PassportToolContainer: React.FC<PassportToolContainerProps> = ({ initialDimension }) => {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [originalImage, setOriginalImage] = useState<string>('');
   const [croppedImage, setCroppedImage] = useState<string>('');
   const [originalFileName, setOriginalFileName] = useState<string>('passport');
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
-  const [selectedDimension, setSelectedDimension] = useState<PassportDimension>({
+  const [selectedDimension, setSelectedDimension] = useState<PassportDimension>(initialDimension || {
     name: 'US Passport',
     width: 51,
     height: 51,
