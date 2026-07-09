@@ -78,8 +78,14 @@ export default function PDFMergeToolContainer({ className = '' }: { className?: 
       const mergedPdf = await PDFDocument.create();
 
       for (const file of pdfFiles) {
-        const arrayBuffer = await file.arrayBuffer();
-        const pdf = await PDFDocument.load(arrayBuffer);
+        const arrayBuffer = await new Promise<ArrayBuffer>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as ArrayBuffer);
+          reader.onerror = reject;
+          reader.readAsArrayBuffer(file);
+        });
+
+        const pdf = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
         const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
         copiedPages.forEach((page) => mergedPdf.addPage(page));
       }
@@ -123,7 +129,7 @@ export default function PDFMergeToolContainer({ className = '' }: { className?: 
           onChange={handleFileSelect} 
           accept="application/pdf" 
           multiple 
-          className="hidden" 
+          className="sr-only" 
         />
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

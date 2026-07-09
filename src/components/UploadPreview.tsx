@@ -160,10 +160,11 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
 
   const handleChooseFile = (e?: React.MouseEvent | React.KeyboardEvent) => {
     if (e) {
-      e.preventDefault();
       e.stopPropagation();
     }
-    fileInputRef.current?.click();
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
   };
 
   const formatFileSize = (bytes: number): string => {
@@ -201,7 +202,7 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
             type="file"
             accept={acceptedFormats.join(',')}
             onChange={handleInputChange}
-            className="hidden"
+            className="sr-only"
             multiple={multiple}
           />
           
@@ -273,7 +274,7 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
             type="file"
             accept={acceptedFormats.join(',')}
             onChange={handleInputChange}
-            className="hidden"
+            className="sr-only"
             multiple={multiple}
           />
           
