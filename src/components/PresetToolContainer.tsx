@@ -92,10 +92,10 @@ const PresetToolContainer: React.FC<PresetToolContainerProps> = ({ preset, prese
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
+        <div className={`grid grid-cols-1 ${uploadedFile ? 'xl:grid-cols-2' : ''} gap-4 md:gap-6`}>
           
           {/* Upload & Settings Section */}
-          <div className="space-y-4 md:space-y-6">
+          <div className={`space-y-4 md:space-y-6 ${!uploadedFile ? 'max-w-3xl mx-auto w-full' : ''}`}>
             <UploadPreview
               onImageUpload={handleImageUpload}
               onImageRemove={handleImageRemove}

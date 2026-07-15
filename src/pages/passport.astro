@@ -1,40 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PassportToolContainer from '../components/PassportToolContainer';
-import { getPassportUrl } from '../utils/i18n';
+import Layout from "../layouts/Layout.astro";
+import PassportToolContainer from "../components/PassportToolContainer";
+import { getPassportUrl } from "../utils/i18n";
 
 // Load all passport files to build the directory
-const allPassportFiles = import.meta.glob('../i18n/passport/*.json', { eager: true });
-const countries = Object.entries(allPassportFiles).map(([path, module]) => {
-  const slug = path.split('/').pop()?.replace('.json', '') || '';
-  const data = (module as any).default;
-  return {
-    slug,
-    name: data.country_code ? `${data.country_code} - ${data.raw_dimensions?.width_mm}x${data.raw_dimensions?.height_mm}mm` : slug, // Will refine this later
-    title: data.h1
-  };
-}).sort((a, b) => a.slug.localeCompare(b.slug));
+const allPassportFiles = import.meta.glob("../i18n/passport/*.json", {
+  eager: true,
+});
+const countries = Object.entries(allPassportFiles)
+  .map(([path, module]) => {
+    const slug = path.split("/").pop()?.replace(".json", "") || "";
+    const data = (module as any).default;
+    return {
+      slug,
+      name: data.country_code
+        ? `${data.country_code} - ${data.raw_dimensions?.width_mm}x${data.raw_dimensions?.height_mm}mm`
+        : slug, // Will refine this later
+      title: data.h1,
+    };
+  })
+  .sort((a, b) => a.slug.localeCompare(b.slug));
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://www.resize-it.com');
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  Astro.site || "https://www.resize-it.com",
+);
 ---
 
-<Layout 
+<Layout
   title="Passport Photo Maker - Professional ID & Visa Photos"
   description="Create professional passport photos with precise cropping and generate printable PDF grids for 60+ countries. Perfect for visa applications and ID cards."
 >
   {/* Hero Section */}
   <div class="bg-white text-center font-crimson mt-[80px] md:mt-10">
-    <h1 class="text-[40px] md:text-[50px] leading-tight px-4">  
+    <h1 class="text-[40px] md:text-[50px] leading-tight px-4">
       Create Perfect
       <span class="text-primary">Passport Photos</span>
     </h1>
-    <p class="text-gray-500 text-lg md:text-xl mt-4 max-w-2xl mx-auto px-4">
-      Select your country to get precise dimensions, crop correctly, and generate a printable PDF grid instantly in your browser.
+    <p class="text-gray-500 text-lg md:text-xl mt-4 max-w-3xl mx-auto px-4">
+      Select your country to get precise dimensions, crop correctly, and
+      generate a printable PDF grid instantly in your browser.
     </p>
   </div>
 
   {/* Tool Container (Generic version) */}
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-0">
     <PassportToolContainer client:load />
   </div>
 
@@ -44,19 +54,21 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://www.resi
       Supported Countries & Formats
     </h2>
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      {countries.map(country => (
-        <a 
-          href={getPassportUrl(country.slug, 'en')}
-          class="p-4 border-2 border-gray-100 rounded-xl hover:border-primary/50 hover:bg-primary/5 transition-all group"
-        >
-          <p class="font-crimson font-semibold text-gray-900 group-hover:text-primary capitalize truncate">
-            {country.slug.replace('-', ' ')}
-          </p>
-          <p class="text-xs text-gray-500 truncate mt-1">
-            View specs & requirements
-          </p>
-        </a>
-      ))}
+      {
+        countries.map((country) => (
+          <a
+            href={getPassportUrl(country.slug, "en")}
+            class="p-4 border-2 border-gray-100 rounded-xl hover:border-primary/50 hover:bg-primary/5 transition-all group"
+          >
+            <p class="font-crimson font-semibold text-gray-900 group-hover:text-primary capitalize truncate">
+              {country.slug.replace("-", " ")}
+            </p>
+            <p class="text-xs text-gray-500 truncate mt-1">
+              View specs & requirements
+            </p>
+          </a>
+        ))
+      }
     </div>
   </div>
 </Layout>

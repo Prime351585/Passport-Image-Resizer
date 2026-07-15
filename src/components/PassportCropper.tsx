@@ -308,15 +308,15 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
       </div>
 
       {/* Crop Canvas */}
-      <div ref={containerRef} className="relative">
+      <div ref={containerRef} className="relative flex justify-center bg-gray-50 rounded-xl p-4 overflow-hidden border-2 border-gray-100">
         <canvas
           ref={canvasRef}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className={`w-full border-2 border-gray-300 rounded-xl shadow-md ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-          style={{ maxHeight: '400px' }}
+          className={`border-2 border-gray-300 shadow-md max-w-full rounded-xl ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+          style={{ maxHeight: '400px', touchAction: 'none' }}
         />
         
         {!isLoaded && (
@@ -327,66 +327,6 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
             </div>
           </div>
         )}
-      </div>
-
-      {/* Crop Info */}
-      {isLoaded && (
-        <div className="grid grid-cols-2 gap-4">
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 border-2 border-purple-200">
-            <div className="flex items-center space-x-2 mb-2">
-              <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-lg">📐</span>
-              </div>
-              <h4 className="text-base font-crimson font-medium text-gray-900">Target Size</h4>
-            </div>
-            <p className="text-base font-medium text-gray-700">
-              {targetDimension.width} × {targetDimension.height} {targetDimension.unit}
-            </p>
-            <p className="text-sm text-gray-500 mt-1">
-              {getTargetPixelSize().width} × {getTargetPixelSize().height} pixels
-            </p>
-          </div>
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border-2 border-green-200">
-            <div className="flex items-center space-x-2 mb-2">
-              <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-lg">✨</span>
-              </div>
-              <h4 className="text-base font-crimson font-medium text-gray-900">Quality</h4>
-            </div>
-            <p className="text-base font-medium text-gray-700">300 DPI</p>
-            <p className="text-sm text-gray-500 mt-1">Print ready</p>
-          </div>
-        </div>
-      )}
-
-      {/* Face Positioning Guidelines */}
-      <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-xl p-5">
-        <div className="flex items-start space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">
-            <span className="text-white text-xl">💡</span>
-          </div>
-          <div className="flex-1">
-            <h5 className="text-lg font-crimson font-medium text-amber-800 mb-3">Positioning Guidelines</h5>
-            <ul className="text-sm text-amber-700 space-y-2">
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Eyes should be on the upper horizontal grid line</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Face should be centered horizontally</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Head should occupy 70-80% of the crop area</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-amber-500 mt-0.5">✓</span>
-                <span>Ensure neutral expression and good lighting</span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   );

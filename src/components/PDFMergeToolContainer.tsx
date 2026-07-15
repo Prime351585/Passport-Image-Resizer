@@ -117,12 +117,16 @@ export default function PDFMergeToolContainer({ className = '' }: { className?: 
       
       {/* Upload Zone */}
       <div 
-        className={`bg-white border-2 border-dashed rounded-2xl p-10 text-center transition-all cursor-pointer ${isDragging ? 'border-primary bg-primary/10' : 'border-primary/40 hover:bg-primary/5'}`}
+        className={`relative group border-2 border-dashed rounded-3xl p-10 md:p-16 text-center transition-all duration-300 cursor-pointer overflow-hidden ${isDragging ? 'border-primary bg-primary/5 scale-[1.02]' : 'border-gray-300 hover:border-primary/50 hover:bg-gray-50/50 bg-[#F8F9FA]'}`}
         onClick={() => fileInputRef.current?.click()}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
       >
+        {/* Decorative background circles */}
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-70 pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-70 pointer-events-none" />
+
         <input 
           type="file" 
           ref={fileInputRef} 
@@ -131,13 +135,21 @@ export default function PDFMergeToolContainer({ className = '' }: { className?: 
           multiple 
           className="sr-only" 
         />
-        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
-          </svg>
+        <div className="relative space-y-6 z-10 flex flex-col items-center justify-center">
+          <button 
+            type="button"
+            className="bg-[#E5E7EB] hover:bg-[#D1D5DB] text-gray-900 px-8 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-lg md:text-xl transition-all duration-300 hover:scale-[1.02] inline-flex items-center space-x-3 shadow-sm"
+          >
+            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            <span>Choose PDF files</span>
+          </button>
+          
+          <p className="text-sm md:text-base text-gray-500 font-medium">
+            or drop files here
+          </p>
         </div>
-        <h3 className="text-xl font-crimson font-semibold text-gray-900 mb-2">Select PDF Files</h3>
-        <p className="text-gray-500">Click to browse or drag and drop files here</p>
       </div>
 
       {/* File List */}

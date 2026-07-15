@@ -6,6 +6,10 @@ import { findToolBySlug, findPresetBySlug, getToolHreflangAlternates, getPresetH
 
 export default defineConfig({
   site: 'https://www.resize-it.com',
+  trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'de', 'fr', 'es', 'hi', 'ja', 'zh', 'pt', 'it', 'ru', 'ar', 'ko', 'tr', 'id', 'vi'],

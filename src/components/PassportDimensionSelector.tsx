@@ -4,6 +4,7 @@ import type { PassportDimension } from './PassportToolContainer';
 interface PassportDimensionSelectorProps {
   selectedDimension: PassportDimension;
   onDimensionChange: (dimension: PassportDimension) => void;
+  isPreSelected?: boolean;
   className?: string;
 }
 
@@ -107,6 +108,7 @@ const getCountryFlag = (country: string): string => {
 const PassportDimensionSelector: React.FC<PassportDimensionSelectorProps> = ({
   selectedDimension,
   onDimensionChange,
+  isPreSelected = false,
   className = ''
 }) => {
   return (
@@ -141,10 +143,12 @@ const PassportDimensionSelector: React.FC<PassportDimensionSelectorProps> = ({
         </div>
       </div>
 
-      {/* Dimension Grid */}
-      <div>
-        <div className="flex items-center space-x-2 mb-4">
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+      {!isPreSelected && (
+        <>
+          {/* Dimension Grid */}
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
             <span className="text-lg">🌍</span>
           </div>
           <h4 className="text-lg font-crimson font-medium text-gray-900">Country Standards</h4>
@@ -258,6 +262,8 @@ const PassportDimensionSelector: React.FC<PassportDimensionSelectorProps> = ({
           </div>
         </details>
       </div>
+      </>
+      )}
     </div>
   );
 };

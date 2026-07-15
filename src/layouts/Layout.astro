@@ -10,6 +10,7 @@ export interface Props {
   title?: string;
   description?: string;
   lang?: SupportedLanguage;
+  canonicalUrl?: string;
   hreflangAlternates?: HreflangAlternate[];
   structuredData?: object | object[];
 }
@@ -18,12 +19,22 @@ const {
   title,
   description,
   lang = 'en',
+  canonicalUrl,
   hreflangAlternates = [],
   structuredData,
 } = Astro.props;
 
 // Get the canonical URL
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.resize-it.com');
+let finalCanonicalURL = canonicalUrl;
+if (!finalCanonicalURL) {
+  const urlObj = new URL(Astro.url.pathname, Astro.site || 'https://www.resize-it.com');
+  let urlStr = urlObj.toString();
+  // Strip trailing slash to match hreflang tags precisely (unless it's just the root domain)
+  if (urlStr.endsWith('/') && urlStr !== (Astro.site || 'https://www.resize-it.com') && urlStr !== (Astro.site || 'https://www.resize-it.com') + '/') {
+    urlStr = urlStr.slice(0, -1);
+  }
+  finalCanonicalURL = urlStr;
+}
 
 // Determine text direction
 const dir = RTL_LANGUAGES.includes(lang as any) ? 'rtl' : 'ltr';
@@ -40,7 +51,7 @@ const schemas = structuredData
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description || "Professional image processing tools"} />
-  <link rel="canonical" href={canonicalURL} />
+  <link rel="canonical" href={finalCanonicalURL} />
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="alternate" type="text/markdown" href="/llms.txt" />
   <link rel="llms-project" href="/llms.txt" />

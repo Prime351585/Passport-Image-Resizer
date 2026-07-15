@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 
 export interface UploadedImage {
   file: File;
@@ -175,16 +175,39 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
+  useEffect(() => {
+    const handlePaste = (e: ClipboardEvent) => {
+      const activeElement = document.activeElement;
+      const isInputActive = activeElement && (
+        activeElement.tagName === 'INPUT' || 
+        activeElement.tagName === 'TEXTAREA' || 
+        (activeElement as HTMLElement).isContentEditable
+      );
+      
+      if (isInputActive) return;
+
+      if (e.clipboardData && e.clipboardData.files && e.clipboardData.files.length > 0) {
+        e.preventDefault();
+        handleFileSelect(e.clipboardData.files);
+      }
+    };
+
+    window.addEventListener('paste', handlePaste);
+    return () => {
+      window.removeEventListener('paste', handlePaste);
+    };
+  }, [handleFileSelect]);
+
   return (
     <div className={`w-full ${className}`}>
       {uploadedImages.length === 0 ? (
         // Initial Upload Area
         <div
           className={`
-            relative group border-2 border-dashed rounded-2xl p-8 md:p-12 text-center transition-all duration-300 cursor-pointer overflow-hidden
+            relative group border-2 border-dashed rounded-3xl p-10 md:p-16 text-center transition-all duration-300 cursor-pointer overflow-hidden
             ${isDragging 
               ? 'border-primary bg-primary/5 scale-[1.02]' 
-              : 'border-gray-300 hover:border-primary/50 hover:bg-gray-50/50'
+              : 'border-gray-300 hover:border-primary/50 hover:bg-gray-50/50 bg-[#F8F9FA]'
             }
             ${isLoading ? 'opacity-50 pointer-events-none' : ''}
           `}
@@ -194,8 +217,8 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
           onClick={(e) => handleChooseFile(e)}
         >
           {/* Decorative background circles */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-70" />
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-70" />
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-70 pointer-events-none" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-70 pointer-events-none" />
           
           <input
             ref={fileInputRef}
@@ -206,7 +229,7 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
             multiple={multiple}
           />
           
-          <div className="relative space-y-4 md:space-y-6">
+          <div className="relative space-y-6 md:space-y-8 z-10">
             {isLoading ? (
               <div className="flex flex-col items-center">
                 <div className="relative">
@@ -216,37 +239,22 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
                 <p className="mt-4 md:mt-6 font-crimson text-lg md:text-xl text-gray-700">Processing image(s)...</p>
               </div>
             ) : (
-              <>
-                <div className="flex justify-center">
-                  <div className="relative">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-2xl flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <svg className="w-10 h-10 md:w-12 md:h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="font-crimson text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
-                    {multiple ? 'Upload Your Images (Batch Processing)' : 'Upload Your Image'}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-600 mb-6">
-                    Drag and drop your image{multiple ? 's' : ''} here, or click to browse
-                  </p>
-                  
-                  <button 
-                    type="button"
-                    onClick={(e) => handleChooseFile(e)}
-                    className="bg-primary hover:bg-primary/90 text-white px-6 md:px-8 py-3 md:py-4 rounded-3xl font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg inline-flex items-center space-x-2"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
-                    </svg>
-                    <span>Choose Image{multiple ? 's' : ''}</span>
-                  </button>
-                </div>
-              </>
+              <div className="flex flex-col items-center justify-center space-y-6">
+                <button 
+                  type="button"
+                  onClick={(e) => handleChooseFile(e)}
+                  className="bg-[#E5E7EB] hover:bg-[#D1D5DB] text-gray-900 px-8 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-lg md:text-xl transition-all duration-300 hover:scale-[1.02] inline-flex items-center space-x-3 shadow-sm"
+                >
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                  </svg>
+                  <span>Choose {multiple ? 'Bulk Images' : 'an image'}</span>
+                </button>
+                
+                <p className="text-sm md:text-base text-gray-500 font-medium">
+                  or drop {multiple ? 'images' : 'an image'} here, or <span className="font-bold text-gray-700">paste</span> from your clipboard
+                </p>
+              </div>
             )}
           </div>
         </div>

@@ -48,14 +48,16 @@ export default function CropToolContainer({ className = '' }: CropToolProps) {
   return (
     <div className={`max-w-7xl mx-auto space-y-6 md:space-y-8 ${className}`}>
       {!uploadedFile ? (
-        <UploadPreview
-          onImageUpload={handleImageUpload}
-          onImageRemove={handleImageRemove}
-          maxSizeMB={20}
-          storageKey="crop-photo"
-          className="w-full"
-          showPreview={false}
-        />
+        <div className="max-w-3xl mx-auto w-full">
+          <UploadPreview
+            onImageUpload={handleImageUpload}
+            onImageRemove={handleImageRemove}
+            maxSizeMB={20}
+            storageKey="crop-photo"
+            className="w-full"
+            showPreview={false}
+          />
+        </div>
       ) : (
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 md:gap-8">
           {/* Main Cropper Area */}

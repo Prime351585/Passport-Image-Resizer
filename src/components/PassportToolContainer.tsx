@@ -114,10 +114,10 @@ const PassportToolContainer: React.FC<PassportToolContainerProps> = ({ initialDi
           </div>
         </div> */}
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-8">
+        <div className={`grid grid-cols-1 ${uploadedFile ? 'xl:grid-cols-2' : ''} gap-6 md:gap-8`}>
           
           {/* Upload & Settings Section */}
-          <div className="space-y-6 md:space-y-8">
+          <div className={`space-y-6 md:space-y-8 ${!uploadedFile ? 'max-w-3xl mx-auto w-full' : ''}`}>
             <UploadPreview
               onImageUpload={handleImageUpload}
               onImageRemove={handleImageRemove}
@@ -132,6 +132,7 @@ const PassportToolContainer: React.FC<PassportToolContainerProps> = ({ initialDi
               <PassportDimensionSelector
                 selectedDimension={selectedDimension}
                 onDimensionChange={setSelectedDimension}
+                isPreSelected={!!initialDimension}
                 className="w-full"
               />
             )}

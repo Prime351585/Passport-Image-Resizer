@@ -118,10 +118,10 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
 
   return (
     <div className={`max-w-7xl mx-auto p-4 space-y-6 ${className}`}>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
+      <div className={`grid grid-cols-1 ${images.length > 0 ? 'xl:grid-cols-2' : ''} gap-4 md:gap-6`}>
         
         {/* Upload Column */}
-        <div className="space-y-4 md:space-y-6">
+        <div className={`space-y-4 md:space-y-6 ${images.length === 0 ? 'max-w-3xl mx-auto w-full' : ''}`}>
           <UploadPreview 
             onBatchUpload={handleBatchUpload}
             onImageRemove={handleRemove}
