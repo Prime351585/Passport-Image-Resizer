@@ -6,6 +6,8 @@ import ConvertToolContainer from '../../components/ConvertToolContainer';
 import CropToolContainer from '../../components/CropToolContainer';
 import PDFCompressToolContainer from '../../components/PDFCompressToolContainer';
 import PDFMergeToolContainer from '../../components/PDFMergeToolContainer';
+import FilterToolContainer from '../../components/FilterToolContainer';
+import RoundCornerToolContainer from '../../components/RoundCornerToolContainer';
 
 import { SUPPORTED_LANGUAGES, TOOLS, getToolSlug, getToolUrl, getToolHreflangAlternates } from '../../utils/i18n';
 import type { SupportedLanguage, ToolId } from '../../utils/i18n';
@@ -62,4 +64,9 @@ const breadcrumbs = [
   
   {toolId === 'compress-pdf' && <PDFCompressToolContainer client:load slot="tool" />}
   {toolId === 'merge-pdf' && <PDFMergeToolContainer client:load slot="tool" />}
+  
+  {(toolId === 'invert' || toolId === 'lighten' || toolId === 'saturate') && 
+    <FilterToolContainer client:load slot="tool" filterType={toolId} />
+  }
+  {toolId === 'round-corners' && <RoundCornerToolContainer client:load slot="tool" />}
 </ToolPageLayout>

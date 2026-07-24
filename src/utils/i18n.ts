@@ -44,7 +44,8 @@ export const TOOLS = [
   'resize', 'crop', 'compress',
   'jpeg-to-png', 'jpeg-to-webp', 'png-to-webp',
   'webp-to-jpeg', 'webp-to-png',
-  'compress-pdf', 'merge-pdf'
+  'compress-pdf', 'merge-pdf',
+  'invert', 'lighten', 'saturate', 'round-corners'
 ] as const;
 
 export type ToolId = typeof TOOLS[number];
@@ -104,11 +105,15 @@ export const TOOL_SLUGS: Record<ToolId, Partial<Record<SupportedLanguage, string
     pt: 'unir-pdf', it: 'unisci-pdf', tr: 'pdf-birlestir',
     id: 'gabung-pdf', vi: 'gop-pdf',
   },
+  'invert': { en: 'invert' },
+  'lighten': { en: 'lighten' },
+  'saturate': { en: 'saturate' },
+  'round-corners': { en: 'round-corners' },
 };
 
 // ─── Preset Identifiers & Slugs ─────────────────────────────────────────────────
 export const RESIZE_PRESETS = [
-  'youtube-thumbnail', 'instagram-post', 'facebook-cover', 'pinterest-pin'
+  'youtube-thumbnail', 'instagram-post', 'facebook-cover', 'pinterest-pin', '3000x3000', 'square'
 ] as const;
 
 export const CROP_PRESETS = [
@@ -137,6 +142,12 @@ export const PRESET_SLUGS: Record<PresetId, Partial<Record<SupportedLanguage, st
     en: 'pinterest-pin', de: 'pinterest-pin', fr: 'epingle-pinterest',
     es: 'pin-pinterest', pt: 'pin-pinterest', it: 'pin-pinterest',
     tr: 'pinterest-pin', id: 'pin-pinterest', vi: 'ghim-pinterest',
+  },
+  '3000x3000': {
+    en: '3000x3000',
+  },
+  'square': {
+    en: 'square',
   },
 };
 
@@ -268,6 +279,10 @@ export const TOOL_COMPONENT_MAP: Record<ToolId, string> = {
   'webp-to-png': 'ConvertToolContainer',
   'compress-pdf': 'PDFCompressToolContainer',
   'merge-pdf': 'PDFMergeToolContainer',
+  'invert': 'FilterToolContainer',
+  'lighten': 'FilterToolContainer',
+  'saturate': 'FilterToolContainer',
+  'round-corners': 'RoundCornerToolContainer',
 };
 
 // Conversion tool needs to know source/target formats

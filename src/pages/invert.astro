@@ -1,0 +1,24 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import FilterToolContainer from '../components/FilterToolContainer';
+import { getToolHreflangAlternates, getToolUrl } from '../utils/i18n';
+
+import toolData from '../i18n/tools/invert-en.json';
+
+const canonicalUrl = getToolUrl('invert', 'en');
+const hreflangAlternates = getToolHreflangAlternates('invert');
+const breadcrumbs = [
+  { name: 'Home', url: 'https://www.resize-it.com' },
+  { name: toolData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang="en"
+  toolData={toolData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  <FilterToolContainer client:load slot="tool" filterType="invert" />
+</ToolPageLayout>

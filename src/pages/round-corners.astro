@@ -1,0 +1,24 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import RoundCornerToolContainer from '../components/RoundCornerToolContainer';
+import { getToolHreflangAlternates, getToolUrl } from '../utils/i18n';
+
+import toolData from '../i18n/tools/round-corners-en.json';
+
+const canonicalUrl = getToolUrl('round-corners', 'en');
+const hreflangAlternates = getToolHreflangAlternates('round-corners');
+const breadcrumbs = [
+  { name: 'Home', url: 'https://www.resize-it.com' },
+  { name: toolData.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang="en"
+  toolData={toolData}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={hreflangAlternates}
+  breadcrumbs={breadcrumbs}
+>
+  <RoundCornerToolContainer client:load slot="tool" />
+</ToolPageLayout>

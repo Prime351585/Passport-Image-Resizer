@@ -1,0 +1,30 @@
+{
+  "meta_title": "Square Image Resizer | 1:1 Aspect Ratio Converter",
+  "meta_description": "Make your image square instantly. Perfect 1:1 aspect ratio converter for profile pictures, social media grids, and square PNGs. 100% private.",
+  "h1": "Square Image Resizer",
+  "subtitle": "Convert any rectangle picture to a perfect square (1:1 aspect ratio). Crop, pad, or stretch to make your image square instantly.",
+  "tool_workspace": {
+    "h2": "Square Image Editor",
+    "description": "Upload an image to make it square. It automatically sets the aspect ratio to 1:1.",
+    "spec_badge": "Square 1:1",
+    "spec_ratio": "Ratio: 1:1"
+  },
+  "how_to": {
+    "title": "How to Make an Image Square",
+    "step1_title": "1. Upload Your Image",
+    "step1_text": "Select your JPG or PNG file.",
+    "step2_title": "2. Select Square Preset",
+    "step2_text": "The dimensions will automatically lock to a 1:1 ratio.",
+    "step3_title": "3. Crop or Pad",
+    "step3_text": "Choose 'Fit' to add padding or 'Crop' to trim the edges.",
+    "step4_title": "4. Download",
+    "step4_text": "Click resize to get your perfectly square image."
+  },
+  "faq": {
+    "h2": "Square Image FAQs",
+    "q1": "Why do I need a 1:1 aspect ratio?",
+    "a1": "A 1:1 aspect ratio (square) is the standard format for profile pictures, Instagram grids, and many product listings.",
+    "q2": "Will it stretch my photo?",
+    "a2": "Not unless you want it to! You can use the 'Crop' mode to cut off the edges, or 'Fit' mode to add borders to your rectangle picture to make it square without stretching."
+  }
+}
