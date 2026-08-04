@@ -47,27 +47,30 @@ export default defineConfig({
         const path = urlObj.pathname.replace(/^\/|\/$/g, '');
         const segments = path.split('/');
         
+        // Strip trailing slash for the main URL too (except root)
+        const cleanUrl = urlObj.pathname === '/' ? item.url : item.url.replace(/\/$/, '');
+
         // FIXED: Added homepage hreflang mapping before returning
         if (!path || path === '') {
            item.links = [
              { lang: 'en', url: 'https://www.resize-it.com/' },
-             { lang: 'de', url: 'https://www.resize-it.com/de/' },
-             { lang: 'fr', url: 'https://www.resize-it.com/fr/' },
-             { lang: 'es', url: 'https://www.resize-it.com/es/' },
-             { lang: 'hi', url: 'https://www.resize-it.com/hi/' },
-             { lang: 'ja', url: 'https://www.resize-it.com/ja/' },
-             { lang: 'zh', url: 'https://www.resize-it.com/zh/' },
-             { lang: 'pt', url: 'https://www.resize-it.com/pt/' },
-             { lang: 'it', url: 'https://www.resize-it.com/it/' },
-             { lang: 'ru', url: 'https://www.resize-it.com/ru/' },
-             { lang: 'ar', url: 'https://www.resize-it.com/ar/' },
-             { lang: 'ko', url: 'https://www.resize-it.com/ko/' },
-             { lang: 'tr', url: 'https://www.resize-it.com/tr/' },
-             { lang: 'id', url: 'https://www.resize-it.com/id/' },
-             { lang: 'vi', url: 'https://www.resize-it.com/vi/' },
+             { lang: 'de', url: 'https://www.resize-it.com/de' },
+             { lang: 'fr', url: 'https://www.resize-it.com/fr' },
+             { lang: 'es', url: 'https://www.resize-it.com/es' },
+             { lang: 'hi', url: 'https://www.resize-it.com/hi' },
+             { lang: 'ja', url: 'https://www.resize-it.com/ja' },
+             { lang: 'zh', url: 'https://www.resize-it.com/zh' },
+             { lang: 'pt', url: 'https://www.resize-it.com/pt' },
+             { lang: 'it', url: 'https://www.resize-it.com/it' },
+             { lang: 'ru', url: 'https://www.resize-it.com/ru' },
+             { lang: 'ar', url: 'https://www.resize-it.com/ar' },
+             { lang: 'ko', url: 'https://www.resize-it.com/ko' },
+             { lang: 'tr', url: 'https://www.resize-it.com/tr' },
+             { lang: 'id', url: 'https://www.resize-it.com/id' },
+             { lang: 'vi', url: 'https://www.resize-it.com/vi' },
              { lang: 'x-default', url: 'https://www.resize-it.com/' }
            ];
-           return item; 
+           return { url: cleanUrl, links: item.links }; 
         }
         
         let toolSlug = '';
@@ -78,10 +81,10 @@ export default defineConfig({
         // Very basic path routing analysis
         if (segments.length === 1) {
           toolSlug = segments[0];
-          if (toolSlug === 'passport') return item;
+          if (toolSlug === 'passport') return { url: cleanUrl, links: item.links || [] };
         } else if (segments.length === 2) {
           if (['de','fr','es','hi','ja','zh','pt','it','ru','ar','ko','tr','id','vi'].includes(segments[0])) {
-            if (segments[1] === 'passport') return item;
+            if (segments[1] === 'passport') return { url: cleanUrl, links: item.links || [] };
             toolSlug = segments[1];
           } else {
             if (segments[0] === 'passport') {
@@ -110,7 +113,7 @@ export default defineConfig({
            newLinks = [
              { lang: 'x-default', url: `https://www.resize-it.com/passport/${passportSlug}` }
            ];
-           return { url: item.url, links: newLinks };
+           return { url: cleanUrl, links: newLinks };
         }
 
         const toolId = findToolBySlug(toolSlug);
@@ -128,7 +131,7 @@ export default defineConfig({
 
         // Return a strictly formatted object
         return { 
-          url: item.url, 
+          url: cleanUrl, 
           links: newLinks 
         };
       }
