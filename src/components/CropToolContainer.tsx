@@ -48,15 +48,43 @@ export default function CropToolContainer({ className = '' }: CropToolProps) {
   return (
     <div className={`max-w-7xl mx-auto space-y-6 md:space-y-8 ${className}`}>
       {!uploadedFile ? (
-        <div className="max-w-3xl mx-auto w-full">
+        <div className="max-w-4xl mx-auto w-full space-y-12">
           <UploadPreview
             onImageUpload={handleImageUpload}
             onImageRemove={handleImageRemove}
             maxSizeMB={20}
             storageKey="crop-photo"
-            className="w-full"
+            className="w-full max-w-3xl mx-auto"
             showPreview={false}
           />
+          
+          {/* Visual Before/After Example */}
+          <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 md:p-10 shadow-sm mt-12">
+            <h3 className="text-2xl font-crimson font-bold text-gray-900 text-center mb-8">
+              Perfect Framing in Seconds
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-3">
+                <p className="text-center font-medium text-gray-500 uppercase tracking-wider text-sm">Before (Original)</p>
+                <div className="aspect-[4/3] bg-gray-100 rounded-xl relative overflow-hidden group border border-gray-200">
+                  <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&q=80" alt="Original Uncropped" className="w-full h-full object-cover" />
+                  {/* Simulated Crop Box */}
+                  <div className="absolute inset-0 bg-black/40"></div>
+                  <div className="absolute border-2 border-white shadow-[0_0_0_9999px_rgba(0,0,0,0.4)] bg-transparent flex items-center justify-center" style={{ top: '16.66%', left: '25%', width: '50%', height: '66.66%' }}>
+                    <span className="bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full">Cropping Area</span>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <p className="text-center font-medium text-primary uppercase tracking-wider text-sm">After (Cropped)</p>
+                <div className="aspect-square max-w-[250px] mx-auto bg-gray-100 rounded-xl relative overflow-hidden shadow-lg border border-gray-200">
+                  <div style={{ width: '200%', height: '150%', left: '-50%', top: '-25%', position: 'absolute' }}>
+                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&q=80" alt="Perfectly Cropped Result" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 md:gap-8">

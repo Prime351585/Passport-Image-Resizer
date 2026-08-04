@@ -1,7 +1,7 @@
 {
   "meta_title": "Free Online Image Cropper | Crop Photos & Pictures Securely",
   "meta_description": "Crop images online instantly. Use custom aspect ratios or presets for Instagram, YouTube, and Facebook. 100% private, browser-based cropping with no quality loss.",
-  "h1": "Free Online Image Cropper",
+  "h1": "Crop Image Online",
   "subtitle": "Frame your photos perfectly. Crop out distractions, adjust aspect ratios, and format for social media instantly—all processed securely within your browser.",
   "tool_workspace": {
     "h2": "Interactive Photo Cropping Studio",
@@ -39,6 +39,10 @@
     "q2": "Are my images uploaded to your servers?",
     "a2": "Absolutely not. This tool utilizes modern HTML5 Canvas technology to perform all cropping locally on your device's browser.",
     "q3": "Can I crop an image into a circle?",
-    "a3": "Yes! Select the 'Circular Crop' option in the toolbar, which is perfect for generating profile pictures or avatars with transparent PNG backgrounds."
+    "a3": "Yes! Select the 'Circular Crop' option in the toolbar, which is perfect for generating profile pictures or avatars with transparent PNG backgrounds.",
+    "q4": "How do I crop an image for Instagram?",
+    "a4": "Simply upload your photo and select our 'Instagram Square (1:1)' preset. Adjust the frame to capture the perfect square, then download and post.",
+    "q5": "Is this online cropper free to use?",
+    "a5": "Yes, our online crop tool is completely free. There are no hidden fees, watermarks, or registration requirements."
   }
 }

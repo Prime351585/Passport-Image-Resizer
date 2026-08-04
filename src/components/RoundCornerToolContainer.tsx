@@ -130,10 +130,9 @@ export default function RoundCornerToolContainer({ className = '' }: RoundCorner
       </div>
 
       <UploadPreview
-        images={images}
-        onUpload={handleBatchUpload}
-        onRemove={handleRemove}
-        maxFiles={20}
+        multiple={true}
+        onBatchUpload={handleBatchUpload}
+        onImageRemove={handleRemove}
         className="w-full"
       />
 

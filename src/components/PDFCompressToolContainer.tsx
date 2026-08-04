@@ -34,7 +34,7 @@ export default function PDFCompressToolContainer({ className = '' }: { className
       // Basic "compression" using pdf-lib. True image downsampling isn't 
       // straightforward in pure JS without external WASM libraries, 
       // but re-saving drops unused objects and some metadata.
-      const compressedBytes = await pdf.save({ useObjectStreams: false });
+      const compressedBytes = await pdf.save({ useObjectStreams: true });
       
       const blob = new Blob([compressedBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);

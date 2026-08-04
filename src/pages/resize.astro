@@ -22,4 +22,28 @@ const breadcrumbs = [
   breadcrumbs={breadcrumbs}
 >
   <ImageToolContainer client:load slot="tool" />
+
+  <!-- Internal Linking for Presets -->
+  <div slot="tool" class="max-w-7xl mx-auto mt-12 bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm">
+    <h3 class="text-2xl font-crimson font-bold text-gray-900 mb-4">
+      Popular Resize Templates
+    </h3>
+    <p class="text-gray-600 mb-6">
+      Need a specific size? Use our one-click templates for common formats:
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <a href="/resize/3000x3000" class="block p-4 border border-gray-100 bg-gray-50 rounded-xl hover:border-primary hover:bg-white hover:shadow-md transition-all group">
+        <h4 class="font-bold text-gray-900 group-hover:text-primary mb-1">3000x3000 Image</h4>
+        <p class="text-sm text-gray-500">Perfect for album covers and high-res print.</p>
+      </a>
+      <a href="/resize/youtube-thumbnail" class="block p-4 border border-gray-100 bg-gray-50 rounded-xl hover:border-primary hover:bg-white hover:shadow-md transition-all group">
+        <h4 class="font-bold text-gray-900 group-hover:text-primary mb-1">YouTube Thumbnail</h4>
+        <p class="text-sm text-gray-500">1280x720 pixels for YouTube videos.</p>
+      </a>
+      <a href="/resize/instagram-post" class="block p-4 border border-gray-100 bg-gray-50 rounded-xl hover:border-primary hover:bg-white hover:shadow-md transition-all group">
+        <h4 class="font-bold text-gray-900 group-hover:text-primary mb-1">Instagram Post</h4>
+        <p class="text-sm text-gray-500">1080x1080 pixels for square IG posts.</p>
+      </a>
+    </div>
+  </div>
 </ToolPageLayout>

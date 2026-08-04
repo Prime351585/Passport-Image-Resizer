@@ -126,10 +126,9 @@ export default function FilterToolContainer({ className = '', filterType }: Filt
       </div>
 
       <UploadPreview
-        images={images}
-        onUpload={handleBatchUpload}
-        onRemove={handleRemove}
-        maxFiles={20}
+        multiple={true}
+        onBatchUpload={handleBatchUpload}
+        onImageRemove={handleRemove}
         className="w-full"
       />
 
