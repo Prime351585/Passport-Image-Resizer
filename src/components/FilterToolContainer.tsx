@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
-import JSZip from 'jszip';
 import { applyPixelFilter, makeCanvas, mimeOfDataUrl } from '../utils/imageOutput';
 
 export type FilterType = 'invert' | 'lighten' | 'saturate';
@@ -43,6 +42,8 @@ export default function FilterToolContainer({ className = '', filterType }: Filt
     setProcessedUrls([]);
     
     try {
+      // Loaded on demand: JSZip is ~95 KB and only needed when downloading
+      const { default: JSZip } = await import('jszip');
       const zip = new JSZip();
       const results: {name: string, url: string}[] = [];
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
-import JSZip from 'jszip';
 
 interface RoundCornerToolContainerProps {
   className?: string;
@@ -32,6 +31,8 @@ export default function RoundCornerToolContainer({ className = '' }: RoundCorner
     setProcessedUrls([]);
     
     try {
+      // Loaded on demand: JSZip is ~95 KB and only needed when downloading
+      const { default: JSZip } = await import('jszip');
       const zip = new JSZip();
       const results: {name: string, url: string}[] = [];
 

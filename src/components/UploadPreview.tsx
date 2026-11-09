@@ -226,6 +226,7 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
             accept={acceptedFormats.join(',')}
             onChange={handleInputChange}
             className="sr-only"
+            aria-label={multiple ? 'Choose images to upload' : 'Choose an image to upload'}
             multiple={multiple}
           />
           
@@ -283,6 +284,7 @@ const UploadPreview: React.FC<UploadPreviewProps> = ({
             accept={acceptedFormats.join(',')}
             onChange={handleInputChange}
             className="sr-only"
+            aria-label={multiple ? 'Choose images to upload' : 'Choose an image to upload'}
             multiple={multiple}
           />
           

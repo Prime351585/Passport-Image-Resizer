@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
-import JSZip from 'jszip';
 import { canvasToBlob, encodeToTargetSize, extForMime, hasTransparency, loadImage, makeCanvas, withExt } from '../utils/imageOutput';
 
 interface CompressToolContainerProps {
@@ -49,6 +48,8 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
     let totalCompressed = 0;
     
     try {
+      // Loaded on demand: JSZip is ~95 KB and only needed when downloading
+      const { default: JSZip } = await import('jszip');
       const zip = new JSZip();
       const results: {name: string, url: string}[] = [];
 

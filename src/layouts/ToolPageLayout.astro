@@ -127,6 +127,8 @@ if (breadcrumbs && breadcrumbs.length > 0) {
 
   {/* Interactive Tool Component — injected via slot */}
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-2">
+    {/* Keeps heading levels sequential (h1 → h2 → h3) for screen readers and agents */}
+    {toolData.tool_workspace?.h2 && <h2 class="sr-only">{toolData.tool_workspace.h2}</h2>}
     <slot name="tool" />
   </div>
 

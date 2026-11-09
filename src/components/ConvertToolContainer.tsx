@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
-import JSZip from 'jszip';
 import { makeCanvas } from '../utils/imageOutput';
 
 interface ConvertToolContainerProps {
@@ -38,6 +37,8 @@ export default function ConvertToolContainer({ className = '', defaultFormat = '
     setProcessedUrls([]);
     
     try {
+      // Loaded on demand: JSZip is ~95 KB and only needed when downloading
+      const { default: JSZip } = await import('jszip');
       const zip = new JSZip();
       const results: {name: string, url: string}[] = [];
 

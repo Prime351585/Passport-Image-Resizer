@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
 import ImageResizer, { renderResized, type ResizePreset, type ResizeSettings } from './ImageResizer';
 import { extForMime, loadImage, mimeOfDataUrl, withExt } from '../utils/imageOutput';
-import JSZip from 'jszip';
 
 
 const ImageToolContainer: React.FC<{ preset?: ResizePreset }> = ({ preset }) => {
@@ -48,6 +47,8 @@ const ImageToolContainer: React.FC<{ preset?: ResizePreset }> = ({ preset }) => 
     setProcessedUrls([]);
     
     try {
+      // Loaded on demand: JSZip is ~95 KB and only needed when downloading
+      const { default: JSZip } = await import('jszip');
       const zip = new JSZip();
       const results: {name: string, url: string}[] = [];
 

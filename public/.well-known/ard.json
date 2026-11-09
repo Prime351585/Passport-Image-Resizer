@@ -1,0 +1,27 @@
+{
+  "specVersion": "0.91",
+  "entries": [
+    {
+      "identifier": "urn:air:resize-it.com:docs:llms-txt",
+      "displayName": "Resize-It: guide for AI agents (llms.txt)",
+      "type": "text/markdown",
+      "url": "https://www.resize-it.com/llms.txt",
+      "representativeQueries": [
+        "resize an image without uploading it",
+        "compress an image to 50 KB",
+        "passport photo size requirements by country",
+        "convert WebP to JPG in the browser"
+      ]
+    },
+    {
+      "identifier": "urn:air:resize-it.com:docs:sitemap",
+      "displayName": "Resize-It sitemap",
+      "type": "application/xml",
+      "url": "https://www.resize-it.com/sitemap-index.xml",
+      "representativeQueries": [
+        "list of Resize-It image tools",
+        "Resize-It passport photo pages"
+      ]
+    }
+  ]
+}
