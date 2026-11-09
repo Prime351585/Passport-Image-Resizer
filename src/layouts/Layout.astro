@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import type { HreflangAlternate } from "../utils/i18n";
 import { RTL_LANGUAGES } from "../utils/i18n";
 import type { SupportedLanguage } from "../utils/i18n";
+import { generateOrganizationSchema, generateWebsiteSchema } from "../utils/schemas";
 
 export interface Props {
   title?: string;
@@ -24,25 +25,30 @@ const {
   structuredData,
 } = Astro.props;
 
-// Get the canonical URL
+// Get the canonical URL. With build.format 'file', Astro.url.pathname ends in
+// ".html" at build time (e.g. /blogs/foo.html), but the site serves clean URLs
+// (/blogs/foo), so strip ".html" / "index" and any trailing slash.
 let finalCanonicalURL = canonicalUrl;
 if (!finalCanonicalURL) {
-  const urlObj = new URL(Astro.url.pathname, Astro.site || 'https://www.resize-it.com');
-  let urlStr = urlObj.toString();
-  // Strip trailing slash to match hreflang tags precisely (unless it's just the root domain)
-  if (urlStr.endsWith('/') && urlStr !== (Astro.site || 'https://www.resize-it.com') && urlStr !== (Astro.site || 'https://www.resize-it.com') + '/') {
-    urlStr = urlStr.slice(0, -1);
-  }
-  finalCanonicalURL = urlStr;
+  let path = Astro.url.pathname
+    .replace(/\.html$/, '')
+    .replace(/\/index$/, '/')
+    .replace(/(.)\/$/, '$1');
+  if (path === '' || path === '/index') path = '/';
+  finalCanonicalURL = new URL(path, 'https://www.resize-it.com').toString();
 }
 
 // Determine text direction
 const dir = RTL_LANGUAGES.includes(lang as any) ? 'rtl' : 'ltr';
 
-// Normalize structured data to array
-const schemas = structuredData
-  ? (Array.isArray(structuredData) ? structuredData : [structuredData])
-  : [];
+// Site identity schemas on every page; page-specific schemas after.
+const schemas = [
+  generateOrganizationSchema(),
+  generateWebsiteSchema(),
+  ...(structuredData
+    ? (Array.isArray(structuredData) ? structuredData : [structuredData])
+    : []),
+];
 ---
 
 <html lang={lang} dir={dir}>

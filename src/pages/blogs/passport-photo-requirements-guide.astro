@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "Complete Passport Photo Requirements Guide: Sizes, Specs & Free Tools",
+  description: "Ultimate guide to passport photo requirements for US, India, and 190+ countries. Learn exact dimensions, background rules, and create compliant photos online for free.",
+  url: 'https://www.resize-it.com/blogs/passport-photo-requirements-guide',
+  datePublished: '2025-12-02',
+});
 ---
 
-<Layout 
-  title="Complete Passport Photo Requirements Guide 2025: Sizes, Specs & Free Tools"
+<Layout
+  title="Complete Passport Photo Requirements Guide: Sizes, Specs & Free Tools"
   description="Ultimate guide to passport photo requirements for US, India, and 190+ countries. Learn exact dimensions, background rules, and create compliant photos online for free."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">

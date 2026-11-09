@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "How to Convert a Screenshot to PDF: Complete Step-by-Step Guide",
+  description: "Learn how to save a screenshot as a PDF on Windows, Mac, iPhone, and Android. Easy methods using built-in tools and free online converters — no software needed.",
+  url: 'https://www.resize-it.com/blogs/screenshot-to-pdf-guide',
+  datePublished: '2026-02-25',
+});
 ---
 
-<Layout 
-  title="How to Convert a Screenshot to PDF: Complete Step-by-Step Guide 2025"
+<Layout
+  title="How to Convert a Screenshot to PDF: Complete Step-by-Step Guide"
   description="Learn how to save a screenshot as a PDF on Windows, Mac, iPhone, and Android. Easy methods using built-in tools and free online converters — no software needed."
+  structuredData={articleSchema}
 >
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">
 

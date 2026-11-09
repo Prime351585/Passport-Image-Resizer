@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "How to Blur the Background or Edges of a Photo Online | Resize-It",
+  description: "Step-by-step guide on how to easily blur a photo online. Learn how to add overlay blur, blur photo edges, or create a bokeh effect without any design software.",
+  url: 'https://www.resize-it.com/blogs/blur-photo-guide',
+  datePublished: '2026-08-04',
+});
 ---
 
-<Layout 
+<Layout
   title="How to Blur the Background or Edges of a Photo Online | Resize-It"
   description="Step-by-step guide on how to easily blur a photo online. Learn how to add overlay blur, blur photo edges, or create a bokeh effect without any design software."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10 mb-16">

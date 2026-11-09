@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "Standard Photo Frame Sizes: Complete Guide to All Frame Dimensions",
+  description: "Complete guide to standard photo frame sizes. Learn about popular frame sizes, wall art dimensions, poster frame size charts, and how to choose the right frame for every photo.",
+  url: 'https://www.resize-it.com/blogs/photo-frame-sizes-guide',
+  datePublished: '2026-02-25',
+});
 ---
 
-<Layout 
-  title="Standard Photo Frame Sizes: Complete Guide to All Frame Dimensions 2025"
+<Layout
+  title="Standard Photo Frame Sizes: Complete Guide to All Frame Dimensions"
   description="Complete guide to standard photo frame sizes. Learn about popular frame sizes, wall art dimensions, poster frame size charts, and how to choose the right frame for every photo."
+  structuredData={articleSchema}
 >
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">
 

@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "The Ultimate Guide to Creating a Perfect Square Image Online | Resize-It",
+  description: "Learn how to effortlessly create a square image online. Master the 1:1 aspect ratio, discover the best tools for making a square pic online, and perfectly crop or resize your photos for social media.",
+  url: 'https://www.resize-it.com/blogs/square-image-online-guide',
+  datePublished: '2026-07-15',
+});
 ---
 
-<Layout 
+<Layout
   title="The Ultimate Guide to Creating a Perfect Square Image Online | Resize-It"
   description="Learn how to effortlessly create a square image online. Master the 1:1 aspect ratio, discover the best tools for making a square pic online, and perfectly crop or resize your photos for social media."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10 mb-16">

@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "How to Optimize Images for Web: A Complete Guide | Resize-It Blog",
+  description: "Learn the best practices for optimizing images for faster website loading times without sacrificing quality. Complete guide with practical tips and tools.",
+  url: 'https://www.resize-it.com/blogs/optimize-images-for-web',
+  datePublished: '2025-11-20',
+});
 ---
 
-<Layout 
+<Layout
   title="How to Optimize Images for Web: A Complete Guide | Resize-It Blog"
   description="Learn the best practices for optimizing images for faster website loading times without sacrificing quality. Complete guide with practical tips and tools."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">

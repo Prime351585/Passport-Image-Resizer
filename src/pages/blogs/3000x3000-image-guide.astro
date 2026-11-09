@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "3000x3000 Image Guide: Creating Perfect Square Photos for Print & Web",
+  description: "Complete guide to creating 3000x3000 pixel images. Learn optimal uses, resolution requirements, file size management, and free tools for album covers, product photos, and professional prints.",
+  url: 'https://www.resize-it.com/blogs/3000x3000-image-guide',
+  datePublished: '2025-12-03',
+});
 ---
 
-<Layout 
-  title="3000x3000 Image Guide: Creating Perfect Square Photos for Print & Web 2025"
+<Layout
+  title="3000x3000 Image Guide: Creating Perfect Square Photos for Print & Web"
   description="Complete guide to creating 3000x3000 pixel images. Learn optimal uses, resolution requirements, file size management, and free tools for album covers, product photos, and professional prints."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">

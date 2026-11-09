@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "How to Round the Corners of an Image (Free & Online) | Resize-It",
+  description: "Learn how to effortlessly round the corners of an image online for free. Step-by-step guide to creating rounded picture corners without Photoshop or design skills.",
+  url: 'https://www.resize-it.com/blogs/round-corners-image-guide',
+  datePublished: '2026-08-04',
+});
 ---
 
-<Layout 
+<Layout
   title="How to Round the Corners of an Image (Free & Online) | Resize-It"
   description="Learn how to effortlessly round the corners of an image online for free. Step-by-step guide to creating rounded picture corners without Photoshop or design skills."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10 mb-16">

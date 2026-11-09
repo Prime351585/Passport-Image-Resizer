@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "What to Wear for a Passport Photo: Complete Dress Code Guide",
+  description: "Can you wear glasses, makeup, or a tank top in your passport photo? Complete passport photo dress code guide covering clothing rules, colors, and what's not allowed.",
+  url: 'https://www.resize-it.com/blogs/passport-photo-dress-code',
+  datePublished: '2026-02-25',
+});
 ---
 
-<Layout 
-  title="What to Wear for a Passport Photo: Complete Dress Code Guide 2025"
+<Layout
+  title="What to Wear for a Passport Photo: Complete Dress Code Guide"
   description="Can you wear glasses, makeup, or a tank top in your passport photo? Complete passport photo dress code guide covering clothing rules, colors, and what's not allowed."
+  structuredData={articleSchema}
 >
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">
 

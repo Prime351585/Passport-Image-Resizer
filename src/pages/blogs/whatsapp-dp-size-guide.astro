@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "WhatsApp Profile Picture Size Guide & Dimensions (2026) | Resize-It",
+  description: "Everything you need to know about WhatsApp profile picture sizes in 2026. Learn the exact WhatsApp DP dimensions and how to resize your photos without cropping.",
+  url: 'https://www.resize-it.com/blogs/whatsapp-dp-size-guide',
+  datePublished: '2026-08-04',
+});
 ---
 
-<Layout 
+<Layout
   title="WhatsApp Profile Picture Size Guide & Dimensions (2026) | Resize-It"
   description="Everything you need to know about WhatsApp profile picture sizes in 2026. Learn the exact WhatsApp DP dimensions and how to resize your photos without cropping."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10 mb-16">

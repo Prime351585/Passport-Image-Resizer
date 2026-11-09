@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "Twitter Image Size Guide: Perfect Dimensions for Posts, Headers & Profile Photos",
+  description: "Complete guide to Twitter image sizes in 2025. Learn exact dimensions for profile pictures, header images, post photos, and video thumbnails. Optimize your Twitter presence with perfect image sizing.",
+  url: 'https://www.resize-it.com/blogs/twitter-image-size-guide',
+  datePublished: '2025-12-04',
+});
 ---
 
-<Layout 
-  title="Twitter Image Size Guide 2025: Perfect Dimensions for Posts, Headers & Profile Photos"
+<Layout
+  title="Twitter Image Size Guide: Perfect Dimensions for Posts, Headers & Profile Photos"
   description="Complete guide to Twitter image sizes in 2025. Learn exact dimensions for profile pictures, header images, post photos, and video thumbnails. Optimize your Twitter presence with perfect image sizing."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">

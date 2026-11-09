@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "Standard Photo Print Sizes: Complete Guide to Every Print Dimension",
+  description: "Complete guide to standard photo print sizes. Learn about common print dimensions, square photo prints, photo print size charts, and how to resize photos for perfect prints.",
+  url: 'https://www.resize-it.com/blogs/standard-photo-print-sizes',
+  datePublished: '2026-02-25',
+});
 ---
 
-<Layout 
-  title="Standard Photo Print Sizes: Complete Guide to Every Print Dimension 2025"
+<Layout
+  title="Standard Photo Print Sizes: Complete Guide to Every Print Dimension"
   description="Complete guide to standard photo print sizes. Learn about common print dimensions, square photo prints, photo print size charts, and how to resize photos for perfect prints."
+  structuredData={articleSchema}
 >
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10">
 

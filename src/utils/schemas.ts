@@ -3,6 +3,62 @@
 
 import type { SupportedLanguage } from './i18n';
 
+const SITE_URL = 'https://www.resize-it.com';
+
+const ORGANIZATION = {
+  '@type': 'Organization',
+  'name': 'Resize-It',
+  'url': SITE_URL,
+  'logo': `${SITE_URL}/favicon.svg`,
+  'sameAs': [
+    'https://x.com/HarshMaurya1585',
+    'https://github.com/Prime351585',
+  ],
+};
+
+// ─── Organization + WebSite (emitted globally by Layout) ────────────────────
+
+export function generateOrganizationSchema(): object {
+  return { '@context': 'https://schema.org', ...ORGANIZATION };
+}
+
+export function generateWebsiteSchema(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': 'Resize-It',
+    'url': SITE_URL,
+    'publisher': ORGANIZATION,
+  };
+}
+
+// ─── Article (blog posts) ─────────────────────────────────────────────────────
+
+interface ArticleSchemaOptions {
+  headline: string;
+  description: string;
+  url: string;
+  /** ISO date (YYYY-MM-DD). Omitted when unknown. */
+  datePublished?: string;
+  dateModified?: string;
+}
+
+export function generateArticleSchema(options: ArticleSchemaOptions): object {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': options.headline,
+    'description': options.description,
+    'mainEntityOfPage': options.url,
+    'inLanguage': 'en',
+    'author': ORGANIZATION,
+    'publisher': ORGANIZATION,
+  };
+  if (options.datePublished) schema.datePublished = options.datePublished;
+  if (options.dateModified) schema.dateModified = options.dateModified;
+  return schema;
+}
+
 // ─── WebApplication Schema ──────────────────────────────────────────────────────
 
 interface WebAppSchemaOptions {

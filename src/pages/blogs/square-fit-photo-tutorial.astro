@@ -1,10 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { generateArticleSchema } from '../../utils/schemas';
+
+const articleSchema = generateArticleSchema({
+  headline: "How to Square Fit a Photo Online Without Cropping | Resize-It",
+  description: "Learn how to square fit an image online perfectly. Keep your full rectangular photos intact by adding borders or blurred backgrounds for Instagram.",
+  url: 'https://www.resize-it.com/blogs/square-fit-photo-tutorial',
+  datePublished: '2026-07-15',
+});
 ---
 
-<Layout 
+<Layout
   title="How to Square Fit a Photo Online Without Cropping | Resize-It"
   description="Learn how to square fit an image online perfectly. Keep your full rectangular photos intact by adding borders or blurred backgrounds for Instagram."
+  structuredData={articleSchema}
 >
   <!-- Article Header -->
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-10 mb-16">
