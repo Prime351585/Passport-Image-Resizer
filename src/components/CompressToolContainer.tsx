@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
 import JSZip from 'jszip';
+import { canvasToBlob, encodeToTargetSize, extForMime, hasTransparency, loadImage, makeCanvas, withExt } from '../utils/imageOutput';
 
 interface CompressToolContainerProps {
   className?: string;
@@ -10,6 +11,8 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
   const [images, setImages] = useState<UploadedImage[]>([]);
   const [quality, setQuality] = useState(80);
   const [format, setFormat] = useState<string>('auto');
+  const [mode, setMode] = useState<'quality' | 'target'>('quality');
+  const [targetKB, setTargetKB] = useState<number>(100);
   
   const [isProcessing, setIsProcessing] = useState(false);
   const [processedUrls, setProcessedUrls] = useState<{name: string, url: string}[]>([]);
@@ -51,39 +54,36 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
 
       for (const img of images) {
         totalOriginal += img.size;
-        
-        const resultUrl = await new Promise<string>((resolve, reject) => {
-          const image = new Image();
-          image.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = image.width;
-            canvas.height = image.height;
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return reject('No context');
-            
-            ctx.drawImage(image, 0, 0);
-            
-            let mimeType = img.file.type;
-            if (format === 'jpeg') mimeType = 'image/jpeg';
-            if (format === 'webp') mimeType = 'image/webp';
-            if (format === 'png') mimeType = 'image/png';
+        const image = await loadImage(img.dataUrl);
+        const srcMime = img.file.type;
 
-            const dataUrl = canvas.toDataURL(mimeType, quality / 100);
-            resolve(dataUrl);
-          };
-          image.onerror = reject;
-          image.src = img.dataUrl;
-        });
+        // Choose the output format. Canvas can't quality-compress PNG, so in
+        // "auto" a PNG becomes WebP (keeps transparency) or JPEG (opaque).
+        let outMime: string;
+        if (format === 'auto') {
+          if (srcMime === 'image/png') outMime = hasTransparency(image) ? 'image/webp' : 'image/jpeg';
+          else outMime = srcMime === 'image/webp' ? 'image/webp' : 'image/jpeg';
+        } else {
+          outMime = `image/${format}`;
+        }
 
-        const base64Data = resultUrl.split(',')[1];
-        let ext = img.name.split('.').pop() || 'jpg';
-        if (format !== 'auto') ext = format;
-        const newName = `${img.name.substring(0, img.name.lastIndexOf('.'))}_compressed.${ext}`;
-        
-        zip.file(newName, base64Data, {base64: true});
-        results.push({ name: newName, url: resultUrl });
-        
-        totalCompressed += Math.round(base64Data.length * 0.75);
+        let blob: Blob;
+        if (mode === 'target') {
+          const targetMime = outMime === 'image/png' ? 'image/webp' : (outMime as 'image/jpeg' | 'image/webp');
+          outMime = targetMime;
+          blob = (await encodeToTargetSize(image, targetMime, Math.max(1, targetKB) * 1024)).blob;
+        } else {
+          const { canvas, ctx } = makeCanvas(image.naturalWidth, image.naturalHeight, outMime);
+          ctx.drawImage(image, 0, 0);
+          blob = await canvasToBlob(canvas, outMime, quality / 100);
+          // Never hand back a bigger file than the user started with.
+          if (blob.size >= img.size && outMime === srcMime) blob = img.file;
+        }
+
+        const newName = withExt(img.name, extForMime(outMime), '_compressed');
+        zip.file(newName, blob);
+        results.push({ name: newName, url: URL.createObjectURL(blob) });
+        totalCompressed += blob.size;
       }
 
       setStats({ original: totalOriginal, compressed: totalCompressed });
@@ -136,6 +136,47 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
               <h3 className="text-lg font-crimson font-semibold text-gray-900 mb-4">Compression Settings</h3>
               
               <div className="space-y-4 mb-6">
+                <div role="radiogroup" aria-label="Compression mode" className="grid grid-cols-2 gap-2 p-1 bg-gray-100 rounded-xl">
+                  {([['quality', 'By quality'], ['target', 'To a file size']] as const).map(([value, label]) => (
+                    <button
+                      key={value}
+                      type="button"
+                      role="radio"
+                      aria-checked={mode === value}
+                      onClick={() => setMode(value)}
+                      className={`py-2 rounded-lg text-sm font-medium transition-colors ${mode === value ? 'bg-white text-primary shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+
+                {mode === 'target' ? (
+                <div>
+                  <label htmlFor="target-kb" className="block text-sm font-medium text-gray-700 mb-1">Maximum file size</label>
+                  <div className="flex items-center gap-2">
+                    <input
+                      id="target-kb"
+                      type="number"
+                      min="5"
+                      step="5"
+                      value={targetKB}
+                      onChange={(e) => setTargetKB(Number(e.target.value))}
+                      className="w-32 p-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                    />
+                    <span className="text-gray-600">KB</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {[20, 50, 100, 200, 500].map((kb) => (
+                      <button key={kb} type="button" onClick={() => setTargetKB(kb)}
+                        className={`px-3 py-1 rounded-full text-xs border ${targetKB === kb ? 'border-primary text-primary bg-primary/5' : 'border-gray-200 text-gray-600 hover:border-primary/50'}`}>
+                        {kb} KB
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2">We lower quality first and only shrink the dimensions if needed.</p>
+                </div>
+                ) : (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Quality: {quality}%</label>
                   <input 
@@ -151,6 +192,7 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
                     <span>Better Quality</span>
                   </div>
                 </div>
+                )}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Output Format</label>
@@ -159,7 +201,7 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
                     onChange={(e) => setFormat(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
                   >
-                    <option value="auto">Keep Original Format</option>
+                    <option value="auto">Auto (smallest file)</option>
                     <option value="jpeg">JPEG (Best compression)</option>
                     <option value="webp">WebP (Modern, efficient)</option>
                     <option value="png">PNG (Lossless, larger)</option>

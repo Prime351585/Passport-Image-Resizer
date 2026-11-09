@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
 import JSZip from 'jszip';
+import { makeCanvas } from '../utils/imageOutput';
 
 interface ConvertToolContainerProps {
   className?: string;
@@ -44,15 +45,11 @@ export default function ConvertToolContainer({ className = '', defaultFormat = '
         const resultUrl = await new Promise<string>((resolve, reject) => {
           const image = new Image();
           image.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = image.width;
-            canvas.height = image.height;
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return reject('No context');
-            
-            ctx.drawImage(image, 0, 0);
-            
             let mimeType = `image/${targetFormat}`;
+            // makeCanvas paints white under JPEG output so transparency doesn't turn black
+            const { canvas, ctx } = makeCanvas(image.naturalWidth, image.naturalHeight, mimeType);
+            ctx.drawImage(image, 0, 0);
+
             // quality is 0.9 for webp/jpeg to keep it reasonable
             const dataUrl = canvas.toDataURL(mimeType, 0.9);
             resolve(dataUrl);

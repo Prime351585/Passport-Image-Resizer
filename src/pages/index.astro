@@ -1,282 +1,266 @@
 ---
-import Image from 'astro/components/Image.astro';
 import Layout from '../layouts/Layout.astro';
-import HeroImg from "../../public/HeroImg.png"
-import HeroImg2 from "../../public/HeroImg2.png"
-import HeroImg2M from "../../public/HeroImg2M.png"
-import MobileDemo4 from "../assets/Mobile_Demos/1.png"
-import MobileDemo3 from "../assets/Mobile_Demos/2.png"
-import MobileDemo2 from "../assets/Mobile_Demos/3.png"
-import MobileDemo1 from "../assets/Mobile_Demos/4.png"
+import ImageToolContainer from '../components/ImageToolContainer';
+import { generateFaqSchema } from '../utils/schemas';
+
+// ─── Tool catalogue (homepage grid) ──────────────────────────────────────────
+// `icon` is the inner markup of a 24x24 stroke icon.
+const ICONS = {
+  resize: '<path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/>',
+  crop: '<path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/>',
+  compress: '<path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/>',
+  corners: '<rect x="3" y="3" width="18" height="18" rx="6"/>',
+  invert: '<circle cx="12" cy="12" r="9"/><path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor"/>',
+  lighten: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  saturate: '<path d="M12 2.7l5.7 5.7a8 8 0 1 1-11.4 0z"/>',
+  convert: '<path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/>',
+  pdf: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/>',
+  merge: '<path d="M8 6h10a2 2 0 0 1 2 2v12"/><rect x="4" y="2" width="12" height="16" rx="2"/>',
+  passport: '<rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8.5 17a4 4 0 0 1 7 0"/>',
+};
+
+const toolGroups = [
+  {
+    name: 'Edit',
+    tools: [
+      { name: 'Resize Image', href: '/resize', desc: 'Exact pixels, %, cm, mm or inches.', icon: ICONS.resize },
+      { name: 'Crop Image', href: '/crop', desc: 'Free crop or social media ratios.', icon: ICONS.crop },
+      { name: 'Compress Image', href: '/compress', desc: 'Hit a target size in KB.', icon: ICONS.compress },
+      { name: 'Round Corners', href: '/round-corners', desc: 'Rounded or circular edges.', icon: ICONS.corners },
+    ],
+  },
+  {
+    name: 'Adjust',
+    tools: [
+      { name: 'Invert Image', href: '/invert', desc: 'Negative / reversed colours.', icon: ICONS.invert },
+      { name: 'Lighten Image', href: '/lighten', desc: 'Brighten dark photos.', icon: ICONS.lighten },
+      { name: 'Saturate Image', href: '/saturate', desc: 'Boost or mute colour.', icon: ICONS.saturate },
+      { name: 'Passport Photo', href: '/passport', desc: 'Official sizes for 60+ countries.', icon: ICONS.passport },
+    ],
+  },
+  {
+    name: 'Convert',
+    tools: [
+      { name: 'JPEG to WebP', href: '/jpeg-to-webp', desc: 'Smaller files for the web.', icon: ICONS.convert },
+      { name: 'PNG to WebP', href: '/png-to-webp', desc: 'Keep transparency, cut size.', icon: ICONS.convert },
+      { name: 'JPEG to PNG', href: '/jpeg-to-png', desc: 'Lossless PNG output.', icon: ICONS.convert },
+      { name: 'WebP to JPEG', href: '/webp-to-jpeg', desc: 'Open WebP anywhere.', icon: ICONS.convert },
+      { name: 'WebP to PNG', href: '/webp-to-png', desc: 'WebP to lossless PNG.', icon: ICONS.convert },
+    ],
+  },
+  {
+    name: 'PDF',
+    tools: [
+      { name: 'Compress PDF', href: '/compress-pdf', desc: 'Shrink PDFs for email & forms.', icon: ICONS.pdf },
+      { name: 'Merge PDF', href: '/merge-pdf', desc: 'Combine files into one PDF.', icon: ICONS.merge },
+    ],
+  },
+];
+
+const presets = [
+  { label: '3000×3000', href: '/resize/3000x3000' },
+  { label: 'Instagram post', href: '/resize/instagram-post' },
+  { label: 'YouTube thumbnail', href: '/resize/youtube-thumbnail' },
+  { label: 'Facebook cover', href: '/resize/facebook-cover' },
+  { label: 'Passport photo', href: '/passport' },
+];
+
+// ─── Passport countries (derived from the data files) ────────────────────────
+const passportFiles = import.meta.glob('../i18n/passport/*.json');
+const countries = Object.keys(passportFiles)
+  .map((p) => p.split('/').pop()!.replace('.json', ''))
+  .map((slug) => ({
+    slug,
+    name: slug === 'schengen-area'
+      ? 'Schengen Area'
+      : slug.split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' '),
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const popularCountries = ['united-states', 'india', 'united-kingdom', 'canada', 'pakistan', 'nigeria', 'schengen-area', 'china'];
+
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
+const faqs = [
+  {
+    question: 'Is Resize-It really free?',
+    answer: 'Yes. Every tool is free with no sign-up, no watermark and no daily limit.',
+  },
+  {
+    question: 'Are my images uploaded to a server?',
+    answer: 'No. Images are processed entirely inside your browser, so your files never leave your device.',
+  },
+  {
+    question: 'Can I resize several images at once?',
+    answer: 'Yes. Select or drop multiple images, choose your size once, and download them all together as a ZIP file.',
+  },
+  {
+    question: 'Which image formats are supported?',
+    answer: 'You can resize and compress JPG, PNG and WebP images, convert between JPEG, PNG and WebP, and compress or merge PDF files.',
+  },
+  {
+    question: 'How do I make a passport photo of the right size?',
+    answer: 'Open the passport tool, pick your country, and upload a photo. Resize-It crops it to the official dimensions and can lay out several copies on a printable sheet.',
+  },
+];
+
+const pageSchemas = [generateFaqSchema(faqs)];
 ---
 
-<Layout 
-  title="Resize-It | Professional Image Processing"
-  description="Free online image tools for resizing, compressing, and converting images. Fast, secure, and professional quality."
+<Layout
+  title="Resize-It: Free Online Image Resizer, Compressor & Converter"
+  description="Resize, compress, crop and convert images free in your browser. Exact pixel, KB and passport photo sizes. No uploads, no sign-up, no watermark."
+  structuredData={pageSchemas}
 >
-  <!-- Hero Section -->
-  <div class="bg-white text-center font-crimson mt-[80px] md:mt-0">
-    <h1 class="text-[70px] md:text-[140px]">  
-      Master Your Images
-      <p class="text-[20px] text-primary p-2">With Resize-It</p>
-      
-    </h1>
-  </div>
-  <!-- IPAD DIV -->
-  <div class="iPad h-[600px] w-1/2 md:w-3/4 md:h-auto border-black border-8 border-b-0  mx-auto">
-    <Image src={HeroImg} alt="Resize-It image editor shown on a tablet" loading="eager" fetchpriority="high" class="w-full h-full object-cover"/>
+  <!-- ═══ Hero: the tool itself ═══ -->
+  <section class="relative mt-[80px] md:mt-0 px-4 pt-8 md:pt-14 pb-12 bg-gradient-to-b from-tertiary/40 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="inline-flex flex-wrap justify-center gap-x-3 gap-y-1 text-sm text-primary font-medium mb-4">
+        <span>Free</span><span aria-hidden="true">·</span>
+        <span>No uploads</span><span aria-hidden="true">·</span>
+        <span>No sign-up</span>
+      </p>
+      <h1 class="font-crimson text-[40px] leading-[1.1] md:text-[64px] text-gray-900">
+        Resize images online, <span class="text-primary">free and private</span>
+      </h1>
+      <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+        Change image size in pixels, percent, cm or inches, then download in seconds.
+        Everything runs in your browser.
+      </p>
     </div>
-<!-- Benefits Section -->
-<div class="mt-5  px-5">
 
-  <p class="py-5 text-primary font-crimson">
-    Benefits
-  </p>
-  <h2 class=" font-crimson text-[30px] md:text-[60px] md:w-3/4 ">
-    Resize, compress, and convert your photos
-  </h2>
-  <h3 class="py-5 text-gray-500">
-    All within your browser. Fast, private, and perfectly optimized for web and print.
-  </h3>
-</div>
+    <div class="mt-8">
+      <ImageToolContainer client:load />
+    </div>
 
-<div class="grid md:grid-cols-4 grid-cols-1 gap-3 p-5">
-  <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
-    <p class="font-crimson text-lg font-medium py-2">Resize Instantly</p>
-    <p class="text-gray-500 text-sm">Set custom dimensions or scale by percentage — perfect for social, web, or design use.</p>
-  </div>
+    <div class="mt-6 max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-2 text-sm">
+      <span class="text-gray-500 mr-1">Popular sizes:</span>
+      {presets.map((p) => (
+        <a href={p.href} class="px-3 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 hover:border-primary hover:text-primary transition-colors">
+          {p.label}
+        </a>
+      ))}
+    </div>
+  </section>
 
-    <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
-    <p class="font-crimson text-lg font-medium py-2">Compress Intelligently</p>
-    <p class="text-gray-500 text-sm">Shrink image size while preserving clarity with advanced browser-based optimization.</p>
-  </div>
-  
-  <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
-    <p class="font-crimson text-lg font-medium py-2">Convert Effortlessly</p>
-    <p class="text-gray-500 text-sm">Transform between JPG, PNG, and WebP formats instantly — all processed locally in your browser.</p>
-  </div>
-  
-  <div class="flex flex-col m-5 p-5 border-t-2 border-gray-200">
-    <Image alt="Svg Icon" width="32" height={32} src="https://www.svgrepo.com/show/535117/activity.svg" class="w-10 h-10 my-3"/>
-    <p class="font-crimson text-lg font-medium py-2">Passport Grid Maker</p>
-    <p class="text-gray-500 text-sm">Automatically arrange passport-sized photos in a printable grid layout for efficient printing.</p>
-  </div>
-</div>
+  <!-- ═══ All tools ═══ -->
+  <section class="px-4 py-16 md:py-20" aria-labelledby="tools-heading">
+    <div class="max-w-6xl mx-auto">
+      <h2 id="tools-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900">Every image tool you need</h2>
+      <p class="mt-2 text-gray-600">Pick a tool. No account, no install.</p>
 
-  <Image src={HeroImg2} alt={"Hero Image 2"} class="mx-auto w-[95%] object-cover rounded-3xl hidden md:block"/>
-  <Image src={HeroImg2M} alt={"Hero Image 2"} class="mx-auto w-[90%] object-cover rounded-3xl block md:hidden"/>
-
-<div class=" grid grid-cols-1 md:grid-cols-2 items-center justify-center  md:m-5 md:p-10 ">
-
-  <div class=" p-5" >
-    <h3 class="text-[50px] md:text-[60px] font-crimson">Do More With Every Image</h3>
-    <p>
-      ResizeIt turns everyday photos into web-ready, printable, and perfectly sized results — all in your browser, instantly.
-    </p>
-    <table class="w-full mt-8">
-      <tr class="border-t-2 border-gray-200">
-      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">01</td>
-      <td class="py-4">
-        <p class="font-crimson text-lg font-medium mb-2">Resize in a Click</p>
-        <p class="text-gray-500 text-sm">Adjust dimensions or aspect ratios without losing quality.</p>
-      </td>
-      </tr>
-      <tr class="border-t-2 border-gray-200">
-      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">02</td>
-      <td class="py-4">
-        <p class="font-crimson text-lg font-medium mb-2">Compress Smartly</p>
-        <p class="text-gray-500 text-sm">Reduce file size while keeping every pixel crisp.</p>
-      </td>
-      </tr>
-      <tr class="border-t-2 border-gray-200">
-      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">03</td>
-      <td class="py-4">
-        <p class="font-crimson text-lg font-medium mb-2">Passport Ready</p>
-        <p class="text-gray-500 text-sm">Generate printable photo grids that meet ID and visa requirements.</p>
-      </td>
-      </tr>
-      <tr class="border-t-2 border-gray-200">
-      <td class="py-4 pr-4 align-top font-crimson text-xl font-medium">04</td>
-      <td class="py-4">
-        <p class="font-crimson text-lg font-medium mb-2">All Offline & Secure</p>
-        <p class="text-gray-500 text-sm">Everything runs in your browser — no uploads, no tracking.</p>
-      </td>
-      </tr>
-    </table>
-    <button class=" my-5 bg-tertiary hover:bg-primary text-primary p-2 rounded-3xl px-3 hover:text-white font-semibold duration-700 ease-in-out">Start Editing</button>
-  </div>
-  <div class="relative w-[60%] mx-auto overflow-hidden">
-    <div class="slider-container flex transition-transform duration-500 ease-in-out touch-pan-y">
-      <div class="min-w-full">
-        <Image src={MobileDemo1} alt={"Image 1"} class="rounded-4xl"/>
-      </div>
-      <div class="min-w-full">
-        <Image src={MobileDemo2} alt={"Image 2"} class="rounded-4xl"/>
-      </div>
-      <div class="min-w-full">
-        <Image src={MobileDemo3} alt={"Image 3"} class="rounded-4xl"/>
-      </div>
-      <div class="min-w-full">
-        <Image src={MobileDemo4} alt={"Image 4"} class="rounded-4xl"/>
+      <div class="mt-10 space-y-10">
+        {toolGroups.map((group) => (
+          <div>
+            <h3 class="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3">{group.name}</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {group.tools.map((tool) => (
+                <li>
+                  <a href={tool.href} class="group flex items-start gap-3 h-full p-4 rounded-xl border border-gray-200 bg-white hover:border-primary hover:shadow-sm transition-all">
+                    <span class="shrink-0 w-10 h-10 rounded-lg bg-tertiary/60 text-primary flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={tool.icon} />
+                    </span>
+                    <span>
+                      <span class="block font-semibold text-gray-900 group-hover:text-primary">{tool.name}</span>
+                      <span class="block text-sm text-gray-500 mt-0.5">{tool.desc}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
-    
-    <!-- Dots Indicator -->
-    <div class="slider-dots flex justify-center gap-2 mt-4">
-      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="0" aria-label="Go to slide 1"></button>
-      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="1" aria-label="Go to slide 2"></button>
-      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="2" aria-label="Go to slide 3"></button>
-      <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600" data-slide="3" aria-label="Go to slide 4"></button>
-    </div>
-  </div>
+  </section>
 
-  <script>
-    let currentSlide = 0;
-    const totalSlides = 4;
-    const sliderContainer = document.querySelector('.slider-container');
-    const dots = document.querySelectorAll('.dot');
-    let autoSlideInterval;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    function updateSlider() {
-      sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('bg-gray-800', index === currentSlide);
-        dot.classList.toggle('bg-gray-400', index !== currentSlide);
-      });
-    }
-    
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlider();
-    }
-    
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 3000);
-    }
-    
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
-    
-    // Touch events for swipe
-    sliderContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      clearInterval(autoSlideInterval);
-    });
-    
-    sliderContainer.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-      startAutoSlide();
-    });
-    
-    function handleSwipe() {
-      if (touchStartX - touchEndX > 50) {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
-      } else if (touchEndX - touchStartX > 50) {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlider();
-      }
-    }
-    
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentSlide = index;
-        updateSlider();
-        resetAutoSlide();
-      });
-    });
-    
-    updateSlider();
-    startAutoSlide();
-  </script>
-</div>
-<div class="m-10  border-1 border-tertiary/70"></div>
-  <div class="text-[50px] md:text-[60px] font-crimson text-center">Why Choose Resize-It?</div>
-  <p class="text-center w-3/5 py-6 text-md mx-auto text-gray-500 ">You need a solution that keeps up. That’s why we developed Resize-It. A user-friendly approach to resize your Images. </p>
-    <div class="flex justify-center">
-      <button class="my-5 bg-tertiary hover:bg-primary text-primary p-2 rounded-3xl px-3 hover:text-white font-semibold duration-700 ease-in-out">Get Started</button>
-    </div>
-  <div class="my-16 px-5">
-    <div class="mt-12 md:mt-16 mb-16 md:mb-24 px-5 max-w-7xl mx-auto">
-    <div class="max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
-      <table class="w-full border-collapse bg-white">
-        <thead>
-          <tr class="border-b-2 border-gray-200 bg-gray-50">
-            <th class="py-4 md:py-5 px-4 md:px-6 font-crimson text-lg md:text-xl text-gray-400 text-left">Others</th>
-            <th class="py-4 md:py-5 px-4 md:px-6 font-crimson text-lg md:text-xl text-gray-900 text-left">Resize-It</th>
-          </tr>
-        </thead>
-        <tbody class="text-sm md:text-base font-semibold">
-          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-500">
-              <span class="inline-block mr-2 text-red-400">✓</span>
-              Upload required
-            </td>
-            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-900">
-              <span class="inline-block mr-2 text-green-500">✓</span>
-              No Uploads
-            </td>
-          </tr>
-          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-500">
-              <span class="inline-block mr-2 text-red-400">✓</span>
-              Server Processing
-            </td>
-            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-900">
-              <span class="inline-block mr-2 text-green-500">✓</span>
-              100% Local Processing
-            </td>
-          </tr>
-          <tr class="hover:bg-gray-50 transition-colors">
-            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-500">
-              <span class="inline-block mr-2 text-red-400">✓</span>
-              Subscription Based
-            </td>
-            <td class="py-4 md:py-5 px-4 md:px-6 text-gray-900">
-              <span class="inline-block mr-2 text-green-500">✓</span>
-              Free Forever
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  </div>
-  </div>
+  <!-- ═══ Passport ═══ -->
+  <section class="px-4 py-16 md:py-20 bg-gray-50" aria-labelledby="passport-heading">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-10 items-start">
+      <div class="md:col-span-2">
+        <h2 id="passport-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900 leading-tight">Passport &amp; visa photos for {countries.length} countries</h2>
+        <p class="mt-3 text-gray-600">
+          Official dimensions, cropped automatically, with a printable sheet of copies.
+          Find your country to start.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          {popularCountries.map((slug) => {
+            const c = countries.find((x) => x.slug === slug);
+            return c && (
+              <a href={`/passport/${c.slug}`} class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-sm text-gray-700 hover:border-primary hover:text-primary transition-colors">{c.name}</a>
+            );
+          })}
+        </div>
+      </div>
 
-</div>
+      <div class="md:col-span-3 bg-white rounded-2xl border border-gray-200 p-4 md:p-5">
+        <label for="country-search" class="sr-only">Search country</label>
+        <input id="country-search" type="search" autocomplete="off" placeholder="Search your country…"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
+        <ul id="country-list" class="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-1 max-h-72 overflow-y-auto pr-1">
+          {countries.map((c) => (
+            <li data-name={c.name.toLowerCase()}>
+              <a href={`/passport/${c.slug}`} class="block px-3 py-2 rounded-lg text-sm text-gray-700 hover:bg-tertiary/50 hover:text-primary">{c.name}</a>
+            </li>
+          ))}
+        </ul>
+        <p id="country-empty" class="hidden mt-3 px-3 text-sm text-gray-500">
+          No match. Try the <a href="/passport" class="text-primary underline">passport photo tool</a> with a custom size.
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <!-- ═══ Why ═══ -->
+  <section class="px-4 py-16 md:py-20" aria-labelledby="why-heading">
+    <div class="max-w-6xl mx-auto">
+      <h2 id="why-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900">Why people use Resize-It</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-gray-200">
+          <h3 class="font-semibold text-gray-900">Private by design</h3>
+          <p class="mt-2 text-gray-600 text-sm">Your photos are processed on your device. Nothing is uploaded, stored or seen by anyone else.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-gray-200">
+          <h3 class="font-semibold text-gray-900">Free, without catches</h3>
+          <p class="mt-2 text-gray-600 text-sm">No sign-up, no watermark, no daily limits and no premium tier hiding the useful features.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-gray-200">
+          <h3 class="font-semibold text-gray-900">Fast in batches</h3>
+          <p class="mt-2 text-gray-600 text-sm">Drop a folder's worth of images, set the size once, and download them all as one ZIP.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="px-4 pb-20" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto">
+      <h2 id="faq-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900 text-center">Questions</h2>
+      <div class="mt-8 divide-y divide-gray-200 border-y border-gray-200">
+        {faqs.map((f) => (
+          <details class="group py-4">
+            <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-gray-900">
+              {f.question}
+              <span class="ml-4 text-primary transition-transform group-open:rotate-45 text-xl leading-none" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-gray-600">{f.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>
 
-
 <script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const ipadDiv = document.querySelector(".iPad");
-
-  gsap.to(ipadDiv, {
-    width: "100%",
-    scale: 1,
-    borderTopLeftRadius: "50",
-    borderTopRightRadius: "50",
-    scrollTrigger: {
-      trigger: ipadDiv,
-      start: "top center",
-      end: "top top",
-      scrub: 1,
-      pin: false
+  const input = document.getElementById('country-search') as HTMLInputElement | null;
+  const items = Array.from(document.querySelectorAll<HTMLLIElement>('#country-list li'));
+  const empty = document.getElementById('country-empty');
+  input?.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    for (const li of items) {
+      const match = !q || (li.dataset.name ?? '').includes(q);
+      li.hidden = !match;
+      if (match) shown++;
     }
+    empty?.classList.toggle('hidden', shown > 0);
   });
-
 </script>

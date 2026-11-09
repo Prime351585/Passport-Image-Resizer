@@ -122,6 +122,25 @@ export const CROP_PRESETS = [
 
 export type PresetId = typeof RESIZE_PRESETS[number];
 
+/**
+ * Output size for each preset (single source of truth for the tools).
+ * Must match the spec_badge text in src/i18n/presets/*.json.
+ */
+export const PRESET_DIMENSIONS: Record<PresetId, { width: number; height: number } | { square: true }> = {
+  'youtube-thumbnail': { width: 1280, height: 720 },
+  'instagram-post': { width: 1080, height: 1080 },
+  'facebook-cover': { width: 1200, height: 630 },
+  'pinterest-pin': { width: 1000, height: 1500 },
+  '3000x3000': { width: 3000, height: 3000 },
+  'square': { square: true },
+};
+
+/** Crop aspect ratio ("w:h") for a preset, derived from PRESET_DIMENSIONS. */
+export function presetAspectRatio(presetId: PresetId): string | undefined {
+  const d = PRESET_DIMENSIONS[presetId];
+  return d && 'width' in d ? `${d.width}:${d.height}` : '1:1';
+}
+
 export const PRESET_SLUGS: Record<PresetId, Partial<Record<SupportedLanguage, string>>> = {
   'youtube-thumbnail': {
     en: 'youtube-thumbnail', de: 'youtube-vorschaubild', fr: 'miniature-youtube',

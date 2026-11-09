@@ -1,7 +1,7 @@
 ---
 import ToolPageLayout from '../../layouts/ToolPageLayout.astro';
 import ImageToolContainer from '../../components/ImageToolContainer';
-import { getPresetHreflangAlternates, getPresetUrl, RESIZE_PRESETS } from '../../utils/i18n';
+import { getPresetHreflangAlternates, getPresetUrl, RESIZE_PRESETS, PRESET_DIMENSIONS } from '../../utils/i18n';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -39,5 +39,5 @@ const breadcrumbs = [
   hreflangAlternates={hreflangAlternates}
   breadcrumbs={breadcrumbs}
 >
-  <ImageToolContainer client:load slot="tool" />
+  <ImageToolContainer client:load slot="tool" preset={PRESET_DIMENSIONS[presetId]} />
 </ToolPageLayout>

@@ -1,7 +1,7 @@
 ---
 import ToolPageLayout from '../../../layouts/ToolPageLayout.astro';
 import CropToolContainer from '../../../components/CropToolContainer';
-import { getPresetHreflangAlternates, getPresetUrl, getPresetSlug, CROP_PRESETS, SUPPORTED_LANGUAGES, getToolSlug } from '../../../utils/i18n';
+import { getPresetHreflangAlternates, getPresetUrl, getPresetSlug, CROP_PRESETS, SUPPORTED_LANGUAGES, getToolSlug, PRESET_DIMENSIONS, presetAspectRatio } from '../../../utils/i18n';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -46,5 +46,5 @@ const breadcrumbs = [
   hreflangAlternates={hreflangAlternates}
   breadcrumbs={breadcrumbs}
 >
-  <CropToolContainer client:load slot="tool" />
+  <CropToolContainer client:load slot="tool" initialAspectRatio={presetAspectRatio(presetId)} outputSize={PRESET_DIMENSIONS[presetId]} />
 </ToolPageLayout>

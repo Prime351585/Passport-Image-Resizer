@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { loadImage, makeCanvas, mimeOfDataUrl, type OutputMime } from '../utils/imageOutput';
 
-interface ResizeSettings {
+export interface ResizeSettings {
   width: number | '';
   height: number | '';
   unit: 'px' | '%' | 'mm' | 'cm' | 'in';
@@ -14,8 +15,65 @@ interface ImageResizerProps {
   originalWidth?: number;
   originalHeight?: number;
   onResize?: (resizedImage: string, settings: ResizeSettings) => void;
-  preset?: ResizeSettings;
+  preset?: ResizePreset;
   className?: string;
+}
+
+/** Target size a preset page starts from. `square` = pad to a square of the longest side. */
+export type ResizePreset =
+  | { width: number; height: number; resizeMethod?: ResizeSettings['resizeMethod'] }
+  | { square: true };
+
+/** Convert a dimension in `unit` to pixels. `ref` is the image's own size (for %). */
+export function toPixels(value: number, unit: string, ref: number): number {
+  const dpi = 96;
+  switch (unit) {
+    case '%': return Math.round((value / 100) * ref);
+    case 'mm': return Math.round((value * dpi) / 25.4);
+    case 'cm': return Math.round((value * dpi) / 2.54);
+    case 'in': return Math.round(value * dpi);
+    default: return Math.round(value);
+  }
+}
+
+/**
+ * Resize one image with the given settings and return a data URL.
+ * Shared by the live preview and the batch download so they always agree.
+ * With "lock aspect ratio" on, height follows each image's own ratio, so a
+ * batch of mixed portrait/landscape photos is never stretched.
+ */
+export function renderResized(img: HTMLImageElement, s: ResizeSettings, mime: OutputMime): string {
+  const ow = img.naturalWidth, oh = img.naturalHeight;
+  const tw = Math.max(1, toPixels(Number(s.width) || 1, s.unit, ow));
+  let th = Math.max(1, toPixels(Number(s.height) || 1, s.unit, oh));
+  if (s.maintainAspectRatio && s.resizeMethod === 'exact') th = Math.max(1, Math.round(tw * oh / ow));
+
+  const { canvas, ctx } = makeCanvas(tw, th, s.resizeMethod === 'fit' ? 'image/jpeg' : mime); // 'fit' pads with white
+  if (s.resizeMethod === 'fit') {
+    const k = Math.min(tw / ow, th / oh);
+    ctx.drawImage(img, (tw - ow * k) / 2, (th - oh * k) / 2, ow * k, oh * k);
+  } else if (s.resizeMethod === 'fill' || s.resizeMethod === 'crop') {
+    // Cover the target and centre-crop the overflow (no distortion).
+    const k = Math.max(tw / ow, th / oh);
+    const sw = tw / k, sh = th / k;
+    ctx.drawImage(img, (ow - sw) / 2, (oh - sh) / 2, sw, sh, 0, 0, tw, th);
+  } else {
+    ctx.drawImage(img, 0, 0, tw, th);
+  }
+  return canvas.toDataURL(mime, s.quality / 100);
+}
+
+/** Starting settings for an image of w×h, honouring a preset if given. */
+export function initialSettingsFor(w: number, h: number, preset?: ResizePreset): Pick<ResizeSettings, 'width' | 'height' | 'unit' | 'maintainAspectRatio' | 'resizeMethod'> {
+  if (preset && 'square' in preset) {
+    const s = Math.max(w, h) || 1080;
+    return { width: s, height: s, unit: 'px', maintainAspectRatio: false, resizeMethod: 'fit' };
+  }
+  if (preset) {
+    // Fill + centre-crop so preset sizes never stretch the photo.
+    return { width: preset.width, height: preset.height, unit: 'px', maintainAspectRatio: false, resizeMethod: preset.resizeMethod ?? 'fill' };
+  }
+  return { width: w || 800, height: h || 600, unit: 'px', maintainAspectRatio: true, resizeMethod: 'exact' };
 }
 
 // Common presets
@@ -41,13 +99,17 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
   className = ''
 }) => {
   const [settings, setSettings] = useState<ResizeSettings>({
-    width: preset?.width || originalWidth || 800,
-    height: preset?.height || originalHeight || 600,
-    unit: preset?.unit || 'px',
-    maintainAspectRatio: true,
-    resizeMethod: 'exact',
-    quality: 100
+    ...initialSettingsFor(originalWidth, originalHeight, preset),
+    quality: 92
   });
+
+  // The image's real size arrives after the first render (it has to load).
+  // Re-seed the fields then; otherwise every image starts at 800×600.
+  useEffect(() => {
+    if (originalWidth && originalHeight) {
+      setSettings(prev => ({ ...prev, ...initialSettingsFor(originalWidth, originalHeight, preset) }));
+    }
+  }, [originalWidth, originalHeight, preset]);
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [previewImage, setPreviewImage] = useState<string>('');
@@ -118,96 +180,21 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
     }
   }, []);
 
-  // Resize image
+  // Resize image (live preview)
   const resizeImage = useCallback(async () => {
     if (!imageData || !originalWidth || !originalHeight) return;
-
     setIsProcessing(true);
-    
     try {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      const img = new Image();
-
-      await new Promise((resolve, reject) => {
-        img.onload = resolve;
-        img.onerror = reject;
-        img.src = imageData;
-      });
-
-      // Convert dimensions to pixels
-      const targetWidth = convertToPixels(Number(settings.width) || 1, settings.unit, true);
-      const targetHeight = convertToPixels(Number(settings.height) || 1, settings.unit, false);
-
-      let drawWidth = targetWidth;
-      let drawHeight = targetHeight;
-      let offsetX = 0;
-      let offsetY = 0;
-
-      // Handle different resize methods
-      switch (settings.resizeMethod) {
-        case 'exact':
-          // Use exact dimensions (may distort)
-          break;
-          
-        case 'fit':
-          // Fit within dimensions (maintain aspect ratio)
-          const scale = Math.min(targetWidth / originalWidth, targetHeight / originalHeight);
-          drawWidth = originalWidth * scale;
-          drawHeight = originalHeight * scale;
-          offsetX = (targetWidth - drawWidth) / 2;
-          offsetY = (targetHeight - drawHeight) / 2;
-          break;
-          
-        case 'fill':
-          // Fill dimensions (maintain aspect ratio, may crop)
-          const fillScale = Math.max(targetWidth / originalWidth, targetHeight / originalHeight);
-          drawWidth = originalWidth * fillScale;
-          drawHeight = originalHeight * fillScale;
-          offsetX = (targetWidth - drawWidth) / 2;
-          offsetY = (targetHeight - drawHeight) / 2;
-          break;
-          
-        case 'crop':
-          // Crop from center
-          const cropScale = Math.min(targetWidth / originalWidth, targetHeight / originalHeight);
-          const cropWidth = targetWidth / cropScale;
-          const cropHeight = targetHeight / cropScale;
-          const cropX = (originalWidth - cropWidth) / 2;
-          const cropY = (originalHeight - cropHeight) / 2;
-          
-          canvas.width = targetWidth;
-          canvas.height = targetHeight;
-          ctx?.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, targetWidth, targetHeight);
-          
-          const croppedDataUrl = canvas.toDataURL('image/jpeg', settings.quality / 100);
-          setPreviewImage(croppedDataUrl);
-          onResize?.(croppedDataUrl, settings);
-          setIsProcessing(false);
-          return;
-      }
-
-      canvas.width = targetWidth;
-      canvas.height = targetHeight;
-
-      // Fill background for transparent images
-      if (settings.resizeMethod === 'fit') {
-        ctx!.fillStyle = '#FFFFFF';
-        ctx!.fillRect(0, 0, targetWidth, targetHeight);
-      }
-
-      ctx?.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-
-      const resizedDataUrl = canvas.toDataURL('image/jpeg', settings.quality / 100);
+      const img = await loadImage(imageData);
+      const resizedDataUrl = renderResized(img, settings, mimeOfDataUrl(imageData));
       setPreviewImage(resizedDataUrl);
       onResize?.(resizedDataUrl, settings);
-      
     } catch (error) {
-      console.error('Resize failed:', error);
+      console.error("Resize failed:", error);
     } finally {
       setIsProcessing(false);
     }
-  }, [imageData, originalWidth, originalHeight, settings, convertToPixels, onResize]);
+  }, [imageData, originalWidth, originalHeight, settings, onResize]);
 
   // Auto-resize when settings change
   useEffect(() => {
@@ -216,13 +203,6 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
       return () => clearTimeout(debounceTimer);
     }
   }, [imageData, originalWidth, originalHeight, settings, resizeImage]);
-
-  // Apply preset on mount
-  useEffect(() => {
-    if (preset) {
-      setSettings(prev => ({ ...prev, ...preset }));
-    }
-  }, [preset]);
 
   const formatFileSize = (bytes: number): string => {
     if (bytes === 0) return '0 B';

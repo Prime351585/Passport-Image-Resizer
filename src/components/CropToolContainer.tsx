@@ -1,19 +1,34 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import UploadPreview from './UploadPreview';
+import { extForMime, makeCanvas, mimeOfDataUrl, withExt } from '../utils/imageOutput';
 
 interface CropToolProps {
   className?: string;
+  /** Ratio to start with, e.g. "1280:720" (preset pages). */
+  initialAspectRatio?: string;
+  /** Scale the crop to this exact size while the preset ratio is selected. */
+  outputSize?: { width: number; height: number } | { square: true };
 }
 
-type AspectRatio = 'free' | '1:1' | '16:9' | '4:3' | '3:2' | '9:16';
+type AspectRatio = string; // 'free' or 'w:h'
+const BASE_RATIOS = ['free', '1:1', '16:9', '4:3', '3:2', '9:16'];
+const sameRatio = (a: string, b: string) => {
+  if (a === 'free' || b === 'free') return a === b;
+  const [aw, ah] = a.split(':').map(Number), [bw, bh] = b.split(':').map(Number);
+  return Math.abs(aw / ah - bw / bh) < 0.001;
+};
 
-export default function CropToolContainer({ className = '' }: CropToolProps) {
+export default function CropToolContainer({ className = '', initialAspectRatio, outputSize }: CropToolProps) {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [originalImage, setOriginalImage] = useState<string>('');
   const [croppedImage, setCroppedImage] = useState<string>('');
   const [originalFileName, setOriginalFileName] = useState<string>('image');
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
-  const [aspectRatio, setAspectRatio] = useState<AspectRatio>('free');
+  const [aspectRatio, setAspectRatio] = useState<AspectRatio>(initialAspectRatio || 'free');
+  // Preset ratio gets its own button when it is not one of the standard ones.
+  const ratioOptions = initialAspectRatio && !BASE_RATIOS.some(r => sameRatio(r, initialAspectRatio))
+    ? [...BASE_RATIOS, initialAspectRatio] : BASE_RATIOS;
+  const presetSize = outputSize && 'width' in outputSize && initialAspectRatio && sameRatio(aspectRatio, initialAspectRatio) ? outputSize : undefined;
 
   const handleImageUpload = (file: File, dataUrl: string) => {
     setUploadedFile(file);
@@ -39,7 +54,7 @@ export default function CropToolContainer({ className = '' }: CropToolProps) {
     if (!croppedImage) return;
     const link = document.createElement('a');
     link.href = croppedImage;
-    link.download = `cropped-${originalFileName}`;
+    link.download = withExt(originalFileName, extForMime(mimeOfDataUrl(croppedImage)), '-cropped');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -106,6 +121,7 @@ export default function CropToolContainer({ className = '' }: CropToolProps) {
                 originalWidth={imageDimensions.width}
                 originalHeight={imageDimensions.height}
                 aspectRatio={aspectRatio}
+                outputSize={presetSize}
                 onCrop={setCroppedImage}
               />
             </div>
@@ -120,7 +136,7 @@ export default function CropToolContainer({ className = '' }: CropToolProps) {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Aspect Ratio</label>
                   <div className="grid grid-cols-2 gap-2">
-                    {(['free', '1:1', '16:9', '4:3', '3:2', '9:16'] as AspectRatio[]).map((ratio) => (
+                    {ratioOptions.map((ratio) => (
                       <button
                         key={ratio}
                         onClick={() => setAspectRatio(ratio)}
@@ -130,7 +146,7 @@ export default function CropToolContainer({ className = '' }: CropToolProps) {
                             : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-primary/50'
                         }`}
                       >
-                        {ratio.toUpperCase()}
+                        {ratio === 'free' ? 'FREE' : BASE_RATIOS.includes(ratio) ? ratio : `${ratio.replace(':', '×')}`}
                       </button>
                     ))}
                   </div>
@@ -163,10 +179,11 @@ interface ImageCropperProps {
   originalWidth: number;
   originalHeight: number;
   aspectRatio: AspectRatio;
+  outputSize?: { width: number; height: number };
   onCrop: (dataUrl: string) => void;
 }
 
-function ImageCropper({ imageData, originalWidth, originalHeight, aspectRatio, onCrop }: ImageCropperProps) {
+function ImageCropper({ imageData, originalWidth, originalHeight, aspectRatio, outputSize, onCrop }: ImageCropperProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(new Image());
@@ -326,36 +343,36 @@ function ImageCropper({ imageData, originalWidth, originalHeight, aspectRatio, o
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!isLoaded) return;
-      const canvas = document.createElement('canvas');
       const cw = cropBox.w * originalWidth;
       const ch = cropBox.h * originalHeight;
-      canvas.width = cw;
-      canvas.height = ch;
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        ctx.drawImage(imageRef.current, 
-          cropBox.x * originalWidth, cropBox.y * originalHeight, cw, ch,
-          0, 0, cw, ch
-        );
-        onCrop(canvas.toDataURL('image/jpeg', 0.95));
-      }
+      const mime = mimeOfDataUrl(imageData);
+      // Preset pages scale the crop to the platform size (e.g. 1080×1080).
+      const outW = outputSize ? outputSize.width : Math.round(cw);
+      const outH = outputSize ? outputSize.height : Math.round(ch);
+      const { canvas, ctx } = makeCanvas(outW, outH, mime);
+      ctx.drawImage(imageRef.current,
+        cropBox.x * originalWidth, cropBox.y * originalHeight, cw, ch,
+        0, 0, outW, outH
+      );
+      onCrop(canvas.toDataURL(mime, 0.95));
     }, 200);
     return () => clearTimeout(timer);
-  }, [cropBox, isLoaded, originalWidth, originalHeight, onCrop]);
+  }, [cropBox, isLoaded, originalWidth, originalHeight, onCrop, outputSize, imageData]);
 
   // Mouse interaction
-  const getMousePos = (e: React.MouseEvent | MouseEvent) => {
+  const getMousePos = (e: React.PointerEvent | PointerEvent) => {
     const rect = canvasRef.current?.getBoundingClientRect();
     if (!rect) return { x: 0, y: 0 };
     return {
-      x: (e.clientX - rect.left) / displaySize.width,
-      y: (e.clientY - rect.top) / displaySize.height
+      x: (e.clientX - rect.left) / rect.width, // rect, not displaySize: CSS may scale the canvas
+      y: (e.clientY - rect.top) / rect.height
     };
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = (e: React.PointerEvent) => {
     const pos = getMousePos(e);
-    const tolerance = 0.05; // 5% of display size
+    // Bigger grab area for fingers than for a mouse
+    const tolerance = e.pointerType === 'touch' ? 0.1 : 0.05;
     
     let type: typeof dragState.type = null;
     
@@ -373,7 +390,7 @@ function ImageCropper({ imageData, originalWidth, originalHeight, aspectRatio, o
   };
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: PointerEvent) => {
       if (!dragState.type) return;
       e.preventDefault();
       
@@ -438,12 +455,14 @@ function ImageCropper({ imageData, originalWidth, originalHeight, aspectRatio, o
     };
 
     if (dragState.type) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', handleMouseUp);
+      window.addEventListener('pointermove', handleMouseMove);
+      window.addEventListener('pointerup', handleMouseUp);
+      window.addEventListener('pointercancel', handleMouseUp);
     }
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('pointermove', handleMouseMove);
+      window.removeEventListener('pointerup', handleMouseUp);
+      window.removeEventListener('pointercancel', handleMouseUp);
     };
   }, [dragState, ratioValue, originalWidth, originalHeight]);
   
@@ -458,7 +477,7 @@ function ImageCropper({ imageData, originalWidth, originalHeight, aspectRatio, o
     <div ref={containerRef} className="relative flex justify-center bg-gray-50 rounded-xl overflow-hidden min-h-[400px]">
       <canvas
         ref={canvasRef}
-        onMouseDown={handleMouseDown}
+        onPointerDown={handleMouseDown}
         className={`touch-none ${getCursor()}`}
       />
       {!isLoaded && (

@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
-import ImageResizer from './ImageResizer';
+import ImageResizer, { renderResized, type ResizePreset, type ResizeSettings } from './ImageResizer';
+import { extForMime, loadImage, mimeOfDataUrl, withExt } from '../utils/imageOutput';
 import JSZip from 'jszip';
 
-interface ResizeSettings {
-  width: number | '';
-  height: number | '';
-  unit: 'px' | '%' | 'mm' | 'cm' | 'in';
-  maintainAspectRatio: boolean;
-  resizeMethod: 'exact' | 'fit' | 'fill' | 'crop';
-  quality: number;
-}
 
-const ImageToolContainer: React.FC = () => {
+const ImageToolContainer: React.FC<{ preset?: ResizePreset }> = ({ preset }) => {
   const [images, setImages] = useState<UploadedImage[]>([]);
   const [latestSettings, setLatestSettings] = useState<ResizeSettings | null>(null);
   
@@ -48,17 +41,6 @@ const ImageToolContainer: React.FC = () => {
     setLatestSettings(settings);
   };
 
-  const convertToPixels = (value: number, unit: string, originalSize: number): number => {
-    const dpi = 96;
-    switch (unit) {
-      case 'px': return value;
-      case '%': return Math.round((value / 100) * originalSize);
-      case 'mm': return Math.round((value * dpi) / 25.4);
-      case 'cm': return Math.round((value * dpi) / 2.54);
-      case 'in': return Math.round(value * dpi);
-      default: return value;
-    }
-  };
 
   const processBatch = async () => {
     if (images.length === 0 || !latestSettings) return;
@@ -70,75 +52,11 @@ const ImageToolContainer: React.FC = () => {
       const results: {name: string, url: string}[] = [];
 
       for (const imgData of images) {
-        const resultUrl = await new Promise<string>((resolve, reject) => {
-          const img = new Image();
-          img.onload = () => {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return reject('No context');
-
-            const originalWidth = img.width;
-            const originalHeight = img.height;
-
-            const targetWidth = convertToPixels(Number(latestSettings.width) || 1, latestSettings.unit, originalWidth);
-            const targetHeight = convertToPixels(Number(latestSettings.height) || 1, latestSettings.unit, originalHeight);
-
-            let drawWidth = targetWidth;
-            let drawHeight = targetHeight;
-            let offsetX = 0;
-            let offsetY = 0;
-
-            switch (latestSettings.resizeMethod) {
-              case 'exact':
-                break;
-              case 'fit':
-                const scale = Math.min(targetWidth / originalWidth, targetHeight / originalHeight);
-                drawWidth = originalWidth * scale;
-                drawHeight = originalHeight * scale;
-                offsetX = (targetWidth - drawWidth) / 2;
-                offsetY = (targetHeight - drawHeight) / 2;
-                break;
-              case 'fill':
-                const fillScale = Math.max(targetWidth / originalWidth, targetHeight / originalHeight);
-                drawWidth = originalWidth * fillScale;
-                drawHeight = originalHeight * fillScale;
-                offsetX = (targetWidth - drawWidth) / 2;
-                offsetY = (targetHeight - drawHeight) / 2;
-                break;
-              case 'crop':
-                const cropScale = Math.min(targetWidth / originalWidth, targetHeight / originalHeight);
-                const cropWidth = targetWidth / cropScale;
-                const cropHeight = targetHeight / cropScale;
-                const cropX = (originalWidth - cropWidth) / 2;
-                const cropY = (originalHeight - cropHeight) / 2;
-                
-                canvas.width = targetWidth;
-                canvas.height = targetHeight;
-                ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, targetWidth, targetHeight);
-                resolve(canvas.toDataURL('image/jpeg', latestSettings.quality / 100));
-                return;
-            }
-
-            canvas.width = targetWidth;
-            canvas.height = targetHeight;
-
-            if (latestSettings.resizeMethod === 'fit') {
-              ctx.fillStyle = '#FFFFFF';
-              ctx.fillRect(0, 0, targetWidth, targetHeight);
-            }
-
-            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-            resolve(canvas.toDataURL('image/jpeg', latestSettings.quality / 100));
-          };
-          img.onerror = reject;
-          img.src = imgData.dataUrl;
-        });
-
-        const base64Data = resultUrl.split(',')[1];
-        const baseName = imgData.name.substring(0, imgData.name.lastIndexOf('.'));
-        const newName = `${baseName}_resized.jpg`;
-        
-        zip.file(newName, base64Data, {base64: true});
+        const img = await loadImage(imgData.dataUrl);
+        const mime = mimeOfDataUrl(imgData.dataUrl);
+        const resultUrl = renderResized(img, latestSettings, mime);
+        const newName = withExt(imgData.name, extForMime(mime), "_resized");
+        zip.file(newName, resultUrl.split(",")[1], {base64: true});
         results.push({ name: newName, url: resultUrl });
       }
 
@@ -179,7 +97,7 @@ const ImageToolContainer: React.FC = () => {
           <UploadPreview
             onBatchUpload={handleBatchUpload}
             onImageRemove={handleRemove}
-            maxSizeMB={10}
+            maxSizeMB={20}
             storageKey="resize-tool-image"
             className="w-full"
             showPreview={false}
@@ -234,6 +152,7 @@ const ImageToolContainer: React.FC = () => {
                 originalWidth={firstImageDim.width}
                 originalHeight={firstImageDim.height}
                 onResize={handleResizeUpdate}
+                preset={preset}
                 className="w-full"
               />
             </>

@@ -32,6 +32,8 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [cropArea, setCropArea] = useState<CropArea>({ x: 0, y: 0, width: 0, height: 0 });
   const [displaySize, setDisplaySize] = useState({ width: 0, height: 0 });
+  // 1 = largest frame that fits; higher = tighter frame around the face
+  const [zoom, setZoom] = useState(1);
   const imageRef = useRef<HTMLImageElement>(new Image());
 
   // Convert target dimensions to pixels (assuming 300 DPI)
@@ -84,6 +86,7 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
     const img = imageRef.current;
     img.onload = () => {
       setIsLoaded(true);
+      setZoom(1);
       const initialCrop = calculateInitialCropArea();
       setCropArea(initialCrop);
     };
@@ -172,54 +175,49 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
     ctx.setLineDash([]);
   }, [isLoaded, cropArea, originalWidth, originalHeight]);
 
-  // Handle mouse events for dragging
-  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+  // Pointer events cover mouse, touch and pen. Coordinates use the canvas's
+  // rendered size, because CSS (max-width / max-height) may scale it down.
+  const toImageCoords = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    const rect = canvasRef.current!.getBoundingClientRect();
+    return {
+      x: ((e.clientX - rect.left) / rect.width) * originalWidth,
+      y: ((e.clientY - rect.top) / rect.height) * originalHeight,
+    };
+  };
 
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Convert to original image coordinates
-    const scaleX = originalWidth / displaySize.width;
-    const scaleY = originalHeight / displaySize.height;
-    const imageX = x * scaleX;
-    const imageY = y * scaleY;
-
-    // Check if click is within crop area
+  const handleMouseDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (!canvasRef.current) return;
+    const { x: imageX, y: imageY } = toImageCoords(e);
     if (imageX >= cropArea.x && imageX <= cropArea.x + cropArea.width &&
         imageY >= cropArea.y && imageY <= cropArea.y + cropArea.height) {
+      canvasRef.current.setPointerCapture(e.pointerId);
       setIsDragging(true);
       setDragStart({ x: imageX - cropArea.x, y: imageY - cropArea.y });
     }
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!isDragging) return;
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Convert to original image coordinates
-    const scaleX = originalWidth / displaySize.width;
-    const scaleY = originalHeight / displaySize.height;
-    const imageX = x * scaleX;
-    const imageY = y * scaleY;
-
-    // Calculate new crop position
-    let newX = imageX - dragStart.x;
-    let newY = imageY - dragStart.y;
-
-    // Constrain to image boundaries
-    newX = Math.max(0, Math.min(newX, originalWidth - cropArea.width));
-    newY = Math.max(0, Math.min(newY, originalHeight - cropArea.height));
-
+  const handleMouseMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (!isDragging || !canvasRef.current) return;
+    const { x: imageX, y: imageY } = toImageCoords(e);
+    const newX = Math.max(0, Math.min(imageX - dragStart.x, originalWidth - cropArea.width));
+    const newY = Math.max(0, Math.min(imageY - dragStart.y, originalHeight - cropArea.height));
     setCropArea(prev => ({ ...prev, x: newX, y: newY }));
+  };
+
+  // Zoom keeps the frame centred on the same point and inside the photo.
+  const handleZoom = (z: number) => {
+    const base = calculateInitialCropArea();
+    setZoom(z);
+    setCropArea(prev => {
+      const w = base.width / z, h = base.height / z;
+      const cx = prev.width ? prev.x + prev.width / 2 : originalWidth / 2;
+      const cy = prev.height ? prev.y + prev.height / 2 : originalHeight / 2;
+      return {
+        x: Math.max(0, Math.min(cx - w / 2, originalWidth - w)),
+        y: Math.max(0, Math.min(cy - h / 2, originalHeight - h)),
+        width: w, height: h,
+      };
+    });
   };
 
   const handleMouseUp = () => {
@@ -273,6 +271,7 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
   useEffect(() => {
     if (isLoaded) {
       const newCrop = calculateInitialCropArea();
+      setZoom(1);
       setCropArea(newCrop);
     }
   }, [targetDimension, isLoaded, calculateInitialCropArea]);
@@ -311,10 +310,10 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
       <div ref={containerRef} className="relative flex justify-center bg-gray-50 rounded-xl p-4 overflow-hidden border-2 border-gray-100">
         <canvas
           ref={canvasRef}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
+          onPointerDown={handleMouseDown}
+          onPointerMove={handleMouseMove}
+          onPointerUp={handleMouseUp}
+          onPointerCancel={handleMouseUp}
           className={`border-2 border-gray-300 shadow-md max-w-full rounded-xl ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
           style={{ maxHeight: '400px', touchAction: 'none' }}
         />
@@ -328,6 +327,16 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
           </div>
         )}
       </div>
+
+      {/* Zoom: make the head fill the frame (most countries want it 50–70% of the photo height) */}
+      <div className="flex items-center gap-3">
+        <label htmlFor="passport-zoom" className="text-sm font-medium text-gray-700 shrink-0">Zoom</label>
+        <input id="passport-zoom" type="range" min="1" max="4" step="0.05" value={zoom}
+          onChange={(e) => handleZoom(Number(e.target.value))}
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" />
+        <span className="text-sm text-gray-500 w-12 text-right">{zoom.toFixed(1)}×</span>
+      </div>
+      <p className="text-xs text-gray-500">Drag the frame to centre your face, and zoom until your head fills most of it.</p>
     </div>
   );
 };

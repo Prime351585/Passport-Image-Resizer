@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UploadPreview, { type UploadedImage } from './UploadPreview';
 import JSZip from 'jszip';
+import { applyPixelFilter, makeCanvas, mimeOfDataUrl } from '../utils/imageOutput';
 
 export type FilterType = 'invert' | 'lighten' | 'saturate';
 
@@ -49,25 +50,12 @@ export default function FilterToolContainer({ className = '', filterType }: Filt
         const resultUrl = await new Promise<string>((resolve, reject) => {
           const image = new Image();
           image.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = image.width;
-            canvas.height = image.height;
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return reject('No context');
-            
-            let filterString = '';
-            if (filterType === 'invert') filterString = `invert(${intensity}%)`;
-            if (filterType === 'lighten') filterString = `brightness(${intensity}%)`;
-            if (filterType === 'saturate') filterString = `saturate(${intensity}%)`;
-            
-            ctx.filter = filterString;
+            const mime = mimeOfDataUrl(img.dataUrl);
+            const { canvas, ctx } = makeCanvas(image.naturalWidth, image.naturalHeight, mime);
             ctx.drawImage(image, 0, 0);
-            
-            // Revert filter for subsequent operations on same ctx, though we recreate canvas
-            ctx.filter = 'none';
-
-            const dataUrl = canvas.toDataURL(img.file.type || 'image/jpeg', 0.92);
-            resolve(dataUrl);
+            // Pixel maths instead of ctx.filter, which Safari ignores.
+            applyPixelFilter(ctx, canvas.width, canvas.height, filterType, intensity);
+            resolve(canvas.toDataURL(mime, 0.92));
           };
           image.onerror = reject;
           image.src = img.dataUrl;
