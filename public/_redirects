@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects.
+# These URLs never existed but used to show the homepage (soft 404) and were
+# indexed by Google. Point them at the closest real page instead of a 404.
+/guides   /blogs          301
+/convert  /jpeg-to-webp   301
+/about    /               301
