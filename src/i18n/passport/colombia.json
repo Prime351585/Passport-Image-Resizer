@@ -1,53 +1,102 @@
 {
-  "meta_title": "Fabricante oficial de tamaño de foto de pasaporte Colombia (38x51 mm) | 2026",
-  "meta_description": "Cree una foto de pasaporte o visa Colombia 100% compatible en línea. Dimensiones exactas de 38x51 mm (1.50x2.00 pulgadas), se requiere un fondo de Blanco. Herramienta rápida y privada del lado del navegador.",
-  "h1": "Guía oficial de requisitos y tamaño de la foto del pasaporte Colombia",
-  "subtitle": "Cambie el tamaño, recorte y compile una cuadrícula imprimible que coincida con los estándares oficiales de pasaportes biométricos de Colombia.",
+  "meta_title": "Foto para pasaporte colombiano: requisitos Cancillería | Resize-It",
+  "meta_description": "Para el pasaporte colombiano no llevas fotos: se toman en la oficina sin costo. Si el formulario en línea pide foto: JPG de máximo 495 KB, rostro 70–80%.",
+  "h1": "Fotografía para pasaporte colombiano",
+  "subtitle": "Cómo se toma la foto del pasaporte en Colombia y cómo preparar la foto del formulario en línea.",
   "tool_workspace": {
-    "h2": "Herramienta interactiva de recorte biométrico Colombia",
-    "description": "Cargue su archivo para alinearlo con la cuadrícula de dimensiones Colombia incorporada. No se envían imágenes a los servidores; Todo el procesamiento del lienzo se realiza localmente en JavaScript.",
-    "spec_badge_mm": "38x51mm",
-    "spec_badge_in": "1,50 x 2,00 pulgadas",
-    "spec_background": "Fondo requerido: Blanco"
+    "h2": "Herramienta de fotos tamaño pasaporte",
+    "description": "Sube una foto para recortarla al tamaño que necesites. Todo se procesa en tu navegador; la foto no se sube a ningún servidor.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Fondo: Liso y claro"
   },
-  "biometric_details": {
-    "h2": "Proporciones biométricas oficiales para Colombia",
-    "head_size_label": "Relación de altura de cabeza",
-    "head_size_text": "La distancia desde la parte inferior de la barbilla hasta la parte superior del cabello debe ocupar aproximadamente el 75% de la altura del marco vertical.",
-    "eye_height_label": "Línea de alineación ocular",
-    "eye_height_text": "Sus ojos deben estar centrados verticalmente dentro de los límites del marco de alineación del objetivo."
+  "requirements": {
+    "h2": "Requisitos de la fotografía para pasaporte colombiano",
+    "notes_h3": "Antes de tu trámite",
+    "rows": [
+      {
+        "label": "¿Debes llevar fotos?",
+        "value": "No. Se toman de manera digital y presencial en la oficina de expedición, como parte del trámite y sin costo."
+      },
+      {
+        "label": "Presencia",
+        "value": "Personal, con cita previa y la cédula de ciudadanía original vigente"
+      },
+      {
+        "label": "Recomendación",
+        "value": "Peinados sencillos; evita joyas y accesorios"
+      },
+      {
+        "label": "Foto del formulario en línea",
+        "value": "Si se solicita: JPG de máximo 495 KB, a color, nítida y de buena resolución"
+      },
+      {
+        "label": "Encuadre (formulario)",
+        "value": "Primer plano de rostro y hombros; la cara debe ocupar entre el 70 % y el 80 % de la imagen"
+      },
+      {
+        "label": "Fondo y accesorios (formulario)",
+        "value": "Fondo liso y claro; sin gorras ni lentes oscuros"
+      }
+    ],
+    "notes": [
+      "En la oficina se toman la fotografía, las huellas y la firma, así que no necesitas estudio fotográfico.",
+      "Para la foto del formulario en línea, usa el botón \"Download digital photo (JPG)\": genera un JPG de 900 × 1200 px de menos de 495 KB. Acerca el zoom hasta que tu cara ocupe entre el 70 % y el 80 % del marco.",
+      "Cancillería cita distintas resoluciones en distintas páginas; confirma el requisito vigente antes de ir."
+    ],
+    "sources_label": "Fuentes oficiales:",
+    "sources": [
+      {
+        "label": "Cancillería: requisitos de pasaporte",
+        "url": "https://www.cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/pasaportes/requisitos"
+      },
+      {
+        "label": "Cancillería: ¿Requiero presentar fotografías?",
+        "url": "https://www.cancilleria.gov.co/node/7337"
+      }
+    ],
+    "checked": "Verificado con estas fuentes en noviembre de 2026. Las reglas pueden cambiar; confirma en la página oficial antes de tu trámite."
   },
   "how_to": {
-    "title": "Cómo hacer e imprimir una foto de pasaporte Colombia",
-    "step1_title": "1. Inicializar los ajustes preestablecidos Colombia",
-    "step1_text": "La ventana de recorte escala automáticamente al tamaño exacto de regulación de 38x51 mm.",
-    "step2_title": "2. Carga de imágenes locales",
-    "step2_text": "Selecciona tu foto de origen. Se mantiene completamente seguro dentro de la memoria de ejecución del navegador.",
-    "step3_title": "3. Alineal con superposiciones biométricas",
-    "step3_text": "Escala y mueve la imagen hasta que tu cara coincida con las capas translúcidas de alineación de la cabeza y los ojos.",
-    "step4_title": "4. Generar cuadrícula y guardar",
-    "step4_text": "Descargue un solo archivo de imagen optimizado o una hoja de plantilla imprimible prealineada para diseños de impresión de fotos estándar de 4x6 pulgadas."
+    "title": "Cómo obtener la foto del pasaporte",
+    "step1_title": "1. Revisa los requisitos",
+    "step1_text": "Lee abajo cómo debes presentarte para la toma de la fotografía.",
+    "step2_title": "2. Prepárate",
+    "step2_text": "Rostro y cabello despejados, sin lentes ni accesorios que cubran la cara.",
+    "step3_title": "3. Acude a tu cita",
+    "step3_text": "La fotografía se toma en la oficina durante tu trámite.",
+    "step4_title": "4. ¿Fotos para otro trámite?",
+    "step4_text": "Si otro trámite te pide fotos impresas, súbela aquí, recórtala y descarga la hoja PDF para imprimir."
   },
   "faq": {
-    "h2": "Preguntas frecuentes sobre Colombia Fotos",
-    "q1": "¿Cuál es la regla oficial de color de fondo para Colombia?",
-    "a1": "El gobierno requiere un telón de fondo blanco sólido y uniforme sin sombras, objetos ni texturas presentes.",
-    "q2": "¿Puedo usar gafas o sombreros en mi foto del documento Colombia?",
-    "a2": "Los anteojos deben quitarse al menos que sea estrictamente necesario desde el punto de vista médico (sin reflejos, tintes o marcos horribles). Se permiten sombreros religiosos siempre que revelen todo el óvalo de la cara desde la barbilla hasta la frente.",
-    "q3": "¿Cómo imprimimo mi archivo digital Colombia generado?",
-    "a3": "Descargue nuestra opción de hoja imprimible compilada, guárdela en una memoria USB e imprímala en un quiosco de fotos digital local utilizando la configuración estándar de papel fotográfico 4x6 de alta calidad."
-  },
-  "cross_link_footer": {
-    "title": "Formatos de documentos relacionados",
-    "text": "¿Necesitas una talla alternativa? Consulta los requisitos para las dimensiones de la visa Colombia o busca formatos de documentación estándar globales alternativos."
+    "h2": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Necesito fotos para el pasaporte colombiano?",
+        "a": "No. Las fotos se toman de manera digital y presencial en la oficina de expedición, sin costo."
+      },
+      {
+        "q": "¿Qué foto pide el formulario en línea?",
+        "a": "Un JPG de máximo 495 KB, a color y nítido, en primer plano de rostro y hombros, con la cara entre el 70 % y el 80 % de la imagen, fondo liso y claro, sin gorras ni lentes oscuros."
+      },
+      {
+        "q": "¿Cómo debo ir peinado?",
+        "a": "Cancillería recomienda peinados sencillos y evitar joyas y accesorios."
+      }
+    ]
   },
   "country_code": "CO",
   "inLanguage": "es",
   "raw_dimensions": {
-    "width_mm": 38,
-    "height_mm": 51,
-    "width_in": 1.5,
-    "height_in": 2.0,
-    "background": "White"
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "Liso y claro",
+    "digital": {
+      "width": 900,
+      "height": 1200,
+      "maxKB": 480
+    }
   }
 }

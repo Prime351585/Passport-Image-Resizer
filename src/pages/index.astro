@@ -65,6 +65,8 @@ const presets = [
   { label: 'Passport photo', href: '/passport' },
 ];
 
+const allTools = toolGroups.flatMap((g) => g.tools);
+
 // ─── Passport countries (derived from the data files) ────────────────────────
 const passportFiles = import.meta.glob('../i18n/passport/*.json');
 const countries = Object.keys(passportFiles)
@@ -76,7 +78,10 @@ const countries = Object.keys(passportFiles)
       : slug.split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' '),
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
-const popularCountries = ['united-states', 'india', 'united-kingdom', 'canada', 'pakistan', 'nigeria', 'schengen-area', 'china'];
+const countryCount = countries.length;
+const popularCountries = ['united-states', 'india', 'united-kingdom', 'canada', 'pakistan', 'nigeria', 'schengen-area', 'china']
+  .map((slug) => countries.find((c) => c.slug === slug))
+  .filter((c): c is { slug: string; name: string } => Boolean(c));
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
 const faqs = [
@@ -111,19 +116,11 @@ const pageSchemas = [generateFaqSchema(faqs)];
   structuredData={pageSchemas}
 >
   <!-- ═══ Hero: the tool itself ═══ -->
-  <section class="relative mt-[80px] md:mt-0 px-4 pt-8 md:pt-14 pb-12 bg-gradient-to-b from-tertiary/40 to-white">
+  <section class="mt-[80px] md:mt-0 px-4 pt-8 md:pt-12 pb-10">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="inline-flex flex-wrap justify-center gap-x-3 gap-y-1 text-sm text-primary font-medium mb-4">
-        <span>Free</span><span aria-hidden="true">·</span>
-        <span>No uploads</span><span aria-hidden="true">·</span>
-        <span>No sign-up</span>
-      </p>
-      <h1 class="font-crimson text-[40px] leading-[1.1] md:text-[64px] text-gray-900">
-        Resize images online, <span class="text-primary">free and private</span>
-      </h1>
+      <h1 class="font-crimson text-[36px] leading-[1.15] md:text-[52px] text-gray-900">Resize images online for free</h1>
       <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
-        Change image size in pixels, percent, cm or inches, then download in seconds.
-        Everything runs in your browser.
+        Pixels, percent, cm or inches. No uploads, no sign-up. Your photos never leave your device.
       </p>
     </div>
 
@@ -142,99 +139,43 @@ const pageSchemas = [generateFaqSchema(faqs)];
   </section>
 
   <!-- ═══ All tools ═══ -->
-  <section class="px-4 py-16 md:py-20" aria-labelledby="tools-heading">
-    <div class="max-w-6xl mx-auto">
-      <h2 id="tools-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900">Every image tool you need</h2>
-      <p class="mt-2 text-gray-600">Pick a tool. No account, no install.</p>
-
-      <div class="mt-10 space-y-10">
-        {toolGroups.map((group) => (
-          <div>
-            <h3 class="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3">{group.name}</h3>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {group.tools.map((tool) => (
-                <li>
-                  <a href={tool.href} class="group flex items-start gap-3 h-full p-4 rounded-xl border border-gray-200 bg-white hover:border-primary hover:shadow-sm transition-all">
-                    <span class="shrink-0 w-10 h-10 rounded-lg bg-tertiary/60 text-primary flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={tool.icon} />
-                    </span>
-                    <span>
-                      <span class="block font-semibold text-gray-900 group-hover:text-primary">{tool.name}</span>
-                      <span class="block text-sm text-gray-500 mt-0.5">{tool.desc}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+  <section class="px-4 py-14" aria-labelledby="tools-heading">
+    <div class="max-w-5xl mx-auto">
+      <h2 id="tools-heading" class="font-crimson text-[28px] md:text-[36px] text-gray-900">All tools</h2>
+      <ul class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-2">
+        {allTools.map((tool) => (
+          <li>
+            <a href={tool.href} class="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:border-primary hover:text-primary transition-colors">
+              <span class="shrink-0 w-8 h-8 rounded-lg bg-tertiary/60 text-primary flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={tool.icon} />
+              </span>
+              <span class="text-sm font-medium">{tool.name}</span>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 
   <!-- ═══ Passport ═══ -->
-  <section class="px-4 py-16 md:py-20 bg-gray-50" aria-labelledby="passport-heading">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-10 items-start">
-      <div class="md:col-span-2">
-        <h2 id="passport-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900 leading-tight">Passport &amp; visa photos for {countries.length} countries</h2>
-        <p class="mt-3 text-gray-600">
-          Official dimensions, cropped automatically, with a printable sheet of copies.
-          Find your country to start.
-        </p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          {popularCountries.map((slug) => {
-            const c = countries.find((x) => x.slug === slug);
-            return c && (
-              <a href={`/passport/${c.slug}`} class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-sm text-gray-700 hover:border-primary hover:text-primary transition-colors">{c.name}</a>
-            );
-          })}
-        </div>
-      </div>
-
-      <div class="md:col-span-3 bg-white rounded-2xl border border-gray-200 p-4 md:p-5">
-        <label for="country-search" class="sr-only">Search country</label>
-        <input id="country-search" type="search" autocomplete="off" placeholder="Search your country…"
-          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
-        <ul id="country-list" class="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-1 max-h-72 overflow-y-auto pr-1">
-          {countries.map((c) => (
-            <li data-name={c.name.toLowerCase()}>
-              <a href={`/passport/${c.slug}`} class="block px-3 py-2 rounded-lg text-sm text-gray-700 hover:bg-tertiary/50 hover:text-primary">{c.name}</a>
-            </li>
-          ))}
-        </ul>
-        <p id="country-empty" class="hidden mt-3 px-3 text-sm text-gray-500">
-          No match. Try the <a href="/passport" class="text-primary underline">passport photo tool</a> with a custom size.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ Why ═══ -->
-  <section class="px-4 py-16 md:py-20" aria-labelledby="why-heading">
-    <div class="max-w-6xl mx-auto">
-      <h2 id="why-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900">Why people use Resize-It</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl border border-gray-200">
-          <h3 class="font-semibold text-gray-900">Private by design</h3>
-          <p class="mt-2 text-gray-600 text-sm">Your photos are processed on your device. Nothing is uploaded, stored or seen by anyone else.</p>
-        </div>
-        <div class="p-6 rounded-2xl border border-gray-200">
-          <h3 class="font-semibold text-gray-900">Free, without catches</h3>
-          <p class="mt-2 text-gray-600 text-sm">No sign-up, no watermark, no daily limits and no premium tier hiding the useful features.</p>
-        </div>
-        <div class="p-6 rounded-2xl border border-gray-200">
-          <h3 class="font-semibold text-gray-900">Fast in batches</h3>
-          <p class="mt-2 text-gray-600 text-sm">Drop a folder's worth of images, set the size once, and download them all as one ZIP.</p>
-        </div>
+  <section class="px-4 py-14 bg-gray-50" aria-labelledby="passport-heading">
+    <div class="max-w-5xl mx-auto">
+      <h2 id="passport-heading" class="font-crimson text-[28px] md:text-[36px] text-gray-900">Passport photos</h2>
+      <p class="mt-2 text-gray-600">Official sizes for {countryCount} countries, with a printable sheet.</p>
+      <div class="mt-5 flex flex-wrap gap-2">
+        {popularCountries.map((c) => (
+          <a href={`/passport/${c.slug}`} class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-sm text-gray-700 hover:border-primary hover:text-primary transition-colors">{c.name}</a>
+        ))}
+        <a href="/passport" class="px-3 py-1.5 rounded-full text-sm font-medium text-primary hover:underline">All countries →</a>
       </div>
     </div>
   </section>
 
   <!-- ═══ FAQ ═══ -->
-  <section class="px-4 pb-20" aria-labelledby="faq-heading">
+  <section class="px-4 py-14" aria-labelledby="faq-heading">
     <div class="max-w-3xl mx-auto">
-      <h2 id="faq-heading" class="font-crimson text-[32px] md:text-[44px] text-gray-900 text-center">Questions</h2>
-      <div class="mt-8 divide-y divide-gray-200 border-y border-gray-200">
+      <h2 id="faq-heading" class="font-crimson text-[28px] md:text-[36px] text-gray-900">Questions</h2>
+      <div class="mt-4 divide-y divide-gray-200 border-y border-gray-200">
         {faqs.map((f) => (
           <details class="group py-4">
             <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-gray-900">
@@ -248,19 +189,3 @@ const pageSchemas = [generateFaqSchema(faqs)];
     </div>
   </section>
 </Layout>
-
-<script>
-  const input = document.getElementById('country-search') as HTMLInputElement | null;
-  const items = Array.from(document.querySelectorAll<HTMLLIElement>('#country-list li'));
-  const empty = document.getElementById('country-empty');
-  input?.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
-    let shown = 0;
-    for (const li of items) {
-      const match = !q || (li.dataset.name ?? '').includes(q);
-      li.hidden = !match;
-      if (match) shown++;
-    }
-    empty?.classList.toggle('hidden', shown > 0);
-  });
-</script>

@@ -1,45 +1,97 @@
 {
-  "meta_title": "Fabricante oficial de tamaño de foto de pasaporte Perú (35x45 mm) | 2026",
-  "meta_description": "Cree una foto de pasaporte o visa Perú 100% compatible en línea. Dimensiones exactas de 35x45 mm (1.38x1.77 pulgadas), se requiere un fondo de Blanco. Herramienta rápida y privada del lado del navegador.",
-  "h1": "Guía oficial de requisitos y tamaño de la foto del pasaporte Perú",
-  "subtitle": "Cambie el tamaño, recorte y compile una cuadrícula imprimible que coincida con los estándares oficiales de pasaportes biométricos del Perú.",
+  "meta_title": "Foto para pasaporte electrónico Perú: requisitos | Resize-It",
+  "meta_description": "Para el pasaporte electrónico peruano no necesitas fotos impresas: Migraciones toma la foto en la cita. Qué ropa llevar y qué evitar en la captura biométrica.",
+  "h1": "Fotografía para pasaporte electrónico peruano",
+  "subtitle": "Cómo toma Migraciones la foto del pasaporte y cómo prepararte para la captura biométrica.",
   "tool_workspace": {
-    "h2": "Herramienta interactiva de recorte biométrico Perú",
-    "description": "Cargue su archivo para alinearlo con la cuadrícula de dimensiones Perú incorporada. No se envían imágenes a los servidores; Todo el procesamiento del lienzo se realiza localmente en JavaScript.",
-    "spec_badge_mm": "35x45mm",
-    "spec_badge_in": "1,38 x 1,77 pulgadas",
-    "spec_background": "Fondo requerido: Blanco"
+    "h2": "Herramienta de fotos tamaño pasaporte",
+    "description": "Sube una foto para recortarla al tamaño que necesites. Todo se procesa en tu navegador; la foto no se sube a ningún servidor.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Fondo: Blanco"
   },
-  "biometric_details": {
-    "h2": "Proporciones biométricas oficiales para Perú",
-    "head_size_label": "Relación de altura de cabeza",
-    "head_size_text": "La distancia desde la parte inferior de la barbilla hasta la parte superior del cabello debe ocupar aproximadamente el 75% de la altura del marco vertical.",
-    "eye_height_label": "Línea de alineación ocular",
-    "eye_height_text": "Sus ojos deben estar centrados verticalmente dentro de los límites del marco de alineación del objetivo."
+  "requirements": {
+    "h2": "Requisitos de la foto para el pasaporte peruano",
+    "notes_h3": "Antes de tu cita en Migraciones",
+    "rows": [
+      {
+        "label": "¿Fotos impresas?",
+        "value": "No se requieren. Migraciones toma la fotografía de forma digital durante la atención."
+      },
+      {
+        "label": "Qué presentar",
+        "value": "DNI vigente y el pago de la tasa del pasaporte (confirma el monto vigente en gob.pe)"
+      },
+      {
+        "label": "Presencia",
+        "value": "El titular debe asistir personalmente; los menores van con al menos uno de sus padres"
+      },
+      {
+        "label": "Ropa",
+        "value": "Una prenda de color oscuro, para contrastar con el fondo blanco"
+      },
+      {
+        "label": "Evita",
+        "value": "Gafas o monturas grandes o lunas que impidan ver los ojos; lentes de contacto de color"
+      },
+      {
+        "label": "En la cabeza y el rostro",
+        "value": "Sin gorros, sombreros, vinchas ni cerquillo o cabello cubriendo el rostro; sin piercings en el rostro; sin maquillaje recargado"
+      }
+    ],
+    "notes": [
+      "No necesitas pasar por un estudio fotográfico: la foto, las huellas y la firma se capturan en la misma sede.",
+      "Un tercero puede pagar o sacar la cita por ti, pero tú debes asistir personalmente.",
+      "Si otro trámite te pide fotos impresas, puedes recortarlas aquí y descargar una hoja PDF para imprimir."
+    ],
+    "sources_label": "Fuentes oficiales:",
+    "sources": [
+      {
+        "label": "Migraciones: obtener pasaporte electrónico (mayores de edad)",
+        "url": "https://www.gob.pe/174-obtener-pasaporte-electronico-para-mayores-de-edad"
+      },
+      {
+        "label": "Migraciones: recomendaciones para la captura biométrica",
+        "url": "https://www.gob.pe/institucion/migraciones/noticias/1413945-vas-a-tramitar-tu-pasaporte-sigue-estas-recomendaciones-para-la-captura-de-tus-datos-biometricos"
+      },
+      {
+        "label": "Migraciones: no se requieren fotografías impresas",
+        "url": "https://www.gob.pe/institucion/migraciones/noticias/1425620-migraciones-recuerda-que-no-se-requieren-formularios-fotografias-impresas-ni-micas-para-realizar-tramites"
+      }
+    ],
+    "checked": "Verificado con estas fuentes en noviembre de 2026. Las reglas pueden cambiar; confirma en la página oficial antes de tu trámite."
   },
   "how_to": {
-    "title": "Cómo hacer e imprimir una foto de pasaporte Perú",
-    "step1_title": "1. Inicializar los ajustes preestablecidos Perú",
-    "step1_text": "La ventana de recorte escala automáticamente al tamaño exacto de regulación de 35x45 mm.",
-    "step2_title": "2. Carga de imágenes locales",
-    "step2_text": "Selecciona tu foto de origen. Se mantiene completamente seguro dentro de la memoria de ejecución del navegador.",
-    "step3_title": "3. Alineal con superposiciones biométricas",
-    "step3_text": "Escala y mueve la imagen hasta que tu cara coincida con las capas translúcidas de alineación de la cabeza y los ojos.",
-    "step4_title": "4. Generar cuadrícula y guardar",
-    "step4_text": "Descargue un solo archivo de imagen optimizado o una hoja de plantilla imprimible prealineada para diseños de impresión de fotos estándar de 4x6 pulgadas."
+    "title": "Cómo obtener la foto del pasaporte",
+    "step1_title": "1. Revisa los requisitos",
+    "step1_text": "Lee abajo cómo debes presentarte para la toma de la fotografía.",
+    "step2_title": "2. Prepárate",
+    "step2_text": "Rostro y cabello despejados, sin lentes ni accesorios que cubran la cara.",
+    "step3_title": "3. Acude a tu cita",
+    "step3_text": "La fotografía se toma en la oficina durante tu trámite.",
+    "step4_title": "4. ¿Fotos para otro trámite?",
+    "step4_text": "Si otro trámite te pide fotos impresas, súbela aquí, recórtala y descarga la hoja PDF para imprimir."
   },
   "faq": {
-    "h2": "Preguntas frecuentes sobre Perú Fotos",
-    "q1": "¿Cuál es la regla oficial de color de fondo para Perú?",
-    "a1": "El gobierno requiere un telón de fondo blanco sólido y uniforme sin sombras, objetos ni texturas presentes.",
-    "q2": "¿Puedo usar gafas o sombreros en mi foto del documento Perú?",
-    "a2": "Los anteojos deben quitarse al menos que sea estrictamente necesario desde el punto de vista médico (sin reflejos, tintes o marcos horribles). Se permiten sombreros religiosos siempre que revelen todo el óvalo de la cara desde la barbilla hasta la frente.",
-    "q3": "¿Cómo imprimimo mi archivo digital Perú generado?",
-    "a3": "Descargue nuestra opción de hoja imprimible compilada, guárdela en una memoria USB e imprímala en un quiosco de fotos digital local utilizando la configuración estándar de papel fotográfico 4x6 de alta calidad."
-  },
-  "cross_link_footer": {
-    "title": "Formatos de documentos relacionados",
-    "text": "¿Necesitas una talla alternativa? Consulta los requisitos para las dimensiones de la visa Perú o busca formatos de documentación estándar globales alternativos."
+    "h2": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Necesito fotos para el pasaporte electrónico peruano?",
+        "a": "No. Migraciones toma la fotografía de forma digital durante la atención; no se requieren fotos impresas."
+      },
+      {
+        "q": "¿Qué ropa llevo para la foto del pasaporte?",
+        "a": "Una prenda de color oscuro, para que haga contraste con el fondo blanco."
+      },
+      {
+        "q": "¿Puedo usar lentes en la foto?",
+        "a": "Evita gafas o monturas grandes y lunas que impidan ver los ojos. Tampoco se permiten lentes de contacto de color."
+      },
+      {
+        "q": "¿Qué documentos necesito?",
+        "a": "Tu DNI vigente y haber pagado la tasa del pasaporte. Confirma el monto en los canales oficiales de Migraciones."
+      }
+    ]
   },
   "country_code": "PE",
   "inLanguage": "es",
@@ -48,6 +100,6 @@
     "height_mm": 45,
     "width_in": 1.38,
     "height_in": 1.77,
-    "background": "White"
+    "background": "Blanco"
   }
 }

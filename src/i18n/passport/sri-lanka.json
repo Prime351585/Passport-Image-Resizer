@@ -1,45 +1,102 @@
 {
-  "meta_title": "Official Sri Lanka Passport Photo Size Maker (35x45 mm) | 2026",
-  "meta_description": "Create a 100% compliant Sri Lanka passport or visa photo online. Exact 35x45 mm (1.38x1.77 in) dimensions, required Light Blue background. Fast, private browser-side tool.",
-  "h1": "Official Sri Lanka Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official Sri Lanka biometric passport standards.",
+  "meta_title": "Sri Lanka Passport Photo Rules: Digital Studio Photos | Resize-It",
+  "meta_description": "Sri Lankan passport photos must be digital, taken by an authorised studio and sent online. Printed photos are not accepted. Rules on glasses, scarves and photo age.",
+  "h1": "Sri Lanka Passport Photo Requirements",
+  "subtitle": "How Sri Lanka's digital passport photo system works, and how to check your look before the studio visit.",
   "tool_workspace": {
-    "h2": "Interactive Sri Lanka Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in Sri Lanka dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "35 x 45 mm",
-    "spec_badge_in": "1.38 x 1.77 in",
-    "spec_background": "Required Backdrop: Light Blue"
+    "h2": "Sri Lankan passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Background: Set by the authorised studio"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for Sri Lanka",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "Sri Lankan passport photo requirements",
+    "notes_h3": "What this means for you",
+    "rows": [
+      {
+        "label": "Photo type",
+        "value": "Digital only. Printed photographs are not accepted for passport applications."
+      },
+      {
+        "label": "Who takes it",
+        "value": "An authorised photo studio, or the Department head office or a regional office"
+      },
+      {
+        "label": "How it is sent",
+        "value": "The studio sends your photo online to the Department and gives you a Studio Acknowledgement Note"
+      },
+      {
+        "label": "How recent",
+        "value": "Taken within 6 months"
+      },
+      {
+        "label": "Glasses",
+        "value": "Eyes must be clearly visible without spectacles"
+      },
+      {
+        "label": "Caps and scarves",
+        "value": "Allowed, but your forehead and ears must be clearly visible with no scarf shadows on your face"
+      },
+      {
+        "label": "Who needs one",
+        "value": "All applicants, including children"
+      },
+      {
+        "label": "Applying abroad",
+        "value": "Applications through Sri Lankan missions overseas can be made without the digital photograph and fingerprints"
+      }
+    ],
+    "notes": [
+      "You cannot submit a photo you made yourself for a Sri Lankan passport. The authorised studio captures and sends it.",
+      "Bring the Studio Acknowledgement Note with your application and supporting documents.",
+      "Fingerprints are collected in person at the head office or regional offices for applicants aged 16–60.",
+      "You can still use this tool to preview framing, or to make photos for other documents that accept prints."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "Department of Immigration & Emigration: General information on passports",
+        "url": "https://www.immigration.gov.lk/pages_e.php?id=7"
+      },
+      {
+        "label": "Instructions to registered photo studios",
+        "url": "https://www.immigration.gov.lk/pages_e.php?id=49"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a Sri Lanka Passport Photo",
-    "step1_title": "1. Initialize Sri Lanka Presets",
-    "step1_text": "The cropping window scales automatically to the exact 35x45 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a Sri Lankan passport photo",
+    "step1_title": "1. Check the rules",
+    "step1_text": "Read the Sri Lankan requirements below so you know what the studio will capture.",
+    "step2_title": "2. Preview your look",
+    "step2_text": "Upload a test photo here to check framing, glasses and background before you go. Nothing leaves your browser.",
+    "step3_title": "3. Visit an authorised studio",
+    "step3_text": "The official photo has to be taken and sent by an authorised studio or office.",
+    "step4_title": "4. Keep the acknowledgement",
+    "step4_text": "Bring the studio acknowledgement with your application."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about Sri Lanka Photos",
-    "q1": "What is the official background color rule for Sri Lanka?",
-    "a1": "The government requires a solid, uniform Light Blue backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my Sri Lanka document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital Sri Lanka file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for Sri Lanka Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "Sri Lankan passport photo questions",
+    "items": [
+      {
+        "q": "Can I use a printed photo for a Sri Lankan passport?",
+        "a": "No. Since August 2015 the Department only accepts digital photos sent by an authorised studio or captured at its offices."
+      },
+      {
+        "q": "Can I wear glasses in a Sri Lankan passport photo?",
+        "a": "No. The studio instructions say your eyes must be clearly visible without spectacles."
+      },
+      {
+        "q": "Can I wear a scarf or cap?",
+        "a": "Yes, as long as your forehead and ears are clearly visible and the scarf casts no shadow on your face."
+      },
+      {
+        "q": "How recent must the photo be?",
+        "a": "It must have been taken within 6 months."
+      }
+    ]
   },
   "country_code": "LK",
   "inLanguage": "en",
@@ -48,6 +105,6 @@
     "height_mm": 45,
     "width_in": 1.38,
     "height_in": 1.77,
-    "background": "Light Blue"
+    "background": "Set by the authorised studio"
   }
 }

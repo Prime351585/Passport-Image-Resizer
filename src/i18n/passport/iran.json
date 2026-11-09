@@ -1,45 +1,98 @@
 {
-  "meta_title": "Official Iran Passport Photo Size Maker (30x40 mm) | 2026",
-  "meta_description": "Create a 100% compliant Iran passport or visa photo online. Exact 30x40 mm (1.18x1.57 in) dimensions, required White background. Fast, private browser-side tool.",
-  "h1": "Official Iran Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official Iran biometric passport standards.",
+  "meta_title": "Iran Passport Photo Size (3×4 cm) & Requirements | Resize-It",
+  "meta_description": "Iranian passport photos are 3 × 4 cm in colour on a plain white background, taken in the last 6 months, no hat or glasses, headscarf for women. Crop and print yours free.",
+  "h1": "Iran Passport Photo Size and Requirements",
+  "subtitle": "Crop your photo to 3 × 4 cm on white and print a sheet, checked against Iran's Ministry of Foreign Affairs guidance.",
   "tool_workspace": {
-    "h2": "Interactive Iran Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in Iran dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "30 x 40 mm",
-    "spec_badge_in": "1.18 x 1.57 in",
-    "spec_background": "Required Backdrop: White"
+    "h2": "Iranian passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "30 × 40 mm",
+    "spec_badge_in": "1.18 × 1.57 in",
+    "spec_background": "Background: Plain white"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for Iran",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "Iranian passport photo requirements",
+    "notes_h3": "Before you send your application",
+    "rows": [
+      {
+        "label": "Photo size",
+        "value": "3 × 4 cm (30 × 40 mm)"
+      },
+      {
+        "label": "Background",
+        "value": "Plain white"
+      },
+      {
+        "label": "Pose",
+        "value": "Full face, front view, eyes open"
+      },
+      {
+        "label": "Not allowed",
+        "value": "Hats, glasses and neck scarves"
+      },
+      {
+        "label": "Headscarf",
+        "value": "Women applicants must wear a headscarf, under Iranian regulations"
+      },
+      {
+        "label": "How recent",
+        "value": "Taken within the past 6 months"
+      },
+      {
+        "label": "How many",
+        "value": "Three photos for a passport renewal abroad (two for each accompanying spouse or child)"
+      },
+      {
+        "label": "Back of photo",
+        "value": "Write your personal details on the back of each photo"
+      }
+    ],
+    "notes": [
+      "Write your personal details on the back of every photo, as the Ministry asks.",
+      "Glasses are not allowed in the photo, so remove them.",
+      "Print the PDF sheet at 100% scale so each photo is exactly 3 × 4 cm.",
+      "Requirements can differ by embassy or consulate, so check with the one handling your application."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "Iran Ministry of Foreign Affairs: Passport renewal",
+        "url": "https://en.mfa.ir/portal/generalserviceinfo/4011"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a Iran Passport Photo",
-    "step1_title": "1. Initialize Iran Presets",
-    "step1_text": "The cropping window scales automatically to the exact 30x40 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a Iranian passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Stand in front of a plain background in even light and have someone else take the photo at eye level. Follow the Iranian rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Drag the frame to centre your face and use Zoom until your head fills the frame to the size the rules require.",
+    "step4_title": "4. Download and print",
+    "step4_text": "Download the PDF sheet and print it at actual size (100%, no \"fit to page\") on photo paper, then cut out the photos."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about Iran Photos",
-    "q1": "What is the official background color rule for Iran?",
-    "a1": "The government requires a solid, uniform White backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my Iran document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital Iran file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for Iran Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "Iranian passport photo questions",
+    "items": [
+      {
+        "q": "What size is an Iranian passport photo?",
+        "a": "3 × 4 cm (30 × 40 mm), in colour, with a plain white background."
+      },
+      {
+        "q": "Do women need to wear a headscarf in an Iranian passport photo?",
+        "a": "Yes. The Ministry of Foreign Affairs says women applicants should wear a headscarf according to Iranian regulations."
+      },
+      {
+        "q": "Can I wear glasses?",
+        "a": "No. The photo must be without a hat, glasses or a neck scarf."
+      },
+      {
+        "q": "How many photos do I need to renew an Iranian passport abroad?",
+        "a": "Three 3 × 4 cm photos taken within the past six months, with your details written on the back."
+      }
+    ]
   },
   "country_code": "IR",
   "inLanguage": "en",
@@ -48,6 +101,6 @@
     "height_mm": 40,
     "width_in": 1.18,
     "height_in": 1.57,
-    "background": "White"
+    "background": "Plain white"
   }
 }

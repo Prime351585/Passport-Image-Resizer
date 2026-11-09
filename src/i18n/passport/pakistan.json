@@ -1,45 +1,101 @@
 {
-  "meta_title": "Official Pakistan Passport Photo Size Maker (35x45 mm) | 2026",
-  "meta_description": "Create a 100% compliant Pakistan passport or visa photo online. Exact 35x45 mm (1.38x1.77 in) dimensions, required White background. Fast, private browser-side tool.",
-  "h1": "Official Pakistan Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official Pakistan biometric passport standards.",
+  "meta_title": "Pakistan Passport Photo Size (35×45 mm) & Rules | Resize-It",
+  "meta_description": "Pakistani passport and visa photos are 45 × 35 mm on a plain white background, taken in the last 6 months, with a neutral expression. Check the DGIP rules and crop yours.",
+  "h1": "Pakistan Passport Photo Size and Requirements",
+  "subtitle": "Crop your photo to 45 × 35 mm on white, checked against Directorate General of Immigration & Passports (DGIP) guidance.",
   "tool_workspace": {
-    "h2": "Interactive Pakistan Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in Pakistan dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "35 x 45 mm",
-    "spec_badge_in": "1.38 x 1.77 in",
-    "spec_background": "Required Backdrop: White"
+    "h2": "Pakistani passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Background: Plain white"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for Pakistan",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "Pakistani passport photo requirements",
+    "notes_h3": "Before you apply",
+    "rows": [
+      {
+        "label": "Photo size",
+        "value": "45 mm high × 35 mm wide"
+      },
+      {
+        "label": "Background",
+        "value": "Plain white"
+      },
+      {
+        "label": "Framing",
+        "value": "Close-up of your full head and shoulders"
+      },
+      {
+        "label": "Pose",
+        "value": "Facing forward, looking straight at the camera, with a neutral expression and no shadows"
+      },
+      {
+        "label": "How recent",
+        "value": "No more than 6 months old"
+      },
+      {
+        "label": "Editing",
+        "value": "Not edited in software such as Photoshop"
+      },
+      {
+        "label": "Online renewal",
+        "value": "DGIP asks for a professionally taken photo; a photo cropped out of a larger picture is not accepted"
+      },
+      {
+        "label": "Visa applications",
+        "value": "Two photographs, 45 × 35 mm, white background"
+      }
+    ],
+    "notes": [
+      "For online renewal, DGIP wants a professionally taken photo rather than a crop of a larger picture. Use this page to check the rules and your framing first.",
+      "Use the photo check on the DGIP online renewal portal before you submit; its upload rules are the ones that will be enforced.",
+      "Print the PDF sheet at 100% scale so each photo is exactly 45 × 35 mm."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "DGIP: Online renewal photo requirements",
+        "url": "https://onlinemrp.dgip.gov.pk/photo-requirements"
+      },
+      {
+        "label": "DGIP: Visa of Pakistan",
+        "url": "https://dgip.gov.pk/visa/"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a Pakistan Passport Photo",
-    "step1_title": "1. Initialize Pakistan Presets",
-    "step1_text": "The cropping window scales automatically to the exact 35x45 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a Pakistani passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Stand in front of a plain background in even light and have someone else take the photo at eye level. Follow the Pakistani rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Drag the frame to centre your face and use Zoom until your head fills the frame to the size the rules require.",
+    "step4_title": "4. Download and print",
+    "step4_text": "Download the PDF sheet and print it at actual size (100%, no \"fit to page\") on photo paper, then cut out the photos."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about Pakistan Photos",
-    "q1": "What is the official background color rule for Pakistan?",
-    "a1": "The government requires a solid, uniform White backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my Pakistan document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital Pakistan file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for Pakistan Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "Pakistani passport photo questions",
+    "items": [
+      {
+        "q": "What size is a Pakistani passport photo?",
+        "a": "45 mm high by 35 mm wide, on a plain white background."
+      },
+      {
+        "q": "How old can my Pakistan passport photo be?",
+        "a": "No more than 6 months old."
+      },
+      {
+        "q": "Can I use a cropped photo for online renewal?",
+        "a": "DGIP asks for a professionally taken photo and says a photo cropped from a larger picture is not acceptable."
+      },
+      {
+        "q": "What photo is needed for a Pakistan visa?",
+        "a": "Two photographs of 45 × 35 mm with a white background."
+      }
+    ]
   },
   "country_code": "PK",
   "inLanguage": "en",
@@ -48,6 +104,6 @@
     "height_mm": 45,
     "width_in": 1.38,
     "height_in": 1.77,
-    "background": "White"
+    "background": "Plain white"
   }
 }

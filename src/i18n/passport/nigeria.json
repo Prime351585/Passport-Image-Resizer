@@ -1,45 +1,101 @@
 {
-  "meta_title": "Official Nigeria Passport Photo Size Maker (35x45 mm) | 2026",
-  "meta_description": "Create a 100% compliant Nigeria passport or visa photo online. Exact 35x45 mm (1.38x1.77 in) dimensions, required White background. Fast, private browser-side tool.",
-  "h1": "Official Nigeria Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official Nigeria biometric passport standards.",
+  "meta_title": "Nigeria Passport Photo Size: 600×800 px Upload & Rules | Resize-It",
+  "meta_description": "The Nigeria Immigration Service passport portal needs a 600 × 800 px photo under 2 MB on a white background, ears visible. Crop and download a compliant JPG free.",
+  "h1": "Nigeria Passport Photo Requirements",
+  "subtitle": "Download a 600 × 800 px JPG on white for the NIS online passport application, or print a sheet for other forms.",
   "tool_workspace": {
-    "h2": "Interactive Nigeria Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in Nigeria dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "35 x 45 mm",
-    "spec_badge_in": "1.38 x 1.77 in",
-    "spec_background": "Required Backdrop: White"
+    "h2": "Nigerian passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Background: White"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for Nigeria",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "Nigerian passport photo requirements",
+    "notes_h3": "Getting through the NIS portal",
+    "rows": [
+      {
+        "label": "Upload size",
+        "value": "600 × 800 px"
+      },
+      {
+        "label": "File size",
+        "value": "Less than 2 MB"
+      },
+      {
+        "label": "Background",
+        "value": "White"
+      },
+      {
+        "label": "Face and ears",
+        "value": "Hair must not cover your face or ears"
+      },
+      {
+        "label": "Accessories",
+        "value": "No headphones, masks or similar items"
+      },
+      {
+        "label": "Lighting",
+        "value": "Even: neither too dark nor too bright"
+      },
+      {
+        "label": "Children",
+        "value": "ICAO rules are relaxed for children under 5, but they must look toward the camera with the face centred"
+      },
+      {
+        "label": "In person",
+        "value": "You still attend your chosen immigration office for photo and biometric capture"
+      }
+    ],
+    "notes": [
+      "The NIS portal has a \"Test Photo Upload\" checker. Run the JPG from this page through it before starting your application.",
+      "The NIS photo page only specifies the digital upload. The print sheet here uses 35 × 45 mm; check your form if it asks for a different printed size.",
+      "Uploading an ICAO-compliant photo is one of the online application steps, after verifying your NIN and choosing a processing centre."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "Nigeria Immigration Service: Image compliance",
+        "url": "https://passport.immigration.gov.ng/image-compliance"
+      },
+      {
+        "label": "NIS: How to apply for a standard passport",
+        "url": "https://immigration.gov.ng/info-center/how-to-apply-for-standard-passport/"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a Nigeria Passport Photo",
-    "step1_title": "1. Initialize Nigeria Presets",
-    "step1_text": "The cropping window scales automatically to the exact 35x45 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a Nigerian passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Have someone else take it (no selfies) against a plain light background, following the Nigerian rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Centre your face, leave space above and around your head, and zoom so your head is the right size.",
+    "step4_title": "4. Download the digital photo",
+    "step4_text": "Use \"Download digital photo (JPG)\". It is sized to the official upload spec shown on this page."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about Nigeria Photos",
-    "q1": "What is the official background color rule for Nigeria?",
-    "a1": "The government requires a solid, uniform White backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my Nigeria document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital Nigeria file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for Nigeria Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "Nigerian passport photo questions",
+    "items": [
+      {
+        "q": "What photo size does the Nigerian passport portal accept?",
+        "a": "600 × 800 pixels, under 2 MB, on a white background. The digital download on this page produces exactly that."
+      },
+      {
+        "q": "Can my hair cover my ears in a Nigerian passport photo?",
+        "a": "No. Hair must not cover your face or ears."
+      },
+      {
+        "q": "Do I still need to go to the immigration office?",
+        "a": "Yes. Applicants attend their chosen office for photo and biometric capture."
+      },
+      {
+        "q": "How can I check my photo before applying?",
+        "a": "Use the NIS image-compliance \"Test Photo Upload\" page, which checks a photo against the portal rules."
+      }
+    ]
   },
   "country_code": "NG",
   "inLanguage": "en",
@@ -48,6 +104,11 @@
     "height_mm": 45,
     "width_in": 1.38,
     "height_in": 1.77,
-    "background": "White"
+    "background": "White",
+    "digital": {
+      "width": 600,
+      "height": 800,
+      "maxKB": 1900
+    }
   }
 }

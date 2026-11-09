@@ -1,53 +1,114 @@
 {
-  "meta_title": "Official Canada Passport Photo Size Maker (50x70 mm) | 2026",
-  "meta_description": "Create a 100% compliant Canada passport or visa photo online. Exact 50x70 mm (2.00x2.75 in) dimensions, required White background. Fast, private browser-side tool.",
-  "h1": "Official Canada Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official Canada biometric passport standards.",
+  "meta_title": "Canadian Passport Photo Size (50×70 mm) & Requirements | Resize-It",
+  "meta_description": "Canadian passport photos are 50 × 70 mm with a 31–36 mm face, white or light background, under 6 months old, with photographer details on the back. All rules explained.",
+  "h1": "Canadian Passport Photo Size and Requirements",
+  "subtitle": "Check your framing at 50 × 70 mm against the IRCC rules before your photographer appointment.",
   "tool_workspace": {
-    "h2": "Interactive Canada Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in Canada dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "50 x 70 mm",
-    "spec_badge_in": "2.00 x 2.75 in",
-    "spec_background": "Required Backdrop: White"
+    "h2": "Canadian passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "50 × 70 mm",
+    "spec_badge_in": "1.97 × 2.76 in",
+    "spec_background": "Background: Plain white or light-coloured"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for Canada",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 48% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "Canadian passport photo requirements",
+    "notes_h3": "Important for Canadian applicants",
+    "rows": [
+      {
+        "label": "Photo size",
+        "value": "50 mm wide × 70 mm high (2 in × 2¾ in)"
+      },
+      {
+        "label": "Face height",
+        "value": "31–36 mm from chin to crown"
+      },
+      {
+        "label": "Background",
+        "value": "Plain white or light-coloured, clearly different from your face"
+      },
+      {
+        "label": "How many",
+        "value": "2 identical, unaltered photos"
+      },
+      {
+        "label": "How recent",
+        "value": "Taken no more than 6 months before you apply"
+      },
+      {
+        "label": "Who takes it",
+        "value": "A commercial photographer, professionally printed on plain, high-quality photo paper. Home prints are not accepted."
+      },
+      {
+        "label": "Back of photo",
+        "value": "Photographer stamps or writes the date and studio name and address. Your guarantor certifies one photo (not needed for adult renewals)."
+      },
+      {
+        "label": "Glasses",
+        "value": "Allowed if your eyes are clearly visible with no glare. Tinted lenses and sunglasses are not accepted."
+      },
+      {
+        "label": "Expression",
+        "value": "Neutral: eyes open, mouth closed, not smiling or frowning"
+      },
+      {
+        "label": "Online renewal",
+        "value": "JPEG from the original camera file, 3:2 portrait, 1,200 × 1,800 to 3,000 × 4,500 px, 200 KB–5 MB, head 45–50% of the height"
+      }
+    ],
+    "notes": [
+      "Canada requires photos taken by a commercial photographer, and any editing (including cropping, background changes or AI tools) is prohibited. Use this page to check your framing and the rules; the photos you submit must come from the photographer.",
+      "Headwear is accepted only if worn daily for religious or medical reasons, with your full face visible.",
+      "If you use a wheelchair, place a plain white cover over the headrest.",
+      "Newborns may be photographed in a car seat with a white blanket behind the head and no shadows."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "Government of Canada: Passport photos",
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/photos.html"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a Canada Passport Photo",
-    "step1_title": "1. Initialize Canada Presets",
-    "step1_text": "The cropping window scales automatically to the exact 50x70 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a Canadian passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Stand in front of a plain background in even light and have someone else take the photo at eye level. Follow the Canadian rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Drag the frame to centre your face and use Zoom until your head fills the frame to the size the rules require.",
+    "step4_title": "4. Download and print",
+    "step4_text": "Download the PDF sheet and print it at actual size (100%, no \"fit to page\") on photo paper, then cut out the photos."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about Canada Photos",
-    "q1": "What is the official background color rule for Canada?",
-    "a1": "The government requires a solid, uniform White backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my Canada document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital Canada file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for Canada Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "Canadian passport photo questions",
+    "items": [
+      {
+        "q": "What size is a Canadian passport photo?",
+        "a": "50 mm wide by 70 mm high (2 × 2¾ inches), with your face 31–36 mm from chin to crown."
+      },
+      {
+        "q": "Can I take my own Canadian passport photo?",
+        "a": "No. Photos must be taken by a commercial photographer and professionally printed. For online renewal, the digital photo must also come from a studio, saved straight from the original camera file."
+      },
+      {
+        "q": "What goes on the back of the photo?",
+        "a": "The photographer adds the date and the studio name and address. Your guarantor writes \"I certify this to be a true likeness of (your name)\" and signs. The guarantor part is not needed for adult renewals."
+      },
+      {
+        "q": "Can I wear glasses?",
+        "a": "Yes, if your eyes are clearly visible and there is no glare. Tinted lenses and sunglasses are not accepted."
+      }
+    ]
   },
   "country_code": "CA",
   "inLanguage": "en",
   "raw_dimensions": {
     "width_mm": 50,
     "height_mm": 70,
-    "width_in": 2.0,
-    "height_in": 2.75,
-    "background": "White"
+    "width_in": 1.97,
+    "height_in": 2.76,
+    "background": "Plain white or light-coloured"
   }
 }

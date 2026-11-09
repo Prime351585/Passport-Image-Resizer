@@ -6,11 +6,12 @@ interface PassportCropperProps {
   originalWidth: number;
   originalHeight: number;
   targetDimension: PassportDimension;
-  onCrop: (croppedImage: string) => void;
+  /** Print-resolution crop plus the crop rectangle in source-image pixels. */
+  onCrop: (croppedImage: string, crop: CropArea) => void;
   className?: string;
 }
 
-interface CropArea {
+export interface CropArea {
   x: number;
   y: number;
   width: number;
@@ -36,9 +37,9 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
   const [zoom, setZoom] = useState(1);
   const imageRef = useRef<HTMLImageElement>(new Image());
 
-  // Convert target dimensions to pixels (assuming 300 DPI)
+  // Print resolution for the PDF sheet (600 DPI keeps prints sharp)
   const getTargetPixelSize = useCallback(() => {
-    const dpi = 300;
+    const dpi = 600;
     let pixelWidth, pixelHeight;
     
     if (targetDimension.unit === 'mm') {
@@ -190,7 +191,8 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
     const { x: imageX, y: imageY } = toImageCoords(e);
     if (imageX >= cropArea.x && imageX <= cropArea.x + cropArea.width &&
         imageY >= cropArea.y && imageY <= cropArea.y + cropArea.height) {
-      canvasRef.current.setPointerCapture(e.pointerId);
+      // Keeps the drag going if the finger slides off the canvas; optional.
+      try { canvasRef.current.setPointerCapture(e.pointerId); } catch { /* not supported */ }
       setIsDragging(true);
       setDragStart({ x: imageX - cropArea.x, y: imageY - cropArea.y });
     }
@@ -244,7 +246,7 @@ const PassportCropper: React.FC<PassportCropperProps> = ({
     );
 
     const croppedDataUrl = canvas.toDataURL('image/jpeg', 0.95);
-    onCrop(croppedDataUrl);
+    onCrop(croppedDataUrl, cropArea);
   }, [isLoaded, cropArea, getTargetPixelSize, onCrop]);
 
   // Auto-generate cropped image when crop area changes

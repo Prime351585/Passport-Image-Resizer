@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UploadPreview from './UploadPreview';
-import PassportCropper from './PassportCropper';
+import PassportCropper, { type CropArea } from './PassportCropper';
+import { canvasToBlob, encodeToTargetSize, loadImage, makeCanvas, withExt } from '../utils/imageOutput';
 import PassportDimensionSelector from './PassportDimensionSelector';
 import PaperTypeSelector from './PaperTypeSelector';
 import PDFGenerator from './PDFGenerator';
@@ -13,6 +14,15 @@ export interface PassportDimension {
   unit: 'mm' | 'in';
   description: string;
   country?: string;
+  /** Official digital-upload spec, when the country has one. */
+  digital?: DigitalSpec;
+}
+
+export interface DigitalSpec {
+  width: number;   // output pixels
+  height: number;
+  minKB?: number;
+  maxKB?: number;
 }
 
 export interface PaperSize {
@@ -31,6 +41,8 @@ const PassportToolContainer: React.FC<PassportToolContainerProps> = ({ initialDi
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [originalImage, setOriginalImage] = useState<string>('');
   const [croppedImage, setCroppedImage] = useState<string>('');
+  const [cropArea, setCropArea] = useState<CropArea | null>(null);
+  const [isExporting, setIsExporting] = useState(false);
   const [originalFileName, setOriginalFileName] = useState<string>('passport');
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
   const [selectedDimension, setSelectedDimension] = useState<PassportDimension>(initialDimension || {
@@ -81,8 +93,51 @@ const PassportToolContainer: React.FC<PassportToolContainerProps> = ({ initialDi
     setImageDimensions({ width: 0, height: 0 });
   };
 
-  const handleCrop = (croppedImageData: string) => {
+  const handleCrop = (croppedImageData: string, crop: CropArea) => {
     setCroppedImage(croppedImageData);
+    setCropArea(crop);
+  };
+
+  // Digital photo for online applications. Uses the country's official pixel
+  // spec when known; otherwise a sharp 1200px-tall image at the print ratio.
+  // If the spec's ratio differs from the print ratio, the frame is widened or
+  // narrowed around its centre (same head height) so nothing is stretched.
+  const digitalSpec = (): DigitalSpec => {
+    if (selectedDimension.digital) return selectedDimension.digital;
+    const r = (Number(selectedDimension.width) || 35) / (Number(selectedDimension.height) || 45);
+    return { width: Math.round(1200 * r), height: 1200 };
+  };
+
+  const downloadDigital = async () => {
+    if (!cropArea || !originalImage) return;
+    setIsExporting(true);
+    try {
+      const spec = digitalSpec();
+      const img = await loadImage(originalImage);
+      const aspect = spec.width / spec.height;
+      let h = cropArea.height, w = h * aspect;
+      if (w > img.naturalWidth) { w = img.naturalWidth; h = w / aspect; }
+      const cx = cropArea.x + cropArea.width / 2, cy = cropArea.y + cropArea.height / 2;
+      const sx = Math.max(0, Math.min(cx - w / 2, img.naturalWidth - w));
+      const sy = Math.max(0, Math.min(cy - h / 2, img.naturalHeight - h));
+      const { canvas, ctx } = makeCanvas(spec.width, spec.height, 'image/jpeg');
+      ctx.drawImage(img, sx, sy, w, h, 0, 0, spec.width, spec.height);
+      let blob = await canvasToBlob(canvas, 'image/jpeg', 0.92);
+      // Some portals reject files that are too small (e.g. NZ needs 250 KB+).
+      if (spec.minKB && blob.size < spec.minKB * 1024) blob = await canvasToBlob(canvas, 'image/jpeg', 1);
+      if (spec.maxKB && blob.size > spec.maxKB * 1024) {
+        const out = await loadImage(canvas.toDataURL('image/jpeg', 0.95));
+        blob = (await encodeToTargetSize(out, 'image/jpeg', spec.maxKB * 1024)).blob;
+      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = withExt(originalFileName, 'jpg', '-passport-digital');
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   return (
@@ -160,6 +215,18 @@ const PassportToolContainer: React.FC<PassportToolContainerProps> = ({ initialDi
                 onCrop={handleCrop}
                 className="w-full"
               />
+            )}
+
+            {/* Digital photo (online applications) */}
+            {croppedImage && cropArea && (
+              <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 md:p-8 space-y-3">
+                <h3 className="text-2xl font-crimson font-medium text-gray-900">Digital photo</h3>
+                <p className="text-sm text-gray-600">For online applications. JPG, {digitalSpec().width}×{digitalSpec().height} px{selectedDimension.digital?.maxKB ? `, under ${selectedDimension.digital.maxKB >= 1024 ? Math.ceil(selectedDimension.digital.maxKB / 1024) + ' MB' : selectedDimension.digital.maxKB + ' KB'}` : ''}.</p>
+                <button type="button" onClick={downloadDigital} disabled={isExporting}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-colors disabled:opacity-50">
+                  {isExporting ? 'Preparing…' : 'Download digital photo (JPG)'}
+                </button>
+              </div>
             )}
 
             {/* PDF Generator */}

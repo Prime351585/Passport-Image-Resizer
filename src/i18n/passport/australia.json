@@ -1,45 +1,108 @@
 {
-  "meta_title": "Official Australia Passport Photo Size Maker (35x45 mm) | 2026",
-  "meta_description": "Create a 100% compliant Australia passport or visa photo online. Exact 35x45 mm (1.38x1.77 in) dimensions, required Plain Grey or Cream background. Fast, private browser-side tool.",
-  "h1": "Official Australia Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official Australia biometric passport standards.",
+  "meta_title": "Australian Passport Photo Size (35×45 mm) & Rules | Resize-It",
+  "meta_description": "Australian passport photos must be 35–40 mm wide, 45–50 mm high, with a 32–36 mm face on a plain white or light grey background. Check every rule, then crop yours free.",
+  "h1": "Australian Passport Photo Size and Requirements",
+  "subtitle": "Crop your photo to 35 × 45 mm and print a sheet, checked against the Australian Passport Office guidelines.",
   "tool_workspace": {
-    "h2": "Interactive Australia Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in Australia dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "35 x 45 mm",
-    "spec_badge_in": "1.38 x 1.77 in",
-    "spec_background": "Required Backdrop: Plain Grey or Cream"
+    "h2": "Australian passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Background: Plain white or light grey"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for Australia",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "Australian passport photo requirements",
+    "notes_h3": "Common reasons Australian photos are rejected",
+    "rows": [
+      {
+        "label": "Photo size",
+        "value": "35–40 mm wide × 45–50 mm high (this tool uses 35 × 45 mm)"
+      },
+      {
+        "label": "Face height",
+        "value": "32–36 mm from chin to crown"
+      },
+      {
+        "label": "Background",
+        "value": "Plain white or light grey, contrasting with your face"
+      },
+      {
+        "label": "How many",
+        "value": "2 good-quality photos"
+      },
+      {
+        "label": "How recent",
+        "value": "Less than 6 months old"
+      },
+      {
+        "label": "Printing",
+        "value": "Colour dye-sublimation print (not inkjet) on glossy paper of at least 200 gsm"
+      },
+      {
+        "label": "Glasses",
+        "value": "Not allowed unless you cannot remove them for medical reasons. Poor eyesight alone is not a reason."
+      },
+      {
+        "label": "Expression",
+        "value": "Face the camera, eyes open, neutral expression (children under 3 may have their mouth open)"
+      },
+      {
+        "label": "Head coverings",
+        "value": "Religious coverings only. They must be plain with no pattern and show your whole face from chin to forehead, including the edges."
+      }
+    ],
+    "notes": [
+      "Inkjet or home prints. The Passport Office requires dye-sublimation prints on heavy glossy paper, so take the PDF sheet to a photo lab or kiosk that prints this way.",
+      "Retouching of any kind, including smoothing skin or removing moles, wrinkles or scars.",
+      "Hair covering the edges of your face, shadows, reflections, or a tilted head.",
+      "Wireless earbuds. Hearing aids are allowed, but AirPods and similar must come out.",
+      "Jewellery or piercings that cover part of the face or reflect light.",
+      "The Passport Office recommends a professional photo provider and warns against online photo services and apps. Use this tool to check your framing, and make sure the final print meets every rule above."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "Australian Passport Office: Passport photos",
+        "url": "https://www.passports.gov.au/help/passport-photos"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a Australia Passport Photo",
-    "step1_title": "1. Initialize Australia Presets",
-    "step1_text": "The cropping window scales automatically to the exact 35x45 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a Australian passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Stand in front of a plain background in even light and have someone else take the photo at eye level. Follow the Australian rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Drag the frame to centre your face and use Zoom until your head fills the frame to the size the rules require.",
+    "step4_title": "4. Download and print",
+    "step4_text": "Download the PDF sheet and print it at actual size (100%, no \"fit to page\") on photo paper, then cut out the photos."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about Australia Photos",
-    "q1": "What is the official background color rule for Australia?",
-    "a1": "The government requires a solid, uniform Plain Grey or Cream backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my Australia document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital Australia file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for Australia Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "Australian passport photo questions",
+    "items": [
+      {
+        "q": "What size is an Australian passport photo?",
+        "a": "Between 35 and 40 mm wide and 45 to 50 mm high, with your face measuring 32–36 mm from chin to crown. A standard 35 × 45 mm photo fits the range."
+      },
+      {
+        "q": "Can I wear glasses in my Australian passport photo?",
+        "a": "No, unless you cannot remove them for medical reasons. In that case the frames must not cover your eyes and there must be no reflection on the lenses. Vision impairment alone is not accepted."
+      },
+      {
+        "q": "Can I print my Australian passport photo at home?",
+        "a": "Not on an inkjet printer. Photos must be colour dye-sublimation prints on glossy paper of at least 200 gsm. Print the PDF sheet at a photo lab that uses dye-sublimation printers."
+      },
+      {
+        "q": "How old can my photo be?",
+        "a": "Less than 6 months old."
+      },
+      {
+        "q": "What if a medical condition stops me meeting the rules?",
+        "a": "Provide a medical certificate or complete a B-11 form explaining why."
+      }
+    ]
   },
   "country_code": "AU",
   "inLanguage": "en",
@@ -48,6 +111,6 @@
     "height_mm": 45,
     "width_in": 1.38,
     "height_in": 1.77,
-    "background": "Plain Grey or Cream"
+    "background": "Plain white or light grey"
   }
 }

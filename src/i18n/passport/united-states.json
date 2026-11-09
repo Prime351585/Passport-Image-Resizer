@@ -1,53 +1,110 @@
 {
-  "meta_title": "Official United States Passport Photo Size Maker (51x51 mm) | 2026",
-  "meta_description": "Create a 100% compliant United States passport or visa photo online. Exact 51x51 mm (2.00x2.00 in) dimensions, required White background. Fast, private browser-side tool.",
-  "h1": "Official United States Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official United States biometric passport standards.",
+  "meta_title": "US Passport Photo Size (2×2 in) & Requirements | Resize-It",
+  "meta_description": "US passport photos are 2 × 2 in (51 × 51 mm) with a 1–1⅜ in head on a white or off-white background, taken in the last 6 months, no glasses. Check the rules and crop yours.",
+  "h1": "US Passport Photo Size and Requirements",
+  "subtitle": "Crop your photo to 2 × 2 inches and print a sheet, checked against the U.S. Department of State photo rules.",
   "tool_workspace": {
-    "h2": "Interactive United States Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in United States dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "51 x 51 mm",
-    "spec_badge_in": "2.00 x 2.00 in",
-    "spec_background": "Required Backdrop: White"
+    "h2": "US passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "51 × 51 mm",
+    "spec_badge_in": "2 × 2 in",
+    "spec_background": "Background: White or off-white"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for United States",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 56% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "US passport photo requirements",
+    "notes_h3": "Tips from the State Department guidance",
+    "rows": [
+      {
+        "label": "Photo size",
+        "value": "2 × 2 inches (51 × 51 mm)"
+      },
+      {
+        "label": "Head size",
+        "value": "1–1⅜ inches (25–35 mm) from the bottom of your chin to the top of your head"
+      },
+      {
+        "label": "Background",
+        "value": "Plain white or off-white, with no shadows, texture, lines or objects"
+      },
+      {
+        "label": "Colour",
+        "value": "Colour photo"
+      },
+      {
+        "label": "How recent",
+        "value": "Taken in the last 6 months"
+      },
+      {
+        "label": "Glasses",
+        "value": "Remove them, along with anything else covering your face, unless for documented religious or medical reasons"
+      },
+      {
+        "label": "Editing",
+        "value": "No filters or retouching that change your appearance"
+      },
+      {
+        "label": "Online renewal upload",
+        "value": "JPG, JPEG, PNG, HEIC or HEIF, between 54 KB and 10 MB, high resolution and not blurry or pixelated"
+      }
+    ],
+    "notes": [
+      "Stand several feet in front of a white or off-white wall. If your wall is not white, cover it with a white sheet.",
+      "Renewing online? Upload the original, uncropped photo. The State Department asks for an original image for online renewal.",
+      "If your photo cannot meet the online requirements, you may need to renew by mail instead.",
+      "Print the PDF sheet at 100% (no \"fit to page\") so each photo is exactly 2 × 2 inches."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "U.S. Department of State: Passport photos",
+        "url": "https://travel.state.gov/en/passports/apply/help/photos.html"
+      },
+      {
+        "label": "Online renewal photo upload",
+        "url": "https://travel.state.gov/content/travel/en/passports/how-apply/online-renewal-photo.html"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a United States Passport Photo",
-    "step1_title": "1. Initialize United States Presets",
-    "step1_text": "The cropping window scales automatically to the exact 51x51 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a US passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Stand in front of a plain background in even light and have someone else take the photo at eye level. Follow the US rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Drag the frame to centre your face and use Zoom until your head fills the frame to the size the rules require.",
+    "step4_title": "4. Download and print",
+    "step4_text": "Download the PDF sheet and print it at actual size (100%, no \"fit to page\") on photo paper, then cut out the photos."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about United States Photos",
-    "q1": "What is the official background color rule for United States?",
-    "a1": "The government requires a solid, uniform White backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my United States document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital United States file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for United States Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "US passport photo questions",
+    "items": [
+      {
+        "q": "What size is a US passport photo?",
+        "a": "2 × 2 inches (51 × 51 mm). Your head must measure 1 to 1⅜ inches (25–35 mm) from the bottom of your chin to the top of your head."
+      },
+      {
+        "q": "Can I wear glasses in a US passport photo?",
+        "a": "No. Remove glasses and anything else covering your face unless you wear it for documented religious or medical reasons."
+      },
+      {
+        "q": "What background does a US passport photo need?",
+        "a": "Plain white or off-white, with no shadows, texture, lines or objects."
+      },
+      {
+        "q": "What file can I upload for online renewal?",
+        "a": "A JPG, JPEG, PNG, HEIC or HEIF file between 54 KB and 10 MB that is high resolution and not blurry. Upload the original photo rather than a cropped one."
+      }
+    ]
   },
   "country_code": "US",
   "inLanguage": "en",
   "raw_dimensions": {
     "width_mm": 51,
     "height_mm": 51,
-    "width_in": 2.0,
-    "height_in": 2.0,
-    "background": "White"
+    "width_in": 2,
+    "height_in": 2,
+    "background": "White or off-white"
   }
 }

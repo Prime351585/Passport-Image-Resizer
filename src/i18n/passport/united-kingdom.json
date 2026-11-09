@@ -1,45 +1,116 @@
 {
-  "meta_title": "Official United Kingdom Passport Photo Size Maker (35x45 mm) | 2026",
-  "meta_description": "Create a 100% compliant United Kingdom passport or visa photo online. Exact 35x45 mm (1.38x1.77 in) dimensions, required Light Grey or Cream background. Fast, private browser-side tool.",
-  "h1": "Official United Kingdom Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official United Kingdom biometric passport standards.",
+  "meta_title": "UK Passport Photo Size (35×45 mm) & Rules for 2026 | Resize-It",
+  "meta_description": "UK passport photos: 45 × 35 mm printed with a 29–34 mm head, plain cream or light grey background, taken in the last month. Digital: 600 × 750 px minimum. Full rules.",
+  "h1": "UK Passport Photo Size and Requirements",
+  "subtitle": "Crop and print 35 × 45 mm photos, checked against the current GOV.UK rules for printed and digital passport photos.",
   "tool_workspace": {
-    "h2": "Interactive United Kingdom Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in United Kingdom dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "35 x 45 mm",
-    "spec_badge_in": "1.38 x 1.77 in",
-    "spec_background": "Required Backdrop: Light Grey or Cream"
+    "h2": "UK passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Background: Plain cream or light grey"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for United Kingdom",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "UK passport photo requirements",
+    "notes_h3": "What to know before you apply",
+    "rows": [
+      {
+        "label": "Printed size",
+        "value": "45 mm high × 35 mm wide, not cut down from a larger picture"
+      },
+      {
+        "label": "Head size",
+        "value": "29–34 mm from the crown of your head to your chin"
+      },
+      {
+        "label": "Background",
+        "value": "Plain cream or light grey (printed); plain light-coloured (digital)"
+      },
+      {
+        "label": "How recent",
+        "value": "Taken in the last month"
+      },
+      {
+        "label": "How many",
+        "value": "2 identical printed photos for a paper application"
+      },
+      {
+        "label": "Printing",
+        "value": "Professional standard, in colour, on plain white photographic paper with no border"
+      },
+      {
+        "label": "Digital photo",
+        "value": "At least 600 × 750 px and 50 KB–10 MB, in colour, unaltered"
+      },
+      {
+        "label": "Glasses",
+        "value": "Only if you have to. No sunglasses or tinted lenses, and no frames, glare or shadow over your eyes."
+      },
+      {
+        "label": "Expression",
+        "value": "Plain expression, mouth closed, eyes open and visible, facing forwards"
+      },
+      {
+        "label": "Head coverings",
+        "value": "Only for religious or medical reasons"
+      }
+    ],
+    "notes": [
+      "The photo must have been taken in the last month, which is stricter than most countries.",
+      "Applying online with a photo from your own device? GOV.UK asks for your head, shoulders and upper body and says not to crop it, because they crop it for you. Upload the original rather than a cropped version.",
+      "Photos with a code from a booth or shop are more likely to be approved than ones taken on your own device.",
+      "Printed photos must come out at exactly 45 × 35 mm. Print the PDF sheet at 100% scale, not \"fit to page\".",
+      "Children must be alone in the photo. Under-6s do not need a plain expression, and under-1s do not need their eyes open.",
+      "Send printed photos loose, separated from each other and not attached to the form."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "GOV.UK: Printed photos",
+        "url": "https://www.gov.uk/photos-for-passports/photo-requirements"
+      },
+      {
+        "label": "GOV.UK: Digital photos",
+        "url": "https://www.gov.uk/photos-for-passports"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a United Kingdom Passport Photo",
-    "step1_title": "1. Initialize United Kingdom Presets",
-    "step1_text": "The cropping window scales automatically to the exact 35x45 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a UK passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Stand in front of a plain background in even light and have someone else take the photo at eye level. Follow the UK rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Drag the frame to centre your face and use Zoom until your head fills the frame to the size the rules require.",
+    "step4_title": "4. Download and print",
+    "step4_text": "Download the PDF sheet and print it at actual size (100%, no \"fit to page\") on photo paper, then cut out the photos."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about United Kingdom Photos",
-    "q1": "What is the official background color rule for United Kingdom?",
-    "a1": "The government requires a solid, uniform Light Grey or Cream backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my United Kingdom document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital United Kingdom file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for United Kingdom Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "UK passport photo questions",
+    "items": [
+      {
+        "q": "What size is a UK passport photo?",
+        "a": "Printed photos are 45 mm high and 35 mm wide, and your head must measure 29–34 mm from crown to chin. Digital photos must be at least 600 × 750 px."
+      },
+      {
+        "q": "How recent must a UK passport photo be?",
+        "a": "It must have been taken in the last month, for both printed and digital photos."
+      },
+      {
+        "q": "What background colour is allowed?",
+        "a": "Printed photos need a plain cream or light grey background. Digital photos need a plain light-coloured background with clear contrast."
+      },
+      {
+        "q": "Can I wear glasses in a UK passport photo?",
+        "a": "Only if you have to. They cannot be sunglasses or tinted, and your eyes must not be covered by the frames or by glare, reflection or shadow."
+      },
+      {
+        "q": "Should I crop my photo for an online application?",
+        "a": "No. For photos taken on your own device, GOV.UK asks for an uncropped photo showing your head, shoulders and upper body and crops it during the application."
+      }
+    ]
   },
   "country_code": "GB",
   "inLanguage": "en",
@@ -48,6 +119,6 @@
     "height_mm": 45,
     "width_in": 1.38,
     "height_in": 1.77,
-    "background": "Light Grey or Cream"
+    "background": "Plain cream or light grey"
   }
 }

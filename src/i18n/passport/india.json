@@ -1,53 +1,110 @@
 {
-  "meta_title": "आधिकारिक भारत पासपोर्ट फोटो साइज़ निर्माता (51x51 मिमी) | 2026",
-  "meta_description": "100% अनुरूप भारतीय पासपोर्ट या वीज़ा फोटो ऑनलाइन बनाएं। सटीक 51x51 मिमी (2.00x2.00 इंच) आयाम, आवश्यक सफेद पृष्ठभूमि। तेज़, निजी ब्राउज़र-साइड टूल।",
-  "h1": "आधिकारिक भारत पासपोर्ट फोटो आकार और आवश्यकताएँ गाइड",
-  "subtitle": "आधिकारिक भारत बायोमेट्रिक पासपोर्ट मानकों से मेल खाने वाला एक प्रिंट करने योग्य ग्रिड का आकार बदलें, काटें और संकलित करें।",
+  "meta_title": "Indian Passport Photo Size (3.5×4.5 cm) & Rules | Resize-It",
+  "meta_description": "Indian passport photos are 4.5 × 3.5 cm in colour with a plain white background, full frontal face and both ears visible. Find out when you need one and crop yours free.",
+  "h1": "Indian Passport Photo Size and Requirements",
+  "subtitle": "Crop your photo to 4.5 × 3.5 cm on a white background, checked against Passport Seva guidance.",
   "tool_workspace": {
-    "h2": "इंटरएक्टिव भारत बायोमेट्रिक क्रॉपिंग टूल",
-    "description": "अंतर्निहित भारत आयाम ग्रिड के साथ संरेखित करने के लिए अपनी फ़ाइल अपलोड करें। सर्वर पर कोई छवियाँ नहीं भेजी जातीं; सभी कैनवास प्रसंस्करण जावास्क्रिप्ट में स्थानीय रूप से होता है।",
-    "spec_badge_mm": "51 x 51 मिमी",
-    "spec_badge_in": "2.00 x 2.00 इंच",
-    "spec_background": "आवश्यक पृष्ठभूमि: सफ़ेद"
+    "h2": "Indian passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Background: Plain white"
   },
-  "biometric_details": {
-    "h2": "भारत के लिए आधिकारिक बायोमेट्रिक अनुपात",
-    "head_size_label": "सिर की ऊंचाई का अनुपात",
-    "head_size_text": "आपकी ठोड़ी के नीचे से आपके बालों के शीर्ष तक की दूरी ऊर्ध्वाधर फ्रेम की ऊंचाई का लगभग 75% होनी चाहिए।",
-    "eye_height_label": "नेत्र संरेखण रेखा",
-    "eye_height_text": "आपकी आंखें लक्ष्य संरेखण फ्रेम सीमा के भीतर लंबवत रूप से केंद्रित होनी चाहिए।"
+  "requirements": {
+    "h2": "Indian passport photo requirements",
+    "notes_h3": "Before you print",
+    "rows": [
+      {
+        "label": "Photo size",
+        "value": "4.5 cm high × 3.5 cm wide (35 × 45 mm)"
+      },
+      {
+        "label": "Background",
+        "value": "Plain white"
+      },
+      {
+        "label": "Colour",
+        "value": "Colour photograph. Black-and-white photos and computer printouts are not accepted."
+      },
+      {
+        "label": "Pose",
+        "value": "Frontal view of the full face with both ears visible and a natural expression"
+      },
+      {
+        "label": "Clothing",
+        "value": "Dark-coloured clothing is advised so you stand out from the white background"
+      },
+      {
+        "label": "Glasses",
+        "value": "Tinted glasses are not accepted"
+      },
+      {
+        "label": "How many",
+        "value": "Two colour photographs when a photo is required"
+      },
+      {
+        "label": "When you need one",
+        "value": "Not needed at a Passport Seva Kendra (PSK) or Post Office PSK, where your photo is taken on the spot. Needed for applications at other collection centres."
+      }
+    ],
+    "notes": [
+      "Applying at a Passport Seva Kendra or Post Office Passport Seva Kendra? You do not need to bring a photo; it is captured during your appointment.",
+      "The correct size for Indian passports is 4.5 × 3.5 cm. The 2 × 2 inch (51 × 51 mm) square size is a US standard, not an Indian passport size.",
+      "Print the PDF sheet at 100% scale on photo paper. Computer printouts on plain paper are rejected.",
+      "Keep your face straight to the camera with both ears showing and no hair over your face."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "Passport Seva: Application form FAQ",
+        "url": "https://www.passportindia.gov.in/psp/FaqApplicationForm"
+      },
+      {
+        "label": "Passport Seva: Instruction booklet",
+        "url": "https://www.passportindia.gov.in/AppOnlineProject/pdf/ApplicationformInstructionBooklet-V3.0.pdf"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "भारत पासपोर्ट फोटो कैसे बनाएं और प्रिंट करें",
-    "step1_title": "1. भारत प्रीसेट प्रारंभ करें",
-    "step1_text": "क्रॉपिंग विंडो स्वचालित रूप से सटीक 51x51 मिमी विनियमन आकार पर स्केल हो जाती है।",
-    "step2_title": "2. स्थानीय छवि अपलोड",
-    "step2_text": "अपना स्रोत फ़ोटो चुनें. यह ब्राउज़र निष्पादन मेमोरी में पूरी तरह सुरक्षित रहता है।",
-    "step3_title": "3. बायोमेट्रिक ओवरले के साथ संरेखित करें",
-    "step3_text": "अपनी छवि को तब तक स्केल करें और घुमाएँ जब तक कि आपका चेहरा पारभासी सिर और आँख की संरेखण परतों से मेल न खा जाए।",
-    "step4_title": "4. ग्रिड बनाएं और सहेजें",
-    "step4_text": "मानक 4x6 इंच फोटो प्रिंट लेआउट के लिए एकल अनुकूलित छवि फ़ाइल या पूर्व-संरेखित मुद्रण योग्य टेम्पलेट शीट डाउनलोड करें।"
+    "title": "How to make a Indian passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Stand in front of a plain background in even light and have someone else take the photo at eye level. Follow the Indian rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Drag the frame to centre your face and use Zoom until your head fills the frame to the size the rules require.",
+    "step4_title": "4. Download and print",
+    "step4_text": "Download the PDF sheet and print it at actual size (100%, no \"fit to page\") on photo paper, then cut out the photos."
   },
   "faq": {
-    "h2": "भारत फ़ोटो के बारे में अक्सर पूछे जाने वाले प्रश्न",
-    "q1": "भारत के लिए आधिकारिक पृष्ठभूमि रंग नियम क्या है?",
-    "a1": "सरकार को एक ठोस, समान सफेद पृष्ठभूमि की आवश्यकता है जिसमें कोई छाया, वस्तु या बनावट मौजूद न हो।",
-    "q2": "क्या मैं अपने भारत दस्तावेज़ फोटो में चश्मा या टोपी पहन सकता हूँ?",
-    "a2": "जब तक चिकित्सकीय रूप से आवश्यक न हो, चश्मा हटा देना चाहिए (कोई चमक, रंग या मोटा फ्रेम नहीं)। धार्मिक हेडवियर की अनुमति है बशर्ते कि यह ठोड़ी से माथे तक चेहरे के पूरे अंडाकार को प्रकट करता हो।",
-    "q3": "मैं अपनी जेनरेट की गई डिजिटल भारत फ़ाइल कैसे प्रिंट करूं?",
-    "a3": "हमारे संकलित मुद्रण योग्य शीट विकल्प को डाउनलोड करें, इसे थंब ड्राइव में सहेजें, और उच्च गुणवत्ता वाले 4x6 फोटो पेपर मानक सेटिंग्स का उपयोग करके इसे स्थानीय डिजिटल फोटो कियोस्क पर प्रिंट करें।"
-  },
-  "cross_link_footer": {
-    "title": "संबंधित दस्तावेज़ प्रारूप",
-    "text": "वैकल्पिक आकार की आवश्यकता है? भारत वीज़ा आयामों के लिए आवश्यकताएँ देखें या वैकल्पिक वैश्विक मानक दस्तावेज़ीकरण प्रारूप देखें।"
+    "h2": "Indian passport photo questions",
+    "items": [
+      {
+        "q": "What is the Indian passport photo size?",
+        "a": "4.5 cm high by 3.5 cm wide (35 × 45 mm), in colour, with a plain white background."
+      },
+      {
+        "q": "Do I need to bring a photo to the Passport Seva Kendra?",
+        "a": "No. Photos are not required for applications submitted at a PSK or Post Office PSK; your photo is taken there. You need printed photos for applications at other collection centres."
+      },
+      {
+        "q": "Is a 2 × 2 inch photo valid for an Indian passport?",
+        "a": "No. 2 × 2 inch (51 × 51 mm) is the US passport size. Indian passport photos are 4.5 × 3.5 cm."
+      },
+      {
+        "q": "Can I wear glasses in my Indian passport photo?",
+        "a": "Tinted glasses are not accepted. Keep your full face, both ears and eyes clearly visible."
+      }
+    ]
   },
   "country_code": "IN",
-  "inLanguage": "hi",
+  "inLanguage": "en",
   "raw_dimensions": {
-    "width_mm": 51,
-    "height_mm": 51,
-    "width_in": 2.0,
-    "height_in": 2.0,
-    "background": "White"
+    "width_mm": 35,
+    "height_mm": 45,
+    "width_in": 1.38,
+    "height_in": 1.77,
+    "background": "Plain white"
   }
 }

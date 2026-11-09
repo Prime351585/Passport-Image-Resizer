@@ -1,45 +1,104 @@
 {
-  "meta_title": "Official New Zealand Passport Photo Size Maker (35x45 mm) | 2026",
-  "meta_description": "Create a 100% compliant New Zealand passport or visa photo online. Exact 35x45 mm (1.38x1.77 in) dimensions, required Light Grey or Plain Cream background. Fast, private browser-side tool.",
-  "h1": "Official New Zealand Passport Photo Size & Requirements Guide",
-  "subtitle": "Resize, crop, and compile a printable grid matching official New Zealand biometric passport standards.",
+  "meta_title": "NZ Passport Photo Size & Digital Requirements (3:4) | Resize-It",
+  "meta_description": "New Zealand passport photos are digital: 3:4 JPG, 900–4500 × 1200–6000 px, 250 KB–5 MB, under 6 months old. Check the rules and download a compliant JPG free.",
+  "h1": "New Zealand Passport Photo Requirements",
+  "subtitle": "Crop your photo and download a 1200 × 1600 px JPG that meets the NZ Passports digital photo rules.",
   "tool_workspace": {
-    "h2": "Interactive New Zealand Biometric Cropping Tool",
-    "description": "Upload your file to align with the built-in New Zealand dimensions grid. No images are sent to servers; all canvas processing happens locally in JavaScript.",
-    "spec_badge_mm": "35 x 45 mm",
-    "spec_badge_in": "1.38 x 1.77 in",
-    "spec_background": "Required Backdrop: Light Grey or Plain Cream"
+    "h2": "New Zealand passport photo tool",
+    "description": "Upload a photo to crop it to the official size. Everything is processed in your browser; nothing is uploaded.",
+    "spec_badge_mm": "35 × 45 mm",
+    "spec_badge_in": "1.38 × 1.77 in",
+    "spec_background": "Background: Plain, light-coloured"
   },
-  "biometric_details": {
-    "h2": "Official Biometric Proportions for New Zealand",
-    "head_size_label": "Head Height Ratio",
-    "head_size_text": "The distance from the bottom of your chin to the top of your hair must occupy approximately 75% of the vertical frame height.",
-    "eye_height_label": "Eye Alignment Line",
-    "eye_height_text": "Your eyes must be centered vertically within the target alignment frame bounds."
+  "requirements": {
+    "h2": "New Zealand passport photo requirements",
+    "notes_h3": "Getting a New Zealand photo accepted",
+    "rows": [
+      {
+        "label": "Format",
+        "value": "Digital colour photo, .jpg or .jpeg"
+      },
+      {
+        "label": "Aspect ratio",
+        "value": "3:4 portrait"
+      },
+      {
+        "label": "Pixel size",
+        "value": "900–4,500 px wide and 1,200–6,000 px high"
+      },
+      {
+        "label": "File size",
+        "value": "Between 250 KB and 5 MB"
+      },
+      {
+        "label": "How recent",
+        "value": "Less than 6 months old"
+      },
+      {
+        "label": "Background",
+        "value": "Plain and light-coloured, with strong contrast and no shadows or objects behind your head"
+      },
+      {
+        "label": "Glasses",
+        "value": "Prescription glasses are allowed if they are not tinted or thick-framed, with a clear gap between eyes and frames and no glare. No sunglasses."
+      },
+      {
+        "label": "Expression",
+        "value": "Neutral, mouth closed, eyes open, no smiling"
+      },
+      {
+        "label": "Head coverings",
+        "value": "Only for religious or medical reasons, with your face fully visible"
+      }
+    ],
+    "notes": [
+      "Selfies are rejected. Ask someone to take the photo from about 1.5 m away with the camera at your eye level.",
+      "Leave a clear gap above and around your head, and include your shoulders and upper chest.",
+      "Do not use filters, editing or AI tools to change how you look.",
+      "Scans of printed photos are not accepted.",
+      "For babies, lay them on a plain light-coloured sheet and take the photo from above.",
+      "NZ Passports provides an online photo checker. Run your downloaded JPG through it before you start your application."
+    ],
+    "sources_label": "Official sources:",
+    "sources": [
+      {
+        "label": "New Zealand Passports: Passport photos",
+        "url": "https://www.passports.govt.nz/passport-photos"
+      }
+    ],
+    "checked": "Checked against these sources in November 2026. Rules change, so confirm on the official page before you apply."
   },
   "how_to": {
-    "title": "How to Make and Print a New Zealand Passport Photo",
-    "step1_title": "1. Initialize New Zealand Presets",
-    "step1_text": "The cropping window scales automatically to the exact 35x45 mm regulation size.",
-    "step2_title": "2. Local Image Upload",
-    "step2_text": "Select your source photo. It stays fully secured within browser execution memory.",
-    "step3_title": "3. Align with Biometric Overlays",
-    "step3_text": "Scale and move your image until your face matches the translucent head and eye alignment layers.",
-    "step4_title": "4. Generate Grid and Save",
-    "step4_text": "Download a single optimized image file or a pre-aligned printable template sheet for standard 4x6 inch photo print layouts."
+    "title": "How to make a New Zealand passport photo",
+    "step1_title": "1. Take the photo",
+    "step1_text": "Have someone else take it (no selfies) against a plain light background, following the New Zealand rules below.",
+    "step2_title": "2. Upload it here",
+    "step2_text": "Choose the photo. It is processed in your browser and never uploaded to a server.",
+    "step3_title": "3. Crop and zoom",
+    "step3_text": "Centre your face, leave space above and around your head, and zoom so your head is the right size.",
+    "step4_title": "4. Download the digital photo",
+    "step4_text": "Use \"Download digital photo (JPG)\". It is sized to the official upload spec shown on this page."
   },
   "faq": {
-    "h2": "Frequently Asked Questions about New Zealand Photos",
-    "q1": "What is the official background color rule for New Zealand?",
-    "a1": "The government requires a solid, uniform Light Grey or Plain Cream backdrop with no shadows, objects, or textures present.",
-    "q2": "Can I wear glasses or headgear in my New Zealand document photo?",
-    "a2": "Glasses must be removed unless strictly medically necessary (no glare, tint, or thick frames). Religious headwear is permitted provided it reveals the entire oval of the face from chin to forehead.",
-    "q3": "How do I print my generated digital New Zealand file?",
-    "a3": "Download our compiled printable sheet option, save it to a thumb drive, and print it at a local digital photo kiosk using high-quality 4x6 photo paper standard settings."
-  },
-  "cross_link_footer": {
-    "title": "Related Document Formats",
-    "text": "Need an alternative size? View requirements for New Zealand Visa dimensions or look up alternative global standard documentation formats."
+    "h2": "New Zealand passport photo questions",
+    "items": [
+      {
+        "q": "What size is a New Zealand passport photo?",
+        "a": "NZ uses digital photos: a 3:4 colour JPG between 900–4,500 px wide and 1,200–6,000 px high, and between 250 KB and 5 MB. The digital download on this page is 1200 × 1600 px."
+      },
+      {
+        "q": "Can I take my NZ passport photo with my phone?",
+        "a": "Yes, you can use your own device, but someone else must take it. Selfies are rejected because the short distance distorts your face."
+      },
+      {
+        "q": "Can I wear glasses?",
+        "a": "Yes, prescription glasses that are not tinted or thick-framed, with no glare on the lenses and a clear gap between your eyes and the frames. Sunglasses are not allowed."
+      },
+      {
+        "q": "How recent does the photo need to be?",
+        "a": "Less than 6 months old."
+      }
+    ]
   },
   "country_code": "NZ",
   "inLanguage": "en",
@@ -48,6 +107,12 @@
     "height_mm": 45,
     "width_in": 1.38,
     "height_in": 1.77,
-    "background": "Light Grey or Plain Cream"
+    "background": "Plain, light-coloured",
+    "digital": {
+      "width": 1200,
+      "height": 1600,
+      "minKB": 250,
+      "maxKB": 5000
+    }
   }
 }

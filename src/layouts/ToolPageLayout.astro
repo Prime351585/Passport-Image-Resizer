@@ -9,7 +9,6 @@ import {
   generateHowToSchema,
   extractHowToSteps,
   generateFaqSchema,
-  extractFaqItems,
   generateBreadcrumbSchema,
 } from "../utils/schemas";
 import { getPresetUrl } from "../utils/i18n";
@@ -50,13 +49,22 @@ if (toolData.how_to) {
   );
 }
 
-// FAQ schema (if faq section exists)
-if (toolData.faq) {
-  const faqItems = extractFaqItems(toolData.faq);
-  if (faqItems.length > 0) {
-    schemas.push(generateFaqSchema(faqItems));
-  }
+// FAQ: either an `items` array (country-specific pages) or legacy q1..q3 keys.
+const faqList: { q: string; a: string }[] = toolData.faq
+  ? toolData.faq.items ??
+    [
+      { q: toolData.faq.q1, a: toolData.faq.a1 },
+      { q: toolData.faq.q2, a: toolData.faq.a2 },
+      { q: toolData.faq.q3, a: toolData.faq.a3 },
+    ].filter((x) => x.q && x.a)
+  : [];
+if (faqList.length > 0) {
+  schemas.push(generateFaqSchema(faqList.map((f) => ({ question: f.q, answer: f.a }))));
 }
+
+// Verified, country-specific requirements (passport pages). When present they
+// replace the generic biometric blurb and the vague cross-link footer.
+const req = toolData.requirements;
 
 // Breadcrumb schema
 if (breadcrumbs && breadcrumbs.length > 0) {
@@ -208,9 +216,56 @@ if (breadcrumbs && breadcrumbs.length > 0) {
     )
   }
 
+  {/* Official requirements (verified, country-specific) */}
+  {
+    req && (
+      <section class="mt-12 px-5 max-w-4xl mx-auto" aria-labelledby="req-heading">
+        <h2 id="req-heading" class="font-crimson text-[30px] md:text-[40px] mb-2">{req.h2}</h2>
+        {req.intro && <p class="text-gray-600 mb-6">{req.intro}</p>}
+        <div class="overflow-hidden rounded-2xl border border-gray-200">
+          <table class="w-full text-start text-sm">
+            <tbody class="divide-y divide-gray-200">
+              {req.rows.map((r: { label: string; value: string }) => (
+                <tr class="align-top">
+                  <th scope="row" class="text-start w-1/3 md:w-1/4 bg-gray-50 px-4 py-3 font-semibold text-gray-900">{r.label}</th>
+                  <td class="px-4 py-3 text-gray-700">{r.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {req.notes && req.notes.length > 0 && (
+          <div class="mt-8">
+            <h3 class="font-crimson text-2xl text-gray-900 mb-3">{req.notes_h3}</h3>
+            <ul class="space-y-3">
+              {req.notes.map((n: string) => (
+                <li class="flex gap-3 text-gray-700">
+                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" aria-hidden="true"></span>
+                  <span>{n}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <p class="mt-8 text-sm text-gray-500">
+          {req.sources_label}{" "}
+          {req.sources.map((src: { label: string; url: string }, i: number) => (
+            <>
+              {i > 0 && ", "}
+              <a href={src.url} rel="nofollow noopener" target="_blank" class="text-primary underline">{src.label}</a>
+            </>
+          ))}
+          {". "}{req.checked}
+        </p>
+      </section>
+    )
+  }
+
   {/* Biometric Details Section (Passport pages only) */}
   {
-    toolData.biometric_details && (
+    !req && toolData.biometric_details && (
       <div class="mt-12 px-5 max-w-7xl mx-auto">
         <h2 class="font-crimson text-[30px] md:text-[40px] mb-6 text-center">
           {toolData.biometric_details.h2}
@@ -283,13 +338,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
           {toolData.faq.h2}
         </h2>
         <div class="space-y-4">
-          {[
-            { q: toolData.faq.q1, a: toolData.faq.a1 },
-            { q: toolData.faq.q2, a: toolData.faq.a2 },
-            toolData.faq.q3 ? { q: toolData.faq.q3, a: toolData.faq.a3 } : null,
-          ]
-            .filter(Boolean)
-            .map((item: any) => (
+          {faqList.map((item) => (
               <details class="group border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-primary/50 transition-colors">
                 <summary class="flex items-center justify-between p-6 cursor-pointer font-crimson text-lg font-semibold text-gray-900 hover:text-primary transition-colors">
                   {item.q}
@@ -319,7 +368,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
 
   {/* Cross-link Footer (Passport pages only) */}
   {
-    toolData.cross_link_footer && (
+    !req && toolData.cross_link_footer && (
       <div class="mt-8 mb-16 px-5 max-w-4xl mx-auto">
         <div class="bg-gradient-to-br from-primary/5 to-purple-50 border border-primary/20 rounded-2xl p-8 text-center">
           <h3 class="font-crimson text-2xl font-semibold mb-3">
