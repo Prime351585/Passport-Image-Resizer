@@ -1,44 +1,80 @@
 {
-  "meta_title": "Free Online Image WEBP to JPEG Converter | Convert Photos & Pictures Securely",
-  "meta_description": "Convert images online instantly. Use custom aspect ratios or presets for Instagram, YouTube, and Facebook. 100% private, browser-based convertping with no quality loss.",
-  "h1": "Free Online Image WEBP to JPEG Converter",
-  "subtitle": "Frame your photos perfectly. Convert out distractions, adjust aspect ratios, and format for social media instantly—all processed securely within your browser.",
+  "meta_title": "WebP to JPG Converter: Free & Private | Resize-It",
+  "meta_description": "Convert WebP images to JPG so they open anywhere and upload to any form. Batch convert in your browser; transparent areas turn white.",
+  "h1": "WebP to JPG Converter",
+  "subtitle": "Saved an image from the web and got a .webp file? Convert it to JPG so it opens in any app and uploads to any form. Runs entirely in your browser.",
   "tool_workspace": {
-    "h2": "Interactive Photo Convertping Studio",
-    "description": "Drag and drop your image below. Use the handles to define your convert box or select a preset ratio.",
+    "h2": "Convert WebP to JPG",
+    "description": "Drop one or more WebP files below, then click Convert Image.",
     "features_list": [
-      "Custom Freeform Convertping",
-      "Fixed Aspect Ratios (1:1, 16:9, 4:3, 3:2)",
-      "Circular Convert for Profile Pictures",
-      "Zero Server Uploads (Total Privacy)"
+      "Batch conversion with ZIP download",
+      "Runs in your browser: no uploads",
+      "Transparent areas filled with white",
+      "No sign-up, no watermark"
     ]
   },
-  "social_presets": {
-    "h2": "Convert for Social Media Instantly",
-    "description": "Don't guess the dimensions. Use our one-click presets to perfectly frame your content for any platform.",
-    "preset_1": "Instagram Square (1:1)",
-    "preset_2": "YouTube Thumbnail (16:9)",
-    "preset_3": "Twitter/X Header (3:1)",
-    "preset_4": "Pinterest Pin (2:3)"
+  "requirements": {
+    "h2": "WebP vs JPG: what changes",
+    "intro": "Many websites serve images as WebP. That works in browsers, but some apps, printers and upload forms only accept JPG or PNG. Converting to JPG gives you the most widely accepted format.",
+    "rows": [
+      {
+        "label": "Compression",
+        "value": "WebP: Lossy or lossless (this tool saves lossy WebP at 90% quality). JPG: Lossy: some detail is thrown away each time it is saved."
+      },
+      {
+        "label": "Transparency",
+        "value": "WebP: Yes, including in lossy mode. JPG: No. Transparent areas become a solid colour."
+      },
+      {
+        "label": "Best for",
+        "value": "WebP: Images on websites, where smaller files load faster. JPG: Photos, and anywhere that needs maximum compatibility."
+      },
+      {
+        "label": "Compatibility",
+        "value": "WebP: All current browsers. Some older desktop software and some upload forms still reject WebP. JPG: Opens everywhere: every browser, phone, app, printer and upload form."
+      }
+    ],
+    "notes_h3": "Before you convert WebP to JPG",
+    "notes": [
+      "Transparent areas become white, because JPG has no transparency. If you need to keep transparency, convert WebP to PNG instead.",
+      "Animated WebP files are converted as a single still image (the first frame).",
+      "The JPG is saved at 90% quality, a good balance between size and sharpness.",
+      "Use this when a form says \"JPG or PNG only\", or a program will not open the .webp file."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
   },
   "how_to": {
-    "title": "How to Convert an Image Online",
-    "step1_title": "1. Upload Your Image",
-    "step1_text": "Select a JPG, PNG, or WebP file. The image loads instantly in your browser without uploading to a remote server.",
-    "step2_title": "2. Choose Your Ratio",
-    "step2_text": "Select a fixed aspect ratio or drag the corner handles to create a custom convert frame.",
-    "step3_title": "3. Adjust and Frame",
-    "step3_text": "Pan your image within the convert box to center your main subject and eliminate background distractions.",
-    "step4_title": "4. Apply and Download",
-    "step4_text": "Click 'Convert Image' to process the file locally and download your perfectly framed photo."
+    "title": "How to convert WebP to JPG",
+    "step1_title": "1. Add your images",
+    "step1_text": "Select or drag in one or more WebP files. They are read in your browser, not uploaded.",
+    "step2_title": "2. Check the output format",
+    "step2_text": "JPG is already selected on this page. You can switch to another format if needed.",
+    "step3_title": "3. Convert",
+    "step3_text": "Click Convert Image. Each image is redrawn and saved in the new format on your device.",
+    "step4_title": "4. Download",
+    "step4_text": "A single image downloads directly; several images download together as a ZIP."
   },
   "faq": {
-    "h2": "Convertping Tool FAQs",
-    "q1": "Will my convertped image lose quality?",
-    "a1": "No. Our tool performs a high-fidelity convert, retaining the original resolution and color profile of the selected area.",
-    "q2": "Are my images uploaded to your servers?",
-    "a2": "Absolutely not. This tool utilizes modern HTML5 Canvas technology to perform all convertping locally on your device's browser.",
-    "q3": "Can I convert an image into a circle?",
-    "a3": "Yes! Select the 'Circular Convert' option in the toolbar, which is perfect for generating profile pictures or avatars with transparent PNG backgrounds."
+    "h2": "WebP to JPG: common questions",
+    "items": [
+      {
+        "q": "Why can’t I open a WebP file?",
+        "a": "Some older programs and upload forms do not support WebP. Converting it to JPG solves that."
+      },
+      {
+        "q": "What happens to a transparent background?",
+        "a": "JPG cannot store transparency, so transparent areas are filled with white. Use WebP to PNG to keep them transparent."
+      },
+      {
+        "q": "Can I convert several WebP files at once?",
+        "a": "Yes. Add multiple files and download them as a ZIP."
+      },
+      {
+        "q": "Are my images uploaded?",
+        "a": "No. Conversion runs on your device."
+      }
+    ]
   }
 }

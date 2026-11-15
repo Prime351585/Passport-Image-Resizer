@@ -1,7 +1,7 @@
 ---
 import ToolPageLayout from '../../../layouts/ToolPageLayout.astro';
 import CropToolContainer from '../../../components/CropToolContainer';
-import { getPresetHreflangAlternates, getPresetUrl, getPresetSlug, CROP_PRESETS, SUPPORTED_LANGUAGES, getToolSlug, PRESET_DIMENSIONS, presetAspectRatio } from '../../../utils/i18n';
+import { getPresetHreflangAlternates, getPresetUrl, isPresetTranslated, getPresetSlug, CROP_PRESETS, SUPPORTED_LANGUAGES, getToolSlug, PRESET_DIMENSIONS, presetAspectRatio } from '../../../utils/i18n';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
       const presetDataModule = allPresetFiles[filePath] as any;
       
       // Fallback to English if missing
-      const data = presetDataModule ? presetDataModule.default : (allPresetFiles[`../../../i18n/presets/crop-${presetId}-en.json`] as any)?.default;
+      const data = isPresetTranslated('crop', presetId, lang) && presetDataModule ? presetDataModule.default : (allPresetFiles[`../../../i18n/presets/crop-${presetId}-en.json`] as any)?.default;
 
       if (data) {
         paths.push({
@@ -30,8 +30,11 @@ export async function getStaticPaths() {
 }
 
 const { presetId, lang, presetData } = Astro.props;
-const canonicalUrl = getPresetUrl('crop', presetId, lang);
-const hreflangAlternates = getPresetHreflangAlternates('crop', presetId);
+// Untranslated: an English page that defers to the English URL.
+const translated = isPresetTranslated('crop', presetId, lang);
+const pageLang = translated ? lang : 'en';
+const canonicalUrl = getPresetUrl('crop', presetId, pageLang);
+const hreflangAlternates = translated ? getPresetHreflangAlternates('crop', presetId) : [];
 const breadcrumbs = [
   { name: 'Home', url: `/` },
   { name: 'Crop', url: `/${lang}/${getToolSlug('crop', lang)}` },
@@ -40,7 +43,7 @@ const breadcrumbs = [
 ---
 
 <ToolPageLayout
-  lang={lang}
+  lang={pageLang}
   toolData={presetData}
   canonicalUrl={canonicalUrl}
   hreflangAlternates={hreflangAlternates}

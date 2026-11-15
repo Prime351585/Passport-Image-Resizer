@@ -9,7 +9,7 @@ import PDFMergeToolContainer from '../../components/PDFMergeToolContainer';
 import FilterToolContainer from '../../components/FilterToolContainer';
 import RoundCornerToolContainer from '../../components/RoundCornerToolContainer';
 
-import { SUPPORTED_LANGUAGES, TOOLS, getToolSlug, getToolUrl, getToolHreflangAlternates } from '../../utils/i18n';
+import { SUPPORTED_LANGUAGES, TOOLS, getToolSlug, getToolUrl, getToolHreflangAlternates, isToolTranslated } from '../../utils/i18n';
 import type { SupportedLanguage, ToolId } from '../../utils/i18n';
 
 export async function getStaticPaths() {
@@ -25,8 +25,9 @@ export async function getStaticPaths() {
       const filePath = `../../i18n/tools/${toolId}-${lang}.json`;
       const toolDataModule = allToolFiles[filePath] as any;
       
-      // Fallback to English if translation is missing (just in case)
-      const data = toolDataModule ? toolDataModule.default : (allToolFiles[`../../i18n/tools/${toolId}-en.json`] as any).default;
+      // Untranslated pages show the English content (some locale files are
+      // English copies or contain another tool's text).
+      const data = isToolTranslated(toolId, lang) && toolDataModule ? toolDataModule.default : (allToolFiles[`../../i18n/tools/${toolId}-en.json`] as any).default;
 
       paths.push({
         params: { lang, tool: slug },
@@ -39,8 +40,11 @@ export async function getStaticPaths() {
 }
 
 const { toolId, lang, toolData } = Astro.props;
-const canonicalUrl = getToolUrl(toolId, lang);
-const hreflangAlternates = getToolHreflangAlternates(toolId);
+// Untranslated: an English page that defers to the English URL.
+const translated = isToolTranslated(toolId, lang);
+const pageLang = translated ? lang : 'en';
+const canonicalUrl = getToolUrl(toolId, pageLang);
+const hreflangAlternates = translated ? getToolHreflangAlternates(toolId) : [];
 const breadcrumbs = [
   { name: 'Home', url: `/` },
   { name: toolData.h1, url: canonicalUrl },
@@ -48,7 +52,7 @@ const breadcrumbs = [
 ---
 
 <ToolPageLayout
-  lang={lang}
+  lang={pageLang}
   toolData={toolData}
   canonicalUrl={canonicalUrl}
   hreflangAlternates={hreflangAlternates}

@@ -251,7 +251,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
           </div>
         )}
 
-        <p class="mt-8 text-sm text-gray-500">
+        {req.sources && req.sources.length > 0 && <p class="mt-8 text-sm text-gray-500">
           {req.sources_label}{" "}
           {req.sources.map((src: { label: string; url: string }, i: number) => (
             <>
@@ -260,7 +260,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
             </>
           ))}
           {". "}{req.checked}
-        </p>
+        </p>}
       </section>
     )
   }

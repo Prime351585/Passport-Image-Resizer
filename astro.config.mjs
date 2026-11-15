@@ -2,7 +2,11 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import { findToolBySlug, findPresetBySlug, getToolHreflangAlternates, getPresetHreflangAlternates } from './src/utils/i18n.ts';
+import { findToolBySlug, findPresetBySlug, getToolHreflangAlternates, getPresetHreflangAlternates, getUntranslatedUrls } from './src/utils/i18n.ts';
+
+// Localized URLs that only repeat English content: they canonicalize to the
+// English page, so they stay out of the sitemap.
+const UNTRANSLATED = getUntranslatedUrls();
 
 export default defineConfig({
   site: 'https://www.resize-it.com',
@@ -41,6 +45,7 @@ export default defineConfig({
         }
       }, // <-- FIXED: Properly closed the locales and i18n objects here
       xslURL: '/sitemap.xsl',
+      filter: (page) => !UNTRANSLATED.has(page.replace(/\/$/, '')),
       serialize(item) {
         // Strip trailing slash and prefix domain
         const urlObj = new URL(item.url);
@@ -51,26 +56,9 @@ export default defineConfig({
         const cleanUrl = urlObj.pathname === '/' ? item.url : item.url.replace(/\/$/, '');
 
         // FIXED: Added homepage hreflang mapping before returning
+        // Homepage: English only (there are no /de, /fr ... homepages).
         if (!path || path === '') {
-           item.links = [
-             { lang: 'en', url: 'https://www.resize-it.com/' },
-             { lang: 'de', url: 'https://www.resize-it.com/de' },
-             { lang: 'fr', url: 'https://www.resize-it.com/fr' },
-             { lang: 'es', url: 'https://www.resize-it.com/es' },
-             { lang: 'hi', url: 'https://www.resize-it.com/hi' },
-             { lang: 'ja', url: 'https://www.resize-it.com/ja' },
-             { lang: 'zh', url: 'https://www.resize-it.com/zh' },
-             { lang: 'pt', url: 'https://www.resize-it.com/pt' },
-             { lang: 'it', url: 'https://www.resize-it.com/it' },
-             { lang: 'ru', url: 'https://www.resize-it.com/ru' },
-             { lang: 'ar', url: 'https://www.resize-it.com/ar' },
-             { lang: 'ko', url: 'https://www.resize-it.com/ko' },
-             { lang: 'tr', url: 'https://www.resize-it.com/tr' },
-             { lang: 'id', url: 'https://www.resize-it.com/id' },
-             { lang: 'vi', url: 'https://www.resize-it.com/vi' },
-             { lang: 'x-default', url: 'https://www.resize-it.com/' }
-           ];
-           return { url: cleanUrl, links: item.links }; 
+           return { url: 'https://www.resize-it.com/', links: [] };
         }
         
         let toolSlug = '';

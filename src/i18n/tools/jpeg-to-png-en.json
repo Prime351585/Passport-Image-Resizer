@@ -1,44 +1,80 @@
 {
-  "meta_title": "Free Online Image JPEG to PNG Converter | Convert Photos & Pictures Securely",
-  "meta_description": "Convert images online instantly. Use custom aspect ratios or presets for Instagram, YouTube, and Facebook. 100% private, browser-based convertping with no quality loss.",
-  "h1": "Free Online Image JPEG to PNG Converter",
-  "subtitle": "Frame your photos perfectly. Convert out distractions, adjust aspect ratios, and format for social media instantly—all processed securely within your browser.",
+  "meta_title": "JPG to PNG Converter: Free, Private, Batch | Resize-It",
+  "meta_description": "Convert JPG to PNG in your browser. Batch convert many files at once and download a ZIP. Nothing is uploaded, no sign-up, no watermark.",
+  "h1": "JPG to PNG Converter",
+  "subtitle": "Turn JPG or JPEG photos into PNG files in a few seconds. Convert one image or a whole batch; everything runs on your device, so your photos are never uploaded.",
   "tool_workspace": {
-    "h2": "Interactive Photo Convertping Studio",
-    "description": "Drag and drop your image below. Use the handles to define your convert box or select a preset ratio.",
+    "h2": "Convert JPG to PNG",
+    "description": "Drop one or more JPG files below, then click Convert Image.",
     "features_list": [
-      "Custom Freeform Convertping",
-      "Fixed Aspect Ratios (1:1, 16:9, 4:3, 3:2)",
-      "Circular Convert for Profile Pictures",
-      "Zero Server Uploads (Total Privacy)"
+      "Batch conversion with ZIP download",
+      "Runs in your browser: no uploads",
+      "Lossless PNG output",
+      "No sign-up, no watermark"
     ]
   },
-  "social_presets": {
-    "h2": "Convert for Social Media Instantly",
-    "description": "Don't guess the dimensions. Use our one-click presets to perfectly frame your content for any platform.",
-    "preset_1": "Instagram Square (1:1)",
-    "preset_2": "YouTube Thumbnail (16:9)",
-    "preset_3": "Twitter/X Header (3:1)",
-    "preset_4": "Pinterest Pin (2:3)"
+  "requirements": {
+    "h2": "JPG vs PNG: what changes",
+    "intro": "PNG stores every pixel exactly and supports transparency, so it suits graphics, screenshots and anything you will keep editing. For ordinary photos a PNG is usually several times larger than the JPG it came from.",
+    "rows": [
+      {
+        "label": "Compression",
+        "value": "JPG: Lossy: some detail is thrown away each time it is saved. PNG: Lossless: pixels are stored exactly."
+      },
+      {
+        "label": "Transparency",
+        "value": "JPG: No. Transparent areas become a solid colour. PNG: Yes, full transparency."
+      },
+      {
+        "label": "Best for",
+        "value": "JPG: Photos, and anywhere that needs maximum compatibility. PNG: Screenshots, logos, graphics with text or sharp edges, images that need a transparent background."
+      },
+      {
+        "label": "Compatibility",
+        "value": "JPG: Opens everywhere: every browser, phone, app, printer and upload form. PNG: Opens everywhere."
+      }
+    ],
+    "notes_h3": "Before you convert JPG to PNG",
+    "notes": [
+      "Converting to PNG does not bring back detail the JPG already lost. It stops further loss: a PNG can be opened, edited and saved again without getting worse each time.",
+      "Expect a bigger file. If you only need a smaller photo, use the image compressor instead.",
+      "A JPG has no transparency, so the PNG will not have a transparent background either. Remove the background in an editor first if you need one.",
+      "Use PNG when a site or app asks for it, when you plan to edit the image further, or for graphics with text and sharp edges."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
   },
   "how_to": {
-    "title": "How to Convert an Image Online",
-    "step1_title": "1. Upload Your Image",
-    "step1_text": "Select a JPG, PNG, or WebP file. The image loads instantly in your browser without uploading to a remote server.",
-    "step2_title": "2. Choose Your Ratio",
-    "step2_text": "Select a fixed aspect ratio or drag the corner handles to create a custom convert frame.",
-    "step3_title": "3. Adjust and Frame",
-    "step3_text": "Pan your image within the convert box to center your main subject and eliminate background distractions.",
-    "step4_title": "4. Apply and Download",
-    "step4_text": "Click 'Convert Image' to process the file locally and download your perfectly framed photo."
+    "title": "How to convert JPG to PNG",
+    "step1_title": "1. Add your images",
+    "step1_text": "Select or drag in one or more JPG files. They are read in your browser, not uploaded.",
+    "step2_title": "2. Check the output format",
+    "step2_text": "PNG is already selected on this page. You can switch to another format if needed.",
+    "step3_title": "3. Convert",
+    "step3_text": "Click Convert Image. Each image is redrawn and saved in the new format on your device.",
+    "step4_title": "4. Download",
+    "step4_text": "A single image downloads directly; several images download together as a ZIP."
   },
   "faq": {
-    "h2": "Convertping Tool FAQs",
-    "q1": "Will my convertped image lose quality?",
-    "a1": "No. Our tool performs a high-fidelity convert, retaining the original resolution and color profile of the selected area.",
-    "q2": "Are my images uploaded to your servers?",
-    "a2": "Absolutely not. This tool utilizes modern HTML5 Canvas technology to perform all convertping locally on your device's browser.",
-    "q3": "Can I convert an image into a circle?",
-    "a3": "Yes! Select the 'Circular Convert' option in the toolbar, which is perfect for generating profile pictures or avatars with transparent PNG backgrounds."
+    "h2": "JPG to PNG: common questions",
+    "items": [
+      {
+        "q": "Will converting JPG to PNG improve quality?",
+        "a": "No. The PNG keeps exactly what is in the JPG, including any compression artefacts. What it adds is that further edits and saves will not reduce quality."
+      },
+      {
+        "q": "Why is my PNG bigger than the JPG?",
+        "a": "JPG throws away detail to save space; PNG keeps every pixel. For photos that usually makes the PNG several times larger."
+      },
+      {
+        "q": "Can I convert several JPGs at once?",
+        "a": "Yes. Select or drop multiple files. One file downloads directly; several download together as a ZIP."
+      },
+      {
+        "q": "Are my images uploaded?",
+        "a": "No. The conversion runs in your browser using the HTML canvas, so files never leave your device."
+      }
+    ]
   }
 }

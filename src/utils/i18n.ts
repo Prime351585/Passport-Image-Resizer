@@ -217,12 +217,54 @@ export function getToolUrl(toolId: ToolId, lang: SupportedLanguage): string {
   return `${SITE_URL}/${lang}/${slug}`;
 }
 
-/** Build the full URL for a preset page in a given language */
+/**
+ * Build the full URL for a preset page in a given language.
+ * Preset routes live in literal folders (src/pages/[lang]/resize, /crop), so the
+ * parent segment is always "resize"/"crop", never the localized tool slug.
+ * (Using the localized slug produced canonicals like /de/bild-zuschneiden/... → 404.)
+ */
 export function getPresetUrl(parentTool: 'resize' | 'crop', presetId: PresetId, lang: SupportedLanguage): string {
-  const toolSlug = getToolSlug(parentTool as ToolId, lang);
   const presetSlug = getPresetSlug(presetId, lang);
-  if (lang === DEFAULT_LANGUAGE) return `${SITE_URL}/${toolSlug}/${presetSlug}`;
-  return `${SITE_URL}/${lang}/${toolSlug}/${presetSlug}`;
+  if (lang === DEFAULT_LANGUAGE) return `${SITE_URL}/${parentTool}/${presetSlug}`;
+  return `${SITE_URL}/${lang}/${parentTool}/${presetSlug}`;
+}
+
+// ─── Translation coverage ───────────────────────────────────────────────────────
+// Only these pages have real translations. Every other localized URL renders the
+// English content, so it is served as an English page whose canonical points to
+// the English URL, and it is left out of hreflang and the sitemap. Add an entry
+// here only after the JSON for that page has been properly translated.
+
+const TRANSLATED_TOOLS: ToolId[] = ['resize'];
+const TRANSLATED_PRESETS: Record<'resize' | 'crop', PresetId[]> = {
+  resize: ['youtube-thumbnail', 'instagram-post', 'facebook-cover', 'pinterest-pin'],
+  crop: ['youtube-thumbnail', 'instagram-post', 'facebook-cover', 'pinterest-pin'],
+};
+
+export function isToolTranslated(toolId: ToolId, lang: SupportedLanguage): boolean {
+  return lang === DEFAULT_LANGUAGE || TRANSLATED_TOOLS.includes(toolId);
+}
+
+export function isPresetTranslated(parentTool: 'resize' | 'crop', presetId: PresetId, lang: SupportedLanguage): boolean {
+  return lang === DEFAULT_LANGUAGE || TRANSLATED_PRESETS[parentTool].includes(presetId);
+}
+
+/** Localized URLs that only repeat English content (kept live, but not indexed separately). */
+export function getUntranslatedUrls(): Set<string> {
+  const urls = new Set<string>();
+  for (const lang of SUPPORTED_LANGUAGES) {
+    if (lang === DEFAULT_LANGUAGE) continue;
+    for (const toolId of TOOLS) {
+      if (!isToolTranslated(toolId, lang)) urls.add(getToolUrl(toolId, lang));
+    }
+    for (const presetId of RESIZE_PRESETS) {
+      if (!isPresetTranslated('resize', presetId, lang)) urls.add(getPresetUrl('resize', presetId, lang));
+    }
+    for (const presetId of CROP_PRESETS) {
+      if (!isPresetTranslated('crop', presetId, lang)) urls.add(getPresetUrl('crop', presetId, lang));
+    }
+  }
+  return urls;
 }
 
 /** Build the full URL for a passport country page */
@@ -243,11 +285,14 @@ export function getToolHreflangAlternates(toolId: ToolId): HreflangAlternate[] {
   const alternates: HreflangAlternate[] = [];
 
   for (const lang of SUPPORTED_LANGUAGES) {
+    if (!isToolTranslated(toolId, lang)) continue;
     alternates.push({
       lang: LANG_CODES[lang],
       href: getToolUrl(toolId, lang),
     });
   }
+  // English only: no alternates to declare.
+  if (alternates.length < 2) return [];
 
   // x-default points to English
   alternates.push({
@@ -263,11 +308,13 @@ export function getPresetHreflangAlternates(parentTool: 'resize' | 'crop', prese
   const alternates: HreflangAlternate[] = [];
 
   for (const lang of SUPPORTED_LANGUAGES) {
+    if (!isPresetTranslated(parentTool, presetId, lang)) continue;
     alternates.push({
       lang: LANG_CODES[lang],
       href: getPresetUrl(parentTool, presetId, lang),
     });
   }
+  if (alternates.length < 2) return [];
 
   alternates.push({
     lang: 'x-default',
