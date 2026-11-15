@@ -44,7 +44,6 @@ export default defineConfig({
           vi: 'vi'
         }
       }, // <-- FIXED: Properly closed the locales and i18n objects here
-      xslURL: '/sitemap.xsl',
       filter: (page) => !UNTRANSLATED.has(page.replace(/\/$/, '')),
       serialize(item) {
         // Strip trailing slash and prefix domain
