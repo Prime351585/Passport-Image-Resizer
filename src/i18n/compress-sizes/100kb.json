@@ -1,0 +1,83 @@
+{
+  "target_kb": 100,
+  "meta_title": "Compress Image to 100 KB Online, Free | Resize-It",
+  "meta_description": "Compress a JPG, PNG or WebP image to under 100 KB for forms, email and websites. Good quality, measured results, no upload, no sign-up.",
+  "h1": "Compress Image to 100 KB",
+  "subtitle": "Bring a photo under 100 KB for an application form, an email attachment or a web page, while keeping it sharp. Processed in your browser, never uploaded.",
+  "tool_workspace": {
+    "h2": "Compress to 100 KB",
+    "description": "Add one or more images; each is compressed to 100 KB or less.",
+    "features_list": [
+      "Preset to 100 KB",
+      "Quality kept at 60% or better",
+      "JPG, PNG and WebP input",
+      "No uploads, no sign-up"
+    ]
+  },
+  "requirements": {
+    "h2": "What fits in 100 KB",
+    "intro": "We compressed three 12-megapixel (3000 × 4000) phone photos to 100 KB with this tool:",
+    "rows": [
+      {
+        "label": "Simple portrait",
+        "value": "1094 × 1458 px at 64% quality (99.4 KB)"
+      },
+      {
+        "label": "Portrait",
+        "value": "984 × 1312 px at 64% quality (99.4 KB)"
+      },
+      {
+        "label": "Detailed landscape",
+        "value": "628 × 838 px at 67% quality (98.3 KB)"
+      }
+    ],
+    "notes_h3": "Getting a good result at 100 KB",
+    "notes": [
+      "Typical result: about 630–1100 px wide, sharp on phones and laptops and fine for most web pages.",
+      "For a website, consider WebP instead of JPEG: choose WebP as the output format for a smaller file at the same quality.",
+      "Crop first. If the form wants a face or a signature, crop away everything else (use the image cropper): fewer pixels to store means more detail in the part that matters.",
+      "We count 1 KB as 1000 bytes, so a \"20 KB\" file from this page is at most 20,000 bytes. That is also under the limit for forms that count 1 KB as 1024 bytes.",
+      "PNG files are converted to JPEG (or to WebP if they have transparency), because PNG cannot be compressed this far without losing its format.",
+      "If a form also asks for exact pixel dimensions (for example 200 × 230 px), resize to those dimensions first with the image resizer, then compress here."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
+  },
+  "how_to": {
+    "title": "How to compress an image to 100 KB",
+    "step1_title": "1. Add your photo",
+    "step1_text": "Select or drag in a JPG, PNG or WebP image. It is processed in your browser and never uploaded.",
+    "step2_title": "2. Check the limit",
+    "step2_text": "\"To a file size\" is already selected with 100 KB. Change the number if your form asks for something else.",
+    "step3_title": "3. Compress",
+    "step3_text": "Click Compress Image. The tool finds the best quality that fits; if needed it also makes the image smaller in pixels and tells you the new size.",
+    "step4_title": "4. Upload the result",
+    "step4_text": "The file downloads automatically and is 100 KB or less, so it fits forms that count 1 KB as 1000 or as 1024 bytes."
+  },
+  "faq": {
+    "h2": "Compress to 100 KB: common questions",
+    "items": [
+      {
+        "q": "How do I reduce an image to 100 KB?",
+        "a": "Add it on this page and click Compress Image. The 100 KB limit is already set, and the file downloads when it is ready."
+      },
+      {
+        "q": "How big can the photo stay at 100 KB?",
+        "a": "In our tests a portrait stayed about 1000–1100 px wide and a very detailed landscape about 630 px. Simple, evenly lit photos keep more pixels."
+      },
+      {
+        "q": "Can I keep a PNG as PNG?",
+        "a": "Not at this size. PNG is lossless and usually much bigger, so the tool saves JPEG, or WebP if the image has transparency."
+      },
+      {
+        "q": "Can I compress many images to 100 KB?",
+        "a": "Yes. Add several and they download together as a ZIP, each one 100 KB or less."
+      },
+      {
+        "q": "Is my image uploaded?",
+        "a": "No. Compression runs in your browser."
+      }
+    ]
+  }
+}

@@ -4,14 +4,18 @@ import { canvasToBlob, encodeToTargetSize, extForMime, hasTransparency, loadImag
 
 interface CompressToolContainerProps {
   className?: string;
+  /** Open in "to a file size" mode with this limit (used by /compress/20kb etc.). */
+  targetKB?: number;
 }
 
-export default function CompressToolContainer({ className = '' }: CompressToolContainerProps) {
+export default function CompressToolContainer({ className = '', targetKB: presetKB }: CompressToolContainerProps) {
   const [images, setImages] = useState<UploadedImage[]>([]);
   const [quality, setQuality] = useState(80);
   const [format, setFormat] = useState<string>('auto');
-  const [mode, setMode] = useState<'quality' | 'target'>('quality');
-  const [targetKB, setTargetKB] = useState<number>(100);
+  const [mode, setMode] = useState<'quality' | 'target'>(presetKB ? 'target' : 'quality');
+  const [targetKB, setTargetKB] = useState<number>(presetKB ?? 100);
+  // Set when target mode had to scale an image down to fit.
+  const [resizeNote, setResizeNote] = useState<string>('');
   
   const [isProcessing, setIsProcessing] = useState(false);
   const [processedUrls, setProcessedUrls] = useState<{name: string, url: string}[]>([]);
@@ -44,6 +48,7 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
     if (images.length === 0) return;
     setIsProcessing(true);
     setProcessedUrls([]);
+    setResizeNote('');
     let totalOriginal = 0;
     let totalCompressed = 0;
     
@@ -72,7 +77,17 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
         if (mode === 'target') {
           const targetMime = outMime === 'image/png' ? 'image/webp' : (outMime as 'image/jpeg' | 'image/webp');
           outMime = targetMime;
-          blob = (await encodeToTargetSize(image, targetMime, Math.max(1, targetKB) * 1024)).blob;
+          // 1 KB = 1000 bytes here, so the file fits forms that count either
+          // 1000 or 1024 bytes per KB. Quality floor 60%: shrink the image
+          // rather than make it blocky.
+          const out = await encodeToTargetSize(image, targetMime, Math.max(1, targetKB) * 1000, 0.6);
+          blob = out.blob;
+          if (out.width !== image.naturalWidth) {
+            setResizeNote(`To fit ${targetKB} KB, the image was also scaled down from ${image.naturalWidth}×${image.naturalHeight} to ${out.width}×${out.height} px.`);
+          }
+          if (blob.size > targetKB * 1000) {
+            setResizeNote(`This image could not be brought under ${targetKB} KB. Try cropping it or a larger limit.`);
+          }
         } else {
           const { canvas, ctx } = makeCanvas(image.naturalWidth, image.naturalHeight, outMime);
           ctx.drawImage(image, 0, 0);
@@ -175,7 +190,7 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
                       </button>
                     ))}
                   </div>
-                  <p className="text-xs text-gray-500 mt-2">We lower quality first and only shrink the dimensions if needed.</p>
+                  <p className="text-xs text-gray-500 mt-2">We keep quality at 60% or better and make the image smaller in pixels if that is what it takes to fit.</p>
                 </div>
                 ) : (
                 <div>
@@ -253,6 +268,9 @@ export default function CompressToolContainer({ className = '' }: CompressToolCo
                     </p>
                   </div>
                 </div>
+                {resizeNote && (
+                  <p className="text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-3 mb-3">{resizeNote}</p>
+                )}
                 <p className="text-sm text-gray-500 text-center mt-2">
                   {images.length > 1 ? 'Your ZIP file download should start automatically.' : 'Your file download should start automatically.'}
                 </p>

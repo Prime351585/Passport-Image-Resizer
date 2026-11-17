@@ -21,5 +21,13 @@ const breadcrumbs = [
   hreflangAlternates={hreflangAlternates}
   breadcrumbs={breadcrumbs}
 >
-  <CompressToolContainer client:load slot="tool" />
+  <div slot="tool">
+    <CompressToolContainer client:load />
+    <nav aria-label="Compress to a set size" class="max-w-3xl mx-auto mt-6 px-4 text-center text-sm text-gray-600">
+      Need a specific limit for a form?
+      <a href="/compress/20kb" class="text-primary underline">Compress to 20 KB</a> ·
+      <a href="/compress/50kb" class="text-primary underline">50 KB</a> ·
+      <a href="/compress/100kb" class="text-primary underline">100 KB</a>
+    </nav>
+  </div>
 </ToolPageLayout>

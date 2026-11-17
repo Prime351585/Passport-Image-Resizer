@@ -1,0 +1,83 @@
+{
+  "target_kb": 50,
+  "meta_title": "Compress Image to 50 KB Online, Free | Resize-It",
+  "meta_description": "Reduce a JPG, PNG or WebP image to under 50 KB for online forms and uploads. Clean quality, measured results, no upload, no sign-up.",
+  "h1": "Compress Image to 50 KB",
+  "subtitle": "Make a photo small enough for forms and portals that cap uploads at 50 KB, without turning it into a blurry mess. Runs in your browser; nothing is uploaded.",
+  "tool_workspace": {
+    "h2": "Compress to 50 KB",
+    "description": "Add one or more images; each is compressed to 50 KB or less.",
+    "features_list": [
+      "Preset to 50 KB",
+      "Quality kept at 60% or better",
+      "JPG, PNG and WebP input",
+      "No uploads, no sign-up"
+    ]
+  },
+  "requirements": {
+    "h2": "What fits in 50 KB",
+    "intro": "We compressed three 12-megapixel (3000 × 4000) phone photos to 50 KB with this tool:",
+    "rows": [
+      {
+        "label": "Simple portrait",
+        "value": "708 × 943 px at 62% quality (49.7 KB)"
+      },
+      {
+        "label": "Portrait",
+        "value": "622 × 829 px at 67% quality (48.7 KB)"
+      },
+      {
+        "label": "Detailed landscape",
+        "value": "443 × 591 px at 63% quality (49.9 KB)"
+      }
+    ],
+    "notes_h3": "Getting a good result at 50 KB",
+    "notes": [
+      "Typical result: about 450–700 px wide. That is clear on screen and enough for an ID-style photo on a form.",
+      "50 KB is roughly 2.5 times the room of 20 KB, so the same photo keeps about 1.6–1.9 times the width.",
+      "Crop first. If the form wants a face or a signature, crop away everything else (use the image cropper): fewer pixels to store means more detail in the part that matters.",
+      "We count 1 KB as 1000 bytes, so a \"20 KB\" file from this page is at most 20,000 bytes. That is also under the limit for forms that count 1 KB as 1024 bytes.",
+      "PNG files are converted to JPEG (or to WebP if they have transparency), because PNG cannot be compressed this far without losing its format.",
+      "If a form also asks for exact pixel dimensions (for example 200 × 230 px), resize to those dimensions first with the image resizer, then compress here."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
+  },
+  "how_to": {
+    "title": "How to compress an image to 50 KB",
+    "step1_title": "1. Add your photo",
+    "step1_text": "Select or drag in a JPG, PNG or WebP image. It is processed in your browser and never uploaded.",
+    "step2_title": "2. Check the limit",
+    "step2_text": "\"To a file size\" is already selected with 50 KB. Change the number if your form asks for something else.",
+    "step3_title": "3. Compress",
+    "step3_text": "Click Compress Image. The tool finds the best quality that fits; if needed it also makes the image smaller in pixels and tells you the new size.",
+    "step4_title": "4. Upload the result",
+    "step4_text": "The file downloads automatically and is 50 KB or less, so it fits forms that count 1 KB as 1000 or as 1024 bytes."
+  },
+  "faq": {
+    "h2": "Compress to 50 KB: common questions",
+    "items": [
+      {
+        "q": "How do I compress a photo to 50 KB?",
+        "a": "Add the photo on this page and click Compress Image. The 50 KB limit is preset; the result downloads automatically."
+      },
+      {
+        "q": "Will the photo still look good?",
+        "a": "Yes for screen use. The tool keeps JPEG quality at 60% or better and reduces the pixel size instead of making the picture blocky. In our tests a portrait stayed about 620–700 px wide."
+      },
+      {
+        "q": "Can I compress several photos to 50 KB at once?",
+        "a": "Yes. Add several images; each is compressed to 50 KB or less and they download together as a ZIP."
+      },
+      {
+        "q": "What if my form needs both a size and a KB limit?",
+        "a": "Resize to the required pixel size first with the image resizer, then compress to the KB limit here."
+      },
+      {
+        "q": "Is my photo uploaded?",
+        "a": "No. Everything runs on your device."
+      }
+    ]
+  }
+}

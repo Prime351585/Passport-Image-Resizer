@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { PassportDimension, PaperSize } from './PassportToolContainer';
+import { sheetLayout, toMm, SHEET_MARGIN_MM, SHEET_SPACING_MM } from '../utils/paperLayout';
 
 interface PDFGeneratorProps {
   croppedImage: string;
@@ -20,46 +21,24 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({
   const [showPreview, setShowPreview] = useState(false);
   const [gridPreview, setGridPreview] = useState<string>('');
 
-  // Calculate photos per page
-  const calculatePhotosPerPage = (): number => {
-    // Convert everything to mm for calculation
-    const paperWidthMm = paperSize.unit === 'mm' ? paperSize.width : paperSize.width * 25.4;
-    const paperHeightMm = paperSize.unit === 'mm' ? paperSize.height : paperSize.height * 25.4;
-    const photoWidthMm = dimension.unit === 'mm' ? (Number(dimension.width) || 35) : (Number(dimension.width) || 1.38) * 25.4;
-    const photoHeightMm = dimension.unit === 'mm' ? (Number(dimension.height) || 45) : (Number(dimension.height) || 1.77) * 25.4;
-    
-    // Add margins (5mm on each side)
-    const usableWidth = paperWidthMm - 10;
-    const usableHeight = paperHeightMm - 10;
-    
-    // Add spacing between photos (2mm)
-    const photosPerRow = Math.floor((usableWidth + 2) / (photoWidthMm + 2));
-    const photosPerCol = Math.floor((usableHeight + 2) / (photoHeightMm + 2));
-    
-    return Math.max(1, photosPerRow * photosPerCol);
-  };
+  // Photo and sheet sizes in mm, and the best grid (tries both orientations).
+  const photoWmm = toMm(Number(dimension.width) || (dimension.unit === 'mm' ? 35 : 1.38), dimension.unit);
+  const photoHmm = toMm(Number(dimension.height) || (dimension.unit === 'mm' ? 45 : 1.77), dimension.unit);
+  const layout = sheetLayout(toMm(paperSize.width, paperSize.unit), toMm(paperSize.height, paperSize.unit), photoWmm, photoHmm);
+  const calculatePhotosPerPage = (): number => layout.count;
 
-  // Generate grid preview
+  // Generate grid preview (300 DPI), in the orientation chosen by the layout.
   const generateGridPreview = async (): Promise<string> => {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     if (!ctx) throw new Error('Canvas not supported');
 
-    // Convert dimensions to pixels (300 DPI)
     const dpi = 300;
-    const paperWidthPx = paperSize.unit === 'mm' 
-      ? Math.round((paperSize.width * dpi) / 25.4)
-      : Math.round(paperSize.width * dpi);
-    const paperHeightPx = paperSize.unit === 'mm'
-      ? Math.round((paperSize.height * dpi) / 25.4)
-      : Math.round(paperSize.height * dpi);
-    
-    const photoWidthPx = dimension.unit === 'mm'
-      ? Math.round(((Number(dimension.width) || 35) * dpi) / 25.4)
-      : Math.round((Number(dimension.width) || 1.38) * dpi);
-    const photoHeightPx = dimension.unit === 'mm'
-      ? Math.round(((Number(dimension.height) || 45) * dpi) / 25.4)
-      : Math.round((Number(dimension.height) || 1.77) * dpi);
+    const px = (mm: number) => Math.round((mm * dpi) / 25.4);
+    const paperWidthPx = px(layout.sheetWidthMm);
+    const paperHeightPx = px(layout.sheetHeightMm);
+    const photoWidthPx = px(photoWmm);
+    const photoHeightPx = px(photoHmm);
 
     canvas.width = paperWidthPx;
     canvas.height = paperHeightPx;
@@ -76,15 +55,11 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({
       img.src = croppedImage;
     });
 
-    // Calculate layout
-    const marginPx = Math.round((5 * dpi) / 25.4); // 5mm margin
-    const spacingPx = Math.round((2 * dpi) / 25.4); // 2mm spacing
-    const usableWidth = paperWidthPx - (2 * marginPx);
-    const usableHeight = paperHeightPx - (2 * marginPx);
-    
-    const photosPerRow = Math.floor((usableWidth + spacingPx) / (photoWidthPx + spacingPx));
-    const photosPerCol = Math.floor((usableHeight + spacingPx) / (photoHeightPx + spacingPx));
-    
+    const spacingPx = px(SHEET_SPACING_MM);
+    void SHEET_MARGIN_MM; // margins are applied inside sheetLayout
+    const photosPerRow = layout.cols;
+    const photosPerCol = layout.rows;
+
     // Center the grid
     const totalGridWidth = (photosPerRow * photoWidthPx) + ((photosPerRow - 1) * spacingPx);
     const totalGridHeight = (photosPerCol * photoHeightPx) + ((photosPerCol - 1) * spacingPx);
@@ -96,11 +71,8 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({
       for (let col = 0; col < photosPerRow; col++) {
         const x = startX + (col * (photoWidthPx + spacingPx));
         const y = startY + (row * (photoHeightPx + spacingPx));
-        
-        // Draw photo
         ctx.drawImage(img, x, y, photoWidthPx, photoHeightPx);
-        
-        // Draw border
+        // Thin border as a cutting guide
         ctx.strokeStyle = '#E5E7EB';
         ctx.lineWidth = 1;
         ctx.strokeRect(x, y, photoWidthPx, photoHeightPx);
@@ -120,16 +92,12 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({
       
       const gridImage = await generateGridPreview();
       
-      // Convert paper size to points (72 DPI)
-      const paperWidthPt = paperSize.unit === 'mm' 
-        ? (paperSize.width * 72) / 25.4
-        : paperSize.width * 72;
-      const paperHeightPt = paperSize.unit === 'mm'
-        ? (paperSize.height * 72) / 25.4
-        : paperSize.height * 72;
+      // Page size in points (72 DPI), in the orientation the layout chose
+      const paperWidthPt = (layout.sheetWidthMm * 72) / 25.4;
+      const paperHeightPt = (layout.sheetHeightMm * 72) / 25.4;
 
       const pdf = new jsPDF({
-        orientation: paperSize.width > paperSize.height ? 'landscape' : 'portrait',
+        orientation: paperWidthPt > paperHeightPt ? 'landscape' : 'portrait',
         unit: 'pt',
         format: [paperWidthPt, paperHeightPt]
       });

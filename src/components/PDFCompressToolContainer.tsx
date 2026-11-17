@@ -1,5 +1,65 @@
 import React, { useState, useRef } from 'react';
-import { PDFDocument } from 'pdf-lib';
+import { PDFDocument, PDFName, PDFNumber, PDFRawStream, PDFArray, PDFDict } from 'pdf-lib';
+
+// Embedded JPEG images are re-encoded at this quality, and scaled down so the
+// long side is at most MAX_SIDE px (about 200 dpi on an A4 page).
+const JPEG_QUALITY = 0.7;
+const MAX_SIDE = 2200;
+
+/**
+ * Re-encode every embedded JPEG (DCTDecode) image that gets smaller.
+ * Scanned and photo-heavy PDFs are mostly such images, so this is where the
+ * savings are; re-saving alone barely changes them. Skipped: CMYK images,
+ * images with a /Decode array, and other image encodings.
+ */
+async function recompressImages(pdf: PDFDocument): Promise<number> {
+  const ctx = pdf.context;
+  let changed = 0;
+  for (const [ref, obj] of ctx.enumerateIndirectObjects()) {
+    if (!(obj instanceof PDFRawStream)) continue;
+    const dict = obj.dict;
+    if (dict.get(PDFName.of('Subtype')) !== PDFName.of('Image')) continue;
+    const filter = dict.get(PDFName.of('Filter'));
+    const isJpeg = filter === PDFName.of('DCTDecode') ||
+      (filter instanceof PDFArray && filter.size() === 1 && filter.get(0) === PDFName.of('DCTDecode'));
+    if (!isJpeg || dict.get(PDFName.of('Decode'))) continue;
+    const cs = dict.get(PDFName.of('ColorSpace'));
+    const isGray = cs === PDFName.of('DeviceGray');
+    if (cs !== PDFName.of('DeviceRGB') && !isGray) continue; // CMYK, ICC, indexed: leave alone
+
+    try {
+      const original = obj.contents;
+      const bitmap = await createImageBitmap(new Blob([original], { type: 'image/jpeg' }));
+      const scale = Math.min(1, MAX_SIDE / Math.max(bitmap.width, bitmap.height));
+      const w = Math.max(1, Math.round(bitmap.width * scale));
+      const h = Math.max(1, Math.round(bitmap.height * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      const c2d = canvas.getContext('2d');
+      if (!c2d) continue;
+      c2d.fillStyle = '#fff'; c2d.fillRect(0, 0, w, h);
+      c2d.drawImage(bitmap, 0, 0, w, h);
+      bitmap.close();
+      const blob: Blob | null = await new Promise((r) => canvas.toBlob(r, 'image/jpeg', JPEG_QUALITY));
+      if (!blob) continue;
+      const bytes = new Uint8Array(await blob.arrayBuffer());
+      if (bytes.length >= original.length * 0.95) continue; // not worth it
+
+      const newDict = dict.clone(ctx) as PDFDict;
+      newDict.set(PDFName.of('Width'), PDFNumber.of(w));
+      newDict.set(PDFName.of('Height'), PDFNumber.of(h));
+      newDict.set(PDFName.of('BitsPerComponent'), PDFNumber.of(8));
+      // Canvas always writes colour JPEGs.
+      if (isGray) newDict.set(PDFName.of('ColorSpace'), PDFName.of('DeviceRGB'));
+      newDict.delete(PDFName.of('DecodeParms'));
+      ctx.assign(ref, PDFRawStream.of(newDict, bytes));
+      changed++;
+    } catch {
+      // Undecodable image: keep the original.
+    }
+  }
+  return changed;
+}
 
 export default function PDFCompressToolContainer({ className = '' }: { className?: string }) {
   const [pdfFile, setPdfFile] = useState<File | null>(null);
@@ -31,12 +91,13 @@ export default function PDFCompressToolContainer({ className = '' }: { className
       // Load the PDF. We don't update metadata to keep it small.
       const pdf = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
       
-      // Basic "compression" using pdf-lib. True image downsampling isn't 
-      // straightforward in pure JS without external WASM libraries, 
-      // but re-saving drops unused objects and some metadata.
+      await recompressImages(pdf);
       const compressedBytes = await pdf.save({ useObjectStreams: true });
-      
-      const blob = new Blob([compressedBytes], { type: 'application/pdf' });
+
+      // Never hand back a bigger file than the user started with.
+      const blob = compressedBytes.length < pdfFile.size
+        ? new Blob([compressedBytes], { type: 'application/pdf' })
+        : pdfFile;
       const url = URL.createObjectURL(blob);
       
       setCompressedPdfUrl(url);
@@ -176,6 +237,11 @@ export default function PDFCompressToolContainer({ className = '' }: { className
                   <p className="font-semibold text-primary">{getSavingsPercentage()}%</p>
                 </div>
               </div>
+              {compressionStats && compressionStats.compressed >= compressionStats.original && (
+                <p className="text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-3">
+                  This PDF is already as small as this tool can make it, so the download is your original file. Text-only PDFs have little to compress; the biggest savings come from scanned pages and photos.
+                </p>
+              )}
 
               <button
                 onClick={downloadPdf}

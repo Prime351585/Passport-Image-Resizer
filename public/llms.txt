@@ -7,7 +7,8 @@ Resize-It (https://www.resize-it.com) resizes, compresses, crops, converts and e
 ## Image tools
 
 - [Image Resizer](https://www.resize-it.com/resize): Resize to exact pixels, percent, mm, cm or inches. Keeps PNG/WebP transparency. Batch resize downloads as a ZIP.
-- [Image Compressor](https://www.resize-it.com/compress): Compress by quality, or to a maximum file size in KB (for example 20 KB, 50 KB or 100 KB for online forms). Never returns a file larger than the original.
+- [Image Compressor](https://www.resize-it.com/compress): Compress by quality, or to a maximum file size in KB. Never returns a file larger than the original.
+- Compress to a set size for online forms: [under 20 KB](https://www.resize-it.com/compress/20kb), [under 50 KB](https://www.resize-it.com/compress/50kb), [under 100 KB](https://www.resize-it.com/compress/100kb). Keeps JPEG quality at 60% or better by reducing pixel size; 1 KB counted as 1000 bytes.
 - [Image Cropper](https://www.resize-it.com/crop): Free crop or fixed ratios (1:1, 16:9, 4:3, 3:2, 9:16). Works with touch.
 - [Round Corners](https://www.resize-it.com/round-corners): Rounded or circular corners, PNG output with transparency.
 - [Invert Image](https://www.resize-it.com/invert), [Lighten Image](https://www.resize-it.com/lighten), [Saturate Image](https://www.resize-it.com/saturate): Colour adjustments.

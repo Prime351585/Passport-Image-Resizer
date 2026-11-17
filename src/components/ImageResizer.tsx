@@ -323,9 +323,10 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label className="block text-sm font-semibold text-gray-700">Width</label>
+            <label htmlFor="resize-width" className="block text-sm font-semibold text-gray-700">Width</label>
             <div className="flex space-x-2">
               <input
+                id="resize-width"
                 type="number"
                 min="1"
                 value={settings.width}
@@ -333,6 +334,7 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
                 className="flex-1 px-4 py-3 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
               />
               <select
+                aria-label="Unit"
                 value={settings.unit}
                 onChange={(e) => setSettings(prev => ({ ...prev, unit: e.target.value as any }))}
                 className="py-3 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-medium"
@@ -347,9 +349,10 @@ const ImageResizer: React.FC<ImageResizerProps> = ({
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-semibold text-gray-700">Height</label>
+            <label htmlFor="resize-height" className="block text-sm font-semibold text-gray-700">Height</label>
             <div className="flex space-x-2">
               <input
+                id="resize-height"
                 type="number"
                 min="1"
                 value={settings.height}

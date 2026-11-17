@@ -1,0 +1,87 @@
+{
+  "target_kb": 20,
+  "meta_title": "Compress Image to 20 KB Online, Free | Resize-It",
+  "meta_description": "Compress a photo or signature to under 20 KB for online forms. Keeps quality at 60% or better by reducing pixels instead. Free, no upload, no sign-up.",
+  "h1": "Compress Image to 20 KB",
+  "subtitle": "Get a photo or signature under 20 KB for an online application form. Everything runs in your browser, so your ID photos never leave your device.",
+  "tool_workspace": {
+    "h2": "Compress to 20 KB",
+    "description": "Add one or more images; each is compressed to 20 KB or less.",
+    "features_list": [
+      "Preset to 20 KB",
+      "Quality kept at 60% or better",
+      "JPG, PNG and WebP input",
+      "No uploads, no sign-up"
+    ]
+  },
+  "requirements": {
+    "h2": "What fits in 20 KB",
+    "intro": "20 KB is very small: about the size of a short text document. A phone photo is usually 2–5 MB, so it has to shrink 100–250 times. We compressed three 12-megapixel (3000 × 4000) phone photos with this tool:",
+    "rows": [
+      {
+        "label": "Simple portrait",
+        "value": "377 × 502 px at 65% quality (19.9 KB)"
+      },
+      {
+        "label": "Portrait",
+        "value": "362 × 483 px at 68% quality (19.9 KB)"
+      },
+      {
+        "label": "Detailed landscape",
+        "value": "246 × 328 px at 69% quality (19.8 KB)"
+      },
+      {
+        "label": "Passport-size photo",
+        "value": "At 413 × 531 px (35 × 45 mm at 300 dpi) a portrait fits under 20 KB at 57% quality."
+      }
+    ],
+    "notes_h3": "Getting a good result at 20 KB",
+    "notes": [
+      "Typical result: about 250–380 px wide for a whole photo. That is fine for a face or signature on a form, but too small to print.",
+      "Plain backgrounds compress much better than busy ones. A face on a white wall fits in 20 KB at a larger size than a photo full of detail.",
+      "Crop first. If the form wants a face or a signature, crop away everything else (use the image cropper): fewer pixels to store means more detail in the part that matters.",
+      "We count 1 KB as 1000 bytes, so a \"20 KB\" file from this page is at most 20,000 bytes. That is also under the limit for forms that count 1 KB as 1024 bytes.",
+      "PNG files are converted to JPEG (or to WebP if they have transparency), because PNG cannot be compressed this far without losing its format.",
+      "If a form also asks for exact pixel dimensions (for example 200 × 230 px), resize to those dimensions first with the image resizer, then compress here."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
+  },
+  "how_to": {
+    "title": "How to compress an image to 20 KB",
+    "step1_title": "1. Add your photo",
+    "step1_text": "Select or drag in a JPG, PNG or WebP image. It is processed in your browser and never uploaded.",
+    "step2_title": "2. Check the limit",
+    "step2_text": "\"To a file size\" is already selected with 20 KB. Change the number if your form asks for something else.",
+    "step3_title": "3. Compress",
+    "step3_text": "Click Compress Image. The tool finds the best quality that fits; if needed it also makes the image smaller in pixels and tells you the new size.",
+    "step4_title": "4. Upload the result",
+    "step4_text": "The file downloads automatically and is 20 KB or less, so it fits forms that count 1 KB as 1000 or as 1024 bytes."
+  },
+  "faq": {
+    "h2": "Compress to 20 KB: common questions",
+    "items": [
+      {
+        "q": "How do I reduce a photo to under 20 KB?",
+        "a": "Open this page, add the photo and click Compress Image. The limit is already set to 20 KB. The tool lowers the quality and, if needed, the pixel size until the file is 20 KB or less."
+      },
+      {
+        "q": "Why is my 20 KB photo so small in pixels?",
+        "a": "A 20 KB JPEG holds roughly 100,000–200,000 pixels at acceptable quality. Keeping the full size would make the image very blocky, so the tool reduces pixels instead and tells you the new size."
+      },
+      {
+        "q": "Can I compress a signature to 20 KB?",
+        "a": "Yes. Crop tightly around the signature first; a signature on white paper usually fits easily and stays sharp."
+      },
+      {
+        "q": "My form needs a photo between 10 KB and 20 KB. Will this work?",
+        "a": "Yes. The result is just under the limit (about 19–20 KB). If it must be above a minimum such as 10 KB, check the size shown after compressing; for a whole photo it will be well above 10 KB."
+      },
+      {
+        "q": "Is my photo uploaded?",
+        "a": "No. Compression happens in your browser on your own device."
+      }
+    ]
+  }
+}

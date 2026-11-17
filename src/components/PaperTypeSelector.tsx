@@ -1,4 +1,5 @@
 import React from 'react';
+import { sheetLayout, toMm } from '../utils/paperLayout';
 import type {PaperSize, PassportDimension} from './PassportToolContainer';
 
 interface PaperTypeSelectorProps {
@@ -63,21 +64,8 @@ const PaperTypeSelector: React.FC<PaperTypeSelectorProps> = ({
     const w = photoWidth || 35;
     const h = photoHeight || 45;
 
-    // Convert everything to mm for calculation
-    const paperWidthMm = paper.unit === 'mm' ? paper.width : paper.width * 25.4;
-    const paperHeightMm = paper.unit === 'mm' ? paper.height : paper.height * 25.4;
-    const photoWidthMm = unit === 'mm' ? w : w * 25.4;
-    const photoHeightMm = unit === 'mm' ? h : h * 25.4;
-    
-    // Add margins (5mm on each side)
-    const usableWidth = paperWidthMm - 10;
-    const usableHeight = paperHeightMm - 10;
-    
-    // Add spacing between photos (2mm)
-    const photosPerRow = Math.floor((usableWidth + 2) / (photoWidthMm + 2));
-    const photosPerCol = Math.floor((usableHeight + 2) / (photoHeightMm + 2));
-    
-    return Math.max(1, photosPerRow * photosPerCol);
+    // Same layout as the PDF (tries both orientations)
+    return sheetLayout(toMm(paper.width, paper.unit), toMm(paper.height, paper.unit), toMm(w, unit), toMm(h, unit)).count;
   };
 
   const selectedMaxPhotos = calculatePhotosPerPage(

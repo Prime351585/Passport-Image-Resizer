@@ -1,0 +1,42 @@
+---
+// Exact file-size landing pages: /compress/20kb, /compress/50kb, /compress/100kb.
+// Each opens the compressor in "to a file size" mode with that limit preset.
+// Content lives in src/i18n/compress-sizes/<size>.json (English only).
+import ToolPageLayout from '../../layouts/ToolPageLayout.astro';
+import CompressToolContainer from '../../components/CompressToolContainer';
+
+export async function getStaticPaths() {
+  const files = import.meta.glob('../../i18n/compress-sizes/*.json', { eager: true });
+  return Object.entries(files).map(([fp, mod]) => {
+    const size = (fp.split('/').pop() || '').replace('.json', ''); // e.g. "20kb"
+    return { params: { size }, props: { size, data: (mod as any).default } };
+  });
+}
+
+const { size, data } = Astro.props;
+const canonicalUrl = `https://www.resize-it.com/compress/${size}`;
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Compress Image', url: '/compress' },
+  { name: data.h1, url: canonicalUrl },
+];
+---
+
+<ToolPageLayout
+  lang="en"
+  toolData={data}
+  canonicalUrl={canonicalUrl}
+  hreflangAlternates={[]}
+  breadcrumbs={breadcrumbs}
+>
+  <div slot="tool">
+    <CompressToolContainer client:load targetKB={data.target_kb} />
+    <nav aria-label="Other file sizes" class="max-w-3xl mx-auto mt-6 px-4 text-center text-sm text-gray-600">
+      Need a different limit?
+      {[20, 50, 100].filter((kb) => kb !== data.target_kb).map((kb) => (
+        <>{' '}<a href={`/compress/${kb}kb`} class="text-primary underline">Compress to {kb} KB</a>{' ·'}</>
+      ))}
+      {' '}<a href="/compress" class="text-primary underline">any size</a>
+    </nav>
+  </div>
+</ToolPageLayout>

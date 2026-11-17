@@ -83,41 +83,47 @@ export function hasTransparency(img: HTMLImageElement): boolean {
 
 /**
  * Encode `img` so the result is at most `targetBytes`.
- * Binary-searches quality first; if even the lowest acceptable quality is too
- * big, scales the image down step by step. PNG cannot be quality-compressed,
- * so callers should pass JPEG or WebP here.
+ *
+ * With `minQuality` (0–1) the image is scaled down until it fits at that
+ * quality or better, so a 20 KB target gives a smaller but clean photo instead
+ * of a large, blocky one. Without it (default 0.1), quality is lowered first and
+ * the size only shrinks when even the lowest quality is too big — use that when
+ * the pixel dimensions are mandated (passport uploads).
+ * PNG cannot be quality-compressed, so callers should pass JPEG or WebP here.
  */
 export async function encodeToTargetSize(
   img: HTMLImageElement,
   mime: 'image/jpeg' | 'image/webp',
   targetBytes: number,
+  minQuality = 0.1,
 ): Promise<{ blob: Blob; width: number; height: number; quality: number }> {
   let scale = 1;
   let best: { blob: Blob; width: number; height: number; quality: number } | null = null;
 
-  for (let pass = 0; pass < 12; pass++) {
+  for (let pass = 0; pass < 24; pass++) {
     const w = Math.max(1, Math.round(img.naturalWidth * scale));
     const h = Math.max(1, Math.round(img.naturalHeight * scale));
     const { canvas, ctx } = makeCanvas(w, h, mime);
     ctx.drawImage(img, 0, 0, w, h);
 
-    let lo = 0.1, hi = 0.95, found: Blob | null = null, foundQ = 0;
-    for (let i = 0; i < 7; i++) {
-      const q = (lo + hi) / 2;
-      const blob = await canvasToBlob(canvas, mime, q);
-      if (blob.size <= targetBytes) { found = blob; foundQ = q; lo = q; } else { hi = q; }
+    // Does it fit at the quality floor? If not, shrink without searching.
+    const atFloor = await canvasToBlob(canvas, mime, minQuality);
+    if (atFloor.size <= targetBytes) {
+      let lo = minQuality, hi = 0.95, found = atFloor, foundQ = minQuality;
+      for (let i = 0; i < 6; i++) {
+        const q = (lo + hi) / 2;
+        const blob = await canvasToBlob(canvas, mime, q);
+        if (blob.size <= targetBytes) { found = blob; foundQ = q; lo = q; } else { hi = q; }
+      }
+      return { blob: found, width: w, height: h, quality: foundQ };
     }
-    if (!found) {
-      const blob = await canvasToBlob(canvas, mime, 0.1);
-      if (blob.size <= targetBytes) { found = blob; foundQ = 0.1; }
-    }
-    if (found) return { blob: found, width: w, height: h, quality: foundQ };
-
-    // Too big even at low quality: keep the smallest attempt and shrink.
-    const smallest = await canvasToBlob(canvas, mime, 0.1);
-    if (!best || smallest.size < best.blob.size) best = { blob: smallest, width: w, height: h, quality: 0.1 };
-    scale *= 0.8;
+    if (!best || atFloor.size < best.blob.size) best = { blob: atFloor, width: w, height: h, quality: minQuality };
+    if (w <= 16 || h <= 16) break;
+    // Big steps while far from the target, finer ones close to it.
+    scale *= atFloor.size > targetBytes * 2 ? Math.max(0.5, Math.sqrt(targetBytes / atFloor.size)) : 0.9;
   }
+  // Even tiny it doesn't fit at the floor: fall back to the lowest quality.
+  if (minQuality > 0.1) return encodeToTargetSize(img, mime, targetBytes, 0.1);
   return best!;
 }
 
