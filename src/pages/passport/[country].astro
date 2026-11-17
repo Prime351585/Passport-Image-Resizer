@@ -41,6 +41,19 @@ const initialDimension = {
   country: countryData.country_code || countryName,
   digital: countryData.raw_dimensions?.digital
 };
+
+// Related countries: the next 6 countries in alphabetical order (wrapping
+// around), so every country page gets links from 6 others, plus the most
+// searched countries. Before this, country pages were only linked from /passport.
+const titleCase = (slug: string) => slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+const allSlugs = Object.keys(import.meta.glob('../../i18n/passport/*.json')).map((fp) => (fp.split('/').pop() || '').replace('.json', '')).sort();
+const at = allSlugs.indexOf(countrySlug);
+const neighbours = Array.from({ length: 6 }, (_, i) => allSlugs[(at + 1 + i) % allSlugs.length]);
+const popular = ['united-states', 'united-kingdom', 'india', 'canada'];
+const related = [...new Set([...neighbours, ...popular])]
+  .filter((slug) => slug !== countrySlug && allSlugs.includes(slug))
+  .slice(0, 9)
+  .map((slug) => ({ slug, name: titleCase(slug) }));
 ---
 
 <ToolPageLayout
@@ -84,5 +97,21 @@ const initialDimension = {
         </a>
       </div>
     </div>
+
+    {related.length > 0 && (
+    <nav aria-labelledby="related-countries" class="max-w-7xl mx-auto mb-12 px-1">
+      <h2 id="related-countries" class="text-2xl font-crimson font-bold text-gray-900 mb-4">Passport photo sizes for other countries</h2>
+      <ul class="flex flex-wrap gap-2">
+        {related.map((c) => (
+          <li>
+            <a href={`/passport/${c.slug}`} class="inline-block px-4 py-2 rounded-full border border-gray-200 text-gray-700 hover:border-primary hover:text-primary transition-colors">
+              {c.name} passport photo
+            </a>
+          </li>
+        ))}
+        <li><a href="/passport" class="inline-block px-4 py-2 rounded-full text-primary font-medium hover:underline">All countries →</a></li>
+      </ul>
+    </nav>
+    )}
   </div>
 </ToolPageLayout>

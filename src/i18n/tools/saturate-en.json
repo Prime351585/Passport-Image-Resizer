@@ -11,5 +11,71 @@
       "Batch Image Processing",
       "Zero Server Uploads (100% Privacy)"
     ]
+  },
+  "requirements": {
+    "h2": "What the saturation slider does",
+    "intro": "Saturation is how intense the colours are. The slider uses the same formula as the CSS saturate() filter, so 100% leaves colours unchanged.",
+    "rows": [
+      {
+        "label": "0%",
+        "value": "Black and white: all colour is removed while brightness is kept."
+      },
+      {
+        "label": "50%",
+        "value": "Muted, faded colours, often used for a vintage or calm look."
+      },
+      {
+        "label": "100%",
+        "value": "No change."
+      },
+      {
+        "label": "150–200%",
+        "value": "Richer, more vivid colours. 200% is the starting value."
+      },
+      {
+        "label": "Above 200%",
+        "value": "Very strong colours. Skin tones can turn orange and bright colours can lose detail."
+      }
+    ],
+    "notes_h3": "Tips",
+    "notes": [
+      "For portraits, stay around 110–130% so skin looks natural.",
+      "Landscapes, food and product photos usually handle stronger settings well.",
+      "To make a photo black and white, set the slider to 0%.",
+      "Your file keeps its format: a JPG stays a JPG (saved at 92% quality), a PNG or WebP keeps its transparency."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
+  },
+  "how_to": {
+    "title": "How to change the saturation of an image",
+    "step1_title": "1. Add your images",
+    "step1_text": "Select or drag in one or more JPG, PNG or WebP files. They stay on your device.",
+    "step2_title": "2. Set the saturation",
+    "step2_text": "Move the slider: 0% for black and white, above 100% for more vivid colours.",
+    "step3_title": "3. Apply and download",
+    "step3_text": "Click the apply button. One image downloads directly; several download as a ZIP."
+  },
+  "faq": {
+    "h2": "Saturation: common questions",
+    "items": [
+      {
+        "q": "How do I make a photo black and white?",
+        "a": "Set the saturation slider to 0%. Colour is removed and the light and dark areas stay the same."
+      },
+      {
+        "q": "Why do faces look orange?",
+        "a": "Skin tones are already warm, so high saturation exaggerates them. Use a lower setting such as 110–130% for portraits."
+      },
+      {
+        "q": "Can I edit several photos at once?",
+        "a": "Yes. All selected images get the same setting and download together as a ZIP."
+      },
+      {
+        "q": "Are my images uploaded?",
+        "a": "No. Processing happens in your browser."
+      }
+    ]
   }
 }

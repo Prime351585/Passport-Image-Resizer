@@ -5,7 +5,6 @@
 import Layout from "./Layout.astro";
 import type { SupportedLanguage, HreflangAlternate } from "../utils/i18n";
 import {
-  generateWebAppSchema,
   generateHowToSchema,
   extractHowToSteps,
   generateFaqSchema,
@@ -27,15 +26,9 @@ const { lang, toolData, canonicalUrl, hreflangAlternates, breadcrumbs } =
 // Build structured data schemas
 const schemas: object[] = [];
 
-// WebApplication schema
-schemas.push(
-  generateWebAppSchema({
-    name: toolData.h1,
-    description: toolData.meta_description,
-    url: canonicalUrl,
-    lang,
-  }),
-);
+// No WebApplication/SoftwareApplication schema: Google only accepts it with
+// real ratings or reviews (aggregateRating/review), which we don't have, so it
+// was reported as invalid on every tool page.
 
 // HowTo schema (if how_to section exists)
 if (toolData.how_to) {
@@ -256,7 +249,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
           {req.sources.map((src: { label: string; url: string }, i: number) => (
             <>
               {i > 0 && ", "}
-              <a href={src.url} rel="nofollow noopener" target="_blank" class="text-primary underline">{src.label}</a>
+              <a href={src.url} rel="noopener" target="_blank" class="text-primary underline">{src.label}</a>
             </>
           ))}
           {". "}{req.checked}
@@ -301,7 +294,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
         <h2 class="font-crimson text-[30px] md:text-[50px] mb-8 text-center">
           {toolData.how_to.title}
         </h2>
-        <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class={`grid ${toolData.how_to.step4_title ? "md:grid-cols-4" : "md:grid-cols-3"} gap-6 max-w-5xl mx-auto`}>
           {[
             {
               title: toolData.how_to.step1_title,
@@ -319,7 +312,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
               title: toolData.how_to.step4_title,
               text: toolData.how_to.step4_text,
             },
-          ].map((step) => (
+          ].filter((step) => step.title).map((step) => (
             <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl hover:border-primary/50 transition-colors">
               <p class="font-crimson text-lg font-semibold text-gray-900 mb-2">
                 {step.title}

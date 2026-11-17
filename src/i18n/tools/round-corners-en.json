@@ -11,5 +11,70 @@
       "Export as Transparent PNG",
       "Zero Server Uploads (100% Privacy)"
     ]
+  },
+  "requirements": {
+    "h2": "How the corner radius works",
+    "intro": "The slider sets the corner radius as a percentage of half the image’s shorter side, so the same setting looks the same on small and large images.",
+    "rows": [
+      {
+        "label": "10–25%",
+        "value": "Subtly rounded corners, like app screenshots and cards. 25% is the starting value."
+      },
+      {
+        "label": "50%",
+        "value": "Strongly rounded corners, similar to app icons."
+      },
+      {
+        "label": "100% on a square image",
+        "value": "A perfect circle, ideal for profile pictures and avatars."
+      },
+      {
+        "label": "100% on a rectangle",
+        "value": "A pill shape with fully rounded ends."
+      },
+      {
+        "label": "Output",
+        "value": "Always PNG, so the cut-away corners are transparent rather than white or black."
+      }
+    ],
+    "notes_h3": "Tips",
+    "notes": [
+      "For a circular profile picture, crop the photo to a square first with the image cropper, then set the radius to 100%.",
+      "The output is PNG to keep the corners transparent. If you need a smaller file, convert it to WebP, which also keeps transparency.",
+      "If you convert the result to JPG, the transparent corners turn white."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
+  },
+  "how_to": {
+    "title": "How to round the corners of an image",
+    "step1_title": "1. Add your images",
+    "step1_text": "Select or drag in one or more JPG, PNG or WebP files. Nothing is uploaded.",
+    "step2_title": "2. Set the radius",
+    "step2_text": "Move the slider to choose how rounded the corners are. 100% gives a circle on square images.",
+    "step3_title": "3. Apply and download",
+    "step3_text": "Click the apply button to download a PNG with transparent corners, or a ZIP for several images."
+  },
+  "faq": {
+    "h2": "Rounded corners: common questions",
+    "items": [
+      {
+        "q": "How do I make a circular profile picture?",
+        "a": "Crop the image to a square (1:1) first, then set the radius to 100%. The result is a circle with a transparent background."
+      },
+      {
+        "q": "Why is the output a PNG?",
+        "a": "JPG cannot store transparency, so the rounded corners would be filled with a solid colour. PNG keeps them transparent."
+      },
+      {
+        "q": "Why is my PNG larger than the original JPG?",
+        "a": "PNG is lossless. For a smaller file that keeps the transparent corners, convert the PNG to WebP."
+      },
+      {
+        "q": "Are my images uploaded?",
+        "a": "No. Everything runs in your browser."
+      }
+    ]
   }
 }

@@ -150,7 +150,7 @@ export function extractHowToSteps(howTo: I18nHowTo): HowToStep[] {
     { name: howTo.step2_title, text: howTo.step2_text },
     { name: howTo.step3_title, text: howTo.step3_text },
     { name: howTo.step4_title, text: howTo.step4_text },
-  ];
+  ].filter((s) => s.name && s.text);
 }
 
 // ─── BreadcrumbList Schema ──────────────────────────────────────────────────────

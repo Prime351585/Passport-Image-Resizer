@@ -11,5 +11,67 @@
       "Batch Image Lightening",
       "Zero Server Uploads (100% Privacy)"
     ]
+  },
+  "requirements": {
+    "h2": "How the brightness slider works",
+    "intro": "The slider multiplies the brightness of every pixel. 100% leaves the image unchanged, values above 100% make it lighter, and values below 100% make it darker.",
+    "rows": [
+      {
+        "label": "100%",
+        "value": "No change."
+      },
+      {
+        "label": "120–150%",
+        "value": "Good for slightly underexposed photos taken indoors or in shade. 150% is the starting value."
+      },
+      {
+        "label": "150–200%",
+        "value": "For very dark images. Bright areas such as sky or white walls can turn pure white and lose detail."
+      },
+      {
+        "label": "Below 100%",
+        "value": "Darkens the image, which helps with photos that are too bright or washed out."
+      }
+    ],
+    "notes_h3": "Tips for better results",
+    "notes": [
+      "Increase in small steps. If the brightest parts of the photo turn plain white, go back down a little.",
+      "Very dark night photos also contain noise; brightening makes the noise more visible.",
+      "Brightening does not change the background colour of a passport or ID photo. If a photo was rejected for a dark or grey background, it needs to be retaken.",
+      "Your file keeps its format: a JPG stays a JPG (saved at 92% quality), a PNG or WebP keeps its transparency."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
+  },
+  "how_to": {
+    "title": "How to lighten a photo",
+    "step1_title": "1. Add your photos",
+    "step1_text": "Select or drag in one or more JPG, PNG or WebP images. Nothing is uploaded.",
+    "step2_title": "2. Choose the brightness",
+    "step2_text": "Move the slider above 100% to lighten. Start around 120–150% and adjust.",
+    "step3_title": "3. Apply and download",
+    "step3_text": "Click the apply button. One photo downloads directly; several download as a ZIP with the same settings applied to all."
+  },
+  "faq": {
+    "h2": "Lightening photos: common questions",
+    "items": [
+      {
+        "q": "How do I brighten a dark photo without losing detail?",
+        "a": "Use a moderate setting such as 120–150%. Higher values brighten shadows more, but already bright areas reach pure white and lose their detail."
+      },
+      {
+        "q": "Can I make a photo darker instead?",
+        "a": "Yes. Move the slider below 100%."
+      },
+      {
+        "q": "Can I lighten many photos at once?",
+        "a": "Yes. Add several images and they are all brightened with the same setting and downloaded as a ZIP."
+      },
+      {
+        "q": "Are my photos uploaded?",
+        "a": "No. The adjustment runs entirely in your browser."
+      }
+    ]
   }
 }

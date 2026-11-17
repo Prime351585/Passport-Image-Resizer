@@ -11,5 +11,67 @@
       "Batch Image Inversion",
       "Zero Server Uploads (100% Privacy)"
     ]
+  },
+  "requirements": {
+    "h2": "What inverting an image does",
+    "intro": "Inverting replaces every colour with its opposite on the colour wheel and flips light and dark: black becomes white, blue becomes yellow, red becomes cyan. The result looks like a film negative.",
+    "rows": [
+      {
+        "label": "100% (default)",
+        "value": "A full negative. Inverting the result again gives you back the original image."
+      },
+      {
+        "label": "50%",
+        "value": "Every colour meets its opposite halfway, so the image turns into flat mid-grey."
+      },
+      {
+        "label": "Between 0% and 50%",
+        "value": "A faded, washed-out look that keeps the original colours."
+      },
+      {
+        "label": "Transparency",
+        "value": "Kept. Only the colours change; transparent areas of a PNG or WebP stay transparent."
+      }
+    ],
+    "notes_h3": "Common uses",
+    "notes": [
+      "Turn a scanned film negative into a positive photo for a quick preview.",
+      "Make a dark-on-light diagram, chart or screenshot readable on a dark background, and the reverse.",
+      "Create a striking poster, wallpaper or social media effect.",
+      "Your file keeps its format: a JPG stays a JPG (saved at 92% quality), a PNG or WebP keeps its transparency."
+    ],
+    "sources_label": "",
+    "sources": [],
+    "checked": ""
+  },
+  "how_to": {
+    "title": "How to invert an image",
+    "step1_title": "1. Add your images",
+    "step1_text": "Select or drag in one or more JPG, PNG or WebP files. They are processed in your browser and never uploaded.",
+    "step2_title": "2. Set the intensity",
+    "step2_text": "Leave the slider at 100% for a full negative, or lower it for a partial effect.",
+    "step3_title": "3. Apply and download",
+    "step3_text": "Click the apply button. One image downloads directly; several download together as a ZIP."
+  },
+  "faq": {
+    "h2": "Inverting images: common questions",
+    "items": [
+      {
+        "q": "Can I turn a photo negative into a normal photo?",
+        "a": "Yes for black-and-white negatives: invert at 100% to see the positive. Colour negatives also have an orange film base, so the inverted result will look blue-tinted; it works as a preview but needs colour correction for a proper print."
+      },
+      {
+        "q": "Why did my image turn grey?",
+        "a": "At 50% intensity every colour is pulled exactly halfway towards its opposite, which gives flat grey. Use 100% for a negative."
+      },
+      {
+        "q": "Does inverting reduce quality?",
+        "a": "No detail is lost. PNG output is lossless; JPG is saved at 92% quality, which is visually close to the original."
+      },
+      {
+        "q": "Are my images uploaded?",
+        "a": "No. Everything runs on your device in the browser."
+      }
+    ]
   }
 }
